@@ -1,0 +1,75 @@
+{
+  "episode": 23,
+  "summary": "This lesson teaches that nouns ending in -ma are masculine (from Greek neuter), introduces the verb sentir (to feel), and practices the reflexive 'lost myself' pattern with me/te/nos to mean 'got lost'. Extensive practice combining haber with reflexive pronouns and emphatic subject pronouns.",
+  "teachings": [
+    {
+      "conceptSlug": "ma-nouns-masculine",
+      "conceptName": "Nouns ending -ma are masculine (Greek origin)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "A small group of nouns ending in -ma are masculine, not feminine. These words come from Greek, where they were neuter (which looks like masculine). When they entered Spanish via Latin, they were treated as masculine.",
+      "rule": "Nouns ending in -ma are typically masculine (Greek origin): el problema, el sistema, el programa, el aroma, el panorama, el clima.",
+      "examples": [
+        {"spanish": "el problema", "english": "the problem"},
+        {"spanish": "el sistema", "english": "the system"},
+        {"spanish": "el programa", "english": "the program"},
+        {"spanish": "el aroma", "english": "the aroma"},
+        {"spanish": "el panorama", "english": "the panorama"},
+        {"spanish": "el clima", "english": "the climate"}
+      ],
+      "notes": "A very common error is saying 'la problema'. These words come from Greek (problema=provlima, system=systima). Greek neuter words look like masculine and were adopted as masculine in Spanish."
+    },
+    {
+      "conceptSlug": "sentir-to-feel",
+      "conceptName": "The verb sentir (to feel)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Sentir means to feel, related to 'sensation'. Can also mean to perceive/smell. Past participle is sentido.",
+      "rule": null,
+      "examples": [
+        {"spanish": "¿Has sentido el aroma?", "english": "Have you felt/smelt the aroma?"}
+      ],
+      "notes": "Related to English 'sensation'."
+    },
+    {
+      "conceptSlug": "reflexive-perderse",
+      "conceptName": "Reflexive verbs: perderse = to get lost",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "To say 'I got lost' in Spanish, you say 'I have lost myself' (me he perdido). The reflexive pronouns me/te/nos go before haber. Combined with emphatic subject pronouns: yo me he perdido, tú te has perdido, nosotros nos hemos perdido.",
+      "rule": "Reflexive pronoun + haber + past participle. The reflexive pronoun goes before haber.",
+      "examples": [
+        {"spanish": "Me he perdido", "english": "I have got lost (I have lost myself)"},
+        {"spanish": "Yo me he perdido", "english": "I have got lost (emphatic)"},
+        {"spanish": "Te has perdido", "english": "You have got lost"},
+        {"spanish": "Tú te has perdido", "english": "YOU have got lost (emphatic)"},
+        {"spanish": "Nos hemos perdido", "english": "We have got lost"},
+        {"spanish": "Nosotros nos hemos perdido", "english": "WE have got lost (emphatic)"}
+      ],
+      "notes": "When me he sounds together, the two /e/ sounds blend. Just as 'me preparo' = I get ready (I ready myself), 'me he perdido' = I got lost (I have lost myself)."
+    },
+    {
+      "conceptSlug": "haber-auxiliary-have",
+      "conceptName": "Haber: auxiliary 'to have' for past tense",
+      "category": "Verb conjugation",
+      "role": "reviewed",
+      "summary": "Quick review of haber forms using the two-vowel mnemonic: e → he, hemos; a → ha, has, han.",
+      "rule": null,
+      "examples": [
+        {"spanish": "¿Ha entendido el problema?", "english": "Have you (formal) understood the problem?"},
+        {"spanish": "¿Has entendido el sistema?", "english": "Have you (informal) understood the system?"},
+        {"spanish": "¿Has entendido el programa?", "english": "Have you understood the program?"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "sentir", "english": "to feel, to perceive", "derivation": "sensation → sentir"},
+    {"spanish": "el problema", "english": "the problem (masculine)", "derivation": "Greek provlima"},
+    {"spanish": "el sistema", "english": "the system (masculine)", "derivation": "Greek systima"},
+    {"spanish": "el programa", "english": "the program (masculine)", "derivation": null},
+    {"spanish": "el aroma", "english": "the aroma (masculine)", "derivation": null},
+    {"spanish": "el panorama", "english": "the panorama (masculine)", "derivation": null},
+    {"spanish": "el clima", "english": "the climate (masculine)", "derivation": null}
+  ]
+}

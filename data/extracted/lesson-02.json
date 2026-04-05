@@ -1,0 +1,87 @@
+{
+  "episode": 2,
+  "summary": "Introduces the concept of converting Latin-rooted English words to Spanish. Teaches the -al word ending rule, Spanish vowel pronunciation, the verb 'es' (is), and negation with 'no'.",
+  "teachings": [
+    {
+      "conceptSlug": "cognate-conversion-al",
+      "conceptName": "Cognate conversion: -al endings",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "English words ending in -al tend to come from Latin and can be converted to Spanish by pronouncing them with Spanish phonetics and stressing the final syllable.",
+      "rule": "Words ending in -al in English are often the same in Spanish, just pronounced with Spanish vowels and stress on the final syllable.",
+      "examples": [
+        {"spanish": "normal", "english": "normal"},
+        {"spanish": "metal", "english": "metal"},
+        {"spanish": "legal", "english": "legal"},
+        {"spanish": "natural", "english": "natural"},
+        {"spanish": "fatal", "english": "fatal"},
+        {"spanish": "colonial", "english": "colonial"},
+        {"spanish": "cultural", "english": "cultural"},
+        {"spanish": "anual", "english": "annual"},
+        {"spanish": "dental", "english": "dental"},
+        {"spanish": "festival", "english": "festival"},
+        {"spanish": "personal", "english": "personal"},
+        {"spanish": "total", "english": "total"},
+        {"spanish": "verbal", "english": "verbal"}
+      ],
+      "notes": "Pronounce each vowel as written: a=/ah/, e=/eh/, i=/ee/, o=/oh/, u=/oo/. Cut out English sounds that come from nowhere (like the y in 'annual')."
+    },
+    {
+      "conceptSlug": "spanish-vowel-pronunciation",
+      "conceptName": "Spanish vowel pronunciation",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Spanish vowels always have the same sound: a=/ah/, e=/eh/, i=/ee/, o=/oh/, u=/oo/. Unlike English where vowels have many sounds, Spanish is phonetic.",
+      "rule": "a=/ah/, e=/eh/, i=/ee/, o=/oh/, u=/oo/ — always consistent.",
+      "examples": [
+        {"spanish": "natural", "english": "natural (each vowel pronounced as written)"}
+      ],
+      "notes": "Spanish is much more phonetic than English. Pronounce letters as they are written."
+    },
+    {
+      "conceptSlug": "es-verb",
+      "conceptName": "Es (is/he is/she is/it is)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "The word 'es' means is, and also covers he is, she is, it is, and you are (formal). No subject pronoun is needed.",
+      "rule": "'Es' = is / he is / she is / it is / you (formal) are.",
+      "examples": [
+        {"spanish": "Es normal", "english": "It is normal"},
+        {"spanish": "Es legal", "english": "It is legal"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "negation-with-no",
+      "conceptName": "Negation with 'no'",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "To negate, place 'no' before the verb. 'No' means both 'no' and 'not/don't'.",
+      "rule": "Place 'no' before the verb to negate: 'No es' = it is not.",
+      "examples": [
+        {"spanish": "No es normal", "english": "It's not normal"},
+        {"spanish": "No es ideal", "english": "It's not ideal"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "latin-english-cognates",
+      "conceptName": "Latin-English cognates strategy",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "English has a huge amount of Latin vocabulary that can be converted to Spanish with simple rules, giving access to around 3,000 words.",
+      "rule": null,
+      "examples": [],
+      "notes": "Spanish is practically Modern Latin — a 'street Latin' that evolved into Spanish."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "es", "english": "is / he is / she is / it is / you (formal) are", "derivation": null},
+    {"spanish": "no", "english": "no / not / don't", "derivation": null},
+    {"spanish": "ideal", "english": "ideal", "derivation": "cognate with -al ending"},
+    {"spanish": "ilegal", "english": "illegal", "derivation": "cognate with -al ending"},
+    {"spanish": "liberal", "english": "liberal", "derivation": "cognate with -al ending"},
+    {"spanish": "verbo", "english": "verb", "derivation": "from verbal → verbo"},
+    {"spanish": "diente", "english": "tooth", "derivation": "related to 'dental'"}
+  ]
+}

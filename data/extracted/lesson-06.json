@@ -1,0 +1,85 @@
+{
+  "episode": 6,
+  "summary": "Introduces 'intento' (I try), silent h in Spanish, 'ahora' (now), 'voy' (I go/I am going), and the Spanish v/soft-b sound. Practices building longer multi-clause sentences.",
+  "teachings": [
+    {
+      "conceptSlug": "intento-i-try",
+      "conceptName": "Intento (I try / I am trying)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Intento means 'I try' or 'I am trying'. Derived from understanding the connection to 'intention'. The -o ending shows it's the 'I' form.",
+      "rule": "Intento = I try / I am trying. The -o ending indicates first person (I).",
+      "examples": [
+        {"spanish": "Intento publicarlo", "english": "I am trying to publish it"},
+        {"spanish": "Intento administrarlo", "english": "I am trying to administrate it"},
+        {"spanish": "Intento imitarlo", "english": "I am trying to imitate him/it"}
+      ],
+      "notes": "Connected to 'intention/intención' but there's no formal -ación rule here since it doesn't end in -ation."
+    },
+    {
+      "conceptSlug": "silent-h",
+      "conceptName": "Silent h in Spanish",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "H is completely silent in Spanish. You must not even think it, as it tends to slip out. The exception is ch which is pronounced /ch/ as in English.",
+      "rule": "H is always silent in Spanish. Exception: ch = /ch/.",
+      "examples": [
+        {"spanish": "hospital", "english": "hospital (h silent, starts with /o/)"},
+        {"spanish": "horrible", "english": "horrible (h silent)"},
+        {"spanish": "habitual", "english": "habitual (h silent)"}
+      ],
+      "notes": "Think of the word as beginning with the vowel, not with h."
+    },
+    {
+      "conceptSlug": "ahora-now",
+      "conceptName": "Ahora (now)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Ahora means 'now'. It's composed of 'a' (to) + 'hora' (hour), literally 'to the hour'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Voy ahora", "english": "I'm going now"},
+        {"spanish": "No voy ahora", "english": "I'm not going now"}
+      ],
+      "notes": "Spelled a-h-o-r-a. Also gives us: a = to (direction), hora = hour."
+    },
+    {
+      "conceptSlug": "voy-i-go",
+      "conceptName": "Voy (I go / I am going)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Voy means 'I go' or 'I am going'. It's an irregular verb. Related to the English word 'voyage'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Voy ahora", "english": "I am going now"},
+        {"spanish": "No voy ahora", "english": "I'm not going now"}
+      ],
+      "notes": "Spelled v-o-y. The v in Spanish sounds like a soft b. Related to 'vamos' (let's go / we are going)."
+    },
+    {
+      "conceptSlug": "spanish-v-soft-b",
+      "conceptName": "Spanish v as soft b",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "The letter v in Spanish is generally pronounced as a soft b (not a hard plosive b). In some regions like Argentina/Chile, you may hear more of a /v/ sound.",
+      "rule": "V in Spanish = soft b (no burst of air). Hard b has a plosive burst.",
+      "examples": [
+        {"spanish": "voy", "english": "I go"},
+        {"spanish": "visible", "english": "visible"},
+        {"spanish": "viral", "english": "viral"},
+        {"spanish": "visitar", "english": "to visit"}
+      ],
+      "notes": "Test: hold paper in front of mouth — hard b moves paper, soft b doesn't."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "intento", "english": "I try / I am trying", "derivation": "connected to intención (intention)"},
+    {"spanish": "ahora", "english": "now", "derivation": "a (to) + hora (hour)"},
+    {"spanish": "a", "english": "to (direction)", "derivation": null},
+    {"spanish": "hora", "english": "hour", "derivation": null},
+    {"spanish": "voy", "english": "I go / I am going", "derivation": "related to voyage"},
+    {"spanish": "visitar", "english": "to visit", "derivation": "visitation → visitar"},
+    {"spanish": "conveniente", "english": "convenient", "derivation": "cognate with -ent ending"},
+    {"spanish": "virus", "english": "virus", "derivation": "same word, Spanish pronunciation"}
+  ]
+}

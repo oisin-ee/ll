@@ -1,0 +1,97 @@
+{
+  "episode": 25,
+  "summary": "This lesson teaches that me/te/nos can mean 'to me', 'for me', 'from me' without needing prepositions. Spanish drops these prepositions where English requires them. New vocabulary includes cocinar (to cook), numbers ocho/nueve/diez, quedar(se) for 'to stay', and hasta (until). Time expressions with 'a las' are introduced.",
+  "teachings": [
+    {
+      "conceptSlug": "implicit-prepositions",
+      "conceptName": "me/te/nos absorb prepositions (to, for, from)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "In Spanish, me can mean me, to me, for me, or from me — context determines which. Spanish tends not to need prepositions like 'to', 'for', 'from' where English does. The same applies to te and nos.",
+      "rule": "me/te/nos can mean the direct object OR indirect object — no preposition needed. 'He speaks to me' = me habla. 'He buys it for me' = me lo compra.",
+      "examples": [
+        {"spanish": "Me habla", "english": "He speaks to me"},
+        {"spanish": "Me hablan", "english": "They speak to me"},
+        {"spanish": "Me lo hablan", "english": "They speak to me about it"},
+        {"spanish": "Me lo compra", "english": "He buys it for me"},
+        {"spanish": "Te lo compro", "english": "I buy it for you"},
+        {"spanish": "¿Te lo compro?", "english": "Shall I buy it for you?"},
+        {"spanish": "¿Me lo quieres hacer?", "english": "Do you want to do it for me?"},
+        {"spanish": "¿Me puedes cocinar algo?", "english": "Can you cook something for me?"}
+      ],
+      "notes": "Shall I...? in English just becomes a question in Spanish: ¿Te lo compro? Context distinguishes 'for you' from 'from you'."
+    },
+    {
+      "conceptSlug": "quedar-to-stay",
+      "conceptName": "Quedar(se) = to stay (to remain oneself)",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Quedar means 'to remain' or 'to be left over'. To say 'I stay', you say 'I remain myself': me quedo. The reflexive is required for the meaning of 'stay'.",
+      "rule": "quedar = to remain. me quedo = I stay (I remain myself). te quedas = you stay. nos quedamos = we stay.",
+      "examples": [
+        {"spanish": "Me quedo", "english": "I stay (I remain myself)"},
+        {"spanish": "Me quedo aquí hasta las diez", "english": "I'm staying here until ten o'clock"},
+        {"spanish": "Nos quedamos", "english": "We stay"},
+        {"spanish": "Nos quedamos hasta las nueve", "english": "We are staying until nine o'clock"},
+        {"spanish": "Te quedas", "english": "You stay (informal)"},
+        {"spanish": "¿Te quedas aquí?", "english": "Are you staying here?"},
+        {"spanish": "¿Tú te quedas aquí?", "english": "Are YOU staying here? (emphatic)"},
+        {"spanish": "Yo me quedo", "english": "I'm staying (emphatic)"},
+        {"spanish": "Nosotros nos quedamos", "english": "WE are staying (emphatic)"}
+      ],
+      "notes": "The me/te/nos is not optional here — it's required to get the meaning of 'stay'. The emphatic pronoun (yo, tú, nosotros) is separate and optional."
+    },
+    {
+      "conceptSlug": "time-expressions",
+      "conceptName": "Telling time: a las + number",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "'At X o'clock' is expressed as 'a las X' (literally 'at the X hours'). The 'horas' is implied and not said.",
+      "rule": "a las + number = at X o'clock. (a las seis = at six o'clock, a las ocho = at eight o'clock)",
+      "examples": [
+        {"spanish": "He cocinado a las seis", "english": "I cooked at six o'clock"},
+        {"spanish": "Hemos cocinado a las ocho", "english": "We cooked at eight o'clock"},
+        {"spanish": "hasta las diez", "english": "until ten o'clock"},
+        {"spanish": "hasta las nueve", "english": "until nine o'clock"}
+      ],
+      "notes": "Literally 'at the six hours' (a las seis horas), but horas is dropped."
+    },
+    {
+      "conceptSlug": "hasta-until",
+      "conceptName": "hasta = until",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Hasta means 'until'. Appears in the well-known phrase 'hasta la vista' (until the seeing/until we see each other).",
+      "rule": "hasta = until",
+      "examples": [
+        {"spanish": "hasta la vista", "english": "until the seeing (goodbye)"},
+        {"spanish": "Me quedo aquí hasta las diez", "english": "I'm staying here until ten"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "present-perfect-expanded-use",
+      "conceptName": "Present perfect used more broadly in Spanish",
+      "category": "Verb tense",
+      "role": "practiced",
+      "summary": "The present perfect (he cocinado) can be used in Spanish where English would use simple past. 'I cooked at 6' can be 'he cocinado a las seis' in Spanish — it sounds natural even with specific time references.",
+      "rule": null,
+      "examples": [
+        {"spanish": "He cocinado a las seis", "english": "I cooked at six o'clock (I have cooked at six)"},
+        {"spanish": "Hemos cocinado a las ocho", "english": "We cooked at eight o'clock"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "cocinar", "english": "to cook", "derivation": "la cocina (kitchen) → cocinar; related to English 'concoction'"},
+    {"spanish": "la cocina", "english": "the kitchen", "derivation": null},
+    {"spanish": "comprar", "english": "to buy", "derivation": null},
+    {"spanish": "ocho", "english": "eight", "derivation": "octagon, octopus, October (originally 8th month)"},
+    {"spanish": "nueve", "english": "nine", "derivation": "November (originally 9th month), o→ue split"},
+    {"spanish": "diez", "english": "ten", "derivation": "December (originally 10th month), dec→diez split"},
+    {"spanish": "quedar", "english": "to remain, to be left over", "derivation": null},
+    {"spanish": "hasta", "english": "until", "derivation": "as in hasta la vista"},
+    {"spanish": "hacer", "english": "to do, to make", "derivation": null}
+  ]
+}

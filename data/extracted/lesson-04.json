@@ -1,0 +1,89 @@
+{
+  "episode": 4,
+  "summary": "Introduces the crucial -ión cognate rule and how to derive -ar verbs from -ación nouns. Teaches 'quiero' (I want), 'me' (me/myself), and the concept of positive vs negative language transfer.",
+  "teachings": [
+    {
+      "conceptSlug": "cognate-conversion-ion",
+      "conceptName": "Cognate conversion: -ion endings",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "English words ending -ion are the same in Spanish with the accent on the end. When the English has -tion, it becomes -ción in Spanish.",
+      "rule": "-ion words are the same in Spanish with final stress. -tion becomes -ción (pronounced /sión/ in Latin America, /thión/ in most of Spain).",
+      "examples": [
+        {"spanish": "opinión", "english": "opinion"},
+        {"spanish": "pasión", "english": "passion"},
+        {"spanish": "preparación", "english": "preparation"},
+        {"spanish": "organización", "english": "organization"},
+        {"spanish": "generación", "english": "generation"},
+        {"spanish": "confirmación", "english": "confirmation"},
+        {"spanish": "conversación", "english": "conversation"},
+        {"spanish": "complicación", "english": "complication"}
+      ],
+      "notes": "This is described as the teacher's favourite rule due to its productivity."
+    },
+    {
+      "conceptSlug": "acion-to-ar-verb-derivation",
+      "conceptName": "Deriving -ar verbs from -ación nouns",
+      "category": "Word formation",
+      "role": "introduced",
+      "summary": "For words ending -ación, remove -ción and add -r to get the verb. This gives access to roughly 1,000 verbs.",
+      "rule": "-ación → remove -ción, add -r → -ar verb. E.g., preparación → preparar.",
+      "examples": [
+        {"spanish": "preparar", "english": "to prepare"},
+        {"spanish": "generar", "english": "to generate"},
+        {"spanish": "confirmar", "english": "to confirm"},
+        {"spanish": "complicar", "english": "to complicate"},
+        {"spanish": "cooperar", "english": "to cooperate"},
+        {"spanish": "cancelar", "english": "to cancel"},
+        {"spanish": "explorar", "english": "to explore"}
+      ],
+      "notes": "Always take the long route: English word → -ación noun → -ar verb. Don't jump directly from English verb to Spanish."
+    },
+    {
+      "conceptSlug": "quiero-i-want",
+      "conceptName": "Quiero (I want)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Quiero means 'I want'. Derived from 'te quiero' (I love you, literally 'I want you') by removing 'te'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Quiero preparar", "english": "I want to prepare"},
+        {"spanish": "No quiero cancelar", "english": "I don't want to cancel"},
+        {"spanish": "Quiero explorar", "english": "I want to explore"}
+      ],
+      "notes": "'Te quiero' literally means 'I want you' and is used for 'I love you' (casual). 'Te amo' is much more serious."
+    },
+    {
+      "conceptSlug": "me-pronoun",
+      "conceptName": "Me (me/myself)",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "The word for 'me' in Spanish is 'me', pronounced as written. It also serves as 'myself' in reflexive constructions.",
+      "rule": "'Me' attaches to the end of infinitives: prepararme = to prepare myself.",
+      "examples": [
+        {"spanish": "Quiero prepararme", "english": "I want to prepare myself / I want to get ready"}
+      ],
+      "notes": "Latin words sound formal in English but are everyday language in Spanish."
+    },
+    {
+      "conceptSlug": "language-transfer-concept",
+      "conceptName": "Positive and negative language transfer",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Positive language transfer is when English knowledge helps with Spanish (like cognates). Negative language transfer is when English habits interfere with correct Spanish.",
+      "rule": null,
+      "examples": [
+        {"spanish": "confirmación", "english": "confirmation (not 'confermación' — the i stays as /i/)"}
+      ],
+      "notes": "Con = with, firma = signature. So 'confirm' means 'with signature'."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "quiero", "english": "I want", "derivation": "from te quiero (I love you)"},
+    {"spanish": "te", "english": "you (informal, object)", "derivation": null},
+    {"spanish": "me", "english": "me / myself", "derivation": null},
+    {"spanish": "firmar", "english": "to sign", "derivation": "from confirmar = con + firmar (with signing)"},
+    {"spanish": "con", "english": "with", "derivation": "from confirmation = con + firma"},
+    {"spanish": "urgente", "english": "urgent", "derivation": "cognate with -ent ending"}
+  ]
+}

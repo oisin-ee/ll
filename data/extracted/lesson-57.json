@@ -1,0 +1,75 @@
+{
+  "episode": 57,
+  "summary": "Covers the one difference between -er and -ir verbs (we form: -emos vs -imos), introduces lo + adjective for 'the [adjective] thing', lo de for 'the thing about', and así for 'like this/like that'.",
+  "teachings": [
+    {
+      "conceptSlug": "er-vs-ir-we-form",
+      "conceptName": "The one -er/-ir difference: we form",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "The only difference in the entire Spanish language between -er and -ir verbs is the 'we' form in the present tense: -emos for -er verbs, -imos for -ir verbs. In all other forms and tenses, they behave identically.",
+      "rule": "-er verbs: we = -emos (comemos). -ir verbs: we = -imos (vivimos). This is the ONLY difference between -er and -ir in all of Spanish.",
+      "examples": [
+        {"spanish": "Hablamos", "english": "We speak (-ar)"},
+        {"spanish": "Comemos", "english": "We eat (-er: -emos)"},
+        {"spanish": "Vivimos", "english": "We live (-ir: -imos)"},
+        {"spanish": "¿Dónde viven?", "english": "Where do you guys live?"}
+      ],
+      "notes": "All other forms use the same endings: come/vive (he), comen/viven (they), etc."
+    },
+    {
+      "conceptSlug": "lo-adjective",
+      "conceptName": "Lo + adjective (the [X] thing)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Lo + adjective means 'the [adjective] thing'. Lo interesante = the interesting thing. Lo fácil = the easy thing. Lo bueno = the good thing. Lo malo = the bad thing.",
+      "rule": "Lo + adjective = the [adjective] thing. The adjective stays in masculine singular form.",
+      "examples": [
+        {"spanish": "Lo interesante es que viven aquí", "english": "The interesting thing is that they live here"},
+        {"spanish": "Lo interesante es que viven juntos", "english": "The interesting thing is that they live together"},
+        {"spanish": "Lo fácil es que vienen juntos", "english": "The easy thing is that they come together"},
+        {"spanish": "Lo complicado es que vienen juntos", "english": "The complicated thing is that they come together"}
+      ],
+      "notes": "Lo bueno = the good thing, lo malo = the bad thing. Very common and useful structure."
+    },
+    {
+      "conceptSlug": "lo-de",
+      "conceptName": "Lo de (the thing about)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Lo de means 'the thing about' or 'that business about'. Lo de la fiesta = that thing about the party. Lo de Juan = that business about Juan / Juan's business. Lo de mañana = that thing about tomorrow.",
+      "rule": "Lo de + noun/name = the thing about [X], that matter of [X]",
+      "examples": [
+        {"spanish": "Lo de la fiesta", "english": "The thing about the party"},
+        {"spanish": "Lo de Juan", "english": "That business about Juan"},
+        {"spanish": "No quiero hablar de lo de Juan así", "english": "I don't want to talk about Juan's business like this"},
+        {"spanish": "Quiero organizar lo de mañana", "english": "I want to organize that thing about tomorrow"},
+        {"spanish": "Pero no quiero organizarlo así", "english": "But I don't want to organize it like this"}
+      ],
+      "notes": "Lo de is used very often in Spanish. See it as a unit meaning 'that thing about'."
+    },
+    {
+      "conceptSlug": "asi",
+      "conceptName": "Así (like this/like that)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Así means 'like this' or 'like that' and replaces the longer de esta forma / de esta manera. Very common in everyday Spanish.",
+      "rule": null,
+      "examples": [
+        {"spanish": "No hablamos así", "english": "We don't speak like that"},
+        {"spanish": "No comemos así", "english": "We don't eat like that"},
+        {"spanish": "No vivimos así", "english": "We don't live like that"},
+        {"spanish": "No quiero organizarlo así", "english": "I don't want to organize it like this"}
+      ],
+      "notes": "More common than de esta forma or de esta manera. You'll hear it all the time."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "junto/a/os/as", "english": "together", "derivation": "related to junction, join (j sound)"},
+    {"spanish": "fácil", "english": "easy", "derivation": "from facilitate"},
+    {"spanish": "así", "english": "like this, like that", "derivation": null},
+    {"spanish": "malo", "english": "bad", "derivation": "as in malnutritioned (badly nourished)"},
+    {"spanish": "mañana", "english": "tomorrow; the morning (la mañana)", "derivation": "la mañana = the morning; mañana (no article) = tomorrow"},
+    {"spanish": "organizar", "english": "to organize", "derivation": "cognate"}
+  ]
+}

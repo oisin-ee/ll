@@ -1,0 +1,69 @@
+{
+  "episode": 73,
+  "summary": "This lesson teaches 'que + subjunctive' for indirect commands (let him wait, let it finish), the obligatory use of the subjunctive after 'cuando' when referring to the future, and introduces the irregular subjunctive of 'ir' (vaya/vayan/vayamos).",
+  "teachings": [
+    {
+      "conceptSlug": "que-subjunctive-indirect-command",
+      "conceptName": "Que + subjunctive for indirect commands",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "To express 'let him/her/it/them do something' without using quiero que or prefiero que, you can simply say 'que' followed by the subjunctive. This conveys wishes or commands directed at third parties.",
+      "rule": "que + [subjunctive] = let him/her/it/them [verb]",
+      "examples": [
+        {"spanish": "Que espere.", "english": "Let him wait."},
+        {"spanish": "Que termine.", "english": "Let it finish."},
+        {"spanish": "Que termine ya.", "english": "Let it finish already."},
+        {"spanish": "Que se calle.", "english": "Let him shut up."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "subjunctive-after-cuando-future",
+      "conceptName": "Subjunctive after cuando (when referring to future)",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "After 'cuando', if you refer to a future event (something that hasn't happened yet), you must use the subjunctive. If 'cuando' refers to a general/habitual situation, use the indicative. This reflects an unwillingness to state a future event as fact.",
+      "rule": "cuando + [indicative] = general/habitual. cuando + [subjunctive] = future event. The main clause after cuando can use normal present tense since the future context is already established.",
+      "examples": [
+        {"spanish": "Cuando comemos juntos, hablamos.", "english": "When we eat together, we speak. (general)"},
+        {"spanish": "Cuando comamos juntos, hablamos.", "english": "When we eat together (future), we will speak."},
+        {"spanish": "Cuando hablamos.", "english": "When we speak. (general)"},
+        {"spanish": "Cuando hablemos.", "english": "When we speak. (future -- whenever we do speak)"},
+        {"spanish": "La vemos cuando vamos.", "english": "We see her when we go. (general)"},
+        {"spanish": "La vemos cuando vayamos.", "english": "We will see her when we go. (future)"}
+      ],
+      "notes": "The language seems to reflect a kind of superstition -- uncomfortable referring to something in the future as a fact, so the subjunctive marks it as not-yet-realized."
+    },
+    {
+      "conceptSlug": "ir-subjunctive",
+      "conceptName": "Ir (to go) - subjunctive",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "The subjunctive of ir is irregular. The base is 'vaya' (v-a-y-a). Forms: vaya, vayas, vayamos, vayan.",
+      "rule": "Subjunctive of ir: vaya (I/he/she/you formal), vayas (you informal), vayamos (we), vayan (they/you plural).",
+      "examples": [
+        {"spanish": "Cuando vayamos.", "english": "When we go. (future)"},
+        {"spanish": "La vemos cuando vayamos.", "english": "We will see her when we go."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "positive-informal-command-shortcut",
+      "conceptName": "Positive informal command shortcut",
+      "category": "Verb mood",
+      "role": "reviewed",
+      "summary": "Brief review: for positive informal commands, drop the -s from the tú form (esperas -> espera). Contrasted with 'esperemos' (let's wait) and 'no esperemos' (let's not wait).",
+      "rule": null,
+      "examples": [
+        {"spanish": "Espera.", "english": "Wait! (informal positive)"},
+        {"spanish": "Esperemos.", "english": "Let's wait."},
+        {"spanish": "No esperemos.", "english": "Let's not wait."}
+      ],
+      "notes": "'¿Esperamos?' with rising intonation sounds like 'shall we wait?' rather than a command."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "ya", "english": "already", "derivation": null},
+    {"spanish": "juntos/juntas", "english": "together", "derivation": "Related to junction, joint, junta"}
+  ]
+}

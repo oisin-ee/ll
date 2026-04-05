@@ -1,0 +1,64 @@
+{
+  "episode": 68,
+  "summary": "This lesson covers demonstrative pronouns/adjectives (este/esta/esto, ese/esa/eso and their plurals), the neuter forms esto/eso for non-specific referents, introduces 'tan' (so), 'cuánto/cuántas' (how much/how many), and practices combining tenses in complex sentences.",
+  "teachings": [
+    {
+      "conceptSlug": "demonstrative-pronouns",
+      "conceptName": "Demonstrative pronouns and adjectives",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "Full paradigm of this/that/these/those: este/esta (this), ese/esa (that), estos/estas (these), esos/esas (those). Derived from 'esta noche' as a hook. The neuter forms esto/eso are used for general/non-specific references (not tied to a specific noun).",
+      "rule": "Masculine: este/ese (singular), estos/esos (plural). Feminine: esta/esa (singular), estas/esas (plural). Neuter (general, no specific noun): esto/eso. To get 'that' from 'this', remove the t: esta -> esa, este -> ese.",
+      "examples": [
+        {"spanish": "Esta noche.", "english": "Tonight. (this night)"},
+        {"spanish": "Esa noche.", "english": "That night."},
+        {"spanish": "Esas noches.", "english": "Those nights."},
+        {"spanish": "Este hombre.", "english": "This man."},
+        {"spanish": "Ese hombre.", "english": "That man."},
+        {"spanish": "Estos hombres.", "english": "These men."},
+        {"spanish": "Esos hombres.", "english": "Those men."},
+        {"spanish": "No creo esto.", "english": "I don't believe this."},
+        {"spanish": "Nada me gustó más que eso.", "english": "Nothing pleased me more than that."}
+      ],
+      "notes": "Spanish also allows post-positioned demonstratives: 'el hombre este', 'el hombre ese' -- possibly a structure influenced by Arabic during 800 years of contact."
+    },
+    {
+      "conceptSlug": "tan-so",
+      "conceptName": "Tan (so)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Tan means 'so' as in 'so tired' (tan cansado). Used in structures like 'tan... que...' (so... that...).",
+      "rule": null,
+      "examples": [
+        {"spanish": "Tan cansado.", "english": "So tired."},
+        {"spanish": "Estaba tan cansada.", "english": "I was so tired. (feminine)"},
+        {"spanish": "Estábamos tan cansados que dormimos todo el día.", "english": "We were so tired that we slept all day."},
+        {"spanish": "Estábamos tan cansados cuando llegamos que dormimos todo el día.", "english": "We were so tired when we arrived that we slept all day."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "cuanto-how-much",
+      "conceptName": "Cuánto/cuántas (how much/how many)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Cuánto means 'how much'. It agrees in gender and number with what it modifies: cuántas veces (how many times, feminine because vez is feminine).",
+      "rule": "Cuánto/cuánta/cuántos/cuántas -- agrees with the noun it modifies.",
+      "examples": [
+        {"spanish": "¿Cuántas veces?", "english": "How many times?"},
+        {"spanish": "No sé cuántas veces lo visité.", "english": "I don't know how many times I visited him."},
+        {"spanish": "No sé cuántas veces lo visitaron.", "english": "I don't know how many times they visited him."},
+        {"spanish": "No sé cuántas veces la visitaron.", "english": "I don't know how many times they visited her."}
+      ],
+      "notes": "To determine gender of 'vez', look back to where it was used: 'otra vez' (not otro vez) confirms it is feminine."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "hombre", "english": "man", "derivation": "h-o-m-b-r-e (h is silent)"},
+    {"spanish": "creer", "english": "to believe", "derivation": "With two e's"},
+    {"spanish": "tan", "english": "so (as in 'so tired')", "derivation": "t-a-n"},
+    {"spanish": "día", "english": "day (masculine despite -a ending)", "derivation": null},
+    {"spanish": "todo el día", "english": "all day", "derivation": "Literally 'all the day'; todo (not toda) because día is masculine"},
+    {"spanish": "cuánto", "english": "how much", "derivation": "Related to cuándo (when) -- cuándo with a t"}
+  ]
+}

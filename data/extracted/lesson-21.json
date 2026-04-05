@@ -1,0 +1,92 @@
+{
+  "episode": 21,
+  "summary": "This lesson introduces the present perfect tense using haber (to have, in the auxiliary sense). The forms of haber are taught using the mnemonic of its two vowels (e→he/hemos, a→ha/has/han). The past participle for -ar verbs is formed with -ado. This tense is used more widely in Spanish than English.",
+  "teachings": [
+    {
+      "conceptSlug": "haber-auxiliary-have",
+      "conceptName": "Haber: auxiliary 'to have' for past tense",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Haber means 'to have' in the sense of 'I have eaten' (not possession, which is tener). It is extremely irregular. The forms can be remembered by the two vowels in haber: /e/ gives he (I have) and hemos (we have); /a/ gives ha (he/she/it/you formal has), has (you informal have), han (they have).",
+      "rule": "haber vowels: e → he (I have), hemos (we have). a → ha (he/she/you formal have), has (you informal have), han (they have). I and we are connected (he→hemos). The rest build from ha: ha, has, han.",
+      "examples": [
+        {"spanish": "He hablado", "english": "I have spoken"},
+        {"spanish": "No he hablado", "english": "I haven't spoken"},
+        {"spanish": "Hemos hablado", "english": "We have spoken"},
+        {"spanish": "Ha hablado", "english": "He/she has spoken"},
+        {"spanish": "Han hablado", "english": "They have spoken"},
+        {"spanish": "Has hablado", "english": "You (informal) have spoken"}
+      ],
+      "notes": "Haber is spelled h-e: the silent h comes from haber. Only two verbs form 'I' this way: sé from saber, and he from haber. This 'have' past is used even more in Spanish than English — you can use it where English would use simple past."
+    },
+    {
+      "conceptSlug": "past-participle-ar-ado",
+      "conceptName": "Past participle: -ar verbs → -ado",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "To form the past participle needed after haber, -ar verbs drop -ar and add -ado. This is much simpler than English where past participles are highly irregular (eaten, gone, wanted).",
+      "rule": "For -ar verbs: remove -ar, add -ado to get the past participle (hablar → hablado, tomar → tomado).",
+      "examples": [
+        {"spanish": "hablar → hablado", "english": "to speak → spoken"},
+        {"spanish": "anticipar → anticipado", "english": "to anticipate → anticipated"},
+        {"spanish": "celebrar → celebrado", "english": "to celebrate → celebrated"},
+        {"spanish": "tomar → tomado", "english": "to take → taken"},
+        {"spanish": "Lo hemos anticipado por mucho tiempo", "english": "We have anticipated it for a long time"},
+        {"spanish": "¿Has celebrado?", "english": "Have you celebrated?"},
+        {"spanish": "¿Dónde lo has celebrado?", "english": "Where have you celebrated it?"},
+        {"spanish": "¿Lo ha tomado?", "english": "Has she taken it?"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "pronoun-position-haber",
+      "conceptName": "Object pronoun position with haber",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "With haber + past participle, there are two changed verbs together (he hablado), so object pronouns can only go before the first changed verb. You cannot attach them to the participle.",
+      "rule": "With haber constructions, object pronouns go before haber: lo he terminado (not he lo terminado or he terminadolo).",
+      "examples": [
+        {"spanish": "Lo hemos anticipado", "english": "We have anticipated it"},
+        {"spanish": "¿Lo ha tomado?", "english": "Has she taken it?"},
+        {"spanish": "¿Dónde lo has celebrado?", "english": "Where have you celebrated it?"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "por-for-time",
+      "conceptName": "por = for (time periods)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Por means 'for' when talking about periods of time. Also appears in 'por favor' (please, literally 'for a favour').",
+      "rule": "por = for (time durations)",
+      "examples": [
+        {"spanish": "Lo hemos anticipado por mucho tiempo", "english": "We have anticipated it for a long time"},
+        {"spanish": "por favor", "english": "please (for a favour)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "tiempo-time",
+      "conceptName": "tiempo = time",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Tiempo means time. Related to the English musical term 'tempo'. The e in tempo splits to ie under stress, giving tiempo.",
+      "rule": null,
+      "examples": [
+        {"spanish": "mucho tiempo", "english": "a long time (much time)"}
+      ],
+      "notes": "English 'tempo' (used in music) → Spanish 'tiempo' (e→ie split)"
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "haber", "english": "to have (auxiliary, for past tense)", "derivation": null},
+    {"spanish": "he", "english": "I have (from haber)", "derivation": null},
+    {"spanish": "hemos", "english": "we have (from haber)", "derivation": null},
+    {"spanish": "ha", "english": "he/she/it/you (formal) has (from haber)", "derivation": null},
+    {"spanish": "has", "english": "you (informal) have (from haber)", "derivation": null},
+    {"spanish": "han", "english": "they have (from haber)", "derivation": null},
+    {"spanish": "por", "english": "for (time periods)", "derivation": null},
+    {"spanish": "tiempo", "english": "time", "derivation": "tempo → tiempo (e→ie split)"},
+    {"spanish": "por favor", "english": "please (for a favour)", "derivation": null}
+  ]
+}

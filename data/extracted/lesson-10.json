@@ -1,0 +1,110 @@
+{
+  "episode": 10,
+  "summary": "Teaches the core verb conjugation system: all infinitives end in -ar/-er/-ir, the 'I' form is made by replacing the ending with -o, and stress must fall on the penultimate syllable in present tense. Introduces 'comer' (to eat), 'tener' (to have), 'tengo' (I have, irregular), and 'vengo' (I come, irregular).",
+  "teachings": [
+    {
+      "conceptSlug": "verb-endings-ar-er-ir",
+      "conceptName": "Verb infinitive endings: -ar, -er, -ir",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "All Spanish infinitives ('to' forms) end in -ar, -er, or -ir. Verbs are identified by the ability to put 'to' in front. This ending is the key to conjugation.",
+      "rule": "All infinitives end in -ar, -er, or -ir. We identify verbs by the 'to' form.",
+      "examples": [
+        {"spanish": "simular", "english": "to simulate (-ar)"},
+        {"spanish": "revelar", "english": "to reveal (-ar)"},
+        {"spanish": "respirar", "english": "to breathe (-ar)"},
+        {"spanish": "saber", "english": "to know (-er)"},
+        {"spanish": "venir", "english": "to come (-ir)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "present-tense-i-form",
+      "conceptName": "Present tense: 'I' form with -o",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "To make the 'I' form in present tense, remove -ar/-er/-ir and add -o. The accent must move to the penultimate syllable. If the accent stays on the final syllable (e.g., intentó), it means the past tense (he tried).",
+      "rule": "Remove -ar/-er/-ir, add -o. Stress penultimate syllable. Final stress = past tense (he/she).",
+      "examples": [
+        {"spanish": "donar → dono", "english": "to donate → I donate"},
+        {"spanish": "crear → creo", "english": "to create → I create"},
+        {"spanish": "comer → como", "english": "to eat → I eat"},
+        {"spanish": "organizar → organizo", "english": "to organize → I organize"}
+      ],
+      "notes": "Intentar → intento (I try, penultimate stress). Intentó (final stress) = he tried. This distinction is critical."
+    },
+    {
+      "conceptSlug": "comer-to-eat",
+      "conceptName": "Comer (to eat)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Comer means 'to eat'. It's an -er verb. Como = I eat.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Voy a comer", "english": "I'm going to eat"},
+        {"spanish": "Voy a comer tarde", "english": "I'm going to eat late"},
+        {"spanish": "Como mañana", "english": "I eat tomorrow / I'm eating tomorrow"},
+        {"spanish": "Como con Pablo mañana", "english": "I'm eating with Pablo tomorrow"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "present-for-future",
+      "conceptName": "Present tense for future with context",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "In Spanish, if there's a future context word (like 'mañana'), you can just use the present tense to express the future. This is perfectly natural in Spanish.",
+      "rule": "Present tense + future context word (mañana, etc.) = future meaning.",
+      "examples": [
+        {"spanish": "Como mañana", "english": "I'm eating tomorrow"},
+        {"spanish": "Como con Pablo mañana", "english": "I'm eating with Pablo tomorrow"}
+      ],
+      "notes": "Sounds odd in English but is perfectly natural Spanish."
+    },
+    {
+      "conceptSlug": "tener-to-have",
+      "conceptName": "Tener (to have)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Tener means 'to have'. The -tain in English verbs (contain, obtain, sustain, maintain, entertain) corresponds to tener. 'I have' is irregular: tengo (not teno).",
+      "rule": "English -tain = Spanish tener. Contain = contener, obtain = obtener, sustain = sostener, maintain = mantener, entertain = entretener.",
+      "examples": [
+        {"spanish": "Quiero tenerlo", "english": "I want to have it"},
+        {"spanish": "Voy a tenerlo más tarde", "english": "I'm going to have it later"}
+      ],
+      "notes": "Tener reflects a symbiotic relationship: when you own something, you also belong to it — you must maintain, sustain, contain it."
+    },
+    {
+      "conceptSlug": "tengo-vengo-irregular",
+      "conceptName": "Irregular -go verbs: tengo, vengo",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Some verbs have an irregular 'I' form with -go instead of -o. Tener → tengo (not teno), venir → vengo (not veno). These group together — recognizing the pattern helps.",
+      "rule": "Tener → tengo, venir → vengo. The -go irregularity appears only in the 'I' form.",
+      "examples": [
+        {"spanish": "Tengo", "english": "I have"},
+        {"spanish": "Vengo", "english": "I come"},
+        {"spanish": "Vengo mañana", "english": "I'm coming tomorrow"}
+      ],
+      "notes": "Irregular verbs group together in Spanish. Recognizing the pattern makes them manageable."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "comer", "english": "to eat", "derivation": null},
+    {"spanish": "como", "english": "I eat / I'm eating (also: how/like)", "derivation": null},
+    {"spanish": "tarde", "english": "late", "derivation": "related to English 'tardy'"},
+    {"spanish": "más", "english": "more", "derivation": "related to 'massive'"},
+    {"spanish": "más tarde", "english": "later", "derivation": "more late"},
+    {"spanish": "mañana", "english": "tomorrow", "derivation": null},
+    {"spanish": "tener", "english": "to have", "derivation": "English -tain verbs"},
+    {"spanish": "tengo", "english": "I have (irregular)", "derivation": null},
+    {"spanish": "vengo", "english": "I come (irregular)", "derivation": null},
+    {"spanish": "obtener", "english": "to obtain", "derivation": "ob- + tener"},
+    {"spanish": "sostener", "english": "to sustain", "derivation": "sos- + tener (sus- → sos-)"},
+    {"spanish": "mantener", "english": "to maintain", "derivation": "man- + tener (main- → man-)"},
+    {"spanish": "entretener", "english": "to entertain", "derivation": "entre (between) + tener"},
+    {"spanish": "contener", "english": "to contain", "derivation": "con- + tener"},
+    {"spanish": "entre", "english": "between", "derivation": null},
+    {"spanish": "respirar", "english": "to breathe", "derivation": "respiration → respiración → respirar"}
+  ]
+}

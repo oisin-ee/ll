@@ -1,0 +1,49 @@
+{
+  "episode": 58,
+  "summary": "Introduces the preterite tense (dot in the past) for -ar verbs: -é for I, -ó for he/she/it. Teaches the passive se structure in the preterite (se envió = it was sent), introduces todavía (still/yet) and olvidar (to forget).",
+  "teachings": [
+    {
+      "conceptSlug": "preterite-tense-ar",
+      "conceptName": "Preterite tense for -ar verbs (I and he/she)",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "The preterite (dot/point in the past) for -ar verbs: remove -ar, add -é for I, -ó for he/she/it/usted. Both endings are accented. Note the I form uses -é (not -o), which is opposite to the present where I = -o.",
+      "rule": "For -ar verbs: I = -é (hablé), he/she/it/usted = -ó (habló). Accented endings. Careful: I spoke = hablé (not habló). Present hablo (stress on HA-) vs preterite habló (stress on -BLÓ).",
+      "examples": [
+        {"spanish": "Hablé", "english": "I spoke"},
+        {"spanish": "Habló", "english": "He/she spoke"},
+        {"spanish": "Compré", "english": "I bought"},
+        {"spanish": "Lo compré", "english": "I bought it"},
+        {"spanish": "Lo compró", "english": "He bought it"},
+        {"spanish": "Me lo compró", "english": "He bought it for me"},
+        {"spanish": "Lo compró para mí", "english": "He bought it for me (emphatic)"},
+        {"spanish": "Envié", "english": "I sent"},
+        {"spanish": "Te lo envié", "english": "I sent it to you"},
+        {"spanish": "No te lo envié todavía", "english": "I didn't send it to you yet"},
+        {"spanish": "Lo envió ayer", "english": "He sent it yesterday"},
+        {"spanish": "Habló conmigo", "english": "He spoke with me"},
+        {"spanish": "Olvidé", "english": "I forgot"},
+        {"spanish": "Olvidó", "english": "He/she forgot"}
+      ],
+      "notes": "The preterite is more messy/random than other tenses. The accent is critical: hablo (I speak, present) vs habló (he spoke, preterite)."
+    },
+    {
+      "conceptSlug": "preterite-se-passive",
+      "conceptName": "Preterite with se for passive",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "The reflexive se works in the preterite just like other tenses: se envió = it sent itself = it was sent. Don't add lo when using se - the se already completes the sentence.",
+      "rule": "Se + preterite verb = passive meaning. Don't add lo/la with se.",
+      "examples": [
+        {"spanish": "Se envió ayer", "english": "It was sent yesterday"}
+      ],
+      "notes": "Resist the urge to say *se lo envió when you mean 'it was sent'. Se already completes the verb."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "enviar", "english": "to send", "derivation": "related to envoy"},
+    {"spanish": "todavía", "english": "still, yet", "derivation": "toda (all) + vía (way) = 'all the way'"},
+    {"spanish": "olvidar", "english": "to forget", "derivation": null},
+    {"spanish": "el olvido", "english": "the forgetting, oblivion", "derivation": "noun from olvidar; common in tango lyrics"}
+  ]
+}

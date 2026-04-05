@@ -1,0 +1,54 @@
+{
+  "episode": 53,
+  "summary": "Teaches how to express 'could' in past (podía) vs future (podría), introduces the pluperfect tense (había + participle) for 'had done', and shows that choosing between imperfect and preterite is context-based rather than a direct translation from English.",
+  "teachings": [
+    {
+      "conceptSlug": "could-past-vs-future",
+      "conceptName": "Could: past (podía) vs future (podría)",
+      "category": "Key distinction",
+      "role": "introduced",
+      "summary": "English 'could' has two meanings: past could (I couldn't do it yesterday = podía) and future/hypothetical could (I could do it tomorrow = podría). Past could uses the imperfect of poder.",
+      "rule": "Past could = podía (imperfect). Future/hypothetical could = podría (conditional).",
+      "examples": [
+        {"spanish": "No podía hacerlo", "english": "I couldn't do it (past)"},
+        {"spanish": "Podíamos", "english": "We could (past)"},
+        {"spanish": "No podía hacerlo porque no tenía el tiempo", "english": "I couldn't do it because I didn't have the time"},
+        {"spanish": "No podía hacerlo ayer", "english": "I couldn't do it yesterday"}
+      ],
+      "notes": "With querer and poder, the imperfect works even when English doesn't use 'was wanting/was able' because wanting and being able are naturally ongoing states."
+    },
+    {
+      "conceptSlug": "pluperfect-tense",
+      "conceptName": "Pluperfect tense (had + participle)",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "Formed with había (imperfect of haber) + past participle. Always uses the imperfect (line) form of haber, never the preterite. Usage mirrors English 'had eaten', 'had gone'.",
+      "rule": "Había + -ado/-ido. Always use imperfect of haber for 'had'. Usage is the same as English had + past participle.",
+      "examples": [
+        {"spanish": "Había comido", "english": "I had eaten"},
+        {"spanish": "Ya había comido", "english": "I had already eaten"},
+        {"spanish": "Él quería cenar conmigo pero yo ya había cenado", "english": "He wanted to dine with me but I had already dined"},
+        {"spanish": "Lo buscaba porque yo lo había perdido", "english": "He was looking for it because I had lost it"}
+      ],
+      "notes": "Ya (already) tends to go at the beginning of its clause. Use pronouns (él, yo) when contrasting two people to avoid ambiguity."
+    },
+    {
+      "conceptSlug": "conditional-perfect",
+      "conceptName": "Conditional perfect (would have)",
+      "category": "Verb tense",
+      "role": "practiced",
+      "summary": "Reviewed habría + participle for 'would have'. The e in habería naturally falls out to form habría.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Lo habría perdido", "english": "I would have lost it"},
+        {"spanish": "Me habría perdido", "english": "I would have got lost"}
+      ],
+      "notes": "The contraction habería -> habría happens so naturally that speakers do it without thinking."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "ya", "english": "already", "derivation": null},
+    {"spanish": "buscar", "english": "to look for, to search", "derivation": null},
+    {"spanish": "perder", "english": "to lose", "derivation": null}
+  ]
+}

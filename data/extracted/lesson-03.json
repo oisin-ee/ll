@@ -1,0 +1,91 @@
+{
+  "episode": 3,
+  "summary": "Introduces three more cognate conversion rules: -ant/-ent to -ante/-ente, -ible/-able endings, and the -mente adverb suffix. Also teaches the rule that a /j/ sound in English cognates becomes /kh/ in Spanish.",
+  "teachings": [
+    {
+      "conceptSlug": "cognate-conversion-ant-ent",
+      "conceptName": "Cognate conversion: -ant/-ent endings",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "English words ending in -ant or -ent can be converted to Spanish by adding an -e on the end, making them -ante or -ente.",
+      "rule": "-ant → -ante, -ent → -ente in Spanish.",
+      "examples": [
+        {"spanish": "importante", "english": "important"},
+        {"spanish": "diferente", "english": "different"},
+        {"spanish": "constante", "english": "constant"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "adverb-mente-suffix",
+      "conceptName": "Adverb formation with -mente",
+      "category": "Word formation",
+      "role": "introduced",
+      "summary": "Adding -mente to an adjective creates an adverb, equivalent to -ly in English.",
+      "rule": "Adjective + -mente = adverb (like English -ly).",
+      "examples": [
+        {"spanish": "constantemente", "english": "constantly"},
+        {"spanish": "legalmente", "english": "legally"},
+        {"spanish": "ilegalmente", "english": "illegally"},
+        {"spanish": "realmente", "english": "really"},
+        {"spanish": "normalmente", "english": "normally"},
+        {"spanish": "globalmente", "english": "globally"},
+        {"spanish": "generalmente", "english": "generally"},
+        {"spanish": "originalmente", "english": "originally"},
+        {"spanish": "naturalmente", "english": "naturally"}
+      ],
+      "notes": "'Normalmente' can be used like 'usually'. 'Naturalmente' can be used like 'obviously'."
+    },
+    {
+      "conceptSlug": "j-sound-to-kh",
+      "conceptName": "/j/ sound becomes /kh/ in Spanish",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "When a convertible English word has a /j/ sound (not just the letter g), it becomes a /kh/ (fricative) sound in Spanish.",
+      "rule": "The /j/ sound in English cognates becomes /kh/ (throat friction) in Spanish. A hard /g/ stays as /g/.",
+      "examples": [
+        {"spanish": "general", "english": "general"},
+        {"spanish": "original", "english": "original"},
+        {"spanish": "digital", "english": "digital"},
+        {"spanish": "global", "english": "global (hard g stays as g)"}
+      ],
+      "notes": "Argentina is a good hook to remember this rule — the g in Argentina has the /kh/ sound."
+    },
+    {
+      "conceptSlug": "cognate-conversion-ible-able",
+      "conceptName": "Cognate conversion: -ible/-able endings",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "English words ending -ible or -able can be converted to Spanish by pronouncing them syllable by syllable with the accent second from the end.",
+      "rule": "-ible/-able words convert to Spanish with same spelling, pronounced syllable by syllable with penultimate stress.",
+      "examples": [
+        {"spanish": "posible", "english": "possible"},
+        {"spanish": "probable", "english": "probable"},
+        {"spanish": "flexible", "english": "flexible"}
+      ],
+      "notes": "This works when -able/-ible is truly part of the word (not coined words like 'doable')."
+    },
+    {
+      "conceptSlug": "es-verb",
+      "conceptName": "Es (is/he is/she is/it is)",
+      "category": "Verb conjugation",
+      "role": "practiced",
+      "summary": "Continued practice using 'es' in sentences with new adjectives and adverbs.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Es importante", "english": "It is important"},
+        {"spanish": "No es diferente", "english": "It's not different"},
+        {"spanish": "Normalmente es importante", "english": "Normally it's important"},
+        {"spanish": "Posiblemente es original", "english": "Possibly it's original"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "real", "english": "real / royal", "derivation": "cognate; Real Madrid = Royal Madrid"},
+    {"spanish": "posible", "english": "possible", "derivation": "cognate with -ible ending"},
+    {"spanish": "probable", "english": "probable", "derivation": "cognate with -able ending"},
+    {"spanish": "probablemente", "english": "probably", "derivation": "probable + -mente"},
+    {"spanish": "posiblemente", "english": "possibly", "derivation": "posible + -mente"}
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "episode": 52,
+  "summary": "Teaches para as 'in order to', the progressive tense with estar + -ando/-iendo, when NOT to use -ing in Spanish (after prepositions, as subject, as adjective), and the -ante/-iente suffix for making -ing adjectives from verbs.",
+  "teachings": [
+    {
+      "conceptSlug": "para-in-order-to",
+      "conceptName": "Para meaning 'in order to'",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Whenever English 'to' means 'in order to', it must be translated as para in Spanish. The bare infinitive is not enough to convey this meaning.",
+      "rule": "When 'to' means 'in order to', use para + infinitive. The infinitive alone does not carry this meaning.",
+      "examples": [
+        {"spanish": "Hemos hablado para resolverlo", "english": "We have spoken in order to resolve it"},
+        {"spanish": "Hemos hablado para intentar resolverlo", "english": "We have spoken in order to try to resolve it"},
+        {"spanish": "Estoy aquí para verte", "english": "I'm here to see you (in order to)"},
+        {"spanish": "Te he llamado para hablarlo", "english": "I have called you to speak about it"}
+      ],
+      "notes": "Spanish speakers learning English often say 'I am here for see you' - this mistake reveals the para structure. Negative language transfer can teach us the Spanish pattern."
+    },
+    {
+      "conceptSlug": "gerund-progressive",
+      "conceptName": "Progressive tense with estar",
+      "category": "Verb tense",
+      "role": "practiced",
+      "summary": "Reviewed estar + -ando (for -ar verbs) / -iendo (for -er/-ir verbs) for expressing right now actions. Can also be used with imperfect estar (estaba) for past progressive. Both estaba comiendo and comía mean 'I was eating' and are mostly interchangeable.",
+      "rule": "-ar verbs: -ando. -er/-ir verbs: -iendo. Estoy comiendo = I am eating (right now). Estaba comiendo = I was eating.",
+      "examples": [
+        {"spanish": "Estoy comiendo", "english": "I am eating"},
+        {"spanish": "Estoy hablando", "english": "I am speaking"},
+        {"spanish": "Estoy explicándolo", "english": "I am explaining it"},
+        {"spanish": "Lo estoy explicando", "english": "I am explaining it"},
+        {"spanish": "Estoy tomando un curso de español", "english": "I am taking a Spanish course"},
+        {"spanish": "Estaba tomando un curso de español", "english": "I was taking a Spanish course"}
+      ],
+      "notes": "Object pronouns can attach to the gerund (explicándolo) or go before estar (lo estoy explicando). Estaba comiendo and comía are mostly interchangeable."
+    },
+    {
+      "conceptSlug": "infinitive-as-subject",
+      "conceptName": "Infinitive as subject (not -ing)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "When English uses -ing as the subject of a sentence (Swimming is healthy), Spanish uses the infinitive instead.",
+      "rule": "Use the infinitive, not -ando/-iendo, as the subject of a sentence.",
+      "examples": [
+        {"spanish": "Bailar es saludable", "english": "Dancing is healthy"},
+        {"spanish": "Nadar es saludable", "english": "Swimming is healthy"}
+      ],
+      "notes": "Spanish does not use -ing as much as English: not after prepositions, not as subject, not as adjective."
+    },
+    {
+      "conceptSlug": "ante-iente-adjectives",
+      "conceptName": "-ante/-iente adjectives (English -ing adjectives)",
+      "category": "Word formation",
+      "role": "introduced",
+      "summary": "When English makes an adjective from a verb using -ing (interesting, irritating), Spanish uses -ante for -ar verbs and -iente for -er/-ir verbs.",
+      "rule": "-ar verbs: remove -ar, add -ante. -er/-ir verbs: remove ending, add -iente.",
+      "examples": [
+        {"spanish": "interesante", "english": "interesting (from interesar)"},
+        {"spanish": "irritante", "english": "irritating (from irritar)"},
+        {"spanish": "frustrante", "english": "frustrating (from frustrar)"},
+        {"spanish": "menguante", "english": "waning (from menguar)"},
+        {"spanish": "viviente", "english": "living (from vivir)"},
+        {"spanish": "saliente", "english": "salient, protruding (from salir)"},
+        {"spanish": "La luna menguante", "english": "The waning moon"}
+      ],
+      "notes": "This -ante/-iente pattern even exists in English: salient (from salir). A living being = un ser viviente."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "resolver", "english": "to resolve", "derivation": "same word as English"},
+    {"spanish": "explicar", "english": "to explain", "derivation": "from explicación; -plicar means 'to fold' (Latin)"},
+    {"spanish": "tomar", "english": "to take", "derivation": null},
+    {"spanish": "un curso", "english": "a course", "derivation": "cognate with course"},
+    {"spanish": "nadar", "english": "to swim", "derivation": null},
+    {"spanish": "saludable", "english": "healthy", "derivation": "from salud (health)"},
+    {"spanish": "frustrar", "english": "to frustrate", "derivation": "from frustración"},
+    {"spanish": "menguar", "english": "to wane", "derivation": null},
+    {"spanish": "la luna", "english": "the moon", "derivation": "related to lunes (Monday)"},
+    {"spanish": "un ser humano", "english": "a human being", "derivation": "ser used as noun"},
+    {"spanish": "un ser viviente", "english": "a living being", "derivation": null},
+    {"spanish": "lunes", "english": "Monday", "derivation": "from luna (moon)"},
+    {"spanish": "martes", "english": "Tuesday", "derivation": "from Marte (Mars)"},
+    {"spanish": "miércoles", "english": "Wednesday", "derivation": "from Mercurio (Mercury)"},
+    {"spanish": "jueves", "english": "Thursday", "derivation": "from Júpiter (Jupiter)"},
+    {"spanish": "viernes", "english": "Friday", "derivation": "from Venus"}
+  ]
+}

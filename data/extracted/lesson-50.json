@@ -1,0 +1,60 @@
+{
+  "episode": 50,
+  "summary": "Deep dive into por vs para. Para is for somebody or for a purpose. Por means because of, for exchanges, and for time durations. Also reviews demonstratives (este/estos) and practices combining tenses in longer sentences.",
+  "teachings": [
+    {
+      "conceptSlug": "por-vs-para",
+      "conceptName": "Por vs para",
+      "category": "Key distinction",
+      "role": "practiced",
+      "summary": "Detailed exploration of the two words for 'for'. Para = for somebody, directed to someone. Por = because of, for time durations, for exchanges. Por qué (why) literally means 'because of what'. Porque (because) means 'because of that'.",
+      "rule": "Para = for someone/something (destination). Por = because of, for time periods, in multiplication. Por qué = why (because of what). Porque = because.",
+      "examples": [
+        {"spanish": "Para mí", "english": "For me"},
+        {"spanish": "Este es para ti", "english": "This one is for you"},
+        {"spanish": "Estos son para ti", "english": "These are for you"},
+        {"spanish": "Por esta razón, no quiero ir", "english": "Because of this reason, I don't want to go"},
+        {"spanish": "Lo compro para ti", "english": "I'm buying it for you (destined for you)"},
+        {"spanish": "Lo compro por ti", "english": "I'm buying it because of you"},
+        {"spanish": "Me quedo por tres días", "english": "I'm staying for three days"}
+      ],
+      "notes": "Lo he comprado por ti = I bought it because of you (like an ashtray for a friend who smokes). Lo he comprado para ti = I bought it for you (as a gift, they'll take it home)."
+    },
+    {
+      "conceptSlug": "por-for-time-duration",
+      "conceptName": "Por for time duration",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "When talking about periods of time (for two weeks, for three days), use por, not para.",
+      "rule": "Use por for time durations: por tres días (for three days)",
+      "examples": [
+        {"spanish": "Me quedo por tres días", "english": "I'm staying for three days"},
+        {"spanish": "Me quedaré por tres días", "english": "I will stay for three days"},
+        {"spanish": "Me quedaría por tres días", "english": "I would stay for three days"},
+        {"spanish": "Me quedaría por tres días, pero tengo que trabajar", "english": "I would stay for three days, but I have to work"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "demonstratives-masculine",
+      "conceptName": "Demonstrative adjectives (masculine)",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "Reviewed este/estos with the mnemonic: este has /e/ of el, estos has /os/ of los.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Este es para ti", "english": "This one is for you"},
+        {"spanish": "Estos son para ti", "english": "These are for you"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "razón", "english": "reason", "derivation": "cognate with reason (feminine noun)"},
+    {"spanish": "comprar", "english": "to buy", "derivation": null},
+    {"spanish": "el día", "english": "the day", "derivation": "from Indo-European root meaning light; related to deity, Jupiter. Masculine despite -a ending."},
+    {"spanish": "todos los días", "english": "every day", "derivation": "literally 'all the days'"},
+    {"spanish": "trabajar", "english": "to work", "derivation": null},
+    {"spanish": "tres", "english": "three", "derivation": null}
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "episode": 45,
+  "summary": "This lesson deepens the gustar construction by practicing it with le/les and introduces two more verbs that work the same way: interesar (to be interesting to) and parecer (to seem to). It also teaches poner (to put) and its -pose cognate pattern, the expression 'me parece bien', and using le to mean 'on it'.",
+  "teachings": [
+    {
+      "conceptSlug": "gustar-construction",
+      "conceptName": "Gustar construction (to be pleasing)",
+      "category": "Verb construction",
+      "role": "practiced",
+      "summary": "Extended gustar practice with third-person indirect objects: le gusta (he/she likes it), les gusta (they like it), les gustan (they like them). Emphasized translating as 'to be pleasing to' rather than 'to please' because it preserves the 'to' that maps to le/les.",
+      "rule": "Store gustar as 'to be pleasing to' (not 'to please') so the 'to' maps naturally to le/les. Le gusta = it is pleasing to him/her. Les gustan = they are pleasing to them.",
+      "examples": [
+        { "spanish": "Nos gusta.", "english": "We like it. (It is pleasing to us.)" },
+        { "spanish": "Le gusta.", "english": "He/she likes it. (It is pleasing to him/her.)" },
+        { "spanish": "Les gusta.", "english": "They like it." },
+        { "spanish": "Les gustan.", "english": "They like them." },
+        { "spanish": "Le gustan.", "english": "He likes them." }
+      ],
+      "notes": "Gustar uses le/les (not lo/la). Always start with the verb (gusta/gustan), then add the pronoun."
+    },
+    {
+      "conceptSlug": "interesar-construction",
+      "conceptName": "Interesar - to be interesting to",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Interesar works like gustar: translate as 'to be interesting to' rather than 'to interest'. Uses le/les for third person. Can be used with conditional: te interesaría (would it interest you).",
+      "rule": "Me interesa = it interests me. Le interesa = it interests him/her. Les interesa = it interests them. Uses le/les, not lo/la.",
+      "examples": [
+        { "spanish": "Me interesa.", "english": "It interests me." },
+        { "spanish": "¿Te interesa?", "english": "Does it interest you?" },
+        { "spanish": "¿No te interesa?", "english": "Doesn't it interest you?" },
+        { "spanish": "¿Por qué no te interesa?", "english": "Why doesn't it interest you?" },
+        { "spanish": "Le interesa.", "english": "It interests him/her." },
+        { "spanish": "Les interesa.", "english": "It interests them." },
+        { "spanish": "¿Le interesa bailar esta noche?", "english": "Is she interested in dancing tonight?" },
+        { "spanish": "¿Le interesa salir a bailar esta noche?", "english": "Is she interested in going out to dance tonight?" },
+        { "spanish": "¿Te interesaría?", "english": "Would it interest you?" },
+        { "spanish": "Me interesaría verlo.", "english": "I would be interested in seeing it." }
+      ],
+      "notes": "Interesante (interesting) is the adjective. Interesar is the verb. Always check verb type before conjugating (-ar, -er, -ir)."
+    },
+    {
+      "conceptSlug": "parecer-construction",
+      "conceptName": "Parecer - to seem to",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Parecer (to seem) works like gustar and interesar with le/les. 'Me parece' = it seems to me. 'Me parece que...' = it seems to me that... The 'que' (that) is obligatory in Spanish even though it's optional in English.",
+      "rule": "Me parece = it seems to me. Me parece que + clause (que is obligatory). Me parece bien = it seems good/fine to me. Parecer is an -er verb.",
+      "examples": [
+        { "spanish": "Me parece.", "english": "It seems to me." },
+        { "spanish": "Me parece que no quiere salir esta noche.", "english": "It seems to me that he doesn't want to go out tonight." },
+        { "spanish": "Me parece que no le gusta.", "english": "It seems to me that he doesn't like it." },
+        { "spanish": "Me parece bien.", "english": "It seems fine/good to me." },
+        { "spanish": "No me parece bien.", "english": "It doesn't seem good to me." },
+        { "spanish": "No le parece bien.", "english": "It doesn't seem good to him/her." },
+        { "spanish": "¿No le parece bien?", "english": "Doesn't it seem ok to you (formal)?" }
+      ],
+      "notes": "'Me parece bien' uses bien (well) not bueno (good). There is a gray area between bien and bueno that you pick up through listening. The 'que' after parecer is obligatory in Spanish, unlike English where 'that' is optional. Spanish shows the that/what connection: que = that, qué = what, like English there/where, then/when."
+    },
+    {
+      "conceptSlug": "que-that-what-connection",
+      "conceptName": "Que/qué - that/what connection",
+      "category": "Key distinction",
+      "role": "introduced",
+      "summary": "Spanish shows clearly that 'that' and 'what' are the same word (que/qué), just as English shows: that/what, there/where, then/when (remove t, add w).",
+      "rule": "que = that (conjunction). qué = what (question). Same word, different function.",
+      "examples": [
+        { "spanish": "Me parece que no quiere ir.", "english": "It seems to me that he doesn't want to go." },
+        { "spanish": "¿Qué quieres?", "english": "What do you want?" }
+      ],
+      "notes": "English parallel: that->what, there->where, then->when (replace t with w)."
+    },
+    {
+      "conceptSlug": "poner-pose-pattern",
+      "conceptName": "Poner and the -pose/-poner pattern",
+      "category": "Word formation",
+      "role": "introduced",
+      "summary": "Poner means to put. When English has -pose inside a verb, Spanish has -poner: compose=componer, suppose=suponer, oppose=oponer, impose=imponer. The com- in componer is actually con- (with), where n changes to m before p.",
+      "rule": "English -pose = Spanish -poner. compose=componer, suppose=suponer, oppose=oponer, impose=imponer.",
+      "examples": [
+        { "spanish": "Quiero ponerlo aquí.", "english": "I want to put it here." },
+        { "spanish": "Me gustaría ponerlo aquí.", "english": "I would like to put it here." },
+        { "spanish": "componer", "english": "to compose (with-putting)" },
+        { "spanish": "suponer", "english": "to suppose" },
+        { "spanish": "oponer", "english": "to oppose" },
+        { "spanish": "imponer", "english": "to impose" }
+      ],
+      "notes": "Com- in componer is actually con- (with), where the n assimilates to m before p."
+    },
+    {
+      "conceptSlug": "le-as-on-it",
+      "conceptName": "Le meaning 'on it' / 'to it'",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Le can replace 'on it' or 'to it' when talking about putting something on something. 'Ponerle sal' = to put salt on it. Les for plural.",
+      "rule": "Le replaces 'on it' with poner: ponerle sal = put salt on it. Ponerles sal = put salt on them.",
+      "examples": [
+        { "spanish": "Quiero ponerle sal.", "english": "I want to put salt on it." },
+        { "spanish": "Me gustaría ponerle sal.", "english": "I would like to put salt on it." },
+        { "spanish": "Me gustaría ponerle un poco más sal.", "english": "I would like to put a little more salt on it." },
+        { "spanish": "Me gustaría ponerles un poco más sal.", "english": "I would like to put a little more salt on them." }
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "un-poco",
+      "conceptName": "Un poco - a little",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Un poco means 'a little'. Can be combined with más (more): un poco más = a little more.",
+      "rule": null,
+      "examples": [
+        { "spanish": "un poco más sal", "english": "a little more salt" }
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "interesar", "english": "to interest, to be interesting to", "derivation": "cognate with English 'interest'" },
+    { "spanish": "interesante", "english": "interesting", "derivation": "from interesar" },
+    { "spanish": "parecer", "english": "to seem", "derivation": null },
+    { "spanish": "bien", "english": "well, fine", "derivation": null },
+    { "spanish": "poner", "english": "to put", "derivation": "related to English '-pose' verbs" },
+    { "spanish": "componer", "english": "to compose", "derivation": "con (with) + poner (to put)" },
+    { "spanish": "suponer", "english": "to suppose", "derivation": "su- + poner" },
+    { "spanish": "oponer", "english": "to oppose", "derivation": "o- + poner" },
+    { "spanish": "imponer", "english": "to impose", "derivation": "im- + poner" },
+    { "spanish": "sal", "english": "salt", "derivation": null },
+    { "spanish": "un poco", "english": "a little", "derivation": null },
+    { "spanish": "más", "english": "more", "derivation": null }
+  ]
+}

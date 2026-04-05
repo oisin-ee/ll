@@ -1,0 +1,66 @@
+{
+  "episode": 47,
+  "summary": "Practices the imperfect -aba ending with new vocabulary, introduces reflexive/self verbs for intransitive meanings (se quemaba, se rompe), and teaches the demonstrative adjectives este/estos/ese/esos for masculine nouns.",
+  "teachings": [
+    {
+      "conceptSlug": "imperfect-tense",
+      "conceptName": "Imperfect tense (line in the past)",
+      "category": "Verb tense",
+      "role": "practiced",
+      "summary": "Practiced the imperfect -aba endings with new verbs cenar and quemar.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Cenaba", "english": "I was having dinner / He was having dinner"},
+        {"spanish": "Quemaba la cena", "english": "He was burning the dinner"},
+        {"spanish": "Él quemaba la cena", "english": "He was burning the dinner"},
+        {"spanish": "Usted quemaba la cena", "english": "You (formal) were burning the dinner"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "reflexive-for-intransitive",
+      "conceptName": "Reflexive se for intransitive/passive meaning",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "When a verb's action isn't directed at something else, Spanish uses 'se' (itself) to show the subject is affected by its own action. This avoids leaving the sentence feeling incomplete. 'La cena quemaba' feels incomplete (what was the dinner burning?), but 'La cena se quemaba' means the dinner was burning/getting burnt.",
+      "rule": "Use se + verb when the subject undergoes its own action (it breaks = se rompe, it burns = se quema). Without se, listeners expect to hear what the action is directed at.",
+      "examples": [
+        {"spanish": "La cena se quemaba", "english": "The dinner was burning (getting burnt)"},
+        {"spanish": "Se quemaba la cena", "english": "The dinner was burning"},
+        {"spanish": "Me quemo en el sol", "english": "I get burnt in the sun"},
+        {"spanish": "El sol me quema", "english": "The sun burns me"},
+        {"spanish": "Se rompe todo el tiempo", "english": "It breaks all the time"},
+        {"spanish": "Se rompen todo el tiempo", "english": "They break all the time"},
+        {"spanish": "Esos se rompen todo el tiempo", "english": "Those ones break all the time"}
+      ],
+      "notes": "Word order is flexible: La cena se quemaba = Se quemaba la cena. Without se, the verb expects an object."
+    },
+    {
+      "conceptSlug": "demonstratives-masculine",
+      "conceptName": "Demonstrative adjectives (masculine)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Taught este (this) and estos (these) for masculine nouns, showing the logic: este contains the /e/ of el, estos contains the /os/ of los. That/those formed by removing the t: ese/esos.",
+      "rule": "This: este (masc sing), estos (masc plural). That: ese (masc sing), esos (masc plural). Mnemonic: este has /e/ of el, estos has /os/ of los. Remove t for that/those.",
+      "examples": [
+        {"spanish": "Este auto", "english": "This car"},
+        {"spanish": "Estos coches", "english": "These cars"},
+        {"spanish": "Ese auto", "english": "That car"},
+        {"spanish": "Esos autos", "english": "Those cars"}
+      ],
+      "notes": "The pattern este/estos maps to el/los. Remove t to get ese/esos (that/those)."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "la cena", "english": "the dinner", "derivation": null},
+    {"spanish": "cenar", "english": "to dine, to have dinner", "derivation": "from la cena"},
+    {"spanish": "quemar", "english": "to burn", "derivation": null},
+    {"spanish": "romper", "english": "to break", "derivation": "related to rupture"},
+    {"spanish": "todo el tiempo", "english": "all the time", "derivation": "todo (all) + el tiempo (the time)"},
+    {"spanish": "esta noche", "english": "tonight", "derivation": null},
+    {"spanish": "este", "english": "this (masculine)", "derivation": null},
+    {"spanish": "estos", "english": "these (masculine)", "derivation": null},
+    {"spanish": "ese", "english": "that (masculine)", "derivation": null},
+    {"spanish": "esos", "english": "those (masculine)", "derivation": null}
+  ]
+}

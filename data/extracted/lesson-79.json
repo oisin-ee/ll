@@ -1,0 +1,55 @@
+{
+  "episode": 79,
+  "summary": "This lesson reviews subjunctive usage with the new verb dejar (to leave a message) across several trigger structures: quiero que, cuando + future, es esencial que. It introduces ojalá (hopefully) as a subjunctive trigger and reviews the relationship between -tial endings in English and -cial in Spanish.",
+  "teachings": [
+    {
+      "conceptSlug": "subjunctive-mood",
+      "conceptName": "Subjunctive mood",
+      "category": "Verb mood",
+      "role": "practiced",
+      "summary": "Recap of subjunctive structures using dejar: after quiero que (desire), after cuando (future reference), after es esencial que (judgment), and after ojalá (hope). The subjunctive conveys desire/order vs the indicative which states fact.",
+      "rule": "Quiero que + subjunctive (desire/order). Quiero decirle que + subjunctive = I want to tell him to... vs que + indicative = I want to tell him that he is...",
+      "examples": [
+        {"spanish": "Déjeme un mensaje", "english": "Leave me a message (formal command)"},
+        {"spanish": "Quiero que me dejes un mensaje", "english": "I want you to leave me a message"},
+        {"spanish": "Quiero decirle que me deje un mensaje", "english": "I want to tell him to leave me a message"},
+        {"spanish": "Cuando te deje el mensaje, llámame", "english": "When he leaves you the message, call me"},
+        {"spanish": "Es esencial que vea mi mensaje", "english": "It's essential that he sees my message"}
+      ],
+      "notes": "Using indicative after decir que states a fact (he IS leaving a message). Using subjunctive conveys an order/desire (to leave a message)."
+    },
+    {
+      "conceptSlug": "ojala",
+      "conceptName": "Ojalá - hopefully",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Ojalá means 'hopefully' and is followed by the subjunctive. It has Arabic origins related to 'Allah', reflecting 800 years of Muslim influence on Spanish.",
+      "rule": "Ojalá + subjunctive = hopefully (something happens)",
+      "examples": [
+        {"spanish": "Ojalá deje un mensaje", "english": "Hopefully she leaves a message"},
+        {"spanish": "Ojalá sea pronto", "english": "Hopefully it will be soon"}
+      ],
+      "notes": "Possibly from 'ojo-Allah' (eye of God). Very common expression. After ojalá, use subjunctive."
+    },
+    {
+      "conceptSlug": "tial-to-cial",
+      "conceptName": "-tial to -cial cognate pattern",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "English words ending in -tial become -cial in Spanish, similar to the -tion to -ción pattern.",
+      "rule": "-tial in English → -cial in Spanish",
+      "examples": [
+        {"spanish": "esencial", "english": "essential"},
+        {"spanish": "espacial", "english": "spatial"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "dejar", "english": "to leave (a message, an object)", "derivation": "Not the same as salir (to leave/go out)"},
+    {"spanish": "mensaje", "english": "message", "derivation": null},
+    {"spanish": "ojalá", "english": "hopefully", "derivation": "From Arabic, related to 'Allah'"},
+    {"spanish": "esencial", "english": "essential", "derivation": "From English -tial → Spanish -cial"},
+    {"spanish": "o sea", "english": "I mean / that is to say", "derivation": "Literally 'or be' — uses subjunctive of ser (sea)"}
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "episode": 62,
+  "summary": "This lesson covers the irregular preterite of 'dar' (to give), the phonetic rule that changes 'le lo' to 'se lo' when two l-words appear together as object pronouns, and how to use 'a + pronoun' for clarification/emphasis when sentences with 'se' are ambiguous.",
+  "teachings": [
+    {
+      "conceptSlug": "dar-to-give",
+      "conceptName": "Dar (to give) - preterite",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Dar is an -ar verb but takes -er/-ir endings in the preterite. It is the only verb that switches groups this way in the preterite.",
+      "rule": "Dar in the preterite: di, dio, dimos. Note: 'dio' has no written accent (unlike regular -er/-ir preterite forms like comió).",
+      "examples": [
+        {"spanish": "Di.", "english": "I gave."},
+        {"spanish": "Dio.", "english": "He/she/it gave. You (formal) gave."},
+        {"spanish": "Dimos.", "english": "We gave."},
+        {"spanish": "Me dio.", "english": "He gave me."},
+        {"spanish": "Me lo dio.", "english": "He gave me it."},
+        {"spanish": "Nos lo dio.", "english": "He gave us it."},
+        {"spanish": "Te lo di.", "english": "I gave you it. (informal)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "se-lo-phonetic-change",
+      "conceptName": "Se lo phonetic change (le lo -> se lo)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "When two object pronouns beginning with 'l' would appear together (le lo, les lo, le los, les los, le la, etc.), the first one changes to 'se'. This is purely a phonetic change -- Spanish does not like the sound of two l-words together.",
+      "rule": "Any combination of le/les + lo/la/los/las becomes se + lo/la/los/las. This 'se' has no meaning change -- it is just a phonetic substitution.",
+      "examples": [
+        {"spanish": "Se lo di.", "english": "I gave it to him/her/them/you(formal)."},
+        {"spanish": "Se los di.", "english": "I gave them to him/her."},
+        {"spanish": "Se lo vendí.", "english": "I sold it to him/her."},
+        {"spanish": "Se las vendí a ella.", "english": "I sold them (fem) to her."},
+        {"spanish": "Se las vendí a ellos.", "english": "I sold them (fem) to them."}
+      ],
+      "notes": "This 'se' is totally different from the reflexive 'se' (himself/herself). It is just a phonetic issue."
+    },
+    {
+      "conceptSlug": "a-clarification",
+      "conceptName": "Clarification with 'a + pronoun'",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "When sentences with 'se lo' are ambiguous (could mean to him/her/them/you formal), you can clarify by adding 'a él', 'a ella', 'a ellos', 'a ellas', 'a usted', 'a ustedes' at the end. The structure is a repetition -- you keep the 'se' and add the clarification as an afterthought.",
+      "rule": "With 'a' for clarification, always repeat the pronoun (le di algo a él -- keep the 'le' and add 'a él'). With other prepositions like 'para', do NOT repeat (lo compré para ti -- no 'me' needed).",
+      "examples": [
+        {"spanish": "Le di algo a él.", "english": "I gave something to him."},
+        {"spanish": "Le di algo a ella.", "english": "I gave something to her."},
+        {"spanish": "Le di algo a usted.", "english": "I gave something to you (formal)."},
+        {"spanish": "Se lo vendí a él.", "english": "I sold it to him."},
+        {"spanish": "Se lo vendí a ella.", "english": "I sold it to her."},
+        {"spanish": "Él se lo envió a ella.", "english": "He sent it to her."},
+        {"spanish": "Se lo envió a ustedes.", "english": "He sent it to you guys."},
+        {"spanish": "No sé si se lo envié.", "english": "I don't know if I sent it to him."}
+      ],
+      "notes": "The 'a' used for clarification can represent other prepositions besides 'to' -- e.g., 'me lo compra a mí' could mean 'from me' or 'for me'. Because of this special flexible use, we always repeat with 'a'."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "dar", "english": "to give", "derivation": null},
+    {"spanish": "vender", "english": "to sell", "derivation": null},
+    {"spanish": "enviar", "english": "to send", "derivation": null},
+    {"spanish": "todavía", "english": "yet / still", "derivation": null}
+  ]
+}

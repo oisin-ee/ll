@@ -1,0 +1,103 @@
+{
+  "episode": 83,
+  "summary": "This lesson teaches the past subjunctive used after 'que' at the start of a sentence to express 'the fact that you may have...', the past subjunctive after 'si' (if) for hypothetical past conditions, and introduces the conditional perfect (would have) and pluperfect subjunctive (if you had done) for counterfactual sentences.",
+  "teachings": [
+    {
+      "conceptSlug": "subjunctive-que-initial",
+      "conceptName": "Que + past subjunctive at start of sentence",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "Starting a sentence with 'que + past subjunctive' gives the meaning 'the fact that you may have...' or 'that you might have...'. This expresses a mood/attitude about a past event.",
+      "rule": "Que + past subjunctive + rest of sentence = the fact that (someone) may have (done something)...",
+      "examples": [
+        {"spanish": "Que lo compraras no es mi problema", "english": "That you bought it / the fact that you may have bought it is not my problem"},
+        {"spanish": "Que le contaras no es mi problema", "english": "That you told him is not my problem"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "si-past-subjunctive",
+      "conceptName": "Si + past subjunctive (hypothetical conditions)",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "After 'si' (if) referring to hypothetical past situations, Spanish uses the past subjunctive. This mirrors the English 'if I were you'. The result clause uses the conditional (would).",
+      "rule": "Si + past subjunctive, + conditional. Si pudiera cocinar, cocinaría = If I could cook, I would cook.",
+      "examples": [
+        {"spanish": "Si pudiera cocinar, cocinaría", "english": "If I could cook, I would cook"},
+        {"spanish": "Si pudiera cancelarlo, lo cancelaría", "english": "If I could cancel it, I would cancel it"}
+      ],
+      "notes": "English has a remnant of this: 'if I were you' instead of 'if I was you'."
+    },
+    {
+      "conceptSlug": "pluperfect-subjunctive",
+      "conceptName": "Pluperfect subjunctive (si hubieras + past participle)",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "For counterfactual past conditions ('if you had done X'), use si + past subjunctive of haber + past participle. The result uses the conditional perfect (habría + past participle). Haber in the preterite uses the root hub-.",
+      "rule": "Si + hubiera/hubieras/hubiéramos + past participle, + habría + past participle. Hub- is the preterite root of haber.",
+      "examples": [
+        {"spanish": "Si me lo hubieras contado, habría ido", "english": "If you had told me, I would have gone"},
+        {"spanish": "Si hubiéramos sabido, habríamos ido", "english": "If we had known, we would have gone"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "conditional-perfect",
+      "conceptName": "Conditional perfect (would have done)",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "Habría + past participle = would have done. Habría is the conditional of haber (the e falls away from habería).",
+      "rule": "Habría + past participle = would have (done). Habríamos = we would have.",
+      "examples": [
+        {"spanish": "Habría ido", "english": "I would have gone"},
+        {"spanish": "Habríamos ido", "english": "We would have gone"}
+      ],
+      "notes": "The e of haber falls away: habería → habría."
+    },
+    {
+      "conceptSlug": "preterite-irregular",
+      "conceptName": "Irregular preterite stems",
+      "category": "Verb conjugation",
+      "role": "practiced",
+      "summary": "Poder becomes pud- in the preterite (pudieron). Haber becomes hub- (hubieron). These irregular stems carry over into the past subjunctive.",
+      "rule": "Poder → pud- (pudieron, pudiera). Haber → hub- (hubieron, hubiera).",
+      "examples": [
+        {"spanish": "Pudieron", "english": "They were able to"},
+        {"spanish": "Si pudiera", "english": "If I could"},
+        {"spanish": "Si me lo hubieras contado", "english": "If you had told me"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "si-vieras",
+      "conceptName": "Si vieras... (if you saw...)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Si vieras su casa = if you saw their house. A common expression using past subjunctive of ver after si for hypothetical situations.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Si vieras su casa", "english": "If you saw their house"},
+        {"spanish": "Si lo viera, lo comprendería", "english": "If you saw it, you would understand it"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "past-subjunctive-alternative-ase",
+      "conceptName": "Alternative past subjunctive forms (-ase/-iese)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "An alternative form of the past subjunctive exists using -ase/-iese instead of -ara/-iera: hablase instead of hablara, comiese instead of comiera. Usage depends on dialect. No difference in meaning.",
+      "rule": "-ara/-iera can be replaced with -ase/-iese. Hablara = hablase. Comiera = comiese. Comiéramos = comiésemos.",
+      "examples": [
+        {"spanish": "hablase", "english": "spoke (alternative past subjunctive of hablar)"},
+        {"spanish": "entendiese", "english": "understood (alternative past subjunctive of entender)"},
+        {"spanish": "comiese", "english": "ate (alternative past subjunctive of comer)"}
+      ],
+      "notes": "You don't need to use this form, but you should recognize it. The -ara/-iera form is more common."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "cocinar", "english": "to cook", "derivation": "Related to cocina (kitchen)"},
+    {"spanish": "cancelar", "english": "to cancel", "derivation": "Cognate with English 'cancel'"}
+  ]
+}

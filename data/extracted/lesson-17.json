@@ -1,0 +1,143 @@
+{
+  "episode": 17,
+  "summary": "This lesson continues practicing stem-changing verbs (e→ie, o→ue) and introduces the 'we' form (-amos) for -ar verbs. It explains that the 'we' form does not trigger stem changes because the stress falls on the ending, not the stem. Arabic loanwords in Spanish are also discussed.",
+  "teachings": [
+    {
+      "conceptSlug": "stem-changing-e-to-ie",
+      "conceptName": "Stem change: e splits to ie under stress",
+      "category": "Verb conjugation",
+      "role": "practiced",
+      "summary": "Practiced the e→ie split with querer and perder. Not all e's split — there's no way to know in advance, but most of the time it will happen.",
+      "rule": null,
+      "examples": [
+        {"spanish": "querer → quiero", "english": "to want → I want"},
+        {"spanish": "querer → quiere", "english": "to want → he/she wants"},
+        {"spanish": "querer → quieren", "english": "to want → they want"},
+        {"spanish": "querer → quieres", "english": "to want → you (informal) want"},
+        {"spanish": "¿Qué quieres?", "english": "What do you want?"},
+        {"spanish": "perder → pierdo", "english": "to lose → I lose"},
+        {"spanish": "perder → pierde", "english": "to lose → he/she loses"},
+        {"spanish": "perder → pierden", "english": "to lose → they lose"},
+        {"spanish": "perder → pierdes", "english": "to lose → you (informal) lose"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "stem-changing-o-to-ue",
+      "conceptName": "Stem change: o splits to ue under stress",
+      "category": "Verb conjugation",
+      "role": "practiced",
+      "summary": "Practiced with colgar (to hang). Not all o's split (comer → como, no split). There's no way to predict — you experiment and get feedback.",
+      "rule": null,
+      "examples": [
+        {"spanish": "colgar → cuelgo", "english": "to hang → I hang"},
+        {"spanish": "colgar → cuelga", "english": "to hang → he/she hangs"},
+        {"spanish": "colgar → cuelgan", "english": "to hang → they hang"},
+        {"spanish": "Lo cuelgan", "english": "They hang it"},
+        {"spanish": "Los cuelgan", "english": "They hang them"},
+        {"spanish": "Los cuelga", "english": "She hangs them"}
+      ],
+      "notes": "Always go back to the infinitive to determine the correct ending — colgar is an -ar verb, so he/she form is cuelga, not cuelge."
+    },
+    {
+      "conceptSlug": "we-form-ar-verbs",
+      "conceptName": "Present tense 'we' form for -ar verbs: -amos",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "To form the 'we' version of -ar verbs in present tense, remove -ar and add -amos. The accent falls on the -a- of -amos (penultimate syllable), which is in a different position than other forms.",
+      "rule": "For -ar verbs: remove -ar, add -amos to get the 'we' form.",
+      "examples": [
+        {"spanish": "tomar → tomamos", "english": "to take → we take"},
+        {"spanish": "hablar → hablamos", "english": "to speak → we speak"},
+        {"spanish": "encontrar → encontramos", "english": "to find → we find"},
+        {"spanish": "mostrar → mostramos", "english": "to show → we show"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "we-form-no-stem-change",
+      "conceptName": "No stem change in 'we' form",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "The 'we' form does not trigger stem-vowel splitting because the stress moves to the ending (-amos), away from the stem vowel. The stem vowel is no longer stressed, so it stays intact.",
+      "rule": "Stem vowels (e, o) do not split in the 'we' form because they are unstressed.",
+      "examples": [
+        {"spanish": "encontrar → encontramos (not *encontruemos)", "english": "to find → we find"},
+        {"spanish": "mostrar → mostramos (not *muestramos)", "english": "to show → we show"},
+        {"spanish": "pensar → pensamos (not *piensamos)", "english": "to think → we think"},
+        {"spanish": "cerrar → cerramos (not *cierramos)", "english": "to close → we close"}
+      ],
+      "notes": "The stem-changing issue is fundamentally about stress — only stressed stem vowels split."
+    },
+    {
+      "conceptSlug": "arabic-al-loanwords",
+      "conceptName": "Arabic loanwords with al- prefix",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Spanish words beginning with al- typically come from Arabic, where al- means 'the'. Spanish has many more Arabic loanwords than English due to 800 years of Muslim presence in southern Spain. Sometimes the 'l' in al- assimilates to match the next consonant.",
+      "rule": "Words beginning al- in Spanish are almost always from Arabic, where al- means 'the'.",
+      "examples": [
+        {"spanish": "alcohol", "english": "alcohol (Arabic origin, 'the alcohol')"},
+        {"spanish": "azúcar", "english": "sugar (Arabic: al-zucar, l assimilated)"},
+        {"spanish": "arroz", "english": "rice (Arabic: al-ruz, l assimilated to r)"},
+        {"spanish": "álgebra", "english": "algebra"},
+        {"spanish": "aceite", "english": "oil (Arabic: zet)"},
+        {"spanish": "aceituna", "english": "olive (Arabic: zetun)"},
+        {"spanish": "alfombra", "english": "carpet"},
+        {"spanish": "almohada", "english": "pillow"}
+      ],
+      "notes": "In Arabic, the 'l' of 'al' assimilates to match the next letter for about half the consonants. This is why azúcar (not alzucar) and arroz (not alroz). Spanish never has double-s (posible, pasión), but does have double-r (arroz, perro)."
+    },
+    {
+      "conceptSlug": "pensar-to-think",
+      "conceptName": "The verb pensar (to think)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Pensar means to think, related to 'pensive'. It stem-changes e→ie. 'Pensar hacer' (to think to do) means to plan on doing.",
+      "rule": null,
+      "examples": [
+        {"spanish": "pensar → pienso", "english": "to think → I think"},
+        {"spanish": "pensar → piensa", "english": "to think → he/she thinks"},
+        {"spanish": "pensar → piensan", "english": "to think → they think"},
+        {"spanish": "pensar → piensas", "english": "to think → you (informal) think"},
+        {"spanish": "pensar → pensamos", "english": "to think → we think"},
+        {"spanish": "Pienso que sí", "english": "I think so (I think that yes)"},
+        {"spanish": "¿Qué piensas?", "english": "What do you think?"},
+        {"spanish": "¿Qué piensas hacer?", "english": "What do you plan on doing?"}
+      ],
+      "notes": "Related to English 'pensive'. 'Pienso que sí' = I think so (literally 'I think that yes')."
+    },
+    {
+      "conceptSlug": "cerrar-to-close",
+      "conceptName": "The verb cerrar (to close)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Cerrar means to close. It stem-changes e→ie in stressed forms.",
+      "rule": null,
+      "examples": [
+        {"spanish": "cerrar → cierro", "english": "to close → I close"},
+        {"spanish": "cerrar → cierra", "english": "to close → he/she closes"},
+        {"spanish": "cerrar → cerramos", "english": "to close → we close"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "perder", "english": "to lose", "derivation": "related to 'perish'"},
+    {"spanish": "colgar", "english": "to hang", "derivation": null},
+    {"spanish": "tomar", "english": "to take, to drink", "derivation": null},
+    {"spanish": "beber", "english": "to drink", "derivation": null},
+    {"spanish": "una bebida", "english": "a drink", "derivation": "from beber (to drink)"},
+    {"spanish": "pensar", "english": "to think", "derivation": "pensive → pensar"},
+    {"spanish": "cerrar", "english": "to close", "derivation": null},
+    {"spanish": "alcohol", "english": "alcohol", "derivation": "Arabic loanword"},
+    {"spanish": "azúcar", "english": "sugar", "derivation": "Arabic al-zucar, l assimilated"},
+    {"spanish": "arroz", "english": "rice", "derivation": "Arabic al-ruz, l assimilated to rr"},
+    {"spanish": "álgebra", "english": "algebra", "derivation": "Arabic loanword"},
+    {"spanish": "aceite", "english": "oil", "derivation": "Arabic zet"},
+    {"spanish": "aceituna", "english": "olive", "derivation": "Arabic zetun"},
+    {"spanish": "alfombra", "english": "carpet", "derivation": "Arabic loanword"},
+    {"spanish": "almohada", "english": "pillow", "derivation": "Arabic loanword"},
+    {"spanish": "¿Qué tomas?", "english": "What are you having/drinking?", "derivation": null}
+  ]
+}

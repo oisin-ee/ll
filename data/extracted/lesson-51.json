@@ -1,0 +1,76 @@
+{
+  "episode": 51,
+  "summary": "Explores more uses of por vs para with estar (estoy para ti = I'm there for you, estoy por ti = I'm here because of you). Teaches por for exchanges (cambiar este por ese), the rule that prepositions take infinitives not gerunds in Spanish, and introduces false friends (discutir, actual).",
+  "teachings": [
+    {
+      "conceptSlug": "por-vs-para",
+      "conceptName": "Por vs para",
+      "category": "Key distinction",
+      "role": "practiced",
+      "summary": "Further contrasted por and para with estar: estoy para ti (I'm there for you, supportive), estoy por ti (I'm here because of you). Also por for exchanges: cambiar este por ese.",
+      "rule": "Para = for someone (supportive/destination). Por = because of, for exchanges. Por is also used in multiplication (ocho por ocho).",
+      "examples": [
+        {"spanish": "Estoy para ti", "english": "I'm there for you"},
+        {"spanish": "Estoy por ti", "english": "I'm here because of you"},
+        {"spanish": "He venido por ti", "english": "I have come because of you"},
+        {"spanish": "Es por ti que hemos venido", "english": "It is because of you that we have come"},
+        {"spanish": "Cambiaría este por ese", "english": "I would change this one for that one"},
+        {"spanish": "Cambiaría estos por esos", "english": "I would change these for those"},
+        {"spanish": "Cambiaría estas por esas", "english": "I would change these for those (feminine)"}
+      ],
+      "notes": "Por is written as 'x' in casual online Spanish (gracias x venir). Por is also used for times tables (8 x 8 = ocho por ocho)."
+    },
+    {
+      "conceptSlug": "infinitive-after-prepositions",
+      "conceptName": "Infinitive after prepositions",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "After prepositions (para, por, de, en, con, a, sin), Spanish uses the infinitive (to form), NOT the -ing form as in English. 'Thanks for coming' = Gracias por venir, not *gracias por viniendo.",
+      "rule": "After prepositions, always use the infinitive. Never use -ando/-iendo after a preposition.",
+      "examples": [
+        {"spanish": "Gracias por venir", "english": "Thanks for coming"},
+        {"spanish": "Gracias por llamar", "english": "Thanks for calling"},
+        {"spanish": "Gracias por llamarme", "english": "Thanks for calling me"},
+        {"spanish": "Estoy cansada de trabajar", "english": "I'm tired of working"},
+        {"spanish": "Estaba cansada de trabajar", "english": "I was tired of working"},
+        {"spanish": "Estábamos cansados de trabajar", "english": "We were tired of working"}
+      ],
+      "notes": "This is a key negative language transfer point. Spanish speakers learning English often say 'for see you' instead of 'for seeing you' - that mistake reveals the Spanish structure."
+    },
+    {
+      "conceptSlug": "false-friends",
+      "conceptName": "False friends (false cognates)",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Words that look similar between English and Spanish but differ in meaning. Discutir means to argue (not discuss). Actual means current (not actual). Actualmente means currently (not actually).",
+      "rule": null,
+      "examples": [
+        {"spanish": "discutir", "english": "to argue (not to discuss)"},
+        {"spanish": "Mi trabajo actual", "english": "My current job (not actual job)"},
+        {"spanish": "Actualmente", "english": "Currently (not actually)"}
+      ],
+      "notes": "Most Latin-English to Spanish vocabulary is reliable, but watch out for these false friends."
+    },
+    {
+      "conceptSlug": "es-una-forma-de",
+      "conceptName": "Es una forma de + infinitive",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Way/manner is forma in Spanish. 'A way of doing it' = una forma de hacerlo. 'In this way' = de esta forma.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Es una forma de hacerlo", "english": "It's a way of doing it"},
+        {"spanish": "No creo en discutir de esta forma", "english": "I don't believe in arguing in this way"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "cambiar", "english": "to change, to exchange", "derivation": null},
+    {"spanish": "cansado/a", "english": "tired", "derivation": "from cansar (to tire)"},
+    {"spanish": "forma", "english": "way, form", "derivation": "cognate with form"},
+    {"spanish": "creer", "english": "to believe", "derivation": "c-r-e-e-r (two e's)"},
+    {"spanish": "crear", "english": "to create", "derivation": "from creación"},
+    {"spanish": "discutir", "english": "to argue", "derivation": "false friend - not 'to discuss'"}
+  ]
+}

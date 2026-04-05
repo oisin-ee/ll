@@ -1,0 +1,69 @@
+{
+  "episode": 87,
+  "summary": "This lesson reviews irregular verbs in the imperfect (only ser/ir/ver are irregular) and introduces the pattern for irregular preterite verbs: the stem changes, endings mix -ar (for I and he/she) with -er/-ir (for the rest), and endings are unaccented. Tener (tuv-), estar (estuv-), and decir (dij-) are covered.",
+  "teachings": [
+    {
+      "conceptSlug": "imperfect-irregular",
+      "conceptName": "Imperfect tense irregulars",
+      "category": "Verb conjugation",
+      "role": "reviewed",
+      "summary": "The imperfect is very regular with only three irregular verbs: ser (era), ir (iba), and ver (veía). Ser uses 'era' (remember: an era is a line in the past). Ir uses iba (a mix of -aba and -ía). Ver keeps the extra -e from veo: veía.",
+      "rule": "Ser: era, eras, éramos, eran. Ir: iba, ibas, íbamos, iban. Ver: veía, veías, veíamos, veían.",
+      "examples": [
+        {"spanish": "Era", "english": "I/he/she was (ser, imperfect)"},
+        {"spanish": "Éramos", "english": "We were (ser, imperfect)"},
+        {"spanish": "Iba", "english": "I/he/she was going (ir, imperfect)"},
+        {"spanish": "Veía", "english": "I/he/she was seeing (ver, imperfect)"}
+      ],
+      "notes": "The imperfect is the safest tense — almost entirely regular. You can fall back to it to avoid irregular preterite forms."
+    },
+    {
+      "conceptSlug": "preterite-irregular-pattern",
+      "conceptName": "Irregular preterite pattern",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Irregular preterite verbs share three traits: (1) the stem changes, (2) they use -e and -o endings (from -ar) for I and he/she, but -imos/-iste/-ieron (from -er/-ir) for the rest, and (3) the endings are NOT accented. Once you know the irregular stem, all endings follow the same pattern.",
+      "rule": "Irregular preterite: changed stem + -e (I), -o (he/she), -imos (we), -iste (you informal), -ieron (they). No accent on endings.",
+      "examples": [
+        {"spanish": "Tuve", "english": "I had (tener → tuv-)"},
+        {"spanish": "Tuvo", "english": "He/she had"},
+        {"spanish": "Tuvimos", "english": "We had"},
+        {"spanish": "Tuviste", "english": "You had (informal)"},
+        {"spanish": "Tuvieron", "english": "They had"},
+        {"spanish": "Estuve", "english": "I was (estar → estuv-)"},
+        {"spanish": "Estuvo", "english": "He/she was"},
+        {"spanish": "Estuvimos", "english": "We were"},
+        {"spanish": "¿Dónde estuviste?", "english": "Where were you?"},
+        {"spanish": "Estuvieron", "english": "They were"},
+        {"spanish": "Dije", "english": "I said (decir → dij-)"},
+        {"spanish": "Dijo", "english": "He/she said"},
+        {"spanish": "Dijimos", "english": "We said"}
+      ],
+      "notes": "You can use the imperfect (tenía, estaba) to avoid irregular preterite forms when you need to get meaning across quickly."
+    },
+    {
+      "conceptSlug": "preterite-tense",
+      "conceptName": "Preterite tense regular endings",
+      "category": "Verb tense",
+      "role": "reviewed",
+      "summary": "Review of regular preterite endings. -ar verbs: -é, -ó, -amos, -aron, -aste. -er/-ir verbs: -í, -ió, -imos, -ieron, -iste.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Hablé", "english": "I spoke"},
+        {"spanish": "Habló", "english": "He/she spoke"},
+        {"spanish": "Hablamos", "english": "We spoke"},
+        {"spanish": "Hablaron", "english": "They spoke"},
+        {"spanish": "Hablaste", "english": "You spoke (informal)"},
+        {"spanish": "Comí", "english": "I ate"},
+        {"spanish": "Comió", "english": "He/she ate"},
+        {"spanish": "Comimos", "english": "We ate"},
+        {"spanish": "Comieron", "english": "They ate"},
+        {"spanish": "Comiste", "english": "You ate (informal)"}
+      ],
+      "notes": "The informal 'you' preterite has both -s and -t- in the ending (-aste, -iste)."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "tuve que ir", "english": "I had to go", "derivation": "Tener (tuv-) + que + ir"}
+  ]
+}

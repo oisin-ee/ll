@@ -1,0 +1,78 @@
+{
+  "episode": 31,
+  "summary": "This lesson introduces the verb ser (to be for characteristics), contrasting it with estar (to be for states). All five conjugated forms of ser are taught, along with the e-to-es prosthesis pattern in Spanish words that begin with s+consonant in English.",
+  "teachings": [
+    {
+      "conceptSlug": "e-prosthesis",
+      "conceptName": "E- prosthesis before s+consonant",
+      "category": "Word formation",
+      "role": "introduced",
+      "summary": "Spanish cannot begin a word with s+consonant (st-, sp-, sc-, etc.), so an e- is added to the beginning. This explains the difference between English 'state' and Spanish 'estar', and applies to many cognates.",
+      "rule": "When an English word begins with s+consonant, the Spanish cognate will have an e- prefix.",
+      "examples": [
+        { "spanish": "español", "english": "Spanish" },
+        { "spanish": "España", "english": "Spain" },
+        { "spanish": "estudiante", "english": "student" },
+        { "spanish": "escuela", "english": "school" },
+        { "spanish": "especial", "english": "special" },
+        { "spanish": "espacial", "english": "spatial" },
+        { "spanish": "estricto", "english": "strict" },
+        { "spanish": "espectacular", "english": "spectacular" }
+      ],
+      "notes": "The o-to-ue split also applies in escuela (school)."
+    },
+    {
+      "conceptSlug": "ser-to-be-permanent",
+      "conceptName": "Ser - to be (characteristics)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Ser is used for characteristics of being, as opposed to estar which is used for states. Ser by itself means 'being' (un ser = a being). All five present-tense forms are taught: soy, es, son, somos, eres.",
+      "rule": "Ser conjugation: soy (I), eres (you informal), es (he/she/it/you formal), somos (we), son (they/you guys). Only four verbs use -oy for I: voy, doy, estoy, soy.",
+      "examples": [
+        { "spanish": "Soy estudiante.", "english": "I am a student." },
+        { "spanish": "Es posible.", "english": "It is possible." },
+        { "spanish": "Ellos son.", "english": "They are." },
+        { "spanish": "Nosotros somos.", "english": "We are." },
+        { "spanish": "Tú eres.", "english": "You are." },
+        { "spanish": "Un ser humano.", "english": "A human being." }
+      ],
+      "notes": "Eres is the most irregular-looking form. The phrase '¿De dónde eres?' can help remember it. Somos is derived from son by removing the -n and adding -mos."
+    },
+    {
+      "conceptSlug": "ser-vs-estar",
+      "conceptName": "Ser vs Estar distinction",
+      "category": "Key distinction",
+      "role": "introduced",
+      "summary": "Ser is for characteristics (what someone/something is like), estar is for states (how someone/something is doing). The question '¿Cómo está?' asks how someone is doing, while '¿Cómo es?' asks what someone is like.",
+      "rule": "Use estar for states (how is he doing: ¿Cómo está?) and ser for characteristics (what is he like: ¿Cómo es?).",
+      "examples": [
+        { "spanish": "¿Cómo está?", "english": "How is he? (How is he doing?)" },
+        { "spanish": "¿Cómo es?", "english": "How is he? (What is he like?)" }
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "ustedes-plural-you",
+      "conceptName": "Ustedes as plural you",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "Ustedes is the plural of usted but is not necessarily formal. In most of the Spanish-speaking world (outside parts of Spain), ustedes is simply how you say 'you guys' without any formal connotation.",
+      "rule": "Ustedes uses the same verb form as ellos/ellas (son, están, etc.).",
+      "examples": [
+        { "spanish": "Ustedes son.", "english": "You guys are." }
+      ],
+      "notes": "Only in some parts of Spain is ustedes considered formal in the plural."
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "ser", "english": "to be (characteristics)", "derivation": "un ser = a being" },
+    { "spanish": "soy", "english": "I am (ser)", "derivation": null },
+    { "spanish": "eres", "english": "you are (informal, ser)", "derivation": null },
+    { "spanish": "es", "english": "he/she/it is, you are (formal, ser)", "derivation": null },
+    { "spanish": "somos", "english": "we are (ser)", "derivation": "derived from son by removing -n and adding -mos" },
+    { "spanish": "son", "english": "they are / you guys are (ser)", "derivation": null },
+    { "spanish": "el humano", "english": "the human", "derivation": null },
+    { "spanish": "ustedes", "english": "you guys", "derivation": "plural of usted" },
+    { "spanish": "cómo", "english": "how", "derivation": null }
+  ]
+}

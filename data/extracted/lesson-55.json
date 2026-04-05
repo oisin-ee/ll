@@ -1,0 +1,107 @@
+{
+  "episode": 55,
+  "summary": "Practices past participle adjectives with estar, introduces should have (debería haber) and could have (podría haber) structures, and teaches several irregular past participles: roto (romper), muerto (morir), abierto (abrir), dicho (decir), hecho (hacer). Also covers the f-to-silent-h sound change between English and Spanish.",
+  "teachings": [
+    {
+      "conceptSlug": "past-participle-as-adjective",
+      "conceptName": "Past participle as adjective",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "Continued practice using past participles as adjectives with estar. Some like complicado can go with either ser or estar.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Está cancelado", "english": "It is cancelled"},
+        {"spanish": "Está cancelada", "english": "It is cancelled (la fiesta)"},
+        {"spanish": "Se ha complicado", "english": "It has got complicated"},
+        {"spanish": "Es complicado", "english": "It is complicated (ser)"},
+        {"spanish": "Está complicado", "english": "It is complicated (estar)"}
+      ],
+      "notes": "Complicado can go with either ser or estar. Most participle adjectives tend toward estar."
+    },
+    {
+      "conceptSlug": "should-have",
+      "conceptName": "Should have (debería haber)",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Should = debería (conditional of deber, to owe/must). Should have = debería haber + participle.",
+      "rule": "Debería + haber + past participle = should have done",
+      "examples": [
+        {"spanish": "Debería haber cancelado", "english": "I should have cancelled"},
+        {"spanish": "Lo debería haber cancelado", "english": "I should have cancelled it"},
+        {"spanish": "Debería haberlo cancelado", "english": "I should have cancelled it"}
+      ],
+      "notes": "Lo can go before debería or attached to haber (haberlo)."
+    },
+    {
+      "conceptSlug": "could-have",
+      "conceptName": "Could have (podría haber)",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Could have = podría haber + participle. Uses the conditional of poder.",
+      "rule": "Podría + haber + past participle = could have done",
+      "examples": [
+        {"spanish": "Podría haber ido", "english": "I could have gone"},
+        {"spanish": "Podríamos haber ido", "english": "We could have gone"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "irregular-past-participles",
+      "conceptName": "Irregular past participles",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Several common verbs have irregular past participles: romper->roto, morir->muerto, abrir->abierto, decir->dicho, hacer->hecho. These irregular forms are used both after haber and as adjectives.",
+      "rule": "Romper->roto, morir->muerto, abrir->abierto, decir->dicho, hacer->hecho",
+      "examples": [
+        {"spanish": "Lo he roto", "english": "I have broken it"},
+        {"spanish": "Se ha roto", "english": "It has broken"},
+        {"spanish": "Está roto", "english": "It is broken"},
+        {"spanish": "Está rota", "english": "It is broken (feminine)"},
+        {"spanish": "Ha muerto", "english": "He has died"},
+        {"spanish": "Está muerto", "english": "He is dead"},
+        {"spanish": "Estoy muerta", "english": "I'm dead (used for exhausted)"},
+        {"spanish": "Me muero", "english": "I'm dying (exclamation)"},
+        {"spanish": "Lo he abierto", "english": "I have opened it"},
+        {"spanish": "Está abierto", "english": "It is open"},
+        {"spanish": "Están abiertos", "english": "They are open"},
+        {"spanish": "Lo he dicho", "english": "I have said it"},
+        {"spanish": "Le he dicho", "english": "I have told him"},
+        {"spanish": "Lo he hecho", "english": "I have done it"},
+        {"spanish": "Está hecho", "english": "It is done"},
+        {"spanish": "Debería haberlo hecho", "english": "I should have done it"},
+        {"spanish": "Deberías haberlo hecho", "english": "You should have done it"}
+      ],
+      "notes": "Dicho and hecho both have the /ch/ sound. Un dicho = a saying (noun). Un hecho = a fact (noun). Hecho en España = made in Spain. Muerto always goes with estar, never ser."
+    },
+    {
+      "conceptSlug": "f-to-h-sound-change",
+      "conceptName": "F to silent H sound change",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "A phonetic change in Spanish history turned many f's into silent h's. This creates connections: hecho/fact, hablar/fable, huir/fugitive, hermano/fraternal, hembra/feminine, hierro/ferrocarril, hondo/profundo, humo/fumar.",
+      "rule": "Latin f often became silent h in Spanish. Look for f/h pairs between English and Spanish.",
+      "examples": [
+        {"spanish": "hecho - fact", "english": "hacer/hecho relates to fact/faire"},
+        {"spanish": "hablar - fable", "english": "hablar relates to fable"},
+        {"spanish": "huir - fugitive", "english": "huir (to flee) relates to fugitive"},
+        {"spanish": "hermano - fraternal", "english": "hermano (brother) relates to fraternal"},
+        {"spanish": "hierro - ferrocarril", "english": "iron - railway (within Spanish)"}
+      ],
+      "notes": "Also w/g pairs: war/guerra, William/Guillermo. These letter-pair connections aid vocabulary memory."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "cancelar", "english": "to cancel", "derivation": "cognate"},
+    {"spanish": "complicar", "english": "to complicate", "derivation": "from complicación; 'with-folding'"},
+    {"spanish": "roto/a", "english": "broken", "derivation": "irregular participle of romper"},
+    {"spanish": "muerto/a", "english": "dead", "derivation": "irregular participle of morir"},
+    {"spanish": "morir", "english": "to die", "derivation": null},
+    {"spanish": "abrir", "english": "to open", "derivation": null},
+    {"spanish": "abierto/a", "english": "open", "derivation": "irregular participle of abrir"},
+    {"spanish": "dicho", "english": "said; a saying (noun)", "derivation": "irregular participle of decir"},
+    {"spanish": "hecho", "english": "done/made; a fact (noun)", "derivation": "irregular participle of hacer"},
+    {"spanish": "huir", "english": "to flee, to escape", "derivation": "related to fugitive (f->h)"},
+    {"spanish": "hermano/a", "english": "brother/sister", "derivation": "related to fraternal (f->h)"},
+    {"spanish": "hembra", "english": "female", "derivation": "related to feminine (f->h)"}
+  ]
+}

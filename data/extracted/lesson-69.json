@@ -1,0 +1,38 @@
+{
+  "episode": 69,
+  "summary": "This lesson introduces the subjunctive mood (called the 'mood tense'). It explains the formation rule: -ar verbs take -er/-ir endings and vice versa. The first obligatory use is taught: after 'quiero que' / 'quieres que' (I want that...), the subjunctive must be used.",
+  "teachings": [
+    {
+      "conceptSlug": "subjunctive-mood",
+      "conceptName": "Subjunctive mood (mood tense) - introduction",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "The subjunctive ('mood tense') expresses mood/subjectivity. It exists in English too (e.g., 'it is important that you be here', 'had I gone') but is used much more extensively in Spanish. Formation is simple: switch verb groups. -ar verbs use -er/-ir endings; -er/-ir verbs use -ar endings.",
+      "rule": "Formation: -ar verbs switch to -e endings (habla -> hable, hablan -> hablen, hablamos -> hablemos). -er/-ir verbs switch to -a endings (come -> coma, comen -> coman). The I form and he/she/it/you(formal) form are the same in the subjunctive (e.g., hable = I or he/she/it/you formal).",
+      "examples": [
+        {"spanish": "habla -> hable", "english": "he speaks -> he speak (subjunctive)"},
+        {"spanish": "hablan -> hablen", "english": "they speak -> they speak (subjunctive)"},
+        {"spanish": "hablamos -> hablemos", "english": "we speak -> we speak (subjunctive)"},
+        {"spanish": "come -> coma", "english": "he eats -> he eat (subjunctive)"},
+        {"spanish": "comen -> coman", "english": "they eat -> they eat (subjunctive)"}
+      ],
+      "notes": "Uses are divided into obligatory (must use, considered an error otherwise) and optional (gives different flavor/meaning). The I form becomes the same as he/she/it/you(formal) because switching o for o gives no change."
+    },
+    {
+      "conceptSlug": "subjunctive-after-querer-que",
+      "conceptName": "Subjunctive after querer que",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "When expressing 'I want you to...' in Spanish, the structure is 'quiero que + subjunctive'. This is an obligatory use of the subjunctive -- using the indicative here is considered an error. English says 'I want you to wait'; Spanish says 'I want that you wait (subjunctive)'.",
+      "rule": "quiero que + [subjunctive verb]. The subjunctive is obligatory after quiero que, quieres que, etc.",
+      "examples": [
+        {"spanish": "Quiero que esperes.", "english": "I want you to wait. (informal)"},
+        {"spanish": "Quiero que lo esperes.", "english": "I want you to wait for him/it."},
+        {"spanish": "¿Quieres que te espere?", "english": "Do you want me to wait for you?"},
+        {"spanish": "¿Quieres que yo te espere?", "english": "Do you want me to wait for you? (clarified with yo)"}
+      ],
+      "notes": "The subjunctive form after que is ambiguous for I/he/she/you(formal) -- clarify with yo, él, ella, usted if needed."
+    }
+  ],
+  "vocabulary": []
+}

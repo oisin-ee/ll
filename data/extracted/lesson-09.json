@@ -1,0 +1,79 @@
+{
+  "episode": 9,
+  "summary": "Introduces 'saber' (to know), 'sí' (yes/if), 'explicar' (to explain), and practices building complex multi-clause sentences. Emphasizes confidence in attempting sentences block by block.",
+  "teachings": [
+    {
+      "conceptSlug": "saber-to-know",
+      "conceptName": "Saber (to know)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Saber means 'to know'. It's an -er verb. Related to English 'savvy' and 'Homo sapien'. The -o → -e pattern for he/she/it applies: quiero/quiere, so saber follows similar patterns.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Quiero saber", "english": "I want to know"},
+        {"spanish": "No quiero saber", "english": "I don't want to know"},
+        {"spanish": "Quiere saber", "english": "He/she wants to know"},
+        {"spanish": "Quiero saber por qué no quiere saber", "english": "I want to know why he doesn't want to know"}
+      ],
+      "notes": "Memory hooks: 'savvy' in British slang, 'Homo sapien' = the wise creature."
+    },
+    {
+      "conceptSlug": "si-yes-if",
+      "conceptName": "Sí (yes) / Si (if)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Sí means 'yes' and si (same word) also means 'if'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Quiero saber si quiere saber", "english": "I want to know if you want to know"},
+        {"spanish": "Quiero saber si quiere invitarme", "english": "I want to know if he wants to invite me"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "explicar-to-explain",
+      "conceptName": "Explicar (to explain) — an exception",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Explanation in Spanish is 'explicación', not 'explanación'. This is an exception. English also has this root: 'inexplicable'.",
+      "rule": "Explanation = explicación (exception to normal pattern). To explain = explicar.",
+      "examples": [
+        {"spanish": "Quiero explicarte algo", "english": "I want to explain something to you"},
+        {"spanish": "No intento justificarme, pero quiero explicarte algo", "english": "I'm not trying to justify myself, but I want to explain something to you"}
+      ],
+      "notes": "English has both roots: 'explain' and 'inexplicable' — the c-sound root is the one Spanish uses."
+    },
+    {
+      "conceptSlug": "block-by-block-construction",
+      "conceptName": "Block-by-block sentence construction",
+      "category": "Vocabulary strategy",
+      "role": "practiced",
+      "summary": "Complex sentences should be built block by block, giving 100% mental energy to each block then forgetting it. This makes seemingly impossible sentences achievable.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Quiero saber por qué no quiere venir a la casa a visitarme", "english": "I want to know why she doesn't want to come to the house to visit me"}
+      ],
+      "notes": "Divide up piece by piece. Once you've said a block, you don't need to hold it."
+    },
+    {
+      "conceptSlug": "verbs-of-movement-a",
+      "conceptName": "Verbs of movement + 'a' before infinitive",
+      "category": "Verb construction",
+      "role": "practiced",
+      "summary": "Continued practice of the 'a' connecting verbs of movement to following infinitives, even when other words intervene.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Quiero saber si quiere venir a la casa a visitarme", "english": "I want to know if she wants to come to the house to visit me"}
+      ],
+      "notes": "Even with 'a la casa' in between, the 'a' before 'visitarme' is still required because of 'venir'."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "saber", "english": "to know", "derivation": "related to English 'savvy' and 'Homo sapien'"},
+    {"spanish": "sí", "english": "yes", "derivation": null},
+    {"spanish": "si", "english": "if", "derivation": null},
+    {"spanish": "explicar", "english": "to explain", "derivation": "explicación (exception: not explanación)"},
+    {"spanish": "justificar", "english": "to justify", "derivation": "justificación → justificar"},
+    {"spanish": "imaginar", "english": "to imagine", "derivation": "imaginación → imaginar"}
+  ]
+}

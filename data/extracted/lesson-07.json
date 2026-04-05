@@ -1,0 +1,96 @@
+{
+  "episode": 7,
+  "summary": "Teaches the 'voy a + infinitive' future construction, the rule that verbs of movement require 'a' before a following infinitive, and introduces 'los' (them), 'ver' (to see), 'algo' (something), 'mostrar' (to show), and 'pasar' (to pass).",
+  "teachings": [
+    {
+      "conceptSlug": "voy-a-future",
+      "conceptName": "Voy a + infinitive (going to future)",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "Just like English 'I am going to...', Spanish uses 'voy a + infinitive' to talk about the future. The 'a' is required because voy is a verb of movement.",
+      "rule": "Voy a + infinitive = I am going to [verb]. The 'a' connects movement verbs to a following infinitive.",
+      "examples": [
+        {"spanish": "Voy a confiscarlo", "english": "I am going to confiscate it"},
+        {"spanish": "Voy a examinarlo", "english": "I am going to examine it"},
+        {"spanish": "Voy a intentar", "english": "I am going to try"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "verbs-of-movement-a",
+      "conceptName": "Verbs of movement + 'a' before infinitive",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "When a verb of movement (ir, venir, pasar, salir) is followed by another verb in the infinitive, they are connected with 'a'. Other verbs like querer, intentar, deber do NOT use 'a'.",
+      "rule": "Verb of movement + a + infinitive. Non-movement verbs (querer, intentar, deber) connect directly without 'a'.",
+      "examples": [
+        {"spanish": "Voy a intentar verlos", "english": "I'm going to try to see them"},
+        {"spanish": "Voy a pasar a visitarte", "english": "I'm going to pass by to visit you"},
+        {"spanish": "Quiero pasar a mostrarte algo", "english": "I want to pass by to show you something"}
+      ],
+      "notes": "The 'a' appears after each verb of movement, even if there are other words in between."
+    },
+    {
+      "conceptSlug": "los-pronoun",
+      "conceptName": "Los (them, masculine plural)",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "Los is the plural of lo. Lo = him/it, los = them. Just add -s to make it plural.",
+      "rule": "lo → los (plural). Him/it → them.",
+      "examples": [
+        {"spanish": "Quiero verlos", "english": "I want to see them"},
+        {"spanish": "Voy a verlos", "english": "I am going to see them"},
+        {"spanish": "Intento verlos", "english": "I am trying to see them"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "ver-to-see",
+      "conceptName": "Ver (to see)",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Ver means 'to see'. Related to English 'view'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Quiero verlos", "english": "I want to see them"},
+        {"spanish": "Voy a verlos", "english": "I am going to see them"}
+      ],
+      "notes": "Connected to English 'view'."
+    },
+    {
+      "conceptSlug": "finding-latin-equivalents",
+      "conceptName": "Finding Latin equivalents for everyday English",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "When you don't know a Spanish word, find the Latin/formal English equivalent. E.g., 'carry on' → 'continue' → continuation → continuación → continuar.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Quiero continuar", "english": "I want to carry on / continue"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "intentar-to-try",
+      "conceptName": "Intentar (to try)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "The 'to' form of intento is intentar. It's used like English 'to try' and does not require 'a' before a following infinitive.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Quiero intentar", "english": "I want to try"},
+        {"spanish": "Voy a intentar", "english": "I am going to try"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "los", "english": "them (masculine)", "derivation": "plural of lo"},
+    {"spanish": "ver", "english": "to see", "derivation": "related to English 'view'"},
+    {"spanish": "algo", "english": "something", "derivation": null},
+    {"spanish": "mostrar", "english": "to show", "derivation": "demostración → demostrar → remove de- → mostrar"},
+    {"spanish": "demostrar", "english": "to demonstrate", "derivation": "demostración → demostrar"},
+    {"spanish": "continuar", "english": "to continue", "derivation": "continuation → continuación → continuar"},
+    {"spanish": "intentar", "english": "to try", "derivation": "related to intención"},
+    {"spanish": "pasar", "english": "to pass / to pass by", "derivation": null}
+  ]
+}

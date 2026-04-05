@@ -1,0 +1,94 @@
+{
+  "episode": 16,
+  "summary": "This lesson introduces stem-changing verbs in the present tense, explaining how stressed 'e' can split to 'ie' and stressed 'o' can split to 'ue'. Multiple examples are given showing this pattern across English-Spanish cognates and in verb conjugation.",
+  "teachings": [
+    {
+      "conceptSlug": "stem-changing-e-to-ie",
+      "conceptName": "Stem change: e splits to ie under stress",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "In the present tense, when the penultimate syllable containing 'e' is stressed, that 'e' can split into 'ie'. This happens because the accent on the penultimate syllable puts pressure on the vowel.",
+      "rule": "When a verb has 'e' in its stem, that 'e' may split to 'ie' in present tense forms where it takes the stress (I, he/she, they, you informal).",
+      "examples": [
+        {"spanish": "empezar → empiezo", "english": "to start → I start"},
+        {"spanish": "empezar → empieza", "english": "to start → he/she starts"},
+        {"spanish": "empezar → empiezan", "english": "to start → they start"},
+        {"spanish": "empezar → empiezas", "english": "to start → you (informal) start"},
+        {"spanish": "¿Cuándo empiezas?", "english": "When are you starting?"}
+      ],
+      "notes": "Always go back to the 'to' form (infinitive) before conjugating — this prevents guessing. The process: empezar → empieza, not empiezo → empieze."
+    },
+    {
+      "conceptSlug": "stem-changing-o-to-ue",
+      "conceptName": "Stem change: o splits to ue under stress",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "In the present tense, when the penultimate syllable containing 'o' is stressed, that 'o' can split into 'ue'. This is shown both in verb conjugation and in cognates between English and Spanish.",
+      "rule": "When a verb has 'o' in its stem, that 'o' may split to 'ue' in present tense forms where it takes the stress.",
+      "examples": [
+        {"spanish": "poder → puedo", "english": "to be able → I can"},
+        {"spanish": "dormir → duermo", "english": "to sleep → I sleep"},
+        {"spanish": "encontrar → encuentro", "english": "to find → I find"},
+        {"spanish": "mostrar → muestro", "english": "to show → I show"},
+        {"spanish": "mostrar → muestra", "english": "to show → he/she shows"},
+        {"spanish": "mostrar → muestran", "english": "to show → they show"}
+      ],
+      "notes": "This o→ue split can also be seen in English-Spanish cognates: port→puerto, force→fuerza, school→escuela, corp(orate)→cuerpo, new(nov-)→nuevo, mort→muerto/muerte, pueblo (population→población). These cross-language examples help internalize the pattern."
+    },
+    {
+      "conceptSlug": "accent-shift-present",
+      "conceptName": "Present tense accent on penultimate syllable",
+      "category": "Verb conjugation",
+      "role": "practiced",
+      "summary": "Reinforced that the accent on the penultimate syllable in present tense is what causes the stem vowel to split.",
+      "rule": null,
+      "examples": [],
+      "notes": null
+    },
+    {
+      "conceptSlug": "reflexive-me-duermo",
+      "conceptName": "Reflexive 'me' to change verb meaning",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Adding 'me' (myself) before a verb can change its meaning. 'Duermo' means 'I sleep' but 'me duermo' means 'I fall asleep' (I sleep myself).",
+      "rule": "Adding 'me' (myself) before certain verbs changes the meaning, e.g., duermo = I sleep, me duermo = I fall asleep.",
+      "examples": [
+        {"spanish": "Duermo", "english": "I sleep"},
+        {"spanish": "Me duermo", "english": "I fall asleep"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "verb-form-as-noun",
+      "conceptName": "Verb forms can also be nouns",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Different versions of a verb — either the infinitive or a conjugated form — can serve as nouns when preceded by an article. Whatever you can put 'a' or 'the' in front of is a noun.",
+      "rule": "If a verb form has an article (un/una/el/la) in front of it, it is being used as a noun.",
+      "examples": [
+        {"spanish": "el poder", "english": "the power (noun, from poder = to be able)"},
+        {"spanish": "un encuentro", "english": "an encounter (noun, from encontrar = to find)"},
+        {"spanish": "una muestra", "english": "a sample (noun, from mostrar = to show)"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "comenzar", "english": "to commence, to start", "derivation": "commence → comenzar"},
+    {"spanish": "empezar", "english": "to start (more common than comenzar)", "derivation": null},
+    {"spanish": "dormir", "english": "to sleep", "derivation": "dormant/dormitory → dormir"},
+    {"spanish": "encontrar", "english": "to find, to encounter", "derivation": "encounter → encontrar"},
+    {"spanish": "mostrar", "english": "to show", "derivation": "demonstrate → demostrar, remove de- → mostrar"},
+    {"spanish": "el poder", "english": "the power (noun)", "derivation": "power → poder"},
+    {"spanish": "un encuentro", "english": "an encounter", "derivation": null},
+    {"spanish": "una muestra", "english": "a sample", "derivation": null},
+    {"spanish": "la muerte", "english": "the death", "derivation": "mort (mortgage) → muerte"},
+    {"spanish": "muerto/muerta", "english": "dead (adjective)", "derivation": null},
+    {"spanish": "cuerpo", "english": "body", "derivation": "corp(orate) → cuerpo"},
+    {"spanish": "nuevo", "english": "new", "derivation": "nov(el)/innovative → nuevo"},
+    {"spanish": "pueblo", "english": "village, a people", "derivation": "población (population) → pueblo"},
+    {"spanish": "fuerza", "english": "force", "derivation": "force → fuerza"},
+    {"spanish": "escuela", "english": "school", "derivation": "school → escuela"},
+    {"spanish": "puerto", "english": "port", "derivation": "port → puerto (as in Puerto Rico = rich port)"}
+  ]
+}

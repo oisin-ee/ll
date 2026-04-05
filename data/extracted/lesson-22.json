@@ -1,0 +1,85 @@
+{
+  "episode": 22,
+  "summary": "This lesson introduces the past participle for -er/-ir verbs (-ido), practices haber forms, and teaches the subject pronouns yo, él, ella, tú, usted, nosotros/nosotras, ellos/ellas, ustedes. The distinction between subject pronouns and object pronouns (two separate sets) is made explicit.",
+  "teachings": [
+    {
+      "conceptSlug": "past-participle-er-ir-ido",
+      "conceptName": "Past participle: -er/-ir verbs → -ido",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "For -er and -ir verbs, the past participle is formed by removing -er/-ir and adding -ido. This is the same for both verb groups — the only difference between -er and -ir verbs remains the 'we' present tense form.",
+      "rule": "For -er/-ir verbs: remove -er or -ir, add -ido (vender → vendido, venir → venido, perder → perdido).",
+      "examples": [
+        {"spanish": "vender → vendido", "english": "to sell → sold"},
+        {"spanish": "venir → venido", "english": "to come → come (as in bienvenido = well-come)"},
+        {"spanish": "perder → perdido", "english": "to lose → lost"},
+        {"spanish": "terminar → terminado", "english": "to finish → finished"},
+        {"spanish": "He perdido", "english": "I have lost"},
+        {"spanish": "Hemos perdido", "english": "We have lost"},
+        {"spanish": "He terminado", "english": "I have finished"},
+        {"spanish": "Lo he terminado", "english": "I have finished it"},
+        {"spanish": "Los he terminado", "english": "I have finished them"}
+      ],
+      "notes": "Bienvenido (welcome) comes from bien + venido = well-come."
+    },
+    {
+      "conceptSlug": "pronoun-position-haber",
+      "conceptName": "Object pronoun position with haber",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "With haber + past participle, both are changed verbs, so object pronouns can only go before haber. There is no infinitive to attach them to.",
+      "rule": "In haber constructions, the pronoun goes before haber: lo he terminado. After the infinitive or before the changed verb — here both verbs are changed, so only one position works.",
+      "examples": [
+        {"spanish": "Lo he terminado", "english": "I have finished it"},
+        {"spanish": "Los he terminado", "english": "I have finished them"}
+      ],
+      "notes": "This is a rare situation with two changed verbs together. Usually after a changed verb comes a complete verb (quiero terminar)."
+    },
+    {
+      "conceptSlug": "subject-pronouns",
+      "conceptName": "Subject pronouns: yo, tú, él, ella, usted, nosotros, ellos, ellas",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "Subject pronouns are optional and used for emphasis or clarification. They go in a different position than object pronouns. Two separate sets of words: subject pronouns (yo, tú, él, ella, usted, nosotros/as, ellos/as) and object pronouns (me, te, lo, la, nos, los, las).",
+      "rule": "Subject pronouns: yo (I), tú (you informal), él (he), ella (she), usted (you formal), nosotros/nosotras (we), ellos/ellas (they). These are optional, for emphasis/clarification. Object pronouns: me, te, lo, la, nos, los, las.",
+      "examples": [
+        {"spanish": "Yo he perdido", "english": "I have lost (emphatic)"},
+        {"spanish": "Él ha perdido", "english": "He has lost (clarifying)"},
+        {"spanish": "Ella ha perdido", "english": "She has lost"},
+        {"spanish": "Nosotros hemos perdido", "english": "We have lost (emphatic)"},
+        {"spanish": "Tú has perdido", "english": "YOU have lost (emphatic)"},
+        {"spanish": "Usted ve", "english": "You (formal) see"},
+        {"spanish": "Usted lo ve", "english": "You (formal) see it"},
+        {"spanish": "Ellos ven", "english": "They see"},
+        {"spanish": "Ellos los ven", "english": "They see them"},
+        {"spanish": "Ellos me ven", "english": "They see me"}
+      ],
+      "notes": "Tú (subject, 'you see') vs te (object, 'I see you') — English doesn't distinguish these for 'you' but does for he/him, she/her. Nosotras is for an all-female group. Usted is a contraction of 'vuestra merced' (your honour). Ellos/ellas: double-l pronounced /y/ in most dialects."
+    },
+    {
+      "conceptSlug": "tu-vs-te",
+      "conceptName": "tú vs te: subject vs object 'you'",
+      "category": "Key distinction",
+      "role": "introduced",
+      "summary": "Tú is the subject pronoun (you see = tú ves) while te is the object pronoun (I see you = te veo). English doesn't change 'you' in these positions, which can cause confusion for learners.",
+      "rule": "tú goes with yo, él, ella (subject position). te goes with me, lo, la (object position).",
+      "examples": [
+        {"spanish": "Tú ves", "english": "You see"},
+        {"spanish": "Te veo", "english": "I see you"},
+        {"spanish": "Te quiero", "english": "I love you"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "terminar", "english": "to finish, to terminate", "derivation": "terminate → terminar"},
+    {"spanish": "vender", "english": "to sell", "derivation": null},
+    {"spanish": "yo", "english": "I (subject pronoun, emphatic)", "derivation": null},
+    {"spanish": "tú", "english": "you (informal, subject pronoun)", "derivation": null},
+    {"spanish": "él", "english": "he (subject pronoun)", "derivation": null},
+    {"spanish": "ella", "english": "she (subject pronoun)", "derivation": null},
+    {"spanish": "usted", "english": "you (formal, subject pronoun)", "derivation": "contraction of vuestra merced (your honour)"},
+    {"spanish": "nosotros/nosotras", "english": "we (masculine/mixed or feminine)", "derivation": null},
+    {"spanish": "ellos/ellas", "english": "they (masculine/mixed or feminine)", "derivation": null}
+  ]
+}

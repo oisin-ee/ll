@@ -1,0 +1,90 @@
+{
+  "episode": 64,
+  "summary": "This lesson introduces 'hace + time' for expressing 'ago', teaches the preterite endings for 'you informal' (-aste/-iste) and 'they' (-aron/-ieron), and provides a full panoramic review of regular preterite conjugations for both -ar and -er/-ir verb groups.",
+  "teachings": [
+    {
+      "conceptSlug": "hace-ago",
+      "conceptName": "Hace + time expression (ago)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "To express 'ago' in Spanish, use 'hace' (it makes) followed by a time expression. 'Two weeks ago' becomes 'hace dos semanas' (it makes two weeks).",
+      "rule": "hace + [number] + [time unit] = [number] [time unit] ago",
+      "examples": [
+        {"spanish": "Hace dos semanas.", "english": "Two weeks ago."},
+        {"spanish": "Lo vi hace dos semanas.", "english": "I saw him two weeks ago."},
+        {"spanish": "Le respondí hace siete semanas.", "english": "I responded to her seven weeks ago."},
+        {"spanish": "Se lo respondí hace un mes.", "english": "I responded it to her one month ago."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "preterite-you-informal",
+      "conceptName": "Preterite - you (informal) endings",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "The preterite endings for 'you informal' (tú) are -aste for -ar verbs and -iste for -er/-ir verbs.",
+      "rule": "-ar verbs: -aste (hablaste). -er/-ir verbs: -iste (comiste, saliste). Both contain 's' and 't' which relate to the informal you.",
+      "examples": [
+        {"spanish": "Hablaste.", "english": "You spoke."},
+        {"spanish": "Comiste.", "english": "You ate."},
+        {"spanish": "¿Saliste anoche?", "english": "Did you go out last night?"},
+        {"spanish": "¿Dónde viviste?", "english": "Where did you live?"},
+        {"spanish": "¿Me esperaste?", "english": "Did you wait for me?"},
+        {"spanish": "¿Cuándo llegaste?", "english": "When did you arrive?"},
+        {"spanish": "¿Por qué no me esperaste?", "english": "Why didn't you wait for me?"}
+      ],
+      "notes": "Both 's' and 't' in the endings relate to informal 'you' and help you remember the form."
+    },
+    {
+      "conceptSlug": "preterite-they",
+      "conceptName": "Preterite - they endings",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "The preterite endings for 'they' (ellos/ellas/ustedes) are -aron for -ar verbs and -ieron for -er/-ir verbs.",
+      "rule": "-ar verbs: -aron (hablaron). -er/-ir verbs: -ieron (comieron).",
+      "examples": [
+        {"spanish": "Hablaron.", "english": "They spoke."},
+        {"spanish": "Esperaron.", "english": "They waited."},
+        {"spanish": "Lo prepararon.", "english": "They prepared it."},
+        {"spanish": "Comieron.", "english": "They ate."},
+        {"spanish": "Salieron.", "english": "They left/went out."},
+        {"spanish": "Los vendieron.", "english": "They sold them."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "preterite-tense",
+      "conceptName": "Preterite tense - full panorama",
+      "category": "Verb tense",
+      "role": "reviewed",
+      "summary": "Complete review of all preterite forms. For -ar verbs (hablar): hablé, habló, hablamos, hablaste, hablaron. For -er/-ir verbs (comer): comí, comió, comimos, comiste, comieron. The -er/-ir group has 'i' dominating (the inverse of the present tense where 'e' dominates).",
+      "rule": "In the preterite, -er/-ir verbs have the /i/ sound everywhere except -ieron (where /e/ gets one appearance). This is the exact inverse of the present tense where /e/ dominates and /i/ appears only in -imos.",
+      "examples": [
+        {"spanish": "Hablé, habló, hablamos, hablaste, hablaron.", "english": "I spoke, he spoke, we spoke, you spoke, they spoke."},
+        {"spanish": "Comí, comió, comimos, comiste, comieron.", "english": "I ate, he ate, we ate, you ate, they ate."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "cion-to-verb-ar",
+      "conceptName": "-ción to -ar verb derivation",
+      "category": "Word formation",
+      "role": "practiced",
+      "summary": "Practice deriving verbs from -ción nouns: discriminación -> discriminar.",
+      "rule": null,
+      "examples": [
+        {"spanish": "discriminación -> discriminar", "english": "discrimination -> to discriminate"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "responder", "english": "to respond", "derivation": null},
+    {"spanish": "semana", "english": "week", "derivation": null},
+    {"spanish": "mes", "english": "month (masculine)", "derivation": null},
+    {"spanish": "siete", "english": "seven", "derivation": "Related to September"},
+    {"spanish": "anoche", "english": "last night", "derivation": "Not 'tonight' -- tonight is 'esta noche'"},
+    {"spanish": "discriminación", "english": "discrimination", "derivation": null},
+    {"spanish": "discriminar", "english": "to discriminate", "derivation": "From discriminación"}
+  ]
+}

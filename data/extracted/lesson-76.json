@@ -1,0 +1,52 @@
+{
+  "episode": 76,
+  "summary": "This lesson teaches the Spanish words 'hay' (there is/there are) and 'había' (there was/there were), both from haber. It covers how hay/había are invariable (don't change for singular/plural), and how the subjunctive is triggered when questioning the existence of something unknown using hay + que constructions.",
+  "teachings": [
+    {
+      "conceptSlug": "hay-there-is",
+      "conceptName": "Hay - there is / there are",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "Hay means both 'there is' and 'there are' — it does not change. It comes from haber. Había is the past form and also does not change for singular or plural.",
+      "rule": "Hay = there is / there are (invariable). Había = there was / there were (invariable). When using 'there has to be' (exist), use haber, not ser or estar.",
+      "examples": [
+        {"spanish": "Hay alguien aquí", "english": "There is somebody here"},
+        {"spanish": "Hay dos personas aquí que hablan español", "english": "There are two people here that speak Spanish"},
+        {"spanish": "Había dos personas aquí que hablaban español", "english": "There were two people here that spoke Spanish"},
+        {"spanish": "Tiene que haber algo que puedas hacer", "english": "There has to be something that you can do"}
+      ],
+      "notes": "When 'be' means 'exist' (there has to be something), use haber — not ser or estar."
+    },
+    {
+      "conceptSlug": "subjunctive-triggers",
+      "conceptName": "Subjunctive triggers",
+      "category": "Verb mood",
+      "role": "practiced",
+      "summary": "When questioning the existence of something unknown using hay + que, the subjunctive is used. When stating what exists as fact, the indicative is used.",
+      "rule": "¿Hay alguien que + subjunctive? (existence uncertain) vs. Hay alguien que + indicative (existence stated as fact)",
+      "examples": [
+        {"spanish": "¿Hay alguien aquí que hable español?", "english": "Is there somebody here that speaks Spanish?"},
+        {"spanish": "Hay dos personas aquí que hablan español", "english": "There are two people here that speak Spanish"},
+        {"spanish": "Tiene que haber algo que puedas hacer", "english": "There has to be something that you can do"}
+      ],
+      "notes": "The subjunctive has structural limitations — it occurs in certain places structurally and only to give certain meanings. Its use can vary by dialect and idiolect."
+    },
+    {
+      "conceptSlug": "imperfect-tense",
+      "conceptName": "Imperfect tense",
+      "category": "Verb tense",
+      "role": "practiced",
+      "summary": "The imperfect (line in the past) is used for ongoing states rather than point-in-time events. Spanish speakers saying 'they were speaking Spanish' use the imperfect because being a Spanish speaker is an ongoing characteristic.",
+      "rule": "Use the imperfect for ongoing characteristics, not the preterite, even when English uses simple past.",
+      "examples": [
+        {"spanish": "Había dos personas aquí que hablaban español", "english": "There were two people here that spoke Spanish"}
+      ],
+      "notes": "Don't translate directly from English 'spoke' — look at the context to decide line vs point."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "hay", "english": "there is / there are", "derivation": "From haber"},
+    {"spanish": "había", "english": "there was / there were", "derivation": "From haber, past form of hay"},
+    {"spanish": "alguien", "english": "somebody", "derivation": null}
+  ]
+}

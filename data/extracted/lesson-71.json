@@ -1,0 +1,76 @@
+{
+  "episode": 71,
+  "summary": "This lesson introduces 'contar' (to count/recount/tell), practices the subjunctive with 'espero que' (I hope that), teaches the personal 'a' used when a specific human is the object of a verb, and introduces the subjunctive of 'ver' (built on the I-form 'veo' to avoid ambiguity).",
+  "teachings": [
+    {
+      "conceptSlug": "contar-to-count-tell",
+      "conceptName": "Contar (to count / to tell / to recount)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Contar means both 'to count' and 'to recount/tell' (especially stories). It has an o -> ue stem change: cuento (I tell/count). The noun 'cuento' means 'story'. 'Contar con' means 'to count on' (to count with).",
+      "rule": null,
+      "examples": [
+        {"spanish": "Cuento.", "english": "I tell / I count."},
+        {"spanish": "Un cuento.", "english": "A story."},
+        {"spanish": "Quiero que me cuentes.", "english": "I want you to tell me. (informal)"},
+        {"spanish": "Quiero que me cuenten algo.", "english": "I want you (plural) to tell me something."},
+        {"spanish": "Quiero que cuentes conmigo.", "english": "I want you to count on me."}
+      ],
+      "notes": "Contar con = to count on (literally 'to count with'). English says 'count on', Spanish says 'count with'. Spanish speakers speaking English may say 'you can count with me' -- negative language transfer that reveals the Spanish structure."
+    },
+    {
+      "conceptSlug": "subjunctive-after-esperar-que",
+      "conceptName": "Subjunctive after esperar que (I hope that)",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "When 'esperar' is used to mean 'to hope', 'espero que' triggers the subjunctive, just like 'quiero que' and 'necesito que'.",
+      "rule": "espero que + [subjunctive verb]",
+      "examples": [
+        {"spanish": "Espero que cuentes conmigo.", "english": "I hope that you count on me."},
+        {"spanish": "Esperamos que cuenten con María.", "english": "We hope that they count on Maria."},
+        {"spanish": "Esperamos que lo cuenten a María.", "english": "We hope that they tell it to Maria."},
+        {"spanish": "Espero que vean a María.", "english": "I hope that they see Maria."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "subjunctive-of-ver",
+      "conceptName": "Subjunctive of ver (to see)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "The subjunctive of ver is built on the I-form 'veo' (not 'ven'), giving vea/vean/veamos. This avoids ambiguity with 'van' (they go) from ir.",
+      "rule": "Subjunctive of ver: vea (I/he/she/you formal), veas (you informal), veamos (we), vean (they/you plural).",
+      "examples": [
+        {"spanish": "Espero que vean.", "english": "I hope that they see."},
+        {"spanish": "Espero que comprendas a David.", "english": "I hope that you understand David."},
+        {"spanish": "Espero que comprenda a David.", "english": "I hope that you (formal) understand David."}
+      ],
+      "notes": "If the subjunctive were formed regularly from 'ven', it would give 'van' which would cause confusion with ir (to go). So the subjunctive is based on veo -> vea."
+    },
+    {
+      "conceptSlug": "personal-a",
+      "conceptName": "Personal 'a'",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "When a specific human is the direct object of a verb (having the action done to them) and no other preposition is present, Spanish uses 'a' before that person. This exists because Spanish word order is flexible, so without the personal 'a', it would be unclear whether the person is the subject or object. 'A + el' contracts to 'al'.",
+      "rule": "Use personal 'a' when: (1) a specific human is the direct object, (2) no other preposition is already present. Not used with indefinite/non-specific humans (e.g., 'I need to find a plumber' -- no personal a). 'A' + 'el' = 'al'.",
+      "examples": [
+        {"spanish": "Espero que vean a María.", "english": "I hope that they see Maria."},
+        {"spanish": "Espero que comprendas a David.", "english": "I hope that you understand David."},
+        {"spanish": "Quiero que vea al hombre.", "english": "I want him to see the man."},
+        {"spanish": "Quiero que el hombre vea.", "english": "I want the man to see."},
+        {"spanish": "Me gusta que visite a la profesora.", "english": "I like that he visits the teacher."},
+        {"spanish": "Me gusta que la profesora visite.", "english": "I like that the teacher visits."}
+      ],
+      "notes": "Can be used to personify non-humans (e.g., 'escapar a la muerte' personifies death). Generally used with specific humans, not non-specific ones."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "contar", "english": "to count / to tell / to recount", "derivation": "C-o-n-t-a-r; stem change o -> ue"},
+    {"spanish": "cuento", "english": "story (noun) / I tell (verb)", "derivation": "From contar"},
+    {"spanish": "contar con", "english": "to count on", "derivation": "Literally 'to count with'"},
+    {"spanish": "comprender", "english": "to understand", "derivation": null},
+    {"spanish": "el profesor / la profesora", "english": "the teacher (male/female)", "derivation": null},
+    {"spanish": "al", "english": "to the (masculine)", "derivation": "Contraction of a + el"}
+  ]
+}

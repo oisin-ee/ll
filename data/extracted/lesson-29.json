@@ -1,0 +1,59 @@
+{
+  "episode": 29,
+  "summary": "This lesson introduces the ser vs estar distinction — the two verbs for 'to be' in Spanish. Ser is for characteristics; estar is for states. The lesson warns against simplifying this to 'permanent vs temporary' and instead teaches 'characteristic vs state'. Estar is conjugated: estoy, está, están, estás, estamos.",
+  "teachings": [
+    {
+      "conceptSlug": "ser-vs-estar",
+      "conceptName": "Ser vs Estar: characteristics vs states",
+      "category": "Key distinction",
+      "role": "introduced",
+      "summary": "Spanish has two verbs for 'to be': ser (for characteristics) and estar (for states). This is not about permanent vs temporary — being a student is temporary but uses ser (it's characteristic of you). Being tired uses estar even if you're always tired (it's a state). Spanish forces speakers to decide: is this a characteristic or a state?",
+      "rule": "Ser = characteristics (profession, personality, identity). Estar = states (tired, location, emotional state). Do NOT simplify to permanent vs temporary.",
+      "examples": [
+        {"spanish": "Es profesor", "english": "He is a professor (characteristic — ser)"},
+        {"spanish": "Es agresivo", "english": "He is aggressive (characteristic — ser)"},
+        {"spanish": "Estoy cansada", "english": "I am tired (state — estar)"},
+        {"spanish": "Estoy cansada siempre", "english": "I am always tired (still estar — it's a state)"},
+        {"spanish": "Estoy muerta", "english": "I'm dead / I'm exhausted (state — estar)"}
+      ],
+      "notes": "Un ser = a being (noun). Un ser humano = a human being. The word 'state' is related to 'estar'. Even death (muerto) is a state in Spanish, not a characteristic. Simplifying to temporary/permanent works most of the time but leads to frustration when Spanish disagrees."
+    },
+    {
+      "conceptSlug": "estar-conjugation",
+      "conceptName": "Estar conjugation in present tense",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Estar is the only verb in Spanish where present tense forms have the accent on the final syllable (not penultimate). The 'I' form estoy ends in -oy (like voy, doy). All other forms are regular but with final-syllable stress: está, están, estás. The 'we' form estamos has normal penultimate stress.",
+      "rule": "estar: estoy (I am), está (he/she/it/you formal is), están (they are), estás (you informal are), estamos (we are). Only verb with final-syllable accent in present tense.",
+      "examples": [
+        {"spanish": "Estoy cansado", "english": "I am tired"},
+        {"spanish": "Estamos cansados", "english": "We are tired"},
+        {"spanish": "Estamos cansadas", "english": "We are tired (all female)"},
+        {"spanish": "Estoy muerto", "english": "I'm dead / I'm very tired"}
+      ],
+      "notes": "Estoy ends in -oy like voy (I go) and doy (I give). The accent pattern (final syllable) is unique to estar in the entire present tense. The 'we' form estamos is the exception — it has normal penultimate stress because -amos adds two syllables."
+    },
+    {
+      "conceptSlug": "ser-to-be-permanent",
+      "conceptName": "Ser for permanent/inherent characteristics",
+      "category": "Verb type",
+      "role": "practiced",
+      "summary": "Reviewed that ser is where es and son come from. A being = un ser. Used for characteristics like professions even if temporary.",
+      "rule": null,
+      "examples": [
+        {"spanish": "un ser humano", "english": "a human being"},
+        {"spanish": "humanidad", "english": "humanity (-ity → -idad)"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "estar", "english": "to be (states: tired, location, mood)", "derivation": "related to English 'state'"},
+    {"spanish": "estoy", "english": "I am (from estar)", "derivation": null},
+    {"spanish": "cansado/cansada", "english": "tired", "derivation": null},
+    {"spanish": "muerto/muerta", "english": "dead (also used for 'very tired')", "derivation": "mort (mortgage) → muerto"},
+    {"spanish": "un ser", "english": "a being (noun)", "derivation": null},
+    {"spanish": "un ser humano", "english": "a human being", "derivation": "humanity/humanidad → humano"},
+    {"spanish": "humanidad", "english": "humanity", "derivation": "humanity (-ity → -idad)"}
+  ]
+}

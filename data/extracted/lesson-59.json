@@ -1,0 +1,107 @@
+{
+  "episode": 59,
+  "summary": "Introduces preterite endings for -er/-ir verbs (-í for I, -ió for he/she), teaches que as 'than' for comparisons with más que, introduces nada (nothing), nadie (nobody), sin (without), and durante (during/for). Also covers double negatives and the verb durar.",
+  "teachings": [
+    {
+      "conceptSlug": "preterite-tense-er-ir",
+      "conceptName": "Preterite tense for -er/-ir verbs (I and he/she)",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "For -er/-ir verbs in the preterite: remove ending, add -í for I, -ió for he/she/it/usted. Both endings are accented.",
+      "rule": "For -er/-ir verbs: I = -í (comí), he/she/it/usted = -ió (comió). Ver is regular here: vi, vio.",
+      "examples": [
+        {"spanish": "Comí", "english": "I ate"},
+        {"spanish": "Comió", "english": "He/she ate"},
+        {"spanish": "Salí", "english": "I went out / I left"},
+        {"spanish": "Salió", "english": "She went out / She left"},
+        {"spanish": "No salió todavía", "english": "She didn't leave yet"},
+        {"spanish": "Vi", "english": "I saw"},
+        {"spanish": "Lo vi", "english": "I saw him"},
+        {"spanish": "No me vio", "english": "He didn't see me"},
+        {"spanish": "Lo vi, pero él no me vio", "english": "I saw him, but he didn't see me"}
+      ],
+      "notes": "Ver is regular in the preterite: vi, vio."
+    },
+    {
+      "conceptSlug": "que-as-than",
+      "conceptName": "Que as 'than' in comparisons",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Que means what, that, AND than. For comparisons: más que = more than. After 'than', use subject pronouns (él, yo) not object pronouns, because the meaning is 'more than he ate', 'more than I ate'.",
+      "rule": "Más + que = more than. Use subject pronouns after que (él, yo, not him, me).",
+      "examples": [
+        {"spanish": "Comí más que él", "english": "I ate more than him (more than he)"},
+        {"spanish": "Comió más que yo", "english": "He ate more than me (more than I)"}
+      ],
+      "notes": "English uses object pronouns after 'than' (more than him/me) which is actually peculiar. Spanish is more logical: más que él = more than he (ate)."
+    },
+    {
+      "conceptSlug": "nada-nothing",
+      "conceptName": "Nada (nothing/anything)",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Nada means nothing. Spanish uses double negatives: no vi nada = I didn't see nothing = I didn't see anything.",
+      "rule": "Double negative: no + verb + nada = didn't see anything",
+      "examples": [
+        {"spanish": "No vi nada", "english": "I didn't see anything"},
+        {"spanish": "No comí nada", "english": "I didn't eat anything"},
+        {"spanish": "¿No comió nada?", "english": "Didn't you eat anything?"},
+        {"spanish": "¿Por qué no comió nada?", "english": "Why didn't you eat anything?"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "nadie-nobody",
+      "conceptName": "Nadie (nobody)",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Nadie means nobody. Can be combined with nada in double negative structures.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Nadie vio nada", "english": "Nobody saw anything"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "durante-for-time",
+      "conceptName": "Durante (during/for time periods)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Durante means during and can also be used for 'for' with time periods, as an alternative to por.",
+      "rule": "Durante = during, also works as 'for' with time. Alternative to por for time durations.",
+      "examples": [
+        {"spanish": "Duró dos minutos", "english": "It lasted two minutes"},
+        {"spanish": "Durante dos minutos", "english": "During/for two minutes"},
+        {"spanish": "Comió durante media hora", "english": "He ate for half an hour"},
+        {"spanish": "Habló durante media hora", "english": "He spoke for half an hour"},
+        {"spanish": "Habló durante media hora sin parar", "english": "He spoke for half an hour without stopping"}
+      ],
+      "notes": "Durante comes from durar (to last) using the -ante adjective form. Can replace por for time periods."
+    },
+    {
+      "conceptSlug": "sin-without",
+      "conceptName": "Sin (without)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Sin means without. As a preposition, it takes the infinitive (sin parar = without stopping, not *sin parando).",
+      "rule": "Sin + infinitive (not -ando/-iendo)",
+      "examples": [
+        {"spanish": "Habló durante media hora sin parar", "english": "He spoke for half an hour without stopping"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "nada", "english": "nothing, anything", "derivation": null},
+    {"spanish": "nadie", "english": "nobody", "derivation": null},
+    {"spanish": "durar", "english": "to last", "derivation": "related to endure, duration, Duracell"},
+    {"spanish": "durante", "english": "during, for (time)", "derivation": "from durar + -ante suffix"},
+    {"spanish": "minuto", "english": "minute", "derivation": "cognate"},
+    {"spanish": "media hora", "english": "half an hour", "derivation": "media (half) + hora (hour)"},
+    {"spanish": "sin", "english": "without", "derivation": null},
+    {"spanish": "parar", "english": "to stop", "derivation": "related to pair (par)"},
+    {"spanish": "comparar", "english": "to compare", "derivation": "'con-parar' = with-pairing"},
+    {"spanish": "separar", "english": "to separate", "derivation": "'se-parar' = apart-pairing"},
+    {"spanish": "un par", "english": "a pair", "derivation": null}
+  ]
+}

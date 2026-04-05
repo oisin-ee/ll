@@ -1,0 +1,52 @@
+{
+  "episode": 63,
+  "summary": "This lesson introduces the reflexive verb 'acordarse' (to remember) with its stem change, and practices clarification with 'a + pronoun' specifically with the gustar construction to disambiguate le gusta (he/she/you formal likes it).",
+  "teachings": [
+    {
+      "conceptSlug": "acordarse-to-remember",
+      "conceptName": "Acordarse (to remember)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Acordarse is a reflexive verb meaning 'to remember'. The o splits to ue when stressed (me acuerdo) but stays as o when unstressed (nos acordamos). The se becomes me/te/nos etc. depending on the subject.",
+      "rule": "Acordarse: me acuerdo (I remember), te acuerdas, se acuerda, nos acordamos (no split -- unstressed), se acuerdan.",
+      "examples": [
+        {"spanish": "Me acuerdo.", "english": "I remember."},
+        {"spanish": "No me acuerdo.", "english": "I don't remember."},
+        {"spanish": "No nos acordamos.", "english": "We don't remember."},
+        {"spanish": "No me acuerdo si se lo di a él o a ella.", "english": "I don't remember if I gave it to him or to her."},
+        {"spanish": "No nos acordamos si se lo dimos a él o a ellas.", "english": "We don't remember if we gave it to him or to them (fem)."}
+      ],
+      "notes": "The o does not split in 'nos acordamos' because the stress is not on the o."
+    },
+    {
+      "conceptSlug": "a-clarification",
+      "conceptName": "Clarification with 'a + pronoun'",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "Further practice of 'a + pronoun' clarification, now applied to the gustar construction. 'Le gusta' is ambiguous (he/she/you formal likes it), so 'a ella', 'a él', etc. are added to clarify.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Le gusta a ella.", "english": "She likes it."},
+        {"spanish": "Le gustó a ella.", "english": "She liked it."},
+        {"spanish": "A ella le gusta.", "english": "She likes it. (emphasis first)"}
+      ],
+      "notes": "Be careful not to say 'ella le gusta' to mean 'she likes it' -- that would mean 'she is pleasing to [someone]', i.e., someone likes her. The 'a' is essential for correct meaning."
+    },
+    {
+      "conceptSlug": "gustar-construction",
+      "conceptName": "Gustar construction",
+      "category": "Verb construction",
+      "role": "practiced",
+      "summary": "Practice of gustar with third-person subjects (le gusta for he/she/you formal likes it), emphasizing the 'mid road' literal translation of 'it is pleasing to him/her'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Le gusta.", "english": "He/she likes it. (It is pleasing to him/her.)"},
+        {"spanish": "Le gustó.", "english": "He/she liked it."}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "acordarse", "english": "to remember", "derivation": "Reflexive verb; acordar + se"}
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "episode": 60,
+  "summary": "Teaches the preterite 'we' form: -ar verbs use hablamos (same as present), -er verbs change to -imos (comimos), -ir verbs stay the same (vivimos/salimos). Context disambiguates present from past. Also introduces cuando (when), a menudo (often), and siempre (always) in practice sentences.",
+  "teachings": [
+    {
+      "conceptSlug": "preterite-tense-we",
+      "conceptName": "Preterite 'we' form",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "For -ar verbs, the preterite 'we' form is identical to the present (hablamos = we speak / we spoke). For -er verbs, present -emos becomes preterite -imos (comemos -> comimos). For -ir verbs, both present and preterite are -imos (vivimos stays vivimos). Context disambiguates.",
+      "rule": "-ar: hablamos (present) = hablamos (preterite). -er: comemos (present) -> comimos (preterite). -ir: vivimos (present) = vivimos (preterite). The -er/-ir we-form difference in present (-emos vs -imos) means -er verbs change in preterite but -ir verbs don't.",
+      "examples": [
+        {"spanish": "Hablamos ayer", "english": "We spoke yesterday"},
+        {"spanish": "Hablamos mañana", "english": "We'll speak tomorrow"},
+        {"spanish": "Cuando hablamos, comprendo todo", "english": "When we speak, I understand everything"},
+        {"spanish": "Cuando hablamos, comprendí todo", "english": "When we spoke, I understood everything"},
+        {"spanish": "Comimos", "english": "We ate"},
+        {"spanish": "Vivimos", "english": "We live / We lived"},
+        {"spanish": "Vimos", "english": "We saw (ver: vemos -> vimos)"},
+        {"spanish": "Salimos", "english": "We left / We leave (salir: same form)"},
+        {"spanish": "Perdimos", "english": "We lost (perder: perdemos -> perdimos)"},
+        {"spanish": "Nos perdimos", "english": "We got lost"},
+        {"spanish": "Esperamos mucho ayer", "english": "We waited a lot yesterday"}
+      ],
+      "notes": "The ambiguity of hablamos (present or past) is resolved by context. Words like ayer, mañana, or the tense of surrounding verbs clarify the meaning."
+    },
+    {
+      "conceptSlug": "preterite-tense-ar",
+      "conceptName": "Preterite tense for -ar verbs",
+      "category": "Verb tense",
+      "role": "practiced",
+      "summary": "Recap of all three preterite forms for -ar verbs: hablé (I), habló (he/she), hablamos (we).",
+      "rule": null,
+      "examples": [
+        {"spanish": "Hablé", "english": "I spoke"},
+        {"spanish": "Habló", "english": "He/she spoke"},
+        {"spanish": "Hablamos", "english": "We spoke"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "preterite-tense-er-ir",
+      "conceptName": "Preterite tense for -er/-ir verbs",
+      "category": "Verb tense",
+      "role": "practiced",
+      "summary": "Recap of all three preterite forms for -er/-ir verbs: comí (I), comió (he/she), comimos (we).",
+      "rule": null,
+      "examples": [
+        {"spanish": "Comí", "english": "I ate"},
+        {"spanish": "Comió", "english": "He/she ate"},
+        {"spanish": "Comimos", "english": "We ate"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "cuando", "english": "when", "derivation": null},
+    {"spanish": "comprender", "english": "to understand", "derivation": "cognate with comprehend"},
+    {"spanish": "a menudo", "english": "often", "derivation": "menudo is a literary word for small (related to minute/minuscule)"},
+    {"spanish": "siempre", "english": "always", "derivation": null},
+    {"spanish": "desesperado", "english": "desperate", "derivation": "des- (un-) + esperar (to hope) + -ado; literally 'un-hoped'"}
+  ]
+}

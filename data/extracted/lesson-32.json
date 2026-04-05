@@ -1,0 +1,75 @@
+{
+  "episode": 32,
+  "summary": "This lesson explores how the same adjective changes meaning depending on whether it is used with ser or estar, using aburrido (boring vs bored) as the main example. It also introduces the word 'de' (from/of), the question '¿De dónde eres?', and the persona safety-net strategy for navigating ser/estar uncertainty with adjectives.",
+  "teachings": [
+    {
+      "conceptSlug": "ser-vs-estar",
+      "conceptName": "Ser vs Estar distinction",
+      "category": "Key distinction",
+      "role": "practiced",
+      "summary": "Some adjectives change meaning depending on whether they are used with ser or estar. Aburrido with estar means 'bored' (state), while with ser it means 'boring' (characteristic). Some adjectives only go with one verb, and dialect can affect which verb is used.",
+      "rule": "Adjectives can change meaning with ser vs estar. Aburrido: estar = bored, ser = boring.",
+      "examples": [
+        { "spanish": "Es aburrido.", "english": "It is boring. / He is boring." },
+        { "spanish": "Está aburrido.", "english": "He is bored." },
+        { "spanish": "Es aburrida.", "english": "She is boring." },
+        { "spanish": "Son aburridos.", "english": "They are boring." },
+        { "spanish": "Están aburridos.", "english": "They are bored." }
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "de-of-from",
+      "conceptName": "De - of/from",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "De means 'from' or 'of' in Spanish. It appears as a building block in many English words (deliver = de + liver/freedom, decipher = de + cipher/zero). Used with ser for asking where someone is from.",
+      "rule": "To ask where someone is from: ¿De dónde + ser? (from where is...?)",
+      "examples": [
+        { "spanish": "¿De dónde es?", "english": "Where is he/she from?" },
+        { "spanish": "¿De dónde eres?", "english": "Where are you from? (informal)" },
+        { "spanish": "¿De dónde son?", "english": "Where are they from?" },
+        { "spanish": "¿Dónde están?", "english": "Where are they? (location/state)" }
+      ],
+      "notes": "Where someone is from is a characteristic (ser), but where someone is located is a state (estar)."
+    },
+    {
+      "conceptSlug": "persona-safety-net",
+      "conceptName": "Persona as safety net for ser/estar",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "When unsure whether an adjective can be used with ser directly, you can say 'soy una persona + adjective' to safely express a characteristic. Since 'I am a person' is inherently characteristic, whatever adjective follows persona is safe with ser.",
+      "rule": "Use 'soy/es una persona + adjective' when unsure if an adjective works directly with ser. Persona is always feminine regardless of speaker.",
+      "examples": [
+        { "spanish": "Soy una persona libre.", "english": "I am a free person." },
+        { "spanish": "Soy una persona ocupada.", "english": "I am a busy person." },
+        { "spanish": "Somos personas ocupadas.", "english": "We are busy people." },
+        { "spanish": "Es una persona preocupada.", "english": "He/she is a worried person." }
+      ],
+      "notes": "Persona is feminine, so the adjective always takes feminine form (ocupada, not ocupado), even when the speaker is male."
+    },
+    {
+      "conceptSlug": "adjective-agreement",
+      "conceptName": "Adjective agreement",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "Adjectives ending in -o change to -a for feminine. Adjectives ending in -e (like libre) do not change for gender.",
+      "rule": "Only adjectives ending in -o change for masculine/feminine. Adjectives ending in -e stay the same.",
+      "examples": [
+        { "spanish": "Estoy libre.", "english": "I am free. (same for m/f)" },
+        { "spanish": "Estoy ocupado/ocupada.", "english": "I am busy. (changes for m/f)" }
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "aburrido/a", "english": "boring (with ser) / bored (with estar)", "derivation": null },
+    { "spanish": "de", "english": "from, of", "derivation": "found in English words like deliver, decipher" },
+    { "spanish": "liberar", "english": "to liberate", "derivation": "from liberación" },
+    { "spanish": "libre", "english": "free", "derivation": "related to English 'liberation', 'deliver'" },
+    { "spanish": "persona", "english": "person", "derivation": null },
+    { "spanish": "casado/a", "english": "married", "derivation": "from casa (house) - literally 'housed'" },
+    { "spanish": "ocupado/a", "english": "busy, occupied", "derivation": "same as English 'occupied'" },
+    { "spanish": "preocupado/a", "english": "worried, preoccupied", "derivation": "pre + ocupado" }
+  ]
+}

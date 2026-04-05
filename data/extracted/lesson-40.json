@@ -1,0 +1,106 @@
+{
+  "episode": 40,
+  "summary": "This lesson teaches that verbs in Spanish often take different prepositions than their English equivalents, and encourages analytical curiosity about why. Key examples: enamorarse de (to fall in love with), pensar en (to think about), soñar con (to dream about), depender de (to depend on). Also introduces conmigo/contigo and sí as 'if'.",
+  "teachings": [
+    {
+      "conceptSlug": "verb-preposition-differences",
+      "conceptName": "Verb + preposition differences between languages",
+      "category": "Key distinction",
+      "role": "introduced",
+      "summary": "Spanish verbs often use different prepositions than their English equivalents. Rather than memorizing blindly, analyzing why the preposition differs can aid memory and reveal how language shapes perception. Key pairings: enamorarse DE (fall in love WITH), pensar EN (think ABOUT), soñar CON (dream ABOUT), depender DE (depend ON).",
+      "rule": null,
+      "examples": [
+        { "spanish": "Me enamoro de ti.", "english": "I fall in love with you." },
+        { "spanish": "Me enamoro de él.", "english": "I fall in love with him." },
+        { "spanish": "Pienso en ti.", "english": "I think about you." },
+        { "spanish": "Pensamos en ella.", "english": "We think about her." },
+        { "spanish": "Sueño con ella.", "english": "I dream about her." },
+        { "spanish": "Sueña con él.", "english": "He dreams about him." },
+        { "spanish": "Depende de ella.", "english": "It depends on her." },
+        { "spanish": "Depende de si quiere ir.", "english": "It depends on if she wants to go." }
+      ],
+      "notes": "Enamorarse de: 'of' is more detached than 'with', possibly reflecting different cultural perceptions of love. Soñar con: 'with' implies the dreamed person participates, possibly an old belief. Pensar en: may come from Arabic influence during 800 years of contact."
+    },
+    {
+      "conceptSlug": "enamorarse",
+      "conceptName": "Enamorarse - to fall in love",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "To fall in love is 'enamorarse de' - literally 'to enamor oneself of'. It is a reflexive verb found in the dictionary as enamorarse. Uses the preposition de, not con.",
+      "rule": "Enamorarse de = to fall in love with. Me enamoro de = I fall in love with.",
+      "examples": [
+        { "spanish": "Me enamoro de ti.", "english": "I fall in love with you." },
+        { "spanish": "Me estoy enamorando de él.", "english": "I am falling in love with him." },
+        { "spanish": "Estoy enamorándome.", "english": "I am falling in love." }
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "conmigo-contigo",
+      "conceptName": "Conmigo / Contigo",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "'With me' and 'with you (informal)' have special forms: conmigo and contigo, written as single words. This is an exception to the normal preposition + pronoun pattern (de mí, para ti are two words, but conmigo/contigo are one).",
+      "rule": "con + mí = conmigo (with me). con + ti = contigo (with you informal). Written as one word.",
+      "examples": [
+        { "spanish": "¿Quieres venir conmigo?", "english": "Do you want to come with me?" },
+        { "spanish": "¿Por qué no quieres venir conmigo?", "english": "Why don't you want to come with me?" },
+        { "spanish": "Tienes que venir conmigo.", "english": "You have to come with me." },
+        { "spanish": "¿Puedes venir conmigo?", "english": "Can you come with me?" },
+        { "spanish": "Sueño contigo.", "english": "I dream about you." },
+        { "spanish": "Voy contigo.", "english": "I'm going with you." }
+      ],
+      "notes": "The -go in conmigo comes from nowhere historically. All other prepositions use mí/ti as separate words."
+    },
+    {
+      "conceptSlug": "si-if",
+      "conceptName": "Sí as 'if'",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "The word for 'yes' (sí) is also the word for 'if' in Spanish.",
+      "rule": null,
+      "examples": [
+        { "spanish": "Depende de si quiere ir.", "english": "It depends on if she wants to go." }
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "sonar-to-dream",
+      "conceptName": "Soñar - to dream",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Soñar means to dream. The o splits to ue when stressed (sueño, sueña, sueñan, sueñas) but not when unstressed (soñamos). The ñ is the only letter in Spanish not in English, pronounced like ny.",
+      "rule": "Soñar + con = to dream about. O splits to ue when stressed: sueño, sueña. Does not split in soñamos.",
+      "examples": [
+        { "spanish": "Sueño con ella.", "english": "I dream about her." },
+        { "spanish": "Sueña con él.", "english": "He dreams about him." },
+        { "spanish": "Soñamos.", "english": "We dream." }
+      ],
+      "notes": "The ñ (n with tilde) is pronounced ny, as in mañana. There is no way to predict which verbs will have the o-to-ue split; if it happens in one stressed form, it happens in all stressed forms."
+    },
+    {
+      "conceptSlug": "depender-de",
+      "conceptName": "Depender de - to depend on",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "To depend is depender, an -er verb. In Spanish you say 'depende de' (depends of) rather than 'depends on'.",
+      "rule": "depender de = to depend on. Uses de, not en or another preposition.",
+      "examples": [
+        { "spanish": "Depende de ella.", "english": "It depends on her." },
+        { "spanish": "Depende de si quiere ir.", "english": "It depends on if she wants to go." }
+      ],
+      "notes": "Common mistake: conjugating depender as an -ar verb. Always check the verb type first."
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "enamorarse", "english": "to fall in love", "derivation": "en + amor + arse = to enamor oneself" },
+    { "spanish": "pensar", "english": "to think", "derivation": "related to English 'pensive'" },
+    { "spanish": "en", "english": "in, on", "derivation": null },
+    { "spanish": "soñar", "english": "to dream", "derivation": null },
+    { "spanish": "sueño", "english": "I dream", "derivation": "o-to-ue split from soñar" },
+    { "spanish": "conmigo", "english": "with me", "derivation": "con + mí + go" },
+    { "spanish": "contigo", "english": "with you (informal)", "derivation": "con + ti + go" },
+    { "spanish": "depender", "english": "to depend", "derivation": "cognate with English 'depend'" },
+    { "spanish": "sí", "english": "yes / if", "derivation": null }
+  ]
+}

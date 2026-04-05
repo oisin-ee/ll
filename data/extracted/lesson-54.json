@@ -1,0 +1,69 @@
+{
+  "episode": 54,
+  "summary": "Teaches that past participles (-ado/-ido) can be used as adjectives with estar (está cerrado, está perdida). The participle is invariable after haber but agrees in gender/number as an adjective. Explains ser vs estar with these adjectives, including the 'es una persona + adjective' pattern.",
+  "teachings": [
+    {
+      "conceptSlug": "past-participle-as-adjective",
+      "conceptName": "Past participle as adjective",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "The -ado/-ido form used after haber can also be used as an adjective. After haber it never changes, but as an adjective it agrees in gender and number. These adjectives almost always go with estar, not ser.",
+      "rule": "Participle after haber: invariable (lo he cerrado, la he cerrado). As adjective: agrees in gender/number (cerrado/cerrada/cerrados/cerradas). Almost always uses estar.",
+      "examples": [
+        {"spanish": "Lo he cerrado", "english": "I have closed it (invariable after haber)"},
+        {"spanish": "La he cerrado", "english": "I have closed it (feminine, still cerrado after haber)"},
+        {"spanish": "Está cerrada", "english": "It is closed (the door - feminine adjective)"},
+        {"spanish": "Estoy perdido", "english": "I am lost (masculine)"},
+        {"spanish": "Estoy perdida", "english": "I am lost (feminine)"},
+        {"spanish": "Está terminado", "english": "It is finished"},
+        {"spanish": "Está terminada", "english": "It is finished (la película)"},
+        {"spanish": "Están vendidos", "english": "They are sold (masculine)"},
+        {"spanish": "Están vendidas", "english": "They are sold (feminine, las casas)"}
+      ],
+      "notes": "After haber: always invariable. As adjective: agrees with noun. Almost always with estar, with a couple of exceptions."
+    },
+    {
+      "conceptSlug": "ser-vs-estar-participle",
+      "conceptName": "Ser vs estar with participle adjectives",
+      "category": "Key distinction",
+      "role": "introduced",
+      "summary": "Participle adjectives normally go with estar. But when saying 'it is a [noun]' with ser, the adjective is secondary to the noun classification. 'La silla está mojada' (the chair is wet) vs 'Es una silla mojada' (it is a wet chair).",
+      "rule": "Use estar when the adjective is the main point (la silla está mojada). Use ser when classifying with a noun (es una silla mojada). Es una persona cerrada is fine because ser goes with the noun persona.",
+      "examples": [
+        {"spanish": "Está cerrado a la idea", "english": "He is closed to the idea (estar)"},
+        {"spanish": "Es una persona cerrada", "english": "He/she is a closed person (ser + noun)"},
+        {"spanish": "La silla está mojada", "english": "The chair is wet (estar for state)"},
+        {"spanish": "Es una silla mojada", "english": "It is a wet chair (ser for classification)"},
+        {"spanish": "Está perdida", "english": "She is lost (state)"},
+        {"spanish": "Es una persona perdida", "english": "She is a lost person (classification)"}
+      ],
+      "notes": "When you say 'es un/una [noun]', ser pairs with the noun, not the adjective. The adjective is secondary."
+    },
+    {
+      "conceptSlug": "cansado-from-cansar",
+      "conceptName": "Cansado from cansar",
+      "category": "Word formation",
+      "role": "introduced",
+      "summary": "Cansado (tired) is actually the past participle of cansar (to tire). Me canso = I get tired. Me he cansado = I've gotten tired/fed up.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Me canso", "english": "I get tired / I get fed up"},
+        {"spanish": "Me he cansado", "english": "I've gotten tired / I've had enough"},
+        {"spanish": "Estoy cansada", "english": "I am tired (feminine)"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "cerrar", "english": "to close", "derivation": null},
+    {"spanish": "cerrado/a", "english": "closed", "derivation": "past participle of cerrar"},
+    {"spanish": "la puerta", "english": "the door", "derivation": null},
+    {"spanish": "terminar", "english": "to finish, to terminate", "derivation": "cognate with terminate"},
+    {"spanish": "la película", "english": "the movie", "derivation": null},
+    {"spanish": "cansar", "english": "to tire", "derivation": null},
+    {"spanish": "mojar", "english": "to wet", "derivation": null},
+    {"spanish": "mojado/a", "english": "wet", "derivation": "past participle of mojar"},
+    {"spanish": "la silla", "english": "the chair, the seat", "derivation": null},
+    {"spanish": "la idea", "english": "the idea", "derivation": "same word, feminine"}
+  ]
+}

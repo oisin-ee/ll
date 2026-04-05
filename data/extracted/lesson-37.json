@@ -1,0 +1,96 @@
+{
+  "episode": 37,
+  "summary": "This lesson introduces the indirect object pronouns le and les, explaining how lo/la/los/las change to le/les when meaning 'to him/her/them'. It covers the ordering of double pronouns (personal first), practices the future tense with dar, and introduces the expression 'darse cuenta' (to realize).",
+  "teachings": [
+    {
+      "conceptSlug": "indirect-object-pronouns",
+      "conceptName": "Indirect object pronouns (le/les)",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "When lo/la/los/las mean 'to him', 'to her', 'to them', 'for him', etc. (indirect object), they change to le (singular) and les (plural). Me, te, and nos do NOT change for this meaning - they already include it. The personal pronoun always comes before the object pronoun in double-pronoun constructions.",
+      "rule": "lo/la -> le (to him/her/you formal). los/las -> les (to them/you guys). Me/te/nos don't change. In double pronouns, personal comes first: me lo, te lo, nos lo, etc.",
+      "examples": [
+        { "spanish": "¿Me lo darán?", "english": "Will you guys give it to me?" },
+        { "spanish": "¿Me la darán?", "english": "Will you guys give it (f) to me?" },
+        { "spanish": "Te darán algo.", "english": "They will give you something." },
+        { "spanish": "Te lo darán.", "english": "They will give it to you." },
+        { "spanish": "Nos lo darán.", "english": "They will give it to us." },
+        { "spanish": "No nos lo darán.", "english": "They will not give it to us." },
+        { "spanish": "Les doy algo.", "english": "I give them something." },
+        { "spanish": "Le he hablado.", "english": "I have spoken to him/her." },
+        { "spanish": "Le hemos hablado.", "english": "We have spoken to him/her." },
+        { "spanish": "Les han hablado.", "english": "They have spoken to them." }
+      ],
+      "notes": "Le is ambiguous - it could be 'to him', 'to her', or 'to you (formal)'. Context clarifies."
+    },
+    {
+      "conceptSlug": "darse-cuenta",
+      "conceptName": "Darse cuenta (to realize)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "'To realize' in Spanish is 'darse cuenta' - literally 'to give oneself account'. Realizar means to realize a project (bring to fruition), not to realize mentally. Cuenta means account.",
+      "rule": "Me doy cuenta = I realize. Te das cuenta = you realize. Nos damos cuenta = we realize.",
+      "examples": [
+        { "spanish": "Me doy cuenta.", "english": "I realize." },
+        { "spanish": "¿Te das cuenta?", "english": "Do you realize?" },
+        { "spanish": "Nos damos cuenta.", "english": "We realize." }
+      ],
+      "notes": "¿Te das cuenta? is used a lot conversationally, meaning 'Do you realize? Do you know what I mean?'"
+    },
+    {
+      "conceptSlug": "future-tense",
+      "conceptName": "Future tense (will)",
+      "category": "Verb tense",
+      "role": "practiced",
+      "summary": "Practiced future tense with dar (to give). Clarified that the future tense in Spanish is a literal question about the future, not a polite request like English 'will you...?'",
+      "rule": null,
+      "examples": [
+        { "spanish": "Daré.", "english": "I will give." },
+        { "spanish": "Daremos.", "english": "We will give." },
+        { "spanish": "Dará.", "english": "He/she will give." },
+        { "spanish": "Darán.", "english": "They will give." },
+        { "spanish": "Darás.", "english": "You (informal) will give." }
+      ],
+      "notes": "'Will you give it to me?' in Spanish is a literal future question, not a polite request. Use 'can you' for requests."
+    },
+    {
+      "conceptSlug": "direct-object-pronouns",
+      "conceptName": "Direct object pronouns (lo/la/los/las)",
+      "category": "Pronoun",
+      "role": "practiced",
+      "summary": "Reviewed direct object pronouns with ver (to see). Lo = him/it(m)/you(formal m). La = her/it(f)/you(formal f). Los = them(m)/you guys(m). Las = them(f)/you guys(f).",
+      "rule": null,
+      "examples": [
+        { "spanish": "Lo veo.", "english": "I see it/him." },
+        { "spanish": "La veo.", "english": "I see her/it(f)." },
+        { "spanish": "Las veo.", "english": "I see them (f) / you guys (f)." }
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "indirect-vs-direct-object",
+      "conceptName": "Indirect vs direct object feeling",
+      "category": "Key distinction",
+      "role": "introduced",
+      "summary": "The distinction between direct and indirect objects is about feeling, not about whether English uses 'to'. Ask: 'Am I being cooked? Or am I being cooked FOR?' Direct = the thing directly acted on. Indirect = the person benefiting/receiving. With me/te/nos the form doesn't change anyway.",
+      "rule": "If the person is being acted on directly (I see him), use lo/la. If the person is the beneficiary/recipient (I cook him something = I cook FOR him), use le/les. Me/te/nos cover both meanings.",
+      "examples": [
+        { "spanish": "Me cocina algo.", "english": "He cooks me something." },
+        { "spanish": "Nos cocina algo.", "english": "He cooks us something." },
+        { "spanish": "Le cocina algo.", "english": "He cooks him/her something." },
+        { "spanish": "Les cocina algo.", "english": "He cooks them something." },
+        { "spanish": "Los cocina.", "english": "He cooks them. (the things)" },
+        { "spanish": "Las cocina.", "english": "He cooks them. (f things)" },
+        { "spanish": "Nos las cocina.", "english": "He cooks them for us." }
+      ],
+      "notes": "When combining personal + object pronoun, the personal one comes first: nos las cocina."
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "algo", "english": "something", "derivation": null },
+    { "spanish": "cocinar", "english": "to cook", "derivation": "from cocina (kitchen) + r" },
+    { "spanish": "cuenta", "english": "account", "derivation": null },
+    { "spanish": "le", "english": "to him/her/you(formal)", "derivation": "indirect object form of lo/la" },
+    { "spanish": "les", "english": "to them/you guys", "derivation": "indirect object form of los/las" }
+  ]
+}

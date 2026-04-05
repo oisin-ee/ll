@@ -1,0 +1,48 @@
+{
+  "episode": 33,
+  "summary": "This lesson continues exploring adjectives that change meaning with ser vs estar, introducing listo (ready vs smart), bueno (good person vs attractive), and feliz (happy). It also introduces the intensifier 'tan' (so) and discusses how ser/estar offers expressive nuances that English lacks.",
+  "teachings": [
+    {
+      "conceptSlug": "ser-vs-estar",
+      "conceptName": "Ser vs Estar distinction",
+      "category": "Key distinction",
+      "role": "practiced",
+      "summary": "More adjectives that change meaning with ser/estar: listo with estar means 'ready', with ser means 'smart'. Bueno with ser means 'good person/good at something', with estar (for people) means 'attractive/in good form'. Feliz (happy) can go with either ser or estar.",
+      "rule": "Listo: estar = ready, ser = smart. Bueno (people): ser = good person, estar = attractive. Feliz works with both ser and estar.",
+      "examples": [
+        { "spanish": "Estoy listo.", "english": "I am ready." },
+        { "spanish": "Soy listo.", "english": "I am smart." },
+        { "spanish": "Es lista.", "english": "She is smart." },
+        { "spanish": "Son buenos.", "english": "They are good (people)." },
+        { "spanish": "Está bueno.", "english": "He is attractive / in good form." },
+        { "spanish": "Estoy feliz.", "english": "I am happy. (state)" },
+        { "spanish": "Soy feliz.", "english": "I am happy. (characteristic)" },
+        { "spanish": "Soy una persona feliz.", "english": "I am a happy person." },
+        { "spanish": "Quiero saber cómo está.", "english": "I want to know how he is doing." },
+        { "spanish": "Quiero saber cómo es.", "english": "I want to know what he is like." }
+      ],
+      "notes": "Whether an adjective can flexibly go with ser or estar depends on the word itself, not just its meaning. When unsure, use the persona safety net. Ser/estar gives Spanish speakers expressive tools that English lacks."
+    },
+    {
+      "conceptSlug": "tan-so",
+      "conceptName": "Tan - so (intensifier)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "The word 'tan' means 'so' as an intensifier, as in 'I am so tired' or 'it is so boring'.",
+      "rule": "Tan is placed before the adjective: estar/ser + tan + adjective.",
+      "examples": [
+        { "spanish": "Estoy tan cansada.", "english": "I am so tired." },
+        { "spanish": "Estoy tan aburrida.", "english": "I am so bored." },
+        { "spanish": "Es tan aburrido.", "english": "It is so boring." }
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "listo/a", "english": "ready (with estar) / smart (with ser)", "derivation": null },
+    { "spanish": "tan", "english": "so (intensifier)", "derivation": null },
+    { "spanish": "bueno/a", "english": "good", "derivation": "related to French 'bon' in bon appetit; o-to-ue split from bon to bueno" },
+    { "spanish": "feliz", "english": "happy", "derivation": "related to English 'felicity'" },
+    { "spanish": "felicidad", "english": "happiness", "derivation": "from feliz, like English 'felicity'" }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "episode": 61,
+  "summary": "This lesson teaches how the imperfect (line) and preterite (dot) interact in the same sentence, using common structures like 'I was doing X when Y happened'. It also covers using gustar and parecer in both past tenses and explains how the choice between preterite and imperfect reflects the speaker's mental framing of events.",
+  "teachings": [
+    {
+      "conceptSlug": "imperfect-preterite-interaction",
+      "conceptName": "Imperfect and preterite used together",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "When describing past events, the imperfect (line) sets up an ongoing background action while the preterite (dot) marks a punctual event that interrupts or occurs within it. For example, 'I was cooking when the phone rang' uses imperfect for cooking and preterite for the phone ringing.",
+      "rule": "Use imperfect for the ongoing/background action and preterite for the interrupting/punctual event in the same sentence, typically connected by 'cuando'.",
+      "examples": [
+        {"spanish": "Cocinaba cuando sonó el teléfono.", "english": "I was cooking when the phone rang."},
+        {"spanish": "Hablaba por teléfono cuando María llegó.", "english": "I was speaking on the phone when Maria arrived."},
+        {"spanish": "Me parecía bien, pero cuando lo vi, no me gustó.", "english": "It was seeming good to me, but when I saw it, I didn't like it."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "preterite-tense",
+      "conceptName": "Preterite tense",
+      "category": "Verb tense",
+      "role": "practiced",
+      "summary": "Practice of preterite forms for llegar and quedarse, reinforcing the -ar and reflexive verb patterns in the preterite.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Llegué.", "english": "I arrived."},
+        {"spanish": "Llegó.", "english": "He/she arrived."},
+        {"spanish": "Llegamos.", "english": "We arrived."},
+        {"spanish": "Me quedé.", "english": "I stayed."},
+        {"spanish": "Se quedó.", "english": "He/she stayed."},
+        {"spanish": "Nos quedamos.", "english": "We stayed."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "gustar-construction",
+      "conceptName": "Gustar construction",
+      "category": "Verb construction",
+      "role": "practiced",
+      "summary": "Review of gustar in the preterite and imperfect, emphasizing the literal 'it pleased me' processing. The choice between 'no me gustó' (event) and 'no me gustaba' (ongoing) depends on the speaker's mental framing.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Me gusta.", "english": "I like it. (It pleases me.)"},
+        {"spanish": "Me gustó.", "english": "I liked it. (It pleased me.)"},
+        {"spanish": "No me gustó.", "english": "I didn't like it."},
+        {"spanish": "No me gustaba.", "english": "I wasn't liking it. / I didn't like it (ongoing)."}
+      ],
+      "notes": "'Me gusté' means 'I liked myself' -- a common error to watch for."
+    },
+    {
+      "conceptSlug": "parecer-to-seem",
+      "conceptName": "Parecer (to seem)",
+      "category": "Vocabulary strategy",
+      "role": "practiced",
+      "summary": "Parecer works like gustar with indirect object pronouns. It can be used in both preterite (me pareció) and imperfect (me parecía) depending on framing.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Me parece.", "english": "It seems to me."},
+        {"spanish": "Me parece bien.", "english": "It seems good to me."},
+        {"spanish": "Me pareció bien.", "english": "It seemed good to me."},
+        {"spanish": "Me parecía bien.", "english": "It was seeming good to me."}
+      ],
+      "notes": "Related to 'apparent' and 'aparecer' (to appear), and 'transparent'."
+    },
+    {
+      "conceptSlug": "por-vs-para",
+      "conceptName": "Por vs para",
+      "category": "Key distinction",
+      "role": "practiced",
+      "summary": "Por can mean 'by' as in 'by phone' (por teléfono), not just 'for'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Hablaba por teléfono.", "english": "I was speaking on/by phone."}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "llamar", "english": "to call", "derivation": null},
+    {"spanish": "cocinar", "english": "to cook", "derivation": null},
+    {"spanish": "cuando", "english": "when", "derivation": null},
+    {"spanish": "el teléfono", "english": "the phone/telephone", "derivation": "From Greek: tele- (far/distant) + phone (voice)"},
+    {"spanish": "sonar", "english": "to sound/to ring", "derivation": null},
+    {"spanish": "llegar", "english": "to arrive", "derivation": null},
+    {"spanish": "quedarse", "english": "to stay", "derivation": null},
+    {"spanish": "parecer", "english": "to seem", "derivation": "Related to 'apparent'; aparecer means 'to appear'"}
+  ]
+}

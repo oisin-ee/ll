@@ -1,0 +1,65 @@
+{
+  "episode": 78,
+  "summary": "This lesson covers the verbs seguir (continue), empezar/comenzar (start), and terminar (finish) and how they connect to other verbs. It explains the difference between using the infinitive (with preposition) vs the gerund (-ing form) after these verbs, and how the meaning changes. It also reviews subjunctive usage after cuando referring to the future.",
+  "teachings": [
+    {
+      "conceptSlug": "seguir-plus-gerund",
+      "conceptName": "Seguir + gerund (continue doing)",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "After seguir (to continue/follow), use the gerund (-ando/-iendo) to express 'continue doing something'.",
+      "rule": "Seguir + gerund = to continue doing. Sigo hablando = I continue speaking.",
+      "examples": [
+        {"spanish": "Sigo hablando", "english": "I continue speaking"},
+        {"spanish": "Sigue hablando", "english": "He/she continues speaking"},
+        {"spanish": "Es probable que siga hablando", "english": "It's probable that he continues speaking"},
+        {"spanish": "Es imperativo que siga siendo gratis", "english": "It's imperative that it continues being free"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "empezar-a-vs-gerund",
+      "conceptName": "Empezar/comenzar a + infinitive vs gerund",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Empezar and comenzar need 'a' to connect to an infinitive (empezar a hablar = to start to speak). Using the gerund instead changes meaning to 'start out doing' (empezar hablando = to start out speaking, right from the beginning).",
+      "rule": "Empezar/comenzar + a + infinitive = to start to do. Empezar/comenzar + gerund (no a) = to start out doing.",
+      "examples": [
+        {"spanish": "Es espectacular que comiencen a hablar español", "english": "It's spectacular that they start to speak Spanish"},
+        {"spanish": "Es espectacular que comiencen hablando español", "english": "It's spectacular that they start out speaking Spanish"}
+      ],
+      "notes": "Empezar and comenzar are among a handful of non-movement verbs that need a preposition (a) to connect to an infinitive."
+    },
+    {
+      "conceptSlug": "terminar-de-vs-gerund",
+      "conceptName": "Terminar de + infinitive vs gerund",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Terminar uses 'de' to connect to an infinitive (terminar de vender = to finish selling). Using the gerund instead gives the meaning 'end up doing' (terminar vendiendo = to end up selling).",
+      "rule": "Terminar + de + infinitive = to finish doing. Terminar + gerund = to end up doing.",
+      "examples": [
+        {"spanish": "Quiero que hablen conmigo cuando terminen de venderlos", "english": "I want you guys to speak with me when you finish selling them"},
+        {"spanish": "Quiero que hablen conmigo cuando terminen vendiéndolos", "english": "I want you guys to speak with me when you end up selling them"}
+      ],
+      "notes": "If a verb needs a preposition to join the infinitive, that's a clue it may also take the gerund with a different meaning."
+    },
+    {
+      "conceptSlug": "subjunctive-after-cuando-future",
+      "conceptName": "Subjunctive after cuando (future reference)",
+      "category": "Verb mood",
+      "role": "practiced",
+      "summary": "When cuando refers to a future event that hasn't happened yet, the subjunctive is used. When cuando refers to something general/habitual, the present indicative is used.",
+      "rule": "Cuando + subjunctive for future events; cuando + indicative for general/habitual.",
+      "examples": [
+        {"spanish": "Cuando terminen de venderlos", "english": "When you (guys) finish selling them"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "seguir", "english": "to follow / to continue / to carry on", "derivation": null},
+    {"spanish": "gratis", "english": "free (no cost)", "derivation": "Origin of English 'gratuitous'"},
+    {"spanish": "espectacular", "english": "spectacular", "derivation": "Cognate with English, with es- prefix"},
+    {"spanish": "terminar", "english": "to finish / to terminate", "derivation": null}
+  ]
+}

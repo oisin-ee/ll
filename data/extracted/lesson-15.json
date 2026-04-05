@@ -1,0 +1,116 @@
+{
+  "episode": 15,
+  "summary": "Teaches the e→ie stem vowel split under stress — the key phenomenon that explains irregular forms like quiero, tiene, viene. Introduces 'pensar' (to think, also 'to plan'), 'entender' (to understand), 'perder' (to lose), and 'pasar' as 'to happen'.",
+  "teachings": [
+    {
+      "conceptSlug": "e-to-ie-stem-split",
+      "conceptName": "Stem vowel split: e → ie under stress",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "When a verb has an 'e' in its stem (not the ending), and that e gets stressed in conjugation, it often splits into 'ie'. This explains querer→quiero, tener→tiene, venir→viene, pensar→piensa, entender→entiende, perder→pierdo. It doesn't split when something prevents it (like the -ng- in tengo/vengo).",
+      "rule": "Stem 'e' splits to 'ie' when it receives the stress accent. Does NOT split in: the infinitive (stress on ending), or -go forms (the ng holds it). Splits in: I, he/she/it, you(informal), they forms.",
+      "examples": [
+        {"spanish": "querer → quiero", "english": "to want → I want (e splits to ie under stress)"},
+        {"spanish": "tener → tiene", "english": "to have → he/she has"},
+        {"spanish": "venir → viene", "english": "to come → he/she comes"},
+        {"spanish": "pensar → pienso", "english": "to think → I think"},
+        {"spanish": "pensar → piensa", "english": "to think → he/she thinks"},
+        {"spanish": "entender → entiendo", "english": "to understand → I understand"},
+        {"spanish": "perder → pierdo", "english": "to lose → I lose"}
+      ],
+      "notes": "Visible between English and Spanish words too: tempo→tiempo, concert→concierto, November→noviembre. The -ng- in tengo/vengo 'holds up' the e and prevents the split."
+    },
+    {
+      "conceptSlug": "pensar-to-think",
+      "conceptName": "Pensar (to think / to plan)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Pensar means 'to think'. It's an -ar verb with e→ie stem split. 'Pensar + infinitive' means 'to plan on doing something' (e.g., pienso comer = I plan on eating).",
+      "rule": "Pensar + infinitive = to plan on [verb-ing].",
+      "examples": [
+        {"spanish": "Pienso", "english": "I think"},
+        {"spanish": "Piensa", "english": "He/she thinks"},
+        {"spanish": "Piensas", "english": "You (informal) think"},
+        {"spanish": "¿Qué piensas?", "english": "What do you think?"},
+        {"spanish": "Pienso comer más tarde", "english": "I plan on eating later"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "entender-to-understand",
+      "conceptName": "Entender (to understand)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Entender means 'to understand'. An -er verb with e→ie split. More common than comprender (which is easier to remember from 'comprehend' and doesn't split).",
+      "rule": null,
+      "examples": [
+        {"spanish": "Entiendo", "english": "I understand"},
+        {"spanish": "Entiende", "english": "He/she understands"},
+        {"spanish": "Entienden", "english": "They understand"}
+      ],
+      "notes": "Comprender (from comprehend) also means to understand and doesn't have the e→ie split, but entender is more common."
+    },
+    {
+      "conceptSlug": "perder-to-lose",
+      "conceptName": "Perder (to lose)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Perder means 'to lose'. An -er verb with e→ie split. Related to 'perish' and 'perishable'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Pierdo", "english": "I lose"},
+        {"spanish": "Lo pierdo", "english": "I lose it"},
+        {"spanish": "Los pierdo", "english": "I lose them"}
+      ],
+      "notes": "Related to perish/perishable."
+    },
+    {
+      "conceptSlug": "pasar-to-happen",
+      "conceptName": "Pasar as 'to happen'",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Pasar can also mean 'to happen' (in addition to 'to pass'). ¿Qué pasa? = What's happening? ¿Qué pasó? = What happened? (past tense, with stressed final -ó).",
+      "rule": null,
+      "examples": [
+        {"spanish": "¿Qué pasa?", "english": "What's happening? / What's going on?"},
+        {"spanish": "Quiero saber qué pasa", "english": "I want to know what's happening"}
+      ],
+      "notes": "¿Qué pasó? (stressed final -ó) is past tense = 'what happened?' — the stress distinction between present and past previewed earlier."
+    },
+    {
+      "conceptSlug": "e-to-ie-cross-language",
+      "conceptName": "E→ie split visible between English and Spanish",
+      "category": "Key distinction",
+      "role": "introduced",
+      "summary": "The same e→ie split can be observed between English and Spanish cognates: tempo→tiempo, concert→concierto, November→noviembre.",
+      "rule": null,
+      "examples": [
+        {"spanish": "tiempo", "english": "time (cf. English 'tempo')"},
+        {"spanish": "concierto", "english": "concert"},
+        {"spanish": "noviembre", "english": "November"}
+      ],
+      "notes": "These cross-language pairs help remember the pattern."
+    },
+    {
+      "conceptSlug": "check-infinitive-before-conjugating",
+      "conceptName": "Always check the infinitive ending before conjugating",
+      "category": "Verb conjugation",
+      "role": "practiced",
+      "summary": "Reinforced: must go back to the infinitive to avoid vowel harmony errors. With pensar, the student initially tried 'piense' (e matching ie) instead of 'piensa' (-ar verb requires -a).",
+      "rule": null,
+      "examples": [
+        {"spanish": "pensar → piensa (not piense)", "english": "to think → he/she thinks (-ar verb, key vowel a)"}
+      ],
+      "notes": "The brain wants vowel harmony (ie→e). Fight it by checking: pensar = -ar verb → key vowel is a."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "pensar", "english": "to think / to plan", "derivation": "related to 'pensive'"},
+    {"spanish": "entender", "english": "to understand", "derivation": null},
+    {"spanish": "comprender", "english": "to understand / to comprehend", "derivation": "from English 'comprehend'"},
+    {"spanish": "perder", "english": "to lose", "derivation": "related to 'perish', 'perishable'"},
+    {"spanish": "tiempo", "english": "time", "derivation": "cf. English 'tempo' with e→ie split"},
+    {"spanish": "concierto", "english": "concert", "derivation": "cf. English 'concert' with e→ie split"},
+    {"spanish": "noviembre", "english": "November", "derivation": "cf. English 'November' with e→ie split"}
+  ]
+}

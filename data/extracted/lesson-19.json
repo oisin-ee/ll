@@ -1,0 +1,73 @@
+{
+  "episode": 19,
+  "summary": "This lesson teaches working backwards from conjugated forms to find other forms, using vamos as the starting point to derive va, vas, van. The full irregular paradigm of ir (to go) is assembled. Noun gender for words ending in -e and the conjunction 'y' (and) are also covered.",
+  "teachings": [
+    {
+      "conceptSlug": "working-backwards",
+      "conceptName": "Working backwards from conjugated forms",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "An important skill in language learning is working backwards from a known conjugated form to derive other forms. From 'vamos' (we go), knowing -amos means it's an -ar verb pattern, you can strip to 'va' and build all other forms.",
+      "rule": "From the 'we' form, identify the verb group vowel (-amos = a, -emos = e, -imos = i), strip the ending to get the base, then add other endings.",
+      "examples": [
+        {"spanish": "vamos → va", "english": "we go → he/she goes"},
+        {"spanish": "vamos → vas", "english": "we go → you (informal) go"},
+        {"spanish": "vamos → van", "english": "we go → they go"}
+      ],
+      "notes": "Cross-language vowel splitting helps too: Italian sempre → Spanish siempre, French bon/bene → Spanish bueno/bien."
+    },
+    {
+      "conceptSlug": "ir-to-go",
+      "conceptName": "The verb ir (to go)",
+      "category": "Verb conjugation",
+      "role": "practiced",
+      "summary": "The full present tense paradigm of ir assembled: voy, va, vas, van, vamos. Ir is very irregular because it historically merged from two different verbs. The infinitive 'ir' is used after other verbs (quiero ir, puedo ir, debo ir, tengo que ir).",
+      "rule": "ir = to go. voy (I go), va (he/she/it/you formal go), vas (you informal go), van (they go), vamos (we go).",
+      "examples": [
+        {"spanish": "Quiero ir", "english": "I want to go"},
+        {"spanish": "Puedo ir", "english": "I can go"},
+        {"spanish": "Debo ir", "english": "I must go"},
+        {"spanish": "Tengo que ir", "english": "I have to go"},
+        {"spanish": "Tengo que ir ahora", "english": "I have to go now"},
+        {"spanish": "Tengo que ir esta noche", "english": "I have to go tonight"},
+        {"spanish": "¿A dónde vas?", "english": "Where are you going? (To where are you going?)"}
+      ],
+      "notes": "Ir is actually two historical verbs merged together — the infinitive 'ir' comes from one verb, the conjugated forms (voy, va, etc.) from another. This explains the extreme irregularity."
+    },
+    {
+      "conceptSlug": "noun-gender-e-ending",
+      "conceptName": "Nouns ending in -e: gender unpredictable",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Words ending in -a are feminine, words with -ión or -idad are feminine, but words ending in -e have no predictable gender. You must look at surrounding words (articles, demonstratives) to determine gender.",
+      "rule": "Nouns ending in -e can be either masculine or feminine. Use context clues (el/la, este/esta) to determine gender.",
+      "examples": [
+        {"spanish": "la noche", "english": "the night (feminine — identified by 'esta noche')"},
+        {"spanish": "la carne", "english": "the meat (feminine)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "y-and",
+      "conceptName": "y = and",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "The word for 'and' in Spanish is 'y', spelled as just the letter y.",
+      "rule": "y = and",
+      "examples": [
+        {"spanish": "No como carne y no tomo alcohol", "english": "I don't eat meat and I don't drink alcohol"},
+        {"spanish": "Como carne y tomo alcohol", "english": "I eat meat and I drink alcohol"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "bueno", "english": "good", "derivation": "French bon → Spanish bueno (o→ue split)"},
+    {"spanish": "bien", "english": "well", "derivation": "Italian bene → bien (e→ie split, as in bienvenido)"},
+    {"spanish": "a", "english": "to", "derivation": null},
+    {"spanish": "esta noche", "english": "tonight (this night)", "derivation": null},
+    {"spanish": "la noche", "english": "the night", "derivation": null},
+    {"spanish": "la carne", "english": "the meat", "derivation": "carnage → carne"},
+    {"spanish": "y", "english": "and", "derivation": null}
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "episode": 35,
+  "summary": "This lesson shows how to use 'estar + siendo' (to be being) to express characteristic adjectives as temporary states, allowing ser-adjectives to be used with estar. It also reinforces that the present progressive should only be used for right-now actions, and practices resisting English -ing transfer for future references.",
+  "teachings": [
+    {
+      "conceptSlug": "ser-vs-estar",
+      "conceptName": "Ser vs Estar distinction",
+      "category": "Key distinction",
+      "role": "practiced",
+      "summary": "Spanish determines ser/estar based on whether the concept itself is a characteristic or state, not on the specific usage. But you can say 'estoy siendo + adjective' (I am being + adjective) to use a characteristic adjective in a temporary-state context, exactly like English 'I am being sincere'.",
+      "rule": "For characteristic adjectives that go with ser, use 'estar + siendo + adjective' to express a temporary state of being that way. Siendo is the gerund of ser.",
+      "examples": [
+        { "spanish": "Soy sincera.", "english": "I am sincere. (characteristic)" },
+        { "spanish": "Estoy siendo sincera.", "english": "I am being sincere. (right now)" },
+        { "spanish": "Estamos siendo honestos.", "english": "We are being honest." }
+      ],
+      "notes": "Spanish decides ser/estar based on the concept itself, not the usage context. Sincerity and honesty are concepts that are characteristics, so they go with ser by default."
+    },
+    {
+      "conceptSlug": "present-progressive",
+      "conceptName": "Present progressive (estar + gerund)",
+      "category": "Verb tense",
+      "role": "practiced",
+      "summary": "Further practice of present progressive for right-now actions, and reinforcing that it must NOT be used for future references. Includes the gerund of ser: siendo.",
+      "rule": null,
+      "examples": [
+        { "spanish": "Estoy saliendo.", "english": "I am leaving (right now)." },
+        { "spanish": "Salgo pronto.", "english": "I am leaving soon. (simple present)" },
+        { "spanish": "Salgo mañana.", "english": "I am leaving tomorrow. (simple present)" },
+        { "spanish": "Los compro mañana.", "english": "I'm buying them tomorrow. (simple present)" },
+        { "spanish": "Los compro la semana que viene.", "english": "I'm buying them next week." },
+        { "spanish": "Estoy comprándolos ahora.", "english": "I am buying them now. (right now)" }
+      ],
+      "notes": "Resist the temptation of negative language transfer from English, which uses -ing for future."
+    },
+    {
+      "conceptSlug": "la-semana-que-viene",
+      "conceptName": "La semana que viene (next week)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "'Next week' in Spanish is expressed as 'the week that comes' - la semana que viene.",
+      "rule": null,
+      "examples": [
+        { "spanish": "Los compro la semana que viene.", "english": "I'm buying them next week." }
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "sincero/a", "english": "sincere", "derivation": "from sinceridad (sincerity)" },
+    { "spanish": "sinceridad", "english": "sincerity", "derivation": "cognate with English sincerity" },
+    { "spanish": "honesto/a", "english": "honest", "derivation": "cognate with English honest" },
+    { "spanish": "siendo", "english": "being (gerund of ser)", "derivation": "ser -> siendo" },
+    { "spanish": "pronto", "english": "soon", "derivation": null },
+    { "spanish": "la semana que viene", "english": "next week", "derivation": "literally 'the week that comes'" }
+  ]
+}

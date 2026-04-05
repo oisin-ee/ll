@@ -1,0 +1,61 @@
+{
+  "episode": 84,
+  "summary": "This lesson introduces the 'go verbs' — irregular verbs that use -go instead of -o for the I form in the present tense (tengo, vengo, salgo, pongo, digo, hago, oigo, traigo). It explains that in the subjunctive, these verbs go from -go to -ga for all persons, and introduces traer (to bring) and its compound forms (-tract words).",
+  "teachings": [
+    {
+      "conceptSlug": "go-verbs",
+      "conceptName": "Go verbs (-go in I form)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "A group of irregular verbs use -go for the I form in the present tense, but only for I — all other persons are normal (or have their own stem changes). The verbs include: tener (tengo), venir (vengo), salir (salgo), poner (pongo), decir (digo), hacer (hago), oír (oigo), traer (traigo).",
+      "rule": "Go verbs: -go only appears in the I form. He/she/they etc. conjugate normally (tiene, viene, sale, etc.).",
+      "examples": [
+        {"spanish": "Tengo", "english": "I have"},
+        {"spanish": "Vengo", "english": "I come"},
+        {"spanish": "Salgo", "english": "I go out / I leave"},
+        {"spanish": "Pongo", "english": "I put"},
+        {"spanish": "Digo", "english": "I say / I tell"},
+        {"spanish": "Hago", "english": "I do / I make"},
+        {"spanish": "Oigo", "english": "I hear"},
+        {"spanish": "Traigo", "english": "I bring"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "go-verbs-subjunctive",
+      "conceptName": "Go verbs in the subjunctive (-go to -ga)",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "In the present subjunctive, go verbs change -go to -ga as the base for ALL persons (unlike the present where -go is only for I). So tengo → tenga, vengo → venga, traigo → traiga, etc.",
+      "rule": "-go → -ga for subjunctive base. Tenga (I/he/she), tengas (you informal), tengamos (we), tengan (they).",
+      "examples": [
+        {"spanish": "Quiero que vengas", "english": "I want you to come"},
+        {"spanish": "Quiero que lo traigas", "english": "I want you to bring it"},
+        {"spanish": "No quiero que me distraigas", "english": "I don't want you to distract me"},
+        {"spanish": "Dígame", "english": "Tell me (formal) — used when answering the phone in Spain"}
+      ],
+      "notes": "Venga is used colloquially in Spain as 'come on'. Dígame is used to answer the phone in Spain."
+    },
+    {
+      "conceptSlug": "traer-tract-compounds",
+      "conceptName": "Traer compounds (-tract words)",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Traer means 'to bring', but in compound verbs it translates as -tract: extraer (extract), atraer (attract), contraer (contract), distraer (distract). All follow the same -go pattern (distraigo, etc.).",
+      "rule": "Traer in compounds = -tract in English. All compounds follow the traigo/-traiga pattern.",
+      "examples": [
+        {"spanish": "extraer", "english": "to extract"},
+        {"spanish": "atraer", "english": "to attract"},
+        {"spanish": "contraer", "english": "to contract"},
+        {"spanish": "distraer", "english": "to distract"},
+        {"spanish": "Me distraigo", "english": "I get distracted"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "traer", "english": "to bring", "derivation": "I form: traigo. Related to -tract compounds"},
+    {"spanish": "oír", "english": "to hear", "derivation": "I form: oigo"},
+    {"spanish": "distraer", "english": "to distract", "derivation": "dis- + traer"}
+  ]
+}

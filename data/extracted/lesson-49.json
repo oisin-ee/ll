@@ -1,0 +1,106 @@
+{
+  "episode": 49,
+  "summary": "Practices llamar and the reflexive me llamo for introductions, reviews imperfect -ía for -er/-ir verbs with tener, and introduces the three irregular verbs in the imperfect: ver (veía), ser (era), and ir (iba). Also teaches iba a + infinitive for 'was going to'.",
+  "teachings": [
+    {
+      "conceptSlug": "llamar-reflexive",
+      "conceptName": "Llamar and me llamo",
+      "category": "Verb construction",
+      "role": "practiced",
+      "summary": "Reviewed llamar (to call) and the reflexive structure me llamo (I call myself) for introducing oneself, plus ¿Cómo te llamas? and ¿Cómo se llama?",
+      "rule": null,
+      "examples": [
+        {"spanish": "Me llamo", "english": "My name is (I call myself)"},
+        {"spanish": "¿Cómo te llamas?", "english": "What's your name? (informal)"},
+        {"spanish": "¿Cómo se llama?", "english": "What's his/her name?"},
+        {"spanish": "¿Cómo se llamaba?", "english": "What was his/her name?"},
+        {"spanish": "¿Cómo se llamaban?", "english": "What were their names?"}
+      ],
+      "notes": "Double l (ll) creates a /yuh/ sound in most Spanish dialects."
+    },
+    {
+      "conceptSlug": "tener-family-verbs",
+      "conceptName": "-tener verbs from English -tain",
+      "category": "Vocabulary strategy",
+      "role": "practiced",
+      "summary": "Reviewed how English -tain verbs convert to -tener in Spanish: contain=contener, obtain=obtener, maintain=mantener, sustain=sostener.",
+      "rule": "English -tain becomes -tener in Spanish",
+      "examples": [
+        {"spanish": "obtener", "english": "to obtain"},
+        {"spanish": "mantener", "english": "to maintain"},
+        {"spanish": "sostener", "english": "to sustain"}
+      ],
+      "notes": "Mantener: man- is from mano (hand). Sostener changed slightly from sus- to sos-."
+    },
+    {
+      "conceptSlug": "imperfect-tense",
+      "conceptName": "Imperfect tense",
+      "category": "Verb tense",
+      "role": "practiced",
+      "summary": "Practiced imperfect with tener (tenía) and combined with tener que for 'had to'. Even though English uses 'had to' (not 'was having to'), the imperfect works fine in Spanish.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Tenía una casa grande", "english": "I used to have a big house"},
+        {"spanish": "Teníamos una casa grande", "english": "We used to have a big house"},
+        {"spanish": "Tenía cuatro, pero ahora no me queda", "english": "I used to have four, but now I don't have any left"},
+        {"spanish": "Tenía que verte ayer", "english": "I had to see you yesterday"},
+        {"spanish": "¿No tenías que hacerlo ayer?", "english": "Didn't you have to do it yesterday?"}
+      ],
+      "notes": "The accent stays in the same place on -ía: tenía, teníamos."
+    },
+    {
+      "conceptSlug": "imperfect-irregular-ver",
+      "conceptName": "Imperfect of ver (irregular)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Ver is irregular in the imperfect: veía (not vía). The same extra e irregularity from the present (veo) carries into the imperfect.",
+      "rule": "veía (I/he/she), veías (tú), veíamos (we), veían (they)",
+      "examples": [
+        {"spanish": "Veía", "english": "I was seeing / I used to see"},
+        {"spanish": "Veíamos", "english": "We were seeing"},
+        {"spanish": "Veían", "english": "They were seeing"},
+        {"spanish": "Veías", "english": "You were seeing (informal)"}
+      ],
+      "notes": "Same extra e as in veo (present). Only three verbs are irregular in the imperfect."
+    },
+    {
+      "conceptSlug": "imperfect-irregular-ser",
+      "conceptName": "Imperfect of ser (irregular)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Ser in the imperfect uses era as the base. Easy to remember because 'an era' in English is a line in time in the past.",
+      "rule": "era (I/he/she), eras (tú), éramos (we), eran (they)",
+      "examples": [
+        {"spanish": "Era estudiante", "english": "I used to be a student"},
+        {"spanish": "¿Eras estudiante?", "english": "Were you a student? (informal)"},
+        {"spanish": "Éramos estudiantes", "english": "We were students"},
+        {"spanish": "¿Qué eran?", "english": "What were they?"}
+      ],
+      "notes": "Mnemonic: 'era' in English means a line in time in the past, just like the imperfect. No word for 'a' needed before professions: Era estudiante."
+    },
+    {
+      "conceptSlug": "imperfect-irregular-ir",
+      "conceptName": "Imperfect of ir (irregular)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Ir in the imperfect is iba - a blend of the -aba and -ía patterns. Very useful for 'was going to' + infinitive structures.",
+      "rule": "iba (I/he/she), ibas (tú), íbamos (we), iban (they)",
+      "examples": [
+        {"spanish": "Iba", "english": "I was going / He was going"},
+        {"spanish": "Íbamos", "english": "We were going"},
+        {"spanish": "Iban", "english": "They were going"},
+        {"spanish": "¿Por qué ibas?", "english": "Why were you going?"},
+        {"spanish": "Iba a llamarte", "english": "I was going to call you"},
+        {"spanish": "Iba a hacerlo", "english": "I was going to do it"},
+        {"spanish": "Íbamos a hacerlos", "english": "We were going to make them"}
+      ],
+      "notes": "Iba blends -aba and -ía. Don't forget the 'a' connector: iba A hacerlo (ir is an 'a' verb)."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "llamar", "english": "to call", "derivation": null},
+    {"spanish": "ayer", "english": "yesterday", "derivation": null},
+    {"spanish": "hacer", "english": "to do, to make", "derivation": null},
+    {"spanish": "cuatro", "english": "four", "derivation": "related to quarter"}
+  ]
+}

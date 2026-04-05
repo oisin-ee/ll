@@ -1,0 +1,56 @@
+{
+  "episode": 38,
+  "summary": "This lesson introduces 'se' as the reflexive pronoun for third person (himself/herself/themselves/itself), completing the reflexive pronoun set. It practices conjugating quedar/quedarse across all persons and reviews darse cuenta with he/she/they forms now possible with se.",
+  "teachings": [
+    {
+      "conceptSlug": "se-reflexive",
+      "conceptName": "Se - reflexive pronoun (third person)",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "To express 'himself', 'herself', 'themselves', 'itself', or 'oneself', lo/la/los/las all become 'se'. This is the third-person reflexive. Me/te/nos already include their reflexive meanings (myself/yourself/ourselves). Se is also the dictionary form for reflexive verbs: quedarse, darse cuenta.",
+      "rule": "lo/la/los/las -> se for himself/herself/itself/themselves/oneself. Se does not change for singular/plural. In dictionary, reflexive verbs appear as -se form (quedarse, darse).",
+      "examples": [
+        { "spanish": "Se habla.", "english": "He/she speaks to himself/herself." },
+        { "spanish": "Él se habla.", "english": "He speaks to himself." },
+        { "spanish": "Ella se habla.", "english": "She speaks to herself." },
+        { "spanish": "Se hablan.", "english": "They speak to themselves." },
+        { "spanish": "Me hablo.", "english": "I speak to myself." },
+        { "spanish": "Se queda.", "english": "He/she stays." },
+        { "spanish": "Se quedan.", "english": "They stay." },
+        { "spanish": "Se da cuenta.", "english": "He/she realizes." },
+        { "spanish": "Ella se da cuenta.", "english": "She realizes." },
+        { "spanish": "No se dan cuenta.", "english": "They don't realize." }
+      ],
+      "notes": "Se is easy to remember because it's the beginning of 'self'. In the dictionary, quedarse (to stay) is separate from quedar (to remain). The se/-me/-te/-nos attaches to infinitives as one word: quedarse, quedarme."
+    },
+    {
+      "conceptSlug": "reflexive-verbs",
+      "conceptName": "Reflexive verbs",
+      "category": "Verb type",
+      "role": "practiced",
+      "summary": "Practiced full conjugation of quedarse (to stay) with all persons including the new third-person se. Also practiced with emphasis pronouns (yo me quedo, tú te quedas, etc.).",
+      "rule": "When a reflexive verb has a different meaning from its non-reflexive form, it gets a separate dictionary entry. Quedar = to remain. Quedarse = to stay.",
+      "examples": [
+        { "spanish": "Me quedo.", "english": "I stay." },
+        { "spanish": "Te quedas.", "english": "You stay. (informal)" },
+        { "spanish": "Se queda.", "english": "He/she stays." },
+        { "spanish": "Nos quedamos.", "english": "We stay." },
+        { "spanish": "Se quedan.", "english": "They stay." },
+        { "spanish": "Yo me quedo.", "english": "I am staying. (emphatic)" },
+        { "spanish": "Tú te quedas.", "english": "You are staying. (emphatic)" },
+        { "spanish": "Nosotros nos quedamos.", "english": "We are staying. (emphatic)" },
+        { "spanish": "¿Por qué no te quedas?", "english": "Why don't you stay?" },
+        { "spanish": "Quiero quedarme.", "english": "I want to stay." },
+        { "spanish": "Quiere quedarse.", "english": "He/she wants to stay." },
+        { "spanish": "Quieren quedarse.", "english": "They want to stay." },
+        { "spanish": "Ellas quieren quedarse.", "english": "They (f) want to stay." },
+        { "spanish": "Ustedes quieren quedarse.", "english": "You guys want to stay." }
+      ],
+      "notes": "Nosotras nos quedamos for all-female group. Me queda bien = it fits me well / it suits me well (different meaning of quedar)."
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "se", "english": "himself/herself/itself/themselves/oneself", "derivation": "beginning of 'self'" },
+    { "spanish": "quedarse", "english": "to stay", "derivation": "quedar (to remain) + se (oneself)" }
+  ]
+}

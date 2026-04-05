@@ -1,0 +1,67 @@
+{
+  "episode": 81,
+  "summary": "This lesson introduces the past subjunctive (mood tense in the past), explaining how to form it from the 'they' form of the preterite by changing -ron to -ra/-ran. It also introduces 'volver a + infinitive' as a way to say 'again', and shows how 'para que + subjunctive' differs from 'para + infinitive'.",
+  "teachings": [
+    {
+      "conceptSlug": "subjunctive-past",
+      "conceptName": "Past subjunctive formation",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "The past subjunctive is formed from the 'they' form of the preterite (point in the past). Change the final -o of -aron/-ieron to -a to get -aran/-ieran (they). Remove -n for I/he/she. Add -s for informal you. Add -mos (with accent) for we. One form serves both preterite and imperfect contexts.",
+      "rule": "They preterite (e.g. hablaron) → change -on to -an = hablaran (they, past subjunctive). Drop -n = hablara (I/he/she). Add -s = hablaras (you informal). Add -mos = habláramos (we).",
+      "examples": [
+        {"spanish": "Quería que comieran con nosotros", "english": "I wanted them to eat with us"},
+        {"spanish": "Esperaba que me llamara", "english": "I was hoping that he would call me"},
+        {"spanish": "Necesitábamos que hablara con nosotros", "english": "We needed him to speak with us"},
+        {"spanish": "Volví a llamarte para que organizáramos", "english": "I called you again so that we organized"}
+      ],
+      "notes": "The past subjunctive is the same for both line and point contexts. In English you'd say 'would call' but in Spanish you use the past subjunctive instead."
+    },
+    {
+      "conceptSlug": "volver-a-again",
+      "conceptName": "Volver a + infinitive (to do again)",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Volver a + infinitive means 'to do something again'. It uses 'a' because volver is a verb of movement. It's very common in Spanish.",
+      "rule": "Volver a + infinitive = to do again. No quiero que vuelva a pasar = I don't want it to happen again.",
+      "examples": [
+        {"spanish": "No quiero que la puerta vuelva a cerrarse", "english": "I don't want the door to close again"},
+        {"spanish": "No quiero que vuelva a pasar", "english": "I don't want it to happen again"},
+        {"spanish": "Volví a llamarte", "english": "I called you again"}
+      ],
+      "notes": "An alternative to 'otra vez' for saying 'again'."
+    },
+    {
+      "conceptSlug": "para-que-subjunctive",
+      "conceptName": "Para que + subjunctive vs para + infinitive",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "Para + infinitive (in order to do) does not require subjunctive. Para que + conjugated verb requires subjunctive. You can restructure sentences to use para + infinitive to avoid the subjunctive.",
+      "rule": "Para + infinitive = no subjunctive needed. Para que + verb = subjunctive required.",
+      "examples": [
+        {"spanish": "Volví a llamarte para organizar", "english": "I called you again in order to organize"},
+        {"spanish": "Volví a llamarte para que organizáramos", "english": "I called you again so that we organized"}
+      ],
+      "notes": "You can sometimes restructure a sentence with para + infinitive to avoid the subjunctive."
+    },
+    {
+      "conceptSlug": "puerto-puerta",
+      "conceptName": "Puerto/puerta etymology",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Puerto (port) and puerta (door) are related. Stress the English 'port', change vowel to get puerto; change -o to -a to get puerta.",
+      "rule": null,
+      "examples": [
+        {"spanish": "la puerta", "english": "the door"},
+        {"spanish": "el puerto", "english": "the port"}
+      ],
+      "notes": "Port → puerto (stress the o) → puerta (change o to a)."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "otra vez", "english": "again / another time", "derivation": null},
+    {"spanish": "pasar", "english": "to pass / to happen", "derivation": null},
+    {"spanish": "ocurrir", "english": "to occur / to happen", "derivation": "Cognate with English 'occur'"},
+    {"spanish": "suceder", "english": "to happen / to succeed (in sequence)", "derivation": "Related to 'succession'"}
+  ]
+}

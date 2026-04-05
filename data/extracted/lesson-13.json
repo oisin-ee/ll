@@ -1,0 +1,129 @@
+{
+  "episode": 13,
+  "summary": "Introduces 'hacer' (to do/make), 'puedo/puedes' (I can/you can), 'comprar' (to buy), 'llegar' (to arrive), 'esperar' (to wait/hope), and 'salir' (to leave). Recaps the -s for informal you and -n for they pattern across both verb groups. Emphasizes checking the infinitive ending before conjugating.",
+  "teachings": [
+    {
+      "conceptSlug": "hacer-to-do",
+      "conceptName": "Hacer (to do / to make)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Hacer means 'to do' or 'to make'. It's an -er verb with silent h. Conjugates regularly for he/she/it (hace), they (hacen), you informal (haces), but irregular for I (hago, covered later).",
+      "rule": null,
+      "examples": [
+        {"spanish": "Lo hace", "english": "He/she is doing it"},
+        {"spanish": "Lo hacen", "english": "They're doing it"},
+        {"spanish": "Lo haces", "english": "You (informal) are doing it"},
+        {"spanish": "¿Qué haces?", "english": "What are you doing? (also: how are you?)"}
+      ],
+      "notes": "¿Qué haces? is a casual way to say 'how are you?' / 'what are you up to?'"
+    },
+    {
+      "conceptSlug": "s-informal-n-they-pattern",
+      "conceptName": "Universal -s (informal you) and -n (they) pattern",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Across all verb types, -s marks informal you and -n marks they/you(plural). These associations persist throughout all Spanish verb tenses.",
+      "rule": "-s = you (informal), -n = they/you (plural). This applies across all tenses.",
+      "examples": [
+        {"spanish": "habla → hablas (you informal), hablan (they)", "english": "-ar verb"},
+        {"spanish": "vende → vendes, venden", "english": "-er verb"},
+        {"spanish": "hace → haces, hacen", "english": "-er verb (hacer)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "puedo-i-can",
+      "conceptName": "Puedo (I can / I am able)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Puedo means 'I can' or 'I am able'. It's an -er verb. Puede = he/she/it can, puedes = you (informal) can. Related to English 'power'.",
+      "rule": "Puedo (I can), puede (he/she can), puedes (you informal can). Like 'I am able to...' — takes infinitive directly, no 'a'.",
+      "examples": [
+        {"spanish": "¿Puedes venir?", "english": "Can you come?"},
+        {"spanish": "¿No puedes venir?", "english": "Can't you come?"},
+        {"spanish": "¿Por qué no puedes venir?", "english": "Why can't you come?"},
+        {"spanish": "Quiero saber por qué no puedes venir", "english": "I want to know why you can't come"}
+      ],
+      "notes": "Related to 'power'. The d in puedo is quite soft in Spanish."
+    },
+    {
+      "conceptSlug": "check-infinitive-before-conjugating",
+      "conceptName": "Always check the infinitive ending before conjugating",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Before conjugating any verb, take one split-second to identify: is it -ar, -er, or -ir? Otherwise your brain may use vowel harmony (putting an e because the stem has e sounds) and produce wrong forms.",
+      "rule": "Always go back to the infinitive form before conjugating. Esperar is -ar, so he waits = espera (not espere).",
+      "examples": [
+        {"spanish": "esperar → espera (not espere)", "english": "to wait → he/she waits"}
+      ],
+      "notes": "The brain naturally wants vowel harmony (espe- wants an -e ending). Turkish formalizes this as vowel harmony. Go back to the infinitive to fight this."
+    },
+    {
+      "conceptSlug": "esperar-to-wait-hope",
+      "conceptName": "Esperar (to wait / to hope)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Esperar means both 'to wait' and 'to hope'. Related to English 'desperate' (des- = un-, so hopeless). No need for the word 'for' — just say 'they wait me'.",
+      "rule": "Esperar doesn't need a preposition for its object: 'me esperan' = they wait for me.",
+      "examples": [
+        {"spanish": "Espero", "english": "I wait / I hope"},
+        {"spanish": "Espera", "english": "He/she waits"},
+        {"spanish": "Me esperan", "english": "They're waiting for me"},
+        {"spanish": "No me esperan", "english": "They're not waiting for me"},
+        {"spanish": "Quiero saber por qué no me esperan", "english": "I want to know why they're not waiting for me"}
+      ],
+      "notes": "Related to 'desperate': des- (un-) + esperar (hope) = hopeless."
+    },
+    {
+      "conceptSlug": "salir-to-leave",
+      "conceptName": "Salir (to leave / to go out)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Salir means 'to leave' or 'to go out'. Irregular I form: salgo (same -go pattern as tengo, vengo). Regular for other forms. It's a verb of movement, takes 'a'.",
+      "rule": "Salgo (I leave, irregular -go). Verb of movement: salgo a comer = I'm going out to eat.",
+      "examples": [
+        {"spanish": "Salgo", "english": "I leave / I go out"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "cognate-conversion-ary",
+      "conceptName": "Cognate conversion: -ary to -ario",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "English words ending -ary become -ario in Spanish.",
+      "rule": "-ary → -ario.",
+      "examples": [
+        {"spanish": "vocabulario", "english": "vocabulary"},
+        {"spanish": "necesario", "english": "necessary"},
+        {"spanish": "contrario", "english": "contrary"}
+      ],
+      "notes": "Vocabulario comes from boca (mouth) — your 'mouth-ulary'."
+    },
+    {
+      "conceptSlug": "memorization-vs-remembering",
+      "conceptName": "Memorization vs remembering",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "There's a difference between memorization (active, forced, borrowed) and remembering (natural, through practical application). The method avoids memorization but relies on internalization through constructing sentences.",
+      "rule": null,
+      "examples": [],
+      "notes": "You borrow information when you memorize it. When you apply it practically in sentence construction, you internalize it — then it's yours."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "hacer", "english": "to do / to make", "derivation": null},
+    {"spanish": "qué", "english": "what", "derivation": null},
+    {"spanish": "puedo", "english": "I can / I am able", "derivation": "related to 'power'"},
+    {"spanish": "puede", "english": "he/she/it can, you (formal) can", "derivation": null},
+    {"spanish": "puedes", "english": "you (informal) can", "derivation": null},
+    {"spanish": "comprar", "english": "to buy", "derivation": null},
+    {"spanish": "llegar", "english": "to arrive", "derivation": null},
+    {"spanish": "salir", "english": "to leave / to go out", "derivation": null},
+    {"spanish": "salgo", "english": "I leave (irregular)", "derivation": null},
+    {"spanish": "esperar", "english": "to wait / to hope", "derivation": "related to 'desperate' (des- = un- + hope)"},
+    {"spanish": "vocabulario", "english": "vocabulary", "derivation": "from boca (mouth), -ary → -ario"},
+    {"spanish": "boca", "english": "mouth", "derivation": "root of vocabulario"},
+    {"spanish": "necesario", "english": "necessary", "derivation": "-ary → -ario"}
+  ]
+}

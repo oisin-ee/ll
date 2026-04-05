@@ -1,0 +1,80 @@
+{
+  "episode": 26,
+  "summary": "This lesson extensively practices quedar(se) (to stay) in combination with modal verbs (voy a, quiero, debo, tengo que, puedo) and in the present perfect. The number siete (seven) is introduced. The verb llamar (to call) and 'me llamo' (my name is) are taught, along with cómo (how).",
+  "teachings": [
+    {
+      "conceptSlug": "quedar-to-stay",
+      "conceptName": "Quedar(se) = to stay (to remain oneself)",
+      "category": "Verb construction",
+      "role": "practiced",
+      "summary": "Extended practice combining quedarse with multiple verb constructions: voy a quedarme, quiero quedarme, debemos quedarnos, tengo que quedarme, puedo quedarme. Also practiced in present perfect: me he quedado, nos hemos quedado, te has quedado.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Voy a quedarme hasta las siete", "english": "I'm going to stay until seven o'clock"},
+        {"spanish": "Quiero quedarme", "english": "I want to stay"},
+        {"spanish": "¿Quieres quedarte?", "english": "Do you want to stay?"},
+        {"spanish": "Debemos quedarnos", "english": "We must stay"},
+        {"spanish": "Tengo que quedarme", "english": "I have to stay"},
+        {"spanish": "Tienes que quedarte aquí", "english": "You have to stay here"},
+        {"spanish": "No puedo quedarme esta noche", "english": "I can't stay tonight"},
+        {"spanish": "No podemos quedarnos esta noche", "english": "We can't stay tonight"},
+        {"spanish": "¿Piensas quedarte aquí esta noche?", "english": "Do you plan on staying here tonight?"},
+        {"spanish": "Me he quedado", "english": "I have stayed"},
+        {"spanish": "Nos hemos quedado", "english": "We have stayed"},
+        {"spanish": "No nos hemos quedado", "english": "We haven't stayed"},
+        {"spanish": "Te has quedado", "english": "You have stayed"},
+        {"spanish": "¿Tú te has quedado?", "english": "Have YOU stayed? (emphatic)"},
+        {"spanish": "¿Tú no te has quedado?", "english": "Haven't YOU stayed?"}
+      ],
+      "notes": "The reflexive pronoun (me/te/nos) attaches to the infinitive (quedarme) or goes before the changed verb (me he quedado). It is not optional — it's required for the meaning of 'stay'."
+    },
+    {
+      "conceptSlug": "pronoun-position-rule",
+      "conceptName": "Object pronoun position: before changed verb or after infinitive",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "Reinforced the precise rule: object pronouns go after the complete verb ('to' form / infinitive) or before the changed verb. Not 'at the beginning' — before the changed verb. This precision matters when sentences have nouns or other words before the verb.",
+      "rule": "Object pronouns go: (1) after the infinitive (attached), or (2) before the changed/conjugated verb. Never simplify to 'at the beginning'.",
+      "examples": [
+        {"spanish": "Nos debemos quedar / Debemos quedarnos", "english": "We must stay (two positions)"},
+        {"spanish": "No nos hemos quedado", "english": "We haven't stayed (no before nos, nos before hemos)"}
+      ],
+      "notes": "The teacher stresses: if you tell yourself 'at the beginning' instead of 'before the changed verb', you lose clarity when nouns enter the sentence."
+    },
+    {
+      "conceptSlug": "llamar-to-call",
+      "conceptName": "Llamar = to call; me llamo = my name is",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Llamar means to call/to phone. 'Me llamo' (I call myself) is how you say 'my name is'. '¿Cómo te llamas?' (how do you call yourself?) = what is your name?",
+      "rule": "me llamo = my name is (I call myself). ¿Cómo te llamas? = What is your name? (How do you call yourself?)",
+      "examples": [
+        {"spanish": "Llamo", "english": "I call"},
+        {"spanish": "Me llamo", "english": "My name is (I call myself)"},
+        {"spanish": "Te llamas", "english": "You call yourself"},
+        {"spanish": "¿Cómo te llamas?", "english": "What is your name? (How do you call yourself?)"}
+      ],
+      "notes": "Double-l (ll) pronounced like /y/ in most Spanish-speaking regions."
+    },
+    {
+      "conceptSlug": "como-how",
+      "conceptName": "cómo = how",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Cómo means 'how' in Spanish.",
+      "rule": null,
+      "examples": [
+        {"spanish": "¿Cómo te llamas?", "english": "What is your name? (How do you call yourself?)"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "siete", "english": "seven", "derivation": "September (Septiembre/Setiembre, originally 7th month), e→ie split from 'set'"},
+    {"spanish": "llamar", "english": "to call, to phone", "derivation": null},
+    {"spanish": "cómo", "english": "how", "derivation": null},
+    {"spanish": "me llamo", "english": "my name is (I call myself)", "derivation": null},
+    {"spanish": "¿Cómo te llamas?", "english": "What is your name?", "derivation": null},
+    {"spanish": "Quiero saber por qué tienes que quedarte aquí", "english": "I want to know why you have to stay here", "derivation": null}
+  ]
+}

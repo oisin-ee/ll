@@ -1,0 +1,82 @@
+{
+  "episode": 75,
+  "summary": "This lesson covers the irregular informal positive command of 'hacer' (haz), introduces the optional subjunctive use that turns 'where/how/what' into 'wherever/however/whatever', teaches 'seguir' (to follow/continue) with its e->i stem change, and introduces the irregular subjunctive of 'ser' (sea).",
+  "teachings": [
+    {
+      "conceptSlug": "hacer-irregular-command",
+      "conceptName": "Hacer - irregular informal positive command (haz)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "The informal positive command of hacer is irregular: 'haz' (not 'hace'). H-a-z.",
+      "rule": "Informal positive command of hacer = haz (irregular).",
+      "examples": [
+        {"spanish": "Hazlo.", "english": "Do it! (informal)"},
+        {"spanish": "Hazlo donde quieras.", "english": "Do it wherever you want."},
+        {"spanish": "Hazlo como te guste.", "english": "Do it however you like."}
+      ],
+      "notes": "In most of Spain, pronounced /hath/."
+    },
+    {
+      "conceptSlug": "subjunctive-for-ever-words",
+      "conceptName": "Subjunctive to create 'wherever/however/whatever'",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "An optional use of the subjunctive: putting the verb after donde/como/lo que into the subjunctive changes the meaning from 'where/how/what' to 'wherever/however/whatever'. This is not obligatory -- the indicative version is correct too, just with a different meaning.",
+      "rule": "donde + indicative = where; donde + subjunctive = wherever. como + indicative = how; como + subjunctive = however. lo que + indicative = what; lo que + subjunctive = whatever. cuando + indicative (general) vs cuando + subjunctive = whenever.",
+      "examples": [
+        {"spanish": "Donde quieres.", "english": "Where you want."},
+        {"spanish": "Donde quieras.", "english": "Wherever you want."},
+        {"spanish": "Hazlo como te gusta.", "english": "Do it how you like."},
+        {"spanish": "Hazlo como te guste.", "english": "Do it however you like."},
+        {"spanish": "Haz lo que prefieres.", "english": "Do what you prefer."},
+        {"spanish": "Haz lo que prefieras.", "english": "Do whatever you prefer."},
+        {"spanish": "Come lo que prefieras.", "english": "Eat whatever you prefer. (informal)"},
+        {"spanish": "Coma lo que prefiera.", "english": "Eat whatever you prefer. (formal)"},
+        {"spanish": "Coman lo que prefieran.", "english": "Eat whatever you prefer. (plural)"},
+        {"spanish": "Cuando necesites.", "english": "Whenever you need."}
+      ],
+      "notes": "This is optional -- 'haz lo que prefieres' is perfectly correct Spanish, meaning 'do what you prefer'. The subjunctive version adds the 'ever' nuance."
+    },
+    {
+      "conceptSlug": "seguir-to-follow-continue",
+      "conceptName": "Seguir (to follow / to continue)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Seguir means to follow and also to continue/carry on. It has the same e->i stem change as elegir: sigo (I follow), sigue (he follows), but seguimos (we follow -- unstressed, no change). Related verbs: conseguir (to get/manage to), perseguir (to chase).",
+      "rule": "Stem change e->i when stressed: sigo, sigues, sigue, seguimos, siguen. Same pattern in related verbs: consigo, persigo.",
+      "examples": [
+        {"spanish": "Sigo.", "english": "I follow / I continue."},
+        {"spanish": "Sigue.", "english": "He/she follows / continues."},
+        {"spanish": "Sigues.", "english": "You follow. (informal)"},
+        {"spanish": "Siguen.", "english": "They follow."},
+        {"spanish": "Seguimos.", "english": "We follow. (no stem change)"},
+        {"spanish": "Te sigo adonde vayas.", "english": "I'll follow you wherever you go."}
+      ],
+      "notes": "Related verbs share the irregularity: conseguir (to get/manage to) -> consigo; perseguir (to chase) -> persigo."
+    },
+    {
+      "conceptSlug": "ser-subjunctive",
+      "conceptName": "Ser - subjunctive (sea)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "The subjunctive of ser is irregular with the base 'sea'. Forms: sea, seas, seamos, sean. The expression 'o sea' (literally 'or it might be') is a very common filler word, like 'uhh' or 'I mean'.",
+      "rule": "Subjunctive of ser: sea (I/he/she/you formal), seas (you informal), seamos (we), sean (they/you plural).",
+      "examples": [
+        {"spanish": "Prefiero que sea así.", "english": "I prefer it to be like this."},
+        {"spanish": "Sea lo que sea.", "english": "Whatever will be, will be. / Whatever it is."},
+        {"spanish": "O sea.", "english": "I mean... / In other words... (filler expression)"}
+      ],
+      "notes": "'O sea' is extremely common in spoken Spanish as a discourse filler."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "haz", "english": "do! / make! (informal command of hacer)", "derivation": "Irregular command form"},
+    {"spanish": "seguir", "english": "to follow / to continue / to carry on", "derivation": "E->i stem change; related to conseguir, perseguir"},
+    {"spanish": "conseguir", "english": "to get / to manage to", "derivation": "From seguir with con- prefix"},
+    {"spanish": "perseguir", "english": "to chase", "derivation": "From seguir with per- prefix"},
+    {"spanish": "adonde", "english": "to where", "derivation": "a + donde"},
+    {"spanish": "así", "english": "like this / like that", "derivation": null},
+    {"spanish": "o sea", "english": "I mean / in other words (filler)", "derivation": "Literally 'or it might be'; uses subjunctive of ser"},
+    {"spanish": "sea lo que sea", "english": "whatever will be, will be", "derivation": "Subjunctive of ser used twice"}
+  ]
+}

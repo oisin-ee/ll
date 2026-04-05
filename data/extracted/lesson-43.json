@@ -1,0 +1,65 @@
+{
+  "episode": 43,
+  "summary": "This lesson introduces the 'would have' construction (habría + past participle) and uses it to build complex structures: would have gone, would have been able to, would have liked. It also derives 'should' (debería) from deber + conditional, practicing it extensively.",
+  "teachings": [
+    {
+      "conceptSlug": "conditional-perfect",
+      "conceptName": "Conditional perfect (would have)",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "Haber contracts in the conditional just like poder: habería -> habría. This gives 'would have', which combines with past participles (-ado/-ido) to express 'would have done'. Habría serves I/he/she/it/you(formal). Other forms: habríamos (we), habrían (they), habrías (you informal).",
+      "rule": "Habría + past participle = would have done. Habría ido = would have gone. Habríamos comido = would have eaten. Build complex sentences block by block.",
+      "examples": [
+        { "spanish": "Habría ido.", "english": "I/he/she would have gone." },
+        { "spanish": "Habríamos comido.", "english": "We would have eaten." },
+        { "spanish": "Habríamos podido ir.", "english": "We would have been able to go." },
+        { "spanish": "Habrían podido comer.", "english": "They would have been able to eat." },
+        { "spanish": "Habrían venido a comer.", "english": "They would have come to eat." },
+        { "spanish": "Me habría gustado.", "english": "I would have liked it. (It would have pleased me.)" },
+        { "spanish": "Nos habría gustado.", "english": "We would have liked it." },
+        { "spanish": "Nos habrían gustado.", "english": "We would have liked them. (They would have pleased us.)" }
+      ],
+      "notes": "With gustar in conditional perfect, think in Spanglish: 'I would have liked them' = 'They would have pleased us' = 'Nos habrían gustado'. Always start by identifying who is doing the verb."
+    },
+    {
+      "conceptSlug": "deberia-should",
+      "conceptName": "Debería - should",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "'Should' is expressed as 'would owe': deber (must/owe) in the conditional = debería. Unlike English where 'should' drops 'to' (I should eat, not I should to eat), Spanish keeps the infinitive after debería.",
+      "rule": "Debería = I/he/she should. Deberías = you should. Deberíamos = we should. Deberían = they should. Always followed by an infinitive (deberíamos hablar, not deberíamos hablado).",
+      "examples": [
+        { "spanish": "Debería.", "english": "I/he/she should." },
+        { "spanish": "Deberías venir a mi casa.", "english": "You should come to my house." },
+        { "spanish": "Deberías venir a mi casa a comer.", "english": "You should come to my house to eat." },
+        { "spanish": "Deberíamos hablar.", "english": "We should speak." },
+        { "spanish": "Deberíamos hablarlo.", "english": "We should speak about it." },
+        { "spanish": "Deberíamos hablarle.", "english": "We should speak to him/her." },
+        { "spanish": "Deberíamos hablarles.", "english": "We should speak to them." },
+        { "spanish": "Deberíamos hablar con él.", "english": "We should speak with him." },
+        { "spanish": "Deberíamos hablar con ella.", "english": "We should speak with her." }
+      ],
+      "notes": "In English, after can/should/must you don't say 'to' (I should eat). In Spanish, you still use the infinitive (deberíamos hablar). Using 'con él/con ella' instead of 'le' removes the ambiguity of le (him/her/you formal)."
+    },
+    {
+      "conceptSlug": "haber-conditional-contraction",
+      "conceptName": "Haber contracts in conditional/future",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Haber loses its -e- in the conditional, just like poder: habería -> habría. This is the same contraction pattern.",
+      "rule": "Haber -> habr- + conditional endings. Habría, habrías, habríamos, habrían.",
+      "examples": [
+        { "spanish": "Habría.", "english": "I/he/she would have." },
+        { "spanish": "Habríamos.", "english": "We would have." },
+        { "spanish": "Habrían.", "english": "They would have." }
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "habría", "english": "would have (I/he/she)", "derivation": "haber contracted: habería -> habría" },
+    { "spanish": "debería", "english": "should (I/he/she)", "derivation": "deber (must/owe) + conditional -ía" },
+    { "spanish": "daría", "english": "I/he/she would give", "derivation": "dar + ía" },
+    { "spanish": "me lo darían", "english": "they would give it to me", "derivation": null }
+  ]
+}

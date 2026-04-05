@@ -1,0 +1,120 @@
+{
+  "episode": 30,
+  "summary": "This lesson practices estar in various constructions: ¿cómo estás? (how are you), location with estar, combining estar with modal verbs and ir a. It reviews tener que + estar, deber + estar for probability, and revisits quedarse. The full estar paradigm is drilled with subject pronouns.",
+  "teachings": [
+    {
+      "conceptSlug": "estar-conjugation",
+      "conceptName": "Estar conjugation in present tense",
+      "category": "Verb conjugation",
+      "role": "practiced",
+      "summary": "Full paradigm drill with subject pronouns: yo estoy, él/ella/usted está, ellos/ellas están, nosotros/nosotras estamos, tú estás. Combined with modal verbs and ir a.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Yo estoy", "english": "I am"},
+        {"spanish": "Él está", "english": "He is"},
+        {"spanish": "Ella está", "english": "She is"},
+        {"spanish": "Usted está", "english": "You (formal) are"},
+        {"spanish": "Ellos están", "english": "They are"},
+        {"spanish": "Ellas están", "english": "They (female) are"},
+        {"spanish": "Nosotros estamos", "english": "We are"},
+        {"spanish": "Nosotras estamos", "english": "We (female) are"},
+        {"spanish": "Tú estás", "english": "You (informal) are"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "estar-for-location",
+      "conceptName": "Estar for location (where you are = a state)",
+      "category": "Key distinction",
+      "role": "introduced",
+      "summary": "Location uses estar because where you are is a state, not a characteristic. '¿Dónde estás?' = where are you? 'Estoy aquí' = I am here.",
+      "rule": "Where someone/something is located uses estar (it's a state).",
+      "examples": [
+        {"spanish": "¿Dónde estás?", "english": "Where are you? (informal)"},
+        {"spanish": "No sé dónde estamos", "english": "I don't know where we are"},
+        {"spanish": "Estoy aquí", "english": "I am here"},
+        {"spanish": "Quiero estar aquí", "english": "I want to be here"},
+        {"spanish": "Voy a estar aquí más tarde", "english": "I'm going to be here later"},
+        {"spanish": "¿Dónde vas a estar?", "english": "Where are you going to be?"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "como-estas-greeting",
+      "conceptName": "¿Cómo estás? = How are you?",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "How are you? uses estar because you're asking about someone's state. Informal: ¿cómo estás? Formal: ¿cómo está? Plural: ¿cómo están?",
+      "rule": null,
+      "examples": [
+        {"spanish": "¿Cómo estás?", "english": "How are you? (informal)"},
+        {"spanish": "¿Cómo está?", "english": "How are you? (formal)"},
+        {"spanish": "¿Cómo están?", "english": "How are you? (plural)"}
+      ],
+      "notes": "Uses estar because asking about someone's current state."
+    },
+    {
+      "conceptSlug": "deber-probability",
+      "conceptName": "Deber + infinitive for probability (must be)",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Deber (must/to owe) can express probability, just like English 'he must be tired' meaning 'he probably is tired'. Same usage in both languages.",
+      "rule": "deber + infinitive can express probability: debe estar cansado = he must be tired (probability).",
+      "examples": [
+        {"spanish": "Debe estar aquí", "english": "He must be here (probably is)"},
+        {"spanish": "Debe estar cansado", "english": "He must be tired"},
+        {"spanish": "Deben estar cansados", "english": "They must be tired"},
+        {"spanish": "Deben estar cansadas", "english": "They (female) must be tired"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "tener-que-with-estar",
+      "conceptName": "Tener que + estar",
+      "category": "Verb construction",
+      "role": "practiced",
+      "summary": "Practiced tener que with estar to express 'have to be'. Reviewed that tener comes from -tain words (maintain, contain, sustain, entertain, obtain).",
+      "rule": null,
+      "examples": [
+        {"spanish": "¿Dónde tienen que estar más tarde?", "english": "Where do you (plural) have to be later?"},
+        {"spanish": "Tienen que estar", "english": "They/you (plural) have to be"}
+      ],
+      "notes": "Tener is found in English -tain words: maintain=mantener, contain=contener, sustain=sostener, entertain=entretener, obtain=obtener."
+    },
+    {
+      "conceptSlug": "quedar-to-stay",
+      "conceptName": "Quedar(se) = to stay",
+      "category": "Verb construction",
+      "role": "reviewed",
+      "summary": "Reviewed quedarse with a complex sentence combining it with ir a and estar with porque.",
+      "rule": null,
+      "examples": [
+        {"spanish": "No vamos a quedarnos porque estamos muy cansados", "english": "We're not going to stay because we're very tired"},
+        {"spanish": "No nos vamos a quedar porque estamos muy cansados", "english": "We're not going to stay because we're very tired (alternate pronoun position)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "porque-because",
+      "conceptName": "porque = because",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Porque means 'because'. Note: por qué (two words, with accent) = why; porque (one word) = because.",
+      "rule": "porque (one word) = because. por qué (two words) = why.",
+      "examples": [
+        {"spanish": "No vamos a quedarnos porque estamos muy cansados", "english": "We're not going to stay because we're very tired"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "¿Cómo estás?", "english": "How are you? (informal)", "derivation": null},
+    {"spanish": "¿Cómo está?", "english": "How are you? (formal)", "derivation": null},
+    {"spanish": "porque", "english": "because", "derivation": null},
+    {"spanish": "mantener", "english": "to maintain", "derivation": "maintain → mantener"},
+    {"spanish": "contener", "english": "to contain", "derivation": "contain → contener"},
+    {"spanish": "sostener", "english": "to sustain", "derivation": "sustain → sostener"},
+    {"spanish": "entretener", "english": "to entertain", "derivation": "entertain → entretener"},
+    {"spanish": "obtener", "english": "to obtain", "derivation": "obtain → obtener"}
+  ]
+}

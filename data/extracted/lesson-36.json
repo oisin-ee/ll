@@ -1,0 +1,63 @@
+{
+  "episode": 36,
+  "summary": "This lesson introduces the Spanish future tense, showing that it is formed by adding haber-derived endings to the full infinitive. The mnemonic of 'pushing the accent into the future' is taught. The lesson also reviews the three ways to express future: present tense with context, ir a + infinitive, and the future tense.",
+  "teachings": [
+    {
+      "conceptSlug": "future-tense",
+      "conceptName": "Future tense (will)",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "The future tense is formed by adding endings derived from haber to the full infinitive. The endings are: -é (I), -ás (you informal), -á (he/she/it/you formal), -emos (we), -án (they/you guys). The accent always falls on the ending, 'pushing the accent into the future'. Works the same for -ar, -er, and -ir verbs.",
+      "rule": "Take the full infinitive + add haber-derived endings: -é, -ás, -á, -emos, -án. The accent is always on the ending. Think out the whole verb first before adding the ending (preparar + é = prepararé, not preparé).",
+      "examples": [
+        { "spanish": "Comeré.", "english": "I will eat." },
+        { "spanish": "Comeremos.", "english": "We will eat." },
+        { "spanish": "Comerá.", "english": "He/she will eat." },
+        { "spanish": "Comerás.", "english": "You (informal) will eat." },
+        { "spanish": "Comerán.", "english": "They will eat." },
+        { "spanish": "Iré.", "english": "I will go." },
+        { "spanish": "Irán a Irán.", "english": "They will go to Iran." },
+        { "spanish": "¿Por qué no irás?", "english": "Why won't you go?" },
+        { "spanish": "Lo encontraré.", "english": "I will find it." },
+        { "spanish": "Lo encontraremos.", "english": "We will find it." },
+        { "spanish": "Me quedaré aquí.", "english": "I will stay here." },
+        { "spanish": "Prepararé.", "english": "I will prepare." },
+        { "spanish": "Organizará.", "english": "He/she will organize." },
+        { "spanish": "Estaré cansada.", "english": "I will be tired." },
+        { "spanish": "Será.", "english": "It will be. (Que será, será)" }
+      ],
+      "notes": "Common mistake: saying 'preparé' instead of 'prepararé' by not thinking out the whole verb first. The future tense endings match haber forms (he/hemos/ha/has/han). Ir is regular in the future tense despite being very irregular in the present."
+    },
+    {
+      "conceptSlug": "haber-past-participle",
+      "conceptName": "Haber conjugation review",
+      "category": "Verb conjugation",
+      "role": "reviewed",
+      "summary": "Quick recap of haber forms using the two-vowel trick: /e/ gives he (I have) and hemos (we have); /a/ gives ha (he/she has), has (you informal have), han (they have).",
+      "rule": null,
+      "examples": [
+        { "spanish": "He dormido.", "english": "I have slept." },
+        { "spanish": "Hemos dormido.", "english": "We have slept." },
+        { "spanish": "Lo han recomendado.", "english": "They have recommended it." }
+      ],
+      "notes": "With haber structures, the object pronoun (lo, la, etc.) must come before haber. There is no option of placement."
+    },
+    {
+      "conceptSlug": "ir-a-infinitive",
+      "conceptName": "Ir a + infinitive (going to)",
+      "category": "Verb construction",
+      "role": "reviewed",
+      "summary": "Reviewed as one of the ways to express future. You can use present tense with context, ir a + infinitive, or the future tense. The future tense is not used as often as the other two methods.",
+      "rule": null,
+      "examples": [
+        { "spanish": "Desayuno con ellos mañana.", "english": "I'm having breakfast with them tomorrow. (present)" },
+        { "spanish": "Voy a desayunar con ellos.", "english": "I'm going to have breakfast with them. (ir a)" }
+      ],
+      "notes": "Having future context doesn't prevent using ir a. Both structures can coexist with mañana."
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "recomendar", "english": "to recommend", "derivation": "from recomendación" },
+    { "spanish": "recomendado", "english": "recommended (past participle)", "derivation": null }
+  ]
+}

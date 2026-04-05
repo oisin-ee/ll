@@ -1,0 +1,89 @@
+{
+  "episode": 20,
+  "summary": "This lesson covers using the present tense to talk about the future, either with future context words (pronto, mañana, esta noche) or with 'ir a' (going to). The verb ver (to see) is conjugated, object pronoun 'nos' (us) is introduced, and 'la semana que viene' (next week) is taught as future context.",
+  "teachings": [
+    {
+      "conceptSlug": "present-for-future",
+      "conceptName": "Using present tense for future with context",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "Spanish can use the present tense to talk about the future when future context is provided (mañana, más tarde, esta noche, pronto, la semana que viene). This mirrors English usage like 'I'm seeing her tomorrow'.",
+      "rule": "With future context words (mañana, pronto, la semana que viene, etc.), the present tense can express future meaning.",
+      "examples": [
+        {"spanish": "La veo más tarde", "english": "I'm seeing her later"},
+        {"spanish": "La veo esta noche", "english": "I'm seeing her tonight"},
+        {"spanish": "La vemos pronto", "english": "We are seeing her soon"},
+        {"spanish": "Las ve pronto", "english": "He is seeing them soon"},
+        {"spanish": "Nos vemos", "english": "We'll see each other (goodbye)"},
+        {"spanish": "Nos vemos la semana que viene", "english": "We'll see each other next week"}
+      ],
+      "notes": "'Nos vemos' is a common way to say goodbye — the future context is implied by the farewell situation."
+    },
+    {
+      "conceptSlug": "ir-a-future",
+      "conceptName": "Using 'ir a' + infinitive for future",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Without future context, you can use 'ir a' (going to) + infinitive to express the future, just as in English. Voy a, vamos a, va a, vas a, van a.",
+      "rule": "ir a + infinitive = going to (do something). Object pronouns attach to the infinitive or go before the conjugated verb.",
+      "examples": [
+        {"spanish": "Vamos a verla", "english": "We're going to see her"},
+        {"spanish": "¿Vas a verlo pronto?", "english": "Are you going to see him soon?"},
+        {"spanish": "¿Vas a vernos pronto?", "english": "Are you going to see us soon?"},
+        {"spanish": "¿Nos vas a ver pronto?", "english": "Are you going to see us soon? (alternate pronoun position)"},
+        {"spanish": "¿Por qué no vas a vernos pronto?", "english": "Why aren't you going to see us soon?"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "ver-to-see",
+      "conceptName": "The verb ver (to see)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Ver means to see/to view. It is slightly irregular in the 'I' form: veo (not vo). Other forms are regular: ve, ven, ves, vemos.",
+      "rule": "ver: veo (I), ve (he/she), ven (they), ves (you informal), vemos (we). The 'I' form is veo, not vo.",
+      "examples": [
+        {"spanish": "Veo", "english": "I see"},
+        {"spanish": "Ve", "english": "He/she sees"},
+        {"spanish": "Ven", "english": "They see"},
+        {"spanish": "Ves", "english": "You (informal) see"},
+        {"spanish": "Vemos", "english": "We see"}
+      ],
+      "notes": "The 'I' form veo is slightly irregular — vo was too short, so it became veo."
+    },
+    {
+      "conceptSlug": "nos-us",
+      "conceptName": "nos = us/ourselves/each other",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "Nos means us, ourselves, or each other. It follows the same positioning rules as other object pronouns (before changed verb or after infinitive).",
+      "rule": null,
+      "examples": [
+        {"spanish": "¿Vas a vernos pronto?", "english": "Are you going to see us soon?"},
+        {"spanish": "¿Nos vas a ver pronto?", "english": "Are you going to see us soon?"},
+        {"spanish": "Nos vemos", "english": "We see each other (goodbye)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "la-semana-que-viene",
+      "conceptName": "la semana que viene = next week",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "'Next week' is expressed as 'the week that comes' — la semana que viene. This provides future context allowing present tense for future meaning.",
+      "rule": "la semana que viene = next week (the week that comes)",
+      "examples": [
+        {"spanish": "Hablamos la semana que viene", "english": "Let's speak next week"},
+        {"spanish": "Nos vemos la semana que viene", "english": "See you next week"}
+      ],
+      "notes": "The process of finding 'viene' is more important than memorizing it: venir → viene."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "pronto", "english": "soon", "derivation": null},
+    {"spanish": "ver", "english": "to see, to view", "derivation": null},
+    {"spanish": "nos", "english": "us, ourselves, each other", "derivation": null},
+    {"spanish": "la semana", "english": "the week", "derivation": null},
+    {"spanish": "la semana que viene", "english": "next week (the week that comes)", "derivation": null}
+  ]
+}

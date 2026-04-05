@@ -1,0 +1,118 @@
+{
+  "episode": 8,
+  "summary": "Introduces grammatical gender (lo/la, masculine/feminine), the formal 'quiere' (he/she/it/you formal wants), question formation, 'por qué' (why), 'venir' (to come), 'debo' (I must/owe), and 'la casa' (the house).",
+  "teachings": [
+    {
+      "conceptSlug": "grammatical-gender",
+      "conceptName": "Grammatical gender: lo/la",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Lo (masculine) becomes la (feminine) by changing o to a. La means 'her', a feminine 'it', or 'you (formal, female)'. Gender belongs to the word, not the object — two words for the same object can have different genders.",
+      "rule": "Lo (him/it masculine) → La (her/it feminine). Words ending in -a are usually feminine.",
+      "examples": [
+        {"spanish": "Quiero verla", "english": "I want to see her / I want to see it (feminine)"}
+      ],
+      "notes": "Gender is a property of the word, not the object itself."
+    },
+    {
+      "conceptSlug": "quiere-he-she-wants",
+      "conceptName": "Quiere (he/she/it/you formal wants)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Quiere means 'he wants', 'she wants', 'it wants', or 'you (formal) want'. These four always group together in Spanish verb conjugation.",
+      "rule": "He/she/it/you (formal) always share the same verb form.",
+      "examples": [
+        {"spanish": "Quiere visitarme", "english": "He/she wants to visit me / You (formal) want to visit me"},
+        {"spanish": "¿Quiere visitarme?", "english": "Do you want to visit me?"},
+        {"spanish": "¿No quiere visitarme?", "english": "Don't you want to visit me?"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "question-formation",
+      "conceptName": "Question formation (intonation only)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "In Spanish, questions are formed simply by using question intonation. No word order change or auxiliary verb ('do') is needed.",
+      "rule": "Make a statement sound like a question with your voice. No 'do/does' equivalent needed.",
+      "examples": [
+        {"spanish": "¿Quiere visitarme?", "english": "Do you want to visit me?"},
+        {"spanish": "¿No quiere visitarme?", "english": "Don't you want to visit me?"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "por-que-why",
+      "conceptName": "Por qué (why / because)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "'Por qué' means both 'why' and 'because'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "¿Por qué no quiere visitarme?", "english": "Why don't you want to visit me?"},
+        {"spanish": "¿Por qué no quiere venir a visitarme?", "english": "Why don't you want to come to visit me?"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "venir-to-come",
+      "conceptName": "Venir (to come)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Venir means 'to come'. It's an -ir verb and a verb of movement, so it takes 'a' before a following infinitive. Related to 'conveniente' (convenient = 'with coming') and 'bienvenido' (welcome).",
+      "rule": "Venir is a verb of movement: venir a + infinitive.",
+      "examples": [
+        {"spanish": "¿Quiere venir?", "english": "Do you want to come?"},
+        {"spanish": "¿Quiere venir a la casa?", "english": "Do you want to come to the house?"},
+        {"spanish": "¿Quiere venir a visitarme?", "english": "Do you want to come to visit me?"}
+      ],
+      "notes": "Memory hooks: conveniente = 'with coming'; bienvenido = 'well come' (welcome)."
+    },
+    {
+      "conceptSlug": "debo-i-must",
+      "conceptName": "Debo (I must / I owe)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Debo means 'I owe' and is used like 'I must'. Connected to English 'debt' (which has a silent b from the same Latin root).",
+      "rule": "Debo + infinitive = I must [verb]. Literally 'I owe to [verb]'.",
+      "examples": [
+        {"spanish": "Debo continuar", "english": "I must continue"},
+        {"spanish": "Debo identificarlo", "english": "I must identify it"},
+        {"spanish": "Debo identificarlos", "english": "I must identify them"},
+        {"spanish": "Debo identificarlas", "english": "I must identify them (feminine)"}
+      ],
+      "notes": "The English word 'debt' is spelled d-e-b-t; the silent b comes from 'debo'."
+    },
+    {
+      "conceptSlug": "la-casa",
+      "conceptName": "La casa (the house)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "'La' is the feminine definite article (the). 'Casa' means house. 'A la casa' = to the house.",
+      "rule": null,
+      "examples": [
+        {"spanish": "¿Quiere venir a la casa?", "english": "Do you want to come to the house?"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "formal-vs-informal",
+      "conceptName": "Formal vs informal address",
+      "category": "Key distinction",
+      "role": "introduced",
+      "summary": "Formal address uses lo/la and quiere for 'you'. Informal uses te. Usage varies hugely by dialect — Spain uses formal more; Buenos Aires almost never uses it sincerely.",
+      "rule": "Formal you: lo (male), la (female). Informal you: te.",
+      "examples": [],
+      "notes": "In Buenos Aires, formal address is used more for sarcasm than sincerity. In Spain, formal is default with strangers."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "la", "english": "her / it (feminine) / you (formal, female) / the (feminine)", "derivation": "feminine of lo"},
+    {"spanish": "quiere", "english": "he/she/it wants, you (formal) want", "derivation": null},
+    {"spanish": "por qué", "english": "why / because", "derivation": null},
+    {"spanish": "venir", "english": "to come", "derivation": "related to conveniente, bienvenido"},
+    {"spanish": "debo", "english": "I must / I owe", "derivation": "related to English 'debt'"},
+    {"spanish": "casa", "english": "house", "derivation": null},
+    {"spanish": "las", "english": "them (feminine)", "derivation": "plural of la"}
+  ]
+}

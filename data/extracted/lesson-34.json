@@ -1,0 +1,49 @@
+{
+  "episode": 34,
+  "summary": "This lesson introduces the present progressive (estar + gerund) for describing actions happening right now. The -ando ending for -ar verbs and -iendo ending for -er/-ir verbs are taught. The lesson emphasizes that Spanish uses this form only for 'right now' actions, unlike English which overuses -ing for future references.",
+  "teachings": [
+    {
+      "conceptSlug": "present-progressive",
+      "conceptName": "Present progressive (estar + gerund)",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "To express what you are doing right now in this moment, use estar + gerund. For -ar verbs, replace -ar with -ando. For -er/-ir verbs, replace -er/-ir with -iendo. This form is ONLY used for actions happening right now, not for future references as English does with -ing.",
+      "rule": "-ar verbs: remove -ar, add -ando (hablar -> hablando). -er/-ir verbs: remove -er/-ir, add -iendo (comer -> comiendo). Always use with estar. Object pronouns can go before estar or after the gerund.",
+      "examples": [
+        { "spanish": "Estoy hablando.", "english": "I am speaking (right now)." },
+        { "spanish": "Estoy esperando aquí.", "english": "I am waiting here (right now)." },
+        { "spanish": "Lo estoy preparando.", "english": "I am preparing it (right now)." },
+        { "spanish": "Estoy preparándolo.", "english": "I am preparing it (right now)." },
+        { "spanish": "Estamos desayunando.", "english": "We are having breakfast (right now)." },
+        { "spanish": "Estoy comiendo.", "english": "I am eating (right now)." },
+        { "spanish": "Está comiendo.", "english": "He/she is eating (right now)." },
+        { "spanish": "Están vendiéndolo.", "english": "They are selling it (right now)." },
+        { "spanish": "Lo están vendiendo.", "english": "They are selling it (right now)." }
+      ],
+      "notes": "Do NOT use this for future: 'I'm preparing it later' = 'Lo preparo más tarde' (simple present), NOT 'estoy preparando'. The simple present tense already covers both 'I prepare' and 'I am preparing' in most contexts."
+    },
+    {
+      "conceptSlug": "present-tense-for-future",
+      "conceptName": "Present tense for future meaning",
+      "category": "Verb tense",
+      "role": "practiced",
+      "summary": "English overuses -ing to refer to the future (I'm doing it tomorrow), but Spanish uses the simple present tense with future context instead.",
+      "rule": "For future actions, use simple present + future context (mañana, más tarde). Do not use estar + gerund for future.",
+      "examples": [
+        { "spanish": "Lo preparo mañana.", "english": "I'm preparing it tomorrow." },
+        { "spanish": "Lo preparo más tarde.", "english": "I'm preparing it later." },
+        { "spanish": "Lo venden mañana.", "english": "They are selling it tomorrow." }
+      ],
+      "notes": "This is why verbs are given two translations: 'hablo' = 'I speak' AND 'I am speaking'."
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "desayunar", "english": "to have breakfast", "derivation": "des- (un-) + ayunar (to fast) = to 'un-fast', like English 'break-fast'" },
+    { "spanish": "desayuno", "english": "breakfast (noun) / I have breakfast", "derivation": "same word serves as noun and first person verb" },
+    { "spanish": "hablando", "english": "speaking (gerund)", "derivation": "hablar - ar + ando" },
+    { "spanish": "esperando", "english": "waiting (gerund)", "derivation": "esperar - ar + ando" },
+    { "spanish": "preparando", "english": "preparing (gerund)", "derivation": "preparar - ar + ando" },
+    { "spanish": "comiendo", "english": "eating (gerund)", "derivation": "comer - er + iendo" },
+    { "spanish": "vendiendo", "english": "selling (gerund)", "derivation": "vender - er + iendo" }
+  ]
+}

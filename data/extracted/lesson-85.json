@@ -1,0 +1,57 @@
+{
+  "episode": 85,
+  "summary": "This lesson covers how go verbs form informal positive commands by simply dropping the -go (tengo → ten, vengo → ven, salgo → sal, digo → di). It contrasts this with formal commands that use the -ga subjunctive form. Object pronoun placement with commands is also practiced.",
+  "teachings": [
+    {
+      "conceptSlug": "go-verbs-informal-commands",
+      "conceptName": "Go verbs: informal positive commands (drop -go)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "For informal positive commands, go verbs simply drop the -go ending: tengo → ten, vengo → ven, salgo → sal, digo → di, pongo → pon. This is different from regular verbs which drop the -s from the tú form.",
+      "rule": "Informal positive command of go verbs: drop -go. Tengo → ten. Vengo → ven. Salgo → sal. Digo → di. Formal commands still use -ga form.",
+      "examples": [
+        {"spanish": "Ten", "english": "Have (informal command)"},
+        {"spanish": "Tenlo", "english": "Have it (informal)"},
+        {"spanish": "Téngalo", "english": "Have it (formal)"},
+        {"spanish": "Ven", "english": "Come (informal command)"},
+        {"spanish": "Venga", "english": "Come (formal command) / Come on! (colloquial)"},
+        {"spanish": "Sal", "english": "Leave / Go out (informal command)"},
+        {"spanish": "Dime", "english": "Tell me (informal)"},
+        {"spanish": "Dígame", "english": "Tell me (formal)"}
+      ],
+      "notes": "Dime and dígame are both heard when answering the phone in Spain. Venga has lost its formal feeling in Spain — it's used colloquially as 'come on' by everyone."
+    },
+    {
+      "conceptSlug": "go-verbs-subjunctive",
+      "conceptName": "Go verbs in the subjunctive",
+      "category": "Verb mood",
+      "role": "practiced",
+      "summary": "Go verbs use -ga as the subjunctive base. Practiced with commands (formal uses subjunctive), negative commands, and after cuando referring to the future.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Salga", "english": "Leave (formal command)"},
+        {"spanish": "Salgan", "english": "Leave (formal plural command)"},
+        {"spanish": "No salgan", "english": "Don't leave (formal plural)"},
+        {"spanish": "Póngalo aquí", "english": "Put it here (formal)"},
+        {"spanish": "No lo ponga aquí", "english": "Don't put it here (formal)"},
+        {"spanish": "Dime cuando vengas", "english": "Tell me when you come (future reference)"},
+        {"spanish": "Dígame cuando lo haga", "english": "Tell me when you do it (formal, future reference)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "object-pronoun-placement",
+      "conceptName": "Object pronoun placement with commands",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "With positive commands, object pronouns attach to the end of the verb. With negative commands, pronouns go before the verb.",
+      "rule": "Positive command: verb + pronoun (póngalo). Negative command: no + pronoun + verb (no lo ponga).",
+      "examples": [
+        {"spanish": "Póngalo aquí", "english": "Put it here"},
+        {"spanish": "No lo ponga aquí", "english": "Don't put it here"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": []
+}

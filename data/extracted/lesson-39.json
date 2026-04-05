@@ -1,0 +1,85 @@
+{
+  "episode": 39,
+  "summary": "This lesson introduces prepositions as a word class, teaching that after prepositions Spanish uses subject pronouns (con él, para ella, de nosotros) except for 'me' and 'you informal' which become mí and ti. It also introduces decir (to say/tell), the distinction between le replacing prepositions vs using explicit prepositions, and ser vs estar with prepositions.",
+  "teachings": [
+    {
+      "conceptSlug": "prepositions-with-pronouns",
+      "conceptName": "Prepositions with pronouns",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "After prepositions (con, para, de, etc.), Spanish uses subject pronouns: con él, para ella, de nosotros, con ustedes. The exceptions are 'me' which becomes mí and 'you informal' which becomes ti after prepositions.",
+      "rule": "After prepositions: use él/ella/ellos/ellas/nosotros/nosotras/usted/ustedes. Exceptions: me -> mí, te -> ti. So: para mí, de ti, con él, de nosotros.",
+      "examples": [
+        { "spanish": "con él", "english": "with him" },
+        { "spanish": "con ella", "english": "with her" },
+        { "spanish": "con nosotros", "english": "with us" },
+        { "spanish": "para él", "english": "for him" },
+        { "spanish": "para ella", "english": "for her" },
+        { "spanish": "para nosotros", "english": "for us" },
+        { "spanish": "para mí", "english": "for me" },
+        { "spanish": "para ti", "english": "for you (informal)" },
+        { "spanish": "de mí", "english": "from me" },
+        { "spanish": "de ti", "english": "from you (informal)" },
+        { "spanish": "de ellos", "english": "from them" },
+        { "spanish": "de ustedes", "english": "from you guys" },
+        { "spanish": "¿Es de ustedes?", "english": "Is it from you guys?" },
+        { "spanish": "Es para ustedes.", "english": "It's for you guys." },
+        { "spanish": "Está con ustedes.", "english": "It is with you guys." }
+      ],
+      "notes": "Prepositions show movement or position. 'Es de ustedes' and 'es para ustedes' use ser (characteristic of the object), but 'está con ustedes' uses estar (location = state)."
+    },
+    {
+      "conceptSlug": "le-replaces-prepositions",
+      "conceptName": "Le/les replacing prepositions",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Le and les effectively replace prepositions like 'to', 'for', 'from' in everyday Spanish. Instead of 'compro para ellos' you say 'les compro'. This makes Spanish use fewer prepositions than English. The meaning (to/for/from) is understood from context.",
+      "rule": "In everyday speech, use le/les instead of para él/de él etc. 'Me lo compra' can mean 'he buys it for me' OR 'he buys it from me' - context clarifies.",
+      "examples": [
+        { "spanish": "Les compro.", "english": "I buy for them. (= compro para ellos)" },
+        { "spanish": "Compro para ellos.", "english": "I buy for them. (explicit)" },
+        { "spanish": "Me lo compra.", "english": "He buys it for/from me." },
+        { "spanish": "Me lo compran.", "english": "They buy it for me." },
+        { "spanish": "Me los compran.", "english": "They buy them for me." },
+        { "spanish": "Le quiero decir.", "english": "I want to tell him/her." },
+        { "spanish": "Quiero decirle.", "english": "I want to tell him/her." }
+      ],
+      "notes": "Spanish uses fewer prepositions than English. You'll naturally start shedding prepositions as you listen more to Spanish."
+    },
+    {
+      "conceptSlug": "decir-to-say-tell",
+      "conceptName": "Decir - to say/tell",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Decir means to say or to tell, as distinct from hablar (to speak/talk). Decir is an -ir verb.",
+      "rule": null,
+      "examples": [
+        { "spanish": "Quiero decir.", "english": "I want to say." },
+        { "spanish": "Le quiero decir.", "english": "I want to tell him/her." },
+        { "spanish": "Lo quiero decir.", "english": "I want to say it." }
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "hacer-to-do-make",
+      "conceptName": "Hacer - to do/make",
+      "category": "Verb conjugation",
+      "role": "practiced",
+      "summary": "Reviewed hacer (to do/make). hace = he/she does. Distinguished from ha (haber). Practiced with 'hacer un favor'.",
+      "rule": null,
+      "examples": [
+        { "spanish": "Me hace un favor.", "english": "He does me a favor." },
+        { "spanish": "Le hace un favor.", "english": "He does him/her a favor." }
+      ],
+      "notes": "Common confusion: ha (from haber) vs hace (from hacer)."
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "para", "english": "for", "derivation": null },
+    { "spanish": "mí", "english": "me (after prepositions)", "derivation": null },
+    { "spanish": "ti", "english": "you informal (after prepositions)", "derivation": null },
+    { "spanish": "decir", "english": "to say, to tell", "derivation": null },
+    { "spanish": "un favor", "english": "a favor", "derivation": "cognate" },
+    { "spanish": "comprar", "english": "to buy", "derivation": null }
+  ]
+}

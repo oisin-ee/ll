@@ -1,0 +1,68 @@
+{
+  "episode": 77,
+  "summary": "This lesson covers the subjunctive triggered by 'es + adjective + que' constructions, such as es terrible que, es posible que, es necesario que, and está bien que. It also contrasts these with 'si' (if) clauses that do not trigger the subjunctive, and introduces several new vocabulary items.",
+  "teachings": [
+    {
+      "conceptSlug": "subjunctive-es-adjective-que",
+      "conceptName": "Subjunctive after es + adjective + que",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "When using the structure 'es/está + adjective + que + verb', the verb goes into the subjunctive. However, using 'si' (if) instead of 'que' does not trigger the subjunctive.",
+      "rule": "Es/está + adjective + que + subjunctive. But: es/está + adjective + si + indicative.",
+      "examples": [
+        {"spanish": "Es terrible que comas esto", "english": "It's terrible that you eat this"},
+        {"spanish": "Es terrible si comes esto", "english": "It's terrible if you eat this"},
+        {"spanish": "Es posible que vayamos más tarde", "english": "It's possible that we go later"},
+        {"spanish": "Está bien que preguntes", "english": "It's okay that you ask"},
+        {"spanish": "No es necesario que responda", "english": "It's not necessary that I respond"},
+        {"spanish": "Es importante que lo encontremos pronto", "english": "It's important that we find it soon"}
+      ],
+      "notes": "The 'que' is what introduces the mood tense in this structure. With 'si' instead of 'que', no subjunctive is needed."
+    },
+    {
+      "conceptSlug": "hay-there-is",
+      "conceptName": "Hay - there is / there are",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "When 'be' means 'exist', use haber not ser/estar. 'There should be something' = debería haber algo.",
+      "rule": "Check if 'be' means 'exist' — if so, use haber.",
+      "examples": [
+        {"spanish": "Debería haber algo para comer", "english": "There should be something to eat"}
+      ],
+      "notes": "Your first instinct will be to choose ser or estar. If neither fits, check if 'be' means 'exist' — then it's haber."
+    },
+    {
+      "conceptSlug": "que-exclamation",
+      "conceptName": "Qué + adjective exclamations",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Qué can be used like 'how' in exclamations: qué fuerte (how heavy/hardcore), qué bueno (how good), qué increíble (how incredible). When followed by que, the subjunctive continues.",
+      "rule": "Qué + adjective = How + adjective! Qué + adjective + que + subjunctive.",
+      "examples": [
+        {"spanish": "Qué fuerte que esté aquí", "english": "How hardcore that he is here"},
+        {"spanish": "Qué lindo", "english": "How nice / how beautiful"},
+        {"spanish": "Qué bueno", "english": "How good"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "hacer-falta",
+      "conceptName": "Hacer falta - to be needed/lacking",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "No hace falta que + subjunctive is an alternative way to say 'it's not necessary that'. Hacer falta literally means 'to make lack'.",
+      "rule": "No hace falta que + subjunctive = it's not necessary that",
+      "examples": [
+        {"spanish": "No hace falta que responda", "english": "It's not necessary that I respond"}
+      ],
+      "notes": "Common expression; alternative to 'no es necesario que'."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "fuerte", "english": "strong; colloquially: hardcore, heavy, full-on", "derivation": null},
+    {"spanish": "necesario", "english": "necessary", "derivation": "From necesidad (necessity)"},
+    {"spanish": "preguntar", "english": "to ask", "derivation": null},
+    {"spanish": "responder", "english": "to reply / to respond", "derivation": null},
+    {"spanish": "más tarde", "english": "later (more late)", "derivation": "más (more) + tarde (late)"}
+  ]
+}

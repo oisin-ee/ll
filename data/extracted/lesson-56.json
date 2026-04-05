@@ -1,0 +1,90 @@
+{
+  "episode": 56,
+  "summary": "Teaches that prepositions cannot go at the end of sentences in Spanish, introduces relative clauses with con que/con cual/con quien, demonstrates cuál (which) in questions, and quién/quiénes (who) with plural agreement.",
+  "teachings": [
+    {
+      "conceptSlug": "preposition-fronting",
+      "conceptName": "Prepositions cannot end sentences",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Unlike English, Spanish never puts prepositions at the end of a sentence. 'Where are you from?' becomes 'From where are you?' (¿De dónde eres?). 'Who I work with' becomes 'with whom I work' (con que trabajo).",
+      "rule": "Prepositions must come before their object in Spanish, never at the end of the sentence.",
+      "examples": [
+        {"spanish": "¿De dónde eres?", "english": "Where are you from? (From where are you?)"},
+        {"spanish": "¿A dónde vas?", "english": "Where are you going? (To where are you going?)"},
+        {"spanish": "No sé con cual quiere hacerlo", "english": "I don't know which one he wants to do it with"}
+      ],
+      "notes": "This doesn't sound formal in Spanish as it might in English - it's simply the only correct option."
+    },
+    {
+      "conceptSlug": "relative-clauses",
+      "conceptName": "Relative clauses with que/cual/quien",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "For relative clauses (the girl I work with), Spanish uses: con que, con cual, con la cual, con la que, con quien - all are correct. Que works for everything and is the simplest option.",
+      "rule": "Use preposition + que for relative clauses. Alternatives: cual, la cual, la que, quien. Que is sufficient for all cases.",
+      "examples": [
+        {"spanish": "La chica con que trabajo", "english": "The girl I work with"},
+        {"spanish": "La chica con quien trabajo", "english": "The girl I work with (with whom)"},
+        {"spanish": "La chica con la cual trabajo", "english": "The girl I work with (with which)"},
+        {"spanish": "Es la chica con que trabajaba", "english": "It's the girl I was working with"},
+        {"spanish": "La chica con que iba a la fiesta", "english": "The girl I was going to the party with"}
+      ],
+      "notes": "Just use que for everything at this stage. The other options (cual, quien, la que, la cual) will come naturally with exposure."
+    },
+    {
+      "conceptSlug": "cual-which",
+      "conceptName": "Cuál (which)",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "Cuál means 'which' and is used in questions. You don't need the word 'one' - cuál alone means 'which one'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "¿Cuál quieres?", "english": "Which one do you want?"},
+        {"spanish": "No sé cuál quiere", "english": "I don't know which one he wants"},
+        {"spanish": "No sé cuál quiere ver", "english": "I don't know which one he wants to see"},
+        {"spanish": "No sé con cuál quiere hacerlo", "english": "I don't know which one he wants to do it with"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "quien-who",
+      "conceptName": "Quién/quiénes (who)",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "Quién means who and pairs with he/she/it verb forms. Spanish has a plural form quiénes for when you know it's more than one person, which requires the they verb form.",
+      "rule": "Quién + singular verb. Quiénes + plural verb. Who = he/she/it form.",
+      "examples": [
+        {"spanish": "¿Quién va?", "english": "Who is going?"},
+        {"spanish": "¿Quiénes van?", "english": "Who (plural) is going?"},
+        {"spanish": "¿Quién está aquí?", "english": "Who is here?"},
+        {"spanish": "¿Quién está?", "english": "Who's there?"},
+        {"spanish": "No sé con quién tengo que hacerlo", "english": "I don't know who I have to do it with"},
+        {"spanish": "No sé para quién tengo que hacerlo", "english": "I don't know who I have to do it for"},
+        {"spanish": "No sé por quién tengo que hacerlo", "english": "I don't know who I have to do it because of"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "working-backwards",
+      "conceptName": "Working backwards from vocabulary",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Instead of only building up from verb roots, you can work backwards from a word you encounter. Seeing 'unidos' (united), identify -ido was added (so -ir or -er verb), remove it to find unir (to unite).",
+      "rule": "See a participle or conjugated form -> identify what was added -> remove it to find the infinitive.",
+      "examples": [
+        {"spanish": "Unidos -> unir", "english": "United -> to unite"}
+      ],
+      "notes": "When guessing between -ir and -er, the one you've heard before will feel more natural. This intuition grows with practice."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "Vamos a Estados Unidos", "english": "We are going to the United States", "derivation": "Estados Unidos = United States (no 'the' needed)"},
+    {"spanish": "unir", "english": "to unite", "derivation": "derived backwards from unidos"},
+    {"spanish": "la chica", "english": "the girl", "derivation": null},
+    {"spanish": "el chico", "english": "the guy, the boy", "derivation": null},
+    {"spanish": "cuál", "english": "which", "derivation": null},
+    {"spanish": "quién", "english": "who", "derivation": null},
+    {"spanish": "quiénes", "english": "who (plural)", "derivation": "plural of quién"}
+  ]
+}

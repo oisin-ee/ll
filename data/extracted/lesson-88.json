@@ -1,0 +1,76 @@
+{
+  "episode": 88,
+  "summary": "This lesson continues covering irregular preterite stems: poner (pus-), hacer (hic-/hiz-), venir (vin-), traer (traj-). It introduces the shared preterite of ser and ir (fui/fue/fueron) and shows how irregular preterite stems carry over into the past subjunctive. The -i- drops from -ieron in certain verbs (fueron, trajeron, dijeron).",
+  "teachings": [
+    {
+      "conceptSlug": "preterite-irregular-pattern",
+      "conceptName": "Irregular preterite pattern",
+      "category": "Verb conjugation",
+      "role": "practiced",
+      "summary": "More irregular preterite stems covered: poner → pus- (puse, puso), hacer → hic-/hiz- (hice, hizo), venir → vin- (vine, vino), traer → traj- (traje, trajo). All follow the same ending pattern: -e (I), -o (he/she), -imos (we), -iste (you), -ieron (they), unaccented.",
+      "rule": "Poner → pus-. Hacer → hic- (hizo for he/she, z replaces c before o). Venir → vin-. Traer → traj-.",
+      "examples": [
+        {"spanish": "Puse", "english": "I put (past)"},
+        {"spanish": "¿Dónde lo pusiste?", "english": "Where did you put it?"},
+        {"spanish": "Hice", "english": "I did / I made"},
+        {"spanish": "Hizo", "english": "He/she did / made"},
+        {"spanish": "Hicieron", "english": "They did / made"},
+        {"spanish": "Vine", "english": "I came"},
+        {"spanish": "Vino", "english": "He/she came (also: wine)"},
+        {"spanish": "Vino con vino", "english": "He came with wine"},
+        {"spanish": "Traje", "english": "I brought (also: suit)"},
+        {"spanish": "Traje un traje", "english": "I brought a suit"}
+      ],
+      "notes": "Poner → pus- reveals why compound forms use -pose in English (componer/compose, exponer/expose). Hizo uses z instead of c to preserve the /s/ sound before o."
+    },
+    {
+      "conceptSlug": "ser-ir-shared-preterite",
+      "conceptName": "Ser and ir share the same preterite",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Ser (to be) and ir (to go) share the same preterite forms: fui (I was/went), fue (he was/went), fuimos (we), fuiste (you informal), fueron (they). Context determines meaning. Extremely irregular — doesn't follow the standard pattern.",
+      "rule": "Fui = I was / I went. Fue = he/she was / went. Fuimos, fuiste, fueron.",
+      "examples": [
+        {"spanish": "No fui", "english": "I didn't go / I wasn't"},
+        {"spanish": "No fue", "english": "He didn't go / It wasn't"},
+        {"spanish": "Fuimos", "english": "We went / We were"},
+        {"spanish": "Fuiste", "english": "You went / You were (informal)"},
+        {"spanish": "Fueron", "english": "They went / They were"}
+      ],
+      "notes": "The -i- drops from -ieron in fueron (because 'fuieron' is hard to say). Same happens with trajeron and dijeron."
+    },
+    {
+      "conceptSlug": "preterite-to-past-subjunctive",
+      "conceptName": "Irregular preterite stems carry into past subjunctive",
+      "category": "Verb mood",
+      "role": "practiced",
+      "summary": "The past subjunctive is built from the 'they' preterite form, so all irregular stems carry over: fueron → fuera, tuvieron → tuviera, hicieron → hiciera, dijeron → dijera, trajeron → trajera.",
+      "rule": "They preterite → past subjunctive. Fueron → fuera. Tuvieron → tuviera. Hicieron → hiciera.",
+      "examples": [
+        {"spanish": "Si yo fuera tú", "english": "If I were you"},
+        {"spanish": "Si lo tuviera, te lo contaría", "english": "If I had it, I would tell you"},
+        {"spanish": "Quería que lo hicieran", "english": "I wanted them to do it"},
+        {"spanish": "Quería que lo hiciéramos", "english": "I wanted us to do it"}
+      ],
+      "notes": "This is why the past subjunctive is built from the 'they' preterite: to carry over irregularities."
+    },
+    {
+      "conceptSlug": "ieron-i-drop",
+      "conceptName": "Dropping -i- from -ieron",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "When the irregular preterite stem ends in j or the diphthong would be hard to pronounce, the -i- drops from -ieron: trajieron → trajeron, dijieron → dijeron, fuieron → fueron.",
+      "rule": "After j or difficult diphthongs, -ieron loses the i: trajeron, dijeron, fueron.",
+      "examples": [
+        {"spanish": "Fueron", "english": "They were / they went (not 'fuieron')"},
+        {"spanish": "Trajeron", "english": "They brought (not 'trajieron')"},
+        {"spanish": "Dijeron", "english": "They said (not 'dijieron')"}
+      ],
+      "notes": "The -i- falls away for efficiency of pronunciation."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "vino", "english": "wine; also: he/she came (preterite of venir)", "derivation": null},
+    {"spanish": "traje", "english": "suit (noun); also: I brought (preterite of traer)", "derivation": null}
+  ]
+}

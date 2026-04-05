@@ -1,0 +1,51 @@
+{
+  "episode": 82,
+  "summary": "This lesson practices mixing present and past subjunctive in the same sentence (e.g., present trigger with past subjunctive), introduces the imperfect of ser (era) via the English word 'era', and teaches the 'lo + adjective' construction as a way to avoid the subjunctive by restructuring sentences.",
+  "teachings": [
+    {
+      "conceptSlug": "subjunctive-past",
+      "conceptName": "Past subjunctive",
+      "category": "Verb mood",
+      "role": "practiced",
+      "summary": "A present-tense trigger (es relevante que) can be followed by either present or past subjunctive depending on the time being referred to. Past subjunctive is used when referring back to something in the past.",
+      "rule": "Present trigger + past subjunctive is valid when referring to a past event: No es muy relevante que lo encontraran.",
+      "examples": [
+        {"spanish": "No es muy relevante que lo encontraran", "english": "It's not very relevant that they found it"},
+        {"spanish": "No es muy relevante que lo encuentren", "english": "It's not very relevant that they find it"},
+        {"spanish": "Era muy relevante que lo encontraran", "english": "It was very relevant that they found it"},
+        {"spanish": "Es increíble que volvieran a hacerlo", "english": "It's incredible that they did it again"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "ser-imperfect-era",
+      "conceptName": "Ser imperfect: era",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "The imperfect (line in the past) of ser is irregular: era. The mnemonic is the English word 'era' — a line in the past is an era.",
+      "rule": "Ser imperfect: era (I/he/she/you formal), eras (you informal), éramos (we), eran (they)",
+      "examples": [
+        {"spanish": "Era muy relevante", "english": "It was very relevant"}
+      ],
+      "notes": "Remember: an 'era' is a line in the past. Pronounce the English word 'era' as Spanish and you get the form."
+    },
+    {
+      "conceptSlug": "lo-adjective-construction",
+      "conceptName": "Lo + adjective (the ... thing)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Lo + adjective means 'the [adjective] thing': lo importante = the important thing, lo increíble = the incredible thing. Using 'lo + adjective + es que' avoids the subjunctive that 'es + adjective + que' would trigger.",
+      "rule": "Lo + adjective + es que + indicative (no subjunctive). Contrast: Es + adjective + que + subjunctive.",
+      "examples": [
+        {"spanish": "Es increíble que vuelvan", "english": "It's incredible that they return (subjunctive)"},
+        {"spanish": "Lo increíble es que vuelven", "english": "The incredible thing is that they return (no subjunctive)"},
+        {"spanish": "Lo increíble es que vuelven a hacerlo", "english": "The incredible thing is that they do it again"},
+        {"spanish": "Es increíble que vuelvan a hacerlo", "english": "It's incredible that they do it again (subjunctive)"}
+      ],
+      "notes": "A useful strategy to avoid the subjunctive: restructure 'es + adj + que' into 'lo + adj + es que'."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "increíble", "english": "incredible / unbelievable", "derivation": "in- (not) + creíble (believable), from creer (to believe)"}
+  ]
+}

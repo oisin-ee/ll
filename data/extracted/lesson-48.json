@@ -1,0 +1,102 @@
+{
+  "episode": 48,
+  "summary": "Introduces the imperfect -ía ending for -er/-ir verbs, contrasts it with the conditional (-ería vs -ía), and teaches several uses of reflexive 'se' including 'se vende' (for sale) and 'cómo se dice' (how do you say). Also covers quedar (to remain/be left) vs quedarse (to stay).",
+  "teachings": [
+    {
+      "conceptSlug": "imperfect-tense-er-ir",
+      "conceptName": "Imperfect tense for -er/-ir verbs",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "For -er/-ir verbs in the imperfect, remove the ending and add -ía. This is the same sound as the conditional, but the conditional adds onto the full verb while the imperfect removes the ending first.",
+      "rule": "Remove -er/-ir, add -ía (I/he/she/it/usted), -ías (tú), -íamos (we), -ían (they). Key contrast: comería (I would eat) vs comía (I was eating).",
+      "examples": [
+        {"spanish": "Comía", "english": "I was eating / He was eating"},
+        {"spanish": "Lo vendía", "english": "I was selling it"},
+        {"spanish": "Se vendía", "english": "It was for sale"},
+        {"spanish": "Lo rompía", "english": "I was breaking it"},
+        {"spanish": "Se rompía", "english": "It was breaking (by itself)"},
+        {"spanish": "Se rompían", "english": "They were breaking (by themselves)"}
+      ],
+      "notes": "Conditional adds -ía to full verb (comería). Imperfect removes ending first (comía). Same -ía sound, different base."
+    },
+    {
+      "conceptSlug": "se-vende-passive",
+      "conceptName": "Se vende (passive/reflexive for sale)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Se vende literally means 'it sells itself' and is used to mean 'for sale'. This is seen on houses and cars in Spanish-speaking countries.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Se vende", "english": "For sale (it sells itself)"},
+        {"spanish": "Se vendía", "english": "It was for sale"},
+        {"spanish": "Se vendería", "english": "It would be for sale"}
+      ],
+      "notes": "You will see 'Se vende' on houses and cars in Spanish-speaking places."
+    },
+    {
+      "conceptSlug": "como-se-dice",
+      "conceptName": "¿Cómo se dice?",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "How do you say? in Spanish is literally 'how does it say itself?' - another creative use of the reflexive se structure.",
+      "rule": null,
+      "examples": [
+        {"spanish": "¿Cómo se dice?", "english": "How do you say? (How does it say itself?)"}
+      ],
+      "notes": "Don't say '¿Cómo dices?' for this meaning - that means 'how do you (individually) say it?'"
+    },
+    {
+      "conceptSlug": "decir-to-say",
+      "conceptName": "Decir (to say/tell) conjugation",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Introduced present tense conjugation of decir. Irregular in he/she form (dice) but the we form escapes the irregularity.",
+      "rule": "dice (he/she/it), dices (tú), dicen (they), decimos (we - regular pattern from decir)",
+      "examples": [
+        {"spanish": "Dice", "english": "He/she says"},
+        {"spanish": "Dices", "english": "You say (informal)"},
+        {"spanish": "Dicen", "english": "They say"},
+        {"spanish": "Decimos", "english": "We say"}
+      ],
+      "notes": "The we form tends to escape irregularity as the accent falls somewhere else."
+    },
+    {
+      "conceptSlug": "quedar-vs-quedarse",
+      "conceptName": "Quedar vs quedarse",
+      "category": "Key distinction",
+      "role": "introduced",
+      "summary": "Quedar means to remain/be left over. Quedarse (reflexive) means to stay. 'Me queda uno' = I have one left (it remains to me one). 'Me quedo' = I stay (I remain myself).",
+      "rule": "Quedar + indirect object = to have left (me queda uno). Quedarse (reflexive) = to stay (me quedo).",
+      "examples": [
+        {"spanish": "Me queda uno", "english": "I have one left"},
+        {"spanish": "Me quedan dos", "english": "I have two left"},
+        {"spanish": "Le quedan dos", "english": "He/she has two left"},
+        {"spanish": "No me quedan", "english": "I don't have any left"},
+        {"spanish": "Me quedo", "english": "I stay"},
+        {"spanish": "Nos quedamos", "english": "We stay"},
+        {"spanish": "Se quedan", "english": "They stay"},
+        {"spanish": "Se quedaban", "english": "They were staying"},
+        {"spanish": "No nos quedábamos aquí", "english": "We weren't staying here"},
+        {"spanish": "No nos quedaban", "english": "We didn't have any left"}
+      ],
+      "notes": "The verb changes to plural when what remains is plural: me queda uno, me quedan dos."
+    },
+    {
+      "conceptSlug": "se-habla-espanol",
+      "conceptName": "Se habla español",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Se habla español means 'Spanish is spoken' or 'Spanish spoken' - literally 'Spanish speaks itself'. Another creative application of the reflexive se.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Se habla español", "english": "Spanish spoken / Spanish is spoken"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "vender", "english": "to sell", "derivation": null},
+    {"spanish": "cómo", "english": "how", "derivation": null},
+    {"spanish": "dos", "english": "two", "derivation": "related to duo"}
+  ]
+}

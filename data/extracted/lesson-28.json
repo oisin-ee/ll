@@ -1,0 +1,125 @@
+{
+  "episode": 28,
+  "summary": "This lesson teaches es/son (is/are from ser), the adjective caro (expensive), noun gender agreement in adjectives vs nouns, the -ive to -ivo cognate pattern, consonant plural rule (-es), and the word muy (very). Double consonants from English simplify to single in Spanish (except rr and nn).",
+  "teachings": [
+    {
+      "conceptSlug": "ser-es-son",
+      "conceptName": "es (is) and son (are) from ser",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Es means is (he/she/it is, you formal are). Son means they are / you guys are. These come from ser, used for characteristics.",
+      "rule": "es = is (singular). son = they are / you (plural) are.",
+      "examples": [
+        {"spanish": "El carro es caro", "english": "The car is expensive"},
+        {"spanish": "Es cara", "english": "It is expensive (feminine noun)"},
+        {"spanish": "Los carros son caros", "english": "The cars are expensive"},
+        {"spanish": "Las máquinas son caras", "english": "The cars (machines) are expensive"},
+        {"spanish": "Es profesor", "english": "He is a professor"},
+        {"spanish": "Es profesora", "english": "She is a professor"},
+        {"spanish": "Son profesores", "english": "They are professors"},
+        {"spanish": "Son profesoras", "english": "They are professors (female)"},
+        {"spanish": "Es doctor", "english": "He is a doctor"},
+        {"spanish": "Es doctora", "english": "She is a doctor"}
+      ],
+      "notes": "In Spanish you don't need 'a' before professions: es profesor (not es un profesor)."
+    },
+    {
+      "conceptSlug": "adjective-agreement",
+      "conceptName": "Adjectives agree in gender/number with nouns",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "Adjectives ending in -o change to -a for feminine. Adjectives NOT ending in -o don't change for gender (e.g., global stays global). But nouns can change to feminine (profesor → profesora) to differentiate. Understanding word type (noun vs adjective) determines behavior.",
+      "rule": "Adjectives: only change gender if they end in -o (caro→cara). Otherwise no change (global stays global). Nouns: can change regardless (profesor→profesora, doctor→doctora).",
+      "examples": [
+        {"spanish": "es caro / es cara", "english": "it's expensive (masc/fem)"},
+        {"spanish": "la situación global", "english": "the global situation (no 'globala')"},
+        {"spanish": "profesor / profesora", "english": "professor (masc/fem noun)"},
+        {"spanish": "doctor / doctora", "english": "doctor (masc/fem noun)"}
+      ],
+      "notes": "This is why knowing word type matters — adjectives and nouns behave differently for gender."
+    },
+    {
+      "conceptSlug": "consonant-plural-es",
+      "conceptName": "Plural of consonant-ending words: add -es",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Words ending in a consonant form their plural by adding -es, not just -s.",
+      "rule": "Consonant ending → add -es for plural. Vowel ending → add -s.",
+      "examples": [
+        {"spanish": "profesor → profesores", "english": "professor → professors"},
+        {"spanish": "doctor → doctores", "english": "doctor → doctors"},
+        {"spanish": "usted → ustedes", "english": "you (formal) → you (plural)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "ive-to-ivo",
+      "conceptName": "English -ive becomes -ivo in Spanish",
+      "category": "Word formation",
+      "role": "introduced",
+      "summary": "English words ending in -ive become -ivo (masculine singular/neuter) in Spanish. This follows standard gender/number agreement: -ivo, -iva, -ivos, -ivas.",
+      "rule": "English -ive → Spanish -ivo (masculine). Changes to -iva (feminine), -ivos (masculine plural), -ivas (feminine plural).",
+      "examples": [
+        {"spanish": "adictivo", "english": "addictive"},
+        {"spanish": "positivo / positiva", "english": "positive (masc/fem)"},
+        {"spanish": "intuitivos / intuitivas", "english": "intuitive (masc pl / fem pl)"},
+        {"spanish": "atractiva", "english": "attractive (feminine)"},
+        {"spanish": "creativa", "english": "creative (feminine)"},
+        {"spanish": "agresivo / agresivos", "english": "aggressive (masc sg / masc pl)"},
+        {"spanish": "negativo", "english": "negative"},
+        {"spanish": "intensivo", "english": "intensive"},
+        {"spanish": "nativos / nativas", "english": "natives (masc / fem)"}
+      ],
+      "notes": "Neuter/generic uses masculine singular: 'es adictivo' (it's addictive, referring to a situation)."
+    },
+    {
+      "conceptSlug": "double-consonant-simplification",
+      "conceptName": "English double consonants simplify in Spanish",
+      "category": "Word formation",
+      "role": "introduced",
+      "summary": "Random double consonants in English (ff, ss, gg) become single consonants in Spanish. Only double-r (rr) and double-n (nn) cross over.",
+      "rule": "English double f, s, g → single in Spanish. Only rr and nn remain doubled.",
+      "examples": [
+        {"spanish": "agresivo (not aggresivo)", "english": "aggressive"},
+        {"spanish": "posible (not possible)", "english": "possible"},
+        {"spanish": "pasión (not passión)", "english": "passion"},
+        {"spanish": "connotación", "english": "connotation (nn stays)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "muy-very",
+      "conceptName": "muy = very",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Muy means 'very'. Spelled m-u-y, the y sounds like /i/.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Es muy atractiva", "english": "She is very attractive"},
+        {"spanish": "Ella es muy creativa", "english": "She is very creative"},
+        {"spanish": "Es muy negativo", "english": "He is very negative"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "caro/cara", "english": "expensive", "derivation": null},
+    {"spanish": "es", "english": "is (from ser)", "derivation": null},
+    {"spanish": "son", "english": "they are / you (plural) are (from ser)", "derivation": null},
+    {"spanish": "profesor/profesora", "english": "professor, teacher", "derivation": null},
+    {"spanish": "doctor/doctora", "english": "doctor", "derivation": null},
+    {"spanish": "muy", "english": "very", "derivation": null},
+    {"spanish": "adictivo", "english": "addictive", "derivation": "addictive → adictivo"},
+    {"spanish": "positivo", "english": "positive", "derivation": "positive → positivo"},
+    {"spanish": "intuitivo", "english": "intuitive", "derivation": "intuitive → intuitivo"},
+    {"spanish": "atractivo/atractiva", "english": "attractive", "derivation": "attractive → atractivo"},
+    {"spanish": "creativo/creativa", "english": "creative", "derivation": "creative → creativo"},
+    {"spanish": "agresivo", "english": "aggressive", "derivation": "aggressive → agresivo (double g/s simplified)"},
+    {"spanish": "negativo", "english": "negative", "derivation": "negative → negativo"},
+    {"spanish": "intensivo", "english": "intensive", "derivation": "intensive → intensivo"},
+    {"spanish": "nativo/nativa", "english": "native", "derivation": "native → nativo"},
+    {"spanish": "dinero", "english": "money (standard)", "derivation": null},
+    {"spanish": "plata", "english": "money/silver (informal)", "derivation": "literally 'silver'"},
+    {"spanish": "pasta", "english": "money (Spain slang)", "derivation": null}
+  ]
+}

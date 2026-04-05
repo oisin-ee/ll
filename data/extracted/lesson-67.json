@@ -1,0 +1,62 @@
+{
+  "episode": 67,
+  "summary": "This lesson teaches the Spanish accent/stress rules: words ending in a vowel, n, or s have natural stress on the penultimate syllable; words ending in other consonants have stress on the final syllable. Written accents indicate a break from these rules. It also covers accent marks used to differentiate monosyllables and question words.",
+  "teachings": [
+    {
+      "conceptSlug": "spanish-stress-rules",
+      "conceptName": "Spanish stress and written accent rules",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Spanish has two natural stress rules: (1) words ending in a vowel, n, or s have stress on the penultimate (second-to-last) syllable; (2) words ending in any other consonant have stress on the final syllable. These endings (vowel, n, s) correspond to what verb forms end in. A written accent (tilde) appears only when a word breaks these natural rules.",
+      "rule": "Ends in vowel/n/s -> stress penultimate syllable (no accent needed). Ends in other consonant -> stress final syllable (no accent needed). Written accent = the word breaks the rule above.",
+      "examples": [
+        {"spanish": "habla, hablan, hablas, hablamos", "english": "End in vowel/n/s, stress on penultimate -- no written accent"},
+        {"spanish": "comer, estar, hablar, encontrar", "english": "End in -r (not vowel/n/s), stress on final syllable -- no written accent"},
+        {"spanish": "tradición, situación, opinión", "english": "End in -n but stress is on final syllable -- breaks rule, so written accent on ó"},
+        {"spanish": "encontró, habló, llamó, llegó", "english": "End in vowel but stress on final syllable -- preterite 3rd person always has accent"},
+        {"spanish": "vivió", "english": "End in vowel, stress on end -- written accent"},
+        {"spanish": "limón", "english": "Lemon -- ends in n but stress on final syllable, so accent on ó"},
+        {"spanish": "salud", "english": "Health -- ends in d, stress on end, follows rule, no accent"}
+      ],
+      "notes": "The rule is easy to remember by looking at present tense verbs: they end in vowels, n's, or s's, and always stress the penultimate syllable (with the one exception of estar: estás, están, está which have written accents)."
+    },
+    {
+      "conceptSlug": "accent-differentiating-monosyllables",
+      "conceptName": "Accents differentiating monosyllables",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Some one-syllable words that are spelled the same are differentiated by a written accent. The accent does not change pronunciation -- it only distinguishes meaning in writing.",
+      "rule": "Monosyllable pairs: sí (yes) vs si (if); mí (me, after prepositions) vs mi (my); tú (you) vs tu (your); sé (I know) vs se (reflexive/phonetic pronoun).",
+      "examples": [
+        {"spanish": "Sí lo quiero.", "english": "Yes I want it. (sí with accent = yes)"},
+        {"spanish": "Si lo quiero.", "english": "If I want it. (si without accent = if)"},
+        {"spanish": "Para mí.", "english": "For me. (mí with accent)"},
+        {"spanish": "Mi casa.", "english": "My house. (mi without accent)"},
+        {"spanish": "Tú.", "english": "You. (tú with accent)"},
+        {"spanish": "Tu casa.", "english": "Your house. (tu without accent)"},
+        {"spanish": "Sé.", "english": "I know. (sé with accent)"},
+        {"spanish": "Se lo doy.", "english": "I give it to him. (se without accent)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "accent-question-words",
+      "conceptName": "Accents on question words",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Question words take a written accent when used as questions, but not when used as non-question conjunctions/relative words.",
+      "rule": "dónde (where?) vs donde (where, relative); cómo (how?) vs como (like/as)",
+      "examples": [
+        {"spanish": "¿Dónde estás?", "english": "Where are you? (question -- accent)"},
+        {"spanish": "Voy a verlo donde vimos el fútbol.", "english": "I'm going to see him where we saw the football. (not a question -- no accent)"},
+        {"spanish": "¿Cómo?", "english": "How? (question -- accent)"},
+        {"spanish": "Como.", "english": "Like/as. (not a question -- no accent)"}
+      ],
+      "notes": "Many native Spanish speakers make mistakes with these accents in writing."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "limón", "english": "lemon", "derivation": "From Persian; same root as 'lime'"},
+    {"spanish": "salud", "english": "health", "derivation": "Related to 'salute'; also used when toasting"}
+  ]
+}

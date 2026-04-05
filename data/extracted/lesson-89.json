@@ -1,0 +1,75 @@
+{
+  "episode": 89,
+  "summary": "This lesson teaches how to analyze and make your own rules about Spanish by observing patterns. Three exercises are covered: (1) demasiado changes to match nouns but not adjectives, (2) feminine words starting and ending with 'a' in two syllables take 'el' not 'la', and (3) uno/alguno/ninguno drop the final -o before masculine nouns.",
+  "teachings": [
+    {
+      "conceptSlug": "demasiado-agreement",
+      "conceptName": "Demasiado agreement rules",
+      "category": "Adjective agreement",
+      "role": "introduced",
+      "summary": "Demasiado (too/too many) agrees in gender and number when modifying a noun (demasiadas casas, demasiados coches), but stays invariable as demasiado when modifying an adjective (demasiado agresivo, demasiado agresiva, demasiado agresivos).",
+      "rule": "Demasiado + noun = agrees (demasiadas casas, demasiados coches). Demasiado + adjective = invariable (demasiado agresivo/a/os/as).",
+      "examples": [
+        {"spanish": "Demasiadas casas", "english": "Too many houses"},
+        {"spanish": "Demasiados coches", "english": "Too many cars"},
+        {"spanish": "Demasiado agresivo", "english": "Too aggressive (masc.)"},
+        {"spanish": "Demasiado agresiva", "english": "Too aggressive (fem.)"},
+        {"spanish": "Demasiado agresivos", "english": "Too aggressive (masc. plural)"}
+      ],
+      "notes": "The key is identifying word type: noun → agreement, adjective → no agreement."
+    },
+    {
+      "conceptSlug": "el-with-feminine-a-words",
+      "conceptName": "El with feminine words starting/ending in a",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Feminine two-syllable words that begin and end with 'a' take 'el' instead of 'la' to avoid the awkward 'la a-a' sound: el ala (the wing), el agua (the water), el aula (the classroom). They remain grammatically feminine (el agua fría, not frío).",
+      "rule": "Two-syllable feminine words beginning and ending with 'a' take 'el' (not 'la'). They remain feminine for adjective agreement.",
+      "examples": [
+        {"spanish": "El ala", "english": "The wing"},
+        {"spanish": "El agua", "english": "The water"},
+        {"spanish": "El aula", "english": "The classroom"},
+        {"spanish": "El agua fría", "english": "The cold water (fría = feminine)"},
+        {"spanish": "La alfombra", "english": "The carpet (not affected — more than two syllables)"}
+      ],
+      "notes": "This doesn't apply to longer words like la alfombra or la almohada — only two-syllable words beginning and ending in a."
+    },
+    {
+      "conceptSlug": "uno-alguno-ninguno-apocope",
+      "conceptName": "Uno/alguno/ninguno drop -o before masculine nouns",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Uno (one), alguno (some), and ninguno (none) lose the final -o when placed before a masculine noun: un hombre, algún coche, ningún coche. The feminine forms (una, alguna, ninguna) do not change.",
+      "rule": "Before a masculine noun: uno → un, alguno → algún, ninguno → ningún. Feminine unchanged: una, alguna, ninguna.",
+      "examples": [
+        {"spanish": "Quiero uno", "english": "I want one (standalone)"},
+        {"spanish": "Quiero un coche", "english": "I want one/a car"},
+        {"spanish": "No quiero ninguno", "english": "I don't want any (standalone)"},
+        {"spanish": "No quiero ningún coche", "english": "I don't want any car"},
+        {"spanish": "Algún hombre", "english": "Some man"},
+        {"spanish": "Alguna mujer", "english": "Some woman"},
+        {"spanish": "Ninguna mujer", "english": "No woman"}
+      ],
+      "notes": "The -o drops only before masculine nouns. When standalone (no noun following), the full form is used."
+    },
+    {
+      "conceptSlug": "making-your-own-rules",
+      "conceptName": "Analytical approach to language learning",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "The lesson emphasizes analyzing patterns in Spanish you encounter, identifying what type of word is involved (noun vs adjective), and making your own rules. Understanding why something is correct — not just memorizing — is the path to controlling the language.",
+      "rule": null,
+      "examples": [],
+      "notes": "Identify word types (noun, adjective, verb) to figure out most grammatical behaviors. Analyze, don't memorize."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "demasiado", "english": "too / too much / too many", "derivation": "de más (of more) + -iado"},
+    {"spanish": "de más", "english": "extra / too many / spare", "derivation": "de (of) + más (more). Tengo cuatro de más = I have four too many."},
+    {"spanish": "el ala", "english": "the wing", "derivation": null},
+    {"spanish": "el agua", "english": "the water", "derivation": null},
+    {"spanish": "el aula", "english": "the classroom / the hall", "derivation": null},
+    {"spanish": "alguno", "english": "some (one)", "derivation": null},
+    {"spanish": "ninguno", "english": "none / no (one)", "derivation": null}
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "episode": 11,
+  "summary": "Teaches the -ar verb conjugation pattern: key vowel 'a' for he/she/it/you(formal), adding -n for they/you(plural), adding -s for you(informal). Introduces 'hablar' (to speak), 'mucho' (much), and the rule for pronoun placement with changed vs infinitive verbs.",
+  "teachings": [
+    {
+      "conceptSlug": "ar-verb-conjugation",
+      "conceptName": "-ar verb conjugation pattern",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "For -ar verbs, the key vowel is /a/. Remove -ar, add -o for I. For he/she/it/you(formal), add -a. Add -an for they/you(plural). Add -as for you(informal). New verbs entering Spanish always become -ar verbs.",
+      "rule": "-ar verbs: -o (I), -a (he/she/it/you formal), -an (they/you plural), -as (you informal). Key vowel = a.",
+      "examples": [
+        {"spanish": "eliminar → elimino", "english": "to eliminate → I eliminate"},
+        {"spanish": "eliminar → elimina", "english": "to eliminate → he/she eliminates"},
+        {"spanish": "colaborar → colaboran", "english": "to collaborate → they collaborate"},
+        {"spanish": "hablar → hablo", "english": "to speak → I speak"},
+        {"spanish": "hablar → habla", "english": "to speak → he/she speaks"},
+        {"spanish": "hablar → hablan", "english": "to speak → they speak"},
+        {"spanish": "hablar → hablas", "english": "to speak → you (informal) speak"}
+      ],
+      "notes": "Any new verb entering Spanish becomes an -ar verb (e.g., tuitear, facebookear, googlear). The -er/-ir groups are historically closed."
+    },
+    {
+      "conceptSlug": "pronoun-placement",
+      "conceptName": "Pronoun placement: before changed verb or after infinitive",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Pronouns (me, te, lo, la, los, las) go BEFORE a conjugated verb, or AFTER an infinitive (attached to it). When there's both a conjugated verb and an infinitive, you have the option of either position.",
+      "rule": "Pronoun before conjugated verb: 'Lo quiero'. Pronoun after infinitive: 'Quiero verlo'. With only a conjugated verb, pronoun must go before.",
+      "examples": [
+        {"spanish": "Lo quiero", "english": "I want it"},
+        {"spanish": "Quiero verlo", "english": "I want to see it"},
+        {"spanish": "Lo quiero ver", "english": "I want to see it (alternative)"},
+        {"spanish": "Es importante hablarlo", "english": "It's important to speak about it"},
+        {"spanish": "Debo invitarlo / Lo debo invitar", "english": "I must invite him (both options)"}
+      ],
+      "notes": "With a single conjugated verb and no infinitive, the pronoun must go before — no option."
+    },
+    {
+      "conceptSlug": "hablar-to-speak",
+      "conceptName": "Hablar (to speak)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Hablar means 'to speak'. Spelled h-a-b-l-a-r with silent h. An -ar verb.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Hablo", "english": "I speak"},
+        {"spanish": "No hablan con Pablo", "english": "They don't speak with Pablo"},
+        {"spanish": "Voy a hablar", "english": "I'm going to speak"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "durar-to-last",
+      "conceptName": "Durar (to last)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Durar means 'to last', derived from 'duration' (duración).",
+      "rule": null,
+      "examples": [
+        {"spanish": "Dura mucho", "english": "It lasts a long time"},
+        {"spanish": "No dura mucho", "english": "It doesn't last a long time"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "masticar-to-chew",
+      "conceptName": "Masticar (to chew)",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Masticar means 'to chew', from 'mastication'. Demonstrates that learning Spanish can reveal English vocabulary you didn't know.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Mastico", "english": "I chew"},
+        {"spanish": "Mastica", "english": "He/she chews"}
+      ],
+      "notes": "Learning Spanish can help you discover English words (e.g., mordent = biting, from morder = to bite)."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "hablar", "english": "to speak", "derivation": null},
+    {"spanish": "mucho", "english": "much / a lot", "derivation": null},
+    {"spanish": "durar", "english": "to last", "derivation": "duration → duración → durar"},
+    {"spanish": "exagerar", "english": "to exaggerate", "derivation": "exageración → exagerar"},
+    {"spanish": "masticar", "english": "to chew", "derivation": "mastication → masticación → masticar"},
+    {"spanish": "morder", "english": "to bite", "derivation": "related to English 'mordent'"},
+    {"spanish": "eliminar", "english": "to eliminate/delete", "derivation": "elimination → eliminación → eliminar"},
+    {"spanish": "colaborar", "english": "to collaborate", "derivation": "colaboración → colaborar"},
+    {"spanish": "tolerar", "english": "to tolerate", "derivation": "toleration → toleración → tolerar"}
+  ]
+}

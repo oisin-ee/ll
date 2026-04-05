@@ -1,0 +1,36 @@
+{
+  "episode": 80,
+  "summary": "This lesson reviews the different uses of 'se' in Spanish (reflexive, phonetic double-pronoun change) and introduces a new use: 'se + me/te/le/nos/les' to express 'on me/on you/on him' etc., conveying that something happens to someone unintentionally or affecting them personally.",
+  "teachings": [
+    {
+      "conceptSlug": "se-constructions",
+      "conceptName": "Se constructions",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "Review of three uses of se: (1) reflexive se meaning 'self' (se queda = he stays/remains), (2) phonetic se replacing les before lo/la/los/las (se lo preparo = I prepare it for them), and (3) NEW: se + indirect object pronoun to express 'on me/you/him' — something happening to someone.",
+      "rule": "Se + me/te/le/nos/les + verb = something happens 'on' someone (unintentionally/affecting them). Order: se + indirect object + verb.",
+      "examples": [
+        {"spanish": "Se queda", "english": "He stays (himself)"},
+        {"spanish": "Se lo preparo", "english": "I prepare it for them"},
+        {"spanish": "La puerta se cierra", "english": "The door closes (itself)"},
+        {"spanish": "La puerta se me cierra", "english": "The door closes on me"},
+        {"spanish": "La cena se quema", "english": "The dinner gets burned"},
+        {"spanish": "La cena se me quema", "english": "The dinner burns on me"},
+        {"spanish": "La batería siempre se me acaba", "english": "The battery always runs out on me"},
+        {"spanish": "¿La batería se te acaba?", "english": "Does the battery run out on you? (informal)"},
+        {"spanish": "¿La batería se le acaba?", "english": "Does the battery run out on you? (formal)"},
+        {"spanish": "La batería se les acaba", "english": "The battery runs out on you guys/them"},
+        {"spanish": "La cena se me quemó", "english": "The dinner burned on me"},
+        {"spanish": "La cena se nos quemó", "english": "The dinner burned on us"}
+      ],
+      "notes": "Uses le (not lo) because it's 'on you' / 'to you'. This 'on me' structure is much more common in Spanish than English and not restricted to a few verbs."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "quemar", "english": "to burn", "derivation": null},
+    {"spanish": "la cena", "english": "the dinner", "derivation": "From cenar (to dine)"},
+    {"spanish": "acabar", "english": "to finish / to run out", "derivation": null},
+    {"spanish": "la batería", "english": "the battery", "derivation": null},
+    {"spanish": "siempre", "english": "always", "derivation": null}
+  ]
+}

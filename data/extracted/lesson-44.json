@@ -1,0 +1,110 @@
+{
+  "episode": 44,
+  "summary": "This lesson covers noun gender exceptions: Greek-origin words ending in -ma that are masculine (el problema, el sistema, el esquema), the feminine word mano (hand), and abbreviated feminines like foto and moto. It also introduces demonstratives este/esta (this) and ese/esa (that), and practices conditional structures with could/should.",
+  "teachings": [
+    {
+      "conceptSlug": "greek-ma-nouns",
+      "conceptName": "Greek -ma nouns are masculine",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Many Spanish words ending in -ma entered through Greek. In Greek they are neuter but look masculine, so they became masculine in Spanish despite ending in -a. Examples: el problema, el sistema, el paradigma, el esquema, el diagrama, el planeta.",
+      "rule": "Words ending in -ma that came from Greek are masculine: el problema, el sistema, el diagrama, el esquema, el paradigma, el planeta.",
+      "examples": [
+        { "spanish": "el problema", "english": "the problem" },
+        { "spanish": "el sistema", "english": "the system" },
+        { "spanish": "el paradigma", "english": "the paradigm" },
+        { "spanish": "el esquema", "english": "the outline/diagram" },
+        { "spanish": "el diagrama", "english": "the diagram" },
+        { "spanish": "el planeta", "english": "the planet" },
+        { "spanish": "un planeta", "english": "a planet" },
+        { "spanish": "los planetas", "english": "the planets" }
+      ],
+      "notes": "El esquema follows the e-prosthesis rule (scheme -> esquema, since Spanish can't start with s+consonant)."
+    },
+    {
+      "conceptSlug": "este-ese-demonstratives",
+      "conceptName": "Este/esta (this) and ese/esa (that)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Este (masculine) and esta (feminine) mean 'this'. Remove the t to get ese/esa meaning 'that'. Plurals: estos/estas (these), esos/esas (those).",
+      "rule": "This: este (m), esta (f). That: ese (m), esa (f). Plurals add -s: estos, estas, esos, esas. Remove t from este/esta to get ese/esa.",
+      "examples": [
+        { "spanish": "este auto", "english": "this car" },
+        { "spanish": "esta noche", "english": "this night / tonight" },
+        { "spanish": "ese auto", "english": "that car" },
+        { "spanish": "esa noche", "english": "that night" },
+        { "spanish": "esas noches", "english": "those nights" },
+        { "spanish": "esta mano", "english": "this hand" },
+        { "spanish": "esa mano", "english": "that hand" },
+        { "spanish": "estas manos", "english": "these hands" },
+        { "spanish": "No quiero ese auto, porque es muy grande.", "english": "I don't want that car, because it's very big." }
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "mano-feminine-exception",
+      "conceptName": "La mano - feminine word ending in -o",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Mano (hand) is the only true feminine word ending in -o. La foto and la moto are not true exceptions - they are abbreviations of la fotografía and la motocicleta, retaining the feminine article.",
+      "rule": "La mano = the hand. Feminine despite ending in -o. La foto = la fotografía. La moto = la motocicleta.",
+      "examples": [
+        { "spanish": "la mano", "english": "the hand" },
+        { "spanish": "las manos", "english": "the hands" },
+        { "spanish": "la foto", "english": "the photo" },
+        { "spanish": "la moto", "english": "the motorbike" }
+      ],
+      "notes": "Mano appears in English words: manuscript, manual, maintain (mantener), manage (manejar). Manejar means to handle/manage and also 'to drive' in some Latin American countries."
+    },
+    {
+      "conceptSlug": "conditional-tense",
+      "conceptName": "Conditional tense (would)",
+      "category": "Verb tense",
+      "role": "practiced",
+      "summary": "Practiced conditional structures: could (podría), should (debería), would like (me gustaría), with various sentence constructions.",
+      "rule": null,
+      "examples": [
+        { "spanish": "¿Me podrías dar una mano?", "english": "Could you give me a hand?" },
+        { "spanish": "Deberías darme una mano.", "english": "You should give me a hand." },
+        { "spanish": "Deberían darme una mano.", "english": "You guys should give me a hand." },
+        { "spanish": "Nos deberían dar una mano.", "english": "You guys should give us a hand." },
+        { "spanish": "Tomaría una foto.", "english": "I would take a photo." },
+        { "spanish": "Me gustaría tomar una foto, pero no tengo mi cámara.", "english": "I would like to take a photo, but I don't have my camera." }
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "tomar-to-take",
+      "conceptName": "Tomar - to take",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Tomar means to take. Used for 'tomar una foto' (to take a photo). Sacar can also be used for photos.",
+      "rule": null,
+      "examples": [
+        { "spanish": "Estoy tomando una foto.", "english": "I'm taking a photo (right now)." },
+        { "spanish": "Tomaría una foto.", "english": "I would take a photo." },
+        { "spanish": "Me gustaría tomar una foto.", "english": "I would like to take a photo." }
+      ],
+      "notes": "Sacar can also be used for taking photos: estoy sacando una foto."
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "el problema", "english": "the problem", "derivation": "Greek origin, masculine despite -a ending" },
+    { "spanish": "el sistema", "english": "the system", "derivation": "Greek origin" },
+    { "spanish": "el paradigma", "english": "the paradigm", "derivation": "Greek origin" },
+    { "spanish": "el esquema", "english": "the outline, diagram", "derivation": "from English 'scheme', with e-prosthesis" },
+    { "spanish": "el diagrama", "english": "the diagram", "derivation": "Greek origin" },
+    { "spanish": "el planeta", "english": "the planet", "derivation": "Greek origin, masculine" },
+    { "spanish": "la mano", "english": "the hand", "derivation": "found in manuscript, manual, maintain, manage" },
+    { "spanish": "manejar", "english": "to handle, to manage, to drive", "derivation": "from mano (hand); originally for handling horses" },
+    { "spanish": "mantener", "english": "to maintain", "derivation": "mano (hand) + tener" },
+    { "spanish": "grande", "english": "big, large", "derivation": "cognate with English 'grand'" },
+    { "spanish": "este/esta", "english": "this (m/f)", "derivation": null },
+    { "spanish": "ese/esa", "english": "that (m/f)", "derivation": "este/esta minus the t" },
+    { "spanish": "la noche", "english": "the night", "derivation": null },
+    { "spanish": "tomar", "english": "to take", "derivation": null },
+    { "spanish": "la foto", "english": "the photo", "derivation": "abbreviation of la fotografía" },
+    { "spanish": "la moto", "english": "the motorbike", "derivation": "abbreviation of la motocicleta" },
+    { "spanish": "cámara", "english": "camera", "derivation": "cognate" }
+  ]
+}

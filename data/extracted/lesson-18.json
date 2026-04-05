@@ -1,0 +1,65 @@
+{
+  "episode": 18,
+  "summary": "This lesson teaches the 'we' form for -er verbs (-emos) and -ir verbs (-imos), noting this is the only difference between -er and -ir verbs in all of Spanish. New verbs preferir, vivir, and entender are introduced alongside vocabulary for 'here' and 'always'.",
+  "teachings": [
+    {
+      "conceptSlug": "we-form-er-ir-verbs",
+      "conceptName": "Present tense 'we' form: -emos for -er, -imos for -ir",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "For -er verbs the 'we' form uses -emos, and for -ir verbs it uses -imos. This is the only difference between -er and -ir verbs in the entire Spanish language. For everything else they behave identically.",
+      "rule": "Remove -er and add -emos (we speak: entendemos). Remove -ir and add -imos (we live: vivimos). This is the ONLY difference between -er and -ir verbs.",
+      "examples": [
+        {"spanish": "preferir → preferimos", "english": "to prefer → we prefer"},
+        {"spanish": "venir → venimos", "english": "to come → we come"},
+        {"spanish": "vivir → vivimos", "english": "to live → we live"},
+        {"spanish": "entender → entendemos", "english": "to understand → we understand"},
+        {"spanish": "perder → perdemos", "english": "to lose → we lose"}
+      ],
+      "notes": "The -ir 'i' appears in the 'we' ending for the first time in present tense. For all other conjugations, -er and -ir verbs behave identically."
+    },
+    {
+      "conceptSlug": "stem-changing-e-to-ie",
+      "conceptName": "Stem change: e splits to ie under stress",
+      "category": "Verb conjugation",
+      "role": "practiced",
+      "summary": "Practiced with preferir and entender. The e splits in stressed forms (prefiero, entiende) but not in the 'we' form (preferimos, entendemos).",
+      "rule": null,
+      "examples": [
+        {"spanish": "preferir → prefiero", "english": "to prefer → I prefer"},
+        {"spanish": "preferir → prefiere", "english": "to prefer → he/she prefers"},
+        {"spanish": "preferir → prefieren", "english": "to prefer → they prefer"},
+        {"spanish": "entender → entiendo", "english": "to understand → I understand"},
+        {"spanish": "entender → entiende", "english": "to understand → he/she understands"},
+        {"spanish": "¿Por qué no entiende?", "english": "Why doesn't he understand?"},
+        {"spanish": "Quiero saber por qué no entiende", "english": "I want to know why he doesn't understand"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "vowel-harmony-warning",
+      "conceptName": "Vowel harmony error pattern",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "English speakers tend to harmonize vowels in Spanish words (e.g., saying 'veve' instead of 'vive'). The fix is to consciously remove the ending from the infinitive stem, see what's left, and add the correct ending.",
+      "rule": "Always strip the ending from the infinitive to find the stem, then add the conjugation ending. Don't let vowel sounds bleed into adjacent syllables.",
+      "examples": [
+        {"spanish": "vivir → viv- → vive (not veve)", "english": "to live → he/she lives"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "preferir", "english": "to prefer", "derivation": "prefer → preferir"},
+    {"spanish": "vivir", "english": "to live", "derivation": "viva la revolución = long live the revolution"},
+    {"spanish": "aquí", "english": "here (Spain)", "derivation": null},
+    {"spanish": "acá", "english": "here (Latin America)", "derivation": null},
+    {"spanish": "saber", "english": "to know", "derivation": null},
+    {"spanish": "entender", "english": "to understand (more common than comprender)", "derivation": null},
+    {"spanish": "dónde", "english": "where", "derivation": null},
+    {"spanish": "siempre", "english": "always", "derivation": null},
+    {"spanish": "Siempre perdemos", "english": "We always lose", "derivation": null},
+    {"spanish": "Quiero saber dónde viven", "english": "I want to know where they live", "derivation": null},
+    {"spanish": "Vivo aquí", "english": "I live here", "derivation": null}
+  ]
+}

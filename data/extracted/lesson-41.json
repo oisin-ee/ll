@@ -1,0 +1,80 @@
+{
+  "episode": 41,
+  "summary": "This lesson introduces the conditional tense (would), formed by adding -ía endings to the full infinitive. It reviews the future tense and its connection to haber, and introduces the conditional with practice on bailar, ir, comer, transformar, contaminar, and imaginar, including reflexive se for passive meaning.",
+  "teachings": [
+    {
+      "conceptSlug": "conditional-tense",
+      "conceptName": "Conditional tense (would)",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "The conditional (would) is formed by adding -ía to the full infinitive. Unlike other tenses, I and he/she/it/you(formal) share the same form (-ía). Other endings: -íamos (we), -ían (they/you guys), -ías (you informal). Like the future tense, the accent is pushed to the ending and all verb types (-ar, -er, -ir) use the same endings.",
+      "rule": "Full infinitive + -ía (I/he/she/it/you formal), -ías (you informal), -íamos (we), -ían (they/you guys). The accent stays on -ía in all forms.",
+      "examples": [
+        { "spanish": "Bailaría.", "english": "I/he/she would dance." },
+        { "spanish": "Bailaríamos.", "english": "We would dance." },
+        { "spanish": "Bailarían.", "english": "They would dance." },
+        { "spanish": "Bailarías.", "english": "You (informal) would dance." },
+        { "spanish": "Iría.", "english": "I/he/she would go." },
+        { "spanish": "No iría.", "english": "He/she wouldn't go." },
+        { "spanish": "Comería, pero no tengo tiempo.", "english": "I would eat, but I don't have time." },
+        { "spanish": "Transformaría la situación.", "english": "It would transform the situation." },
+        { "spanish": "Me imaginaría que no quiere ir.", "english": "I would imagine that he doesn't want to go." }
+      ],
+      "notes": "Both futures (will and would) share: adding to full infinitive, stressing the ending, and grouping all verb types together."
+    },
+    {
+      "conceptSlug": "se-passive-meaning",
+      "conceptName": "Se for passive / 'gets' meaning",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Spanish doesn't have a 'gets' construction (it gets contaminated). Instead, use 'se + verb' to express this passive meaning: 'se contamina' = it gets contaminated (literally 'it contaminates itself'). The subject isn't literally acting on itself; it's just the structure Spanish uses.",
+      "rule": "Use 'se + verb' to express 'gets + past participle' in English. Se contamina = it gets contaminated. Se transformaría = it would get transformed.",
+      "examples": [
+        { "spanish": "Se transformaría.", "english": "It would get transformed." },
+        { "spanish": "Se contamina.", "english": "It gets contaminated." },
+        { "spanish": "Se contaminaría.", "english": "It would get contaminated." }
+      ],
+      "notes": "This does not mean the subject is literally acting on itself. It is just the Spanish structure for passive 'gets' constructions."
+    },
+    {
+      "conceptSlug": "future-tense",
+      "conceptName": "Future tense (will)",
+      "category": "Verb tense",
+      "role": "reviewed",
+      "summary": "Reviewed the future tense and its connection to haber. Practiced with bailar. Reiterated that Spanish has three ways to express future: present with context, ir a + infinitive, and the future tense (least common).",
+      "rule": null,
+      "examples": [
+        { "spanish": "Bailaré.", "english": "I will dance." },
+        { "spanish": "Bailaremos.", "english": "We will dance." },
+        { "spanish": "Bailará.", "english": "He/she will dance." },
+        { "spanish": "Bailarán.", "english": "They will dance." },
+        { "spanish": "Bailarás.", "english": "You (informal) will dance." },
+        { "spanish": "Vamos a bailar.", "english": "We are going to dance." },
+        { "spanish": "Bailamos más tarde.", "english": "We dance later." },
+        { "spanish": "Vamos a bailar más tarde.", "english": "We are going to dance later." }
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "me-imagino",
+      "conceptName": "Me imagino / Imaginar(se)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Imaginar means to imagine. You will often hear 'me imagino' (I imagine myself) used interchangeably with 'imagino'. Adding the reflexive doesn't really change the meaning.",
+      "rule": null,
+      "examples": [
+        { "spanish": "Imagino.", "english": "I imagine." },
+        { "spanish": "Me imagino.", "english": "I imagine. (reflexive, same meaning)" },
+        { "spanish": "Me imaginaría que no quiere ir.", "english": "I would imagine that he doesn't want to go." }
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "bailar", "english": "to dance", "derivation": "related to 'ballerina'; bailarín = dancer in Spanish" },
+    { "spanish": "tiempo", "english": "time", "derivation": "related to English 'tempo'" },
+    { "spanish": "transformar", "english": "to transform", "derivation": "from transformación" },
+    { "spanish": "contaminar", "english": "to contaminate", "derivation": "from contaminación" },
+    { "spanish": "imaginar", "english": "to imagine", "derivation": "from imaginación; English j -> Spanish kh" }
+  ]
+}

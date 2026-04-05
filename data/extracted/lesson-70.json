@@ -1,0 +1,88 @@
+{
+  "episode": 70,
+  "summary": "This lesson introduces 'lo que' (what, non-question), extends the obligatory subjunctive to 'necesito que' and 'hace falta que', introduces 'faltar' (to lack/be missing) and the expression 'hace falta', and teaches the subjunctive after 'prefiero que'. It also introduces 'preferir' (to prefer).",
+  "teachings": [
+    {
+      "conceptSlug": "lo-que-what",
+      "conceptName": "Lo que (what, non-question)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "When 'what' is not a question (i.e., used as a relative pronoun meaning 'that which'), Spanish uses 'lo que' instead of 'qué'.",
+      "rule": "qué = what (question); lo que = what (not a question / relative pronoun)",
+      "examples": [
+        {"spanish": "No quiero que hables sobre lo que hablamos.", "english": "I don't want you to speak about what we spoke about."},
+        {"spanish": "No quiero que hables sobre lo que hablábamos.", "english": "I don't want you to speak about what we were speaking about."},
+        {"spanish": "Necesito que prepare lo que falta.", "english": "I need you to prepare what's missing."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "subjunctive-after-necesitar-que",
+      "conceptName": "Subjunctive after necesitar que",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "Like 'quiero que', 'necesito que' (I need that...) is followed by the subjunctive. The pattern is: a verb expressing subjectivity/desire + que + subjunctive.",
+      "rule": "necesito que + [subjunctive verb]",
+      "examples": [
+        {"spanish": "Necesito que lo prepare.", "english": "I need you (formal) to prepare it."},
+        {"spanish": "Necesito que usted lo prepare.", "english": "I need you (formal) to prepare it. (clarified)"},
+        {"spanish": "Necesito que prepare lo que falta.", "english": "I need you to prepare what's missing."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "faltar-to-lack",
+      "conceptName": "Faltar (to lack / to be missing)",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Faltar means to be short of, to be missing, to lack. The noun form is 'falta' (lack). The expression 'hace falta' means 'it is necessary' and is followed by the subjunctive when used with 'que'.",
+      "rule": "hace falta que + [subjunctive] = it is necessary that...",
+      "examples": [
+        {"spanish": "Lo que falta.", "english": "What is missing."},
+        {"spanish": "Falta de consideración.", "english": "Lack of consideration."},
+        {"spanish": "Falta de respeto.", "english": "Lack of respect."},
+        {"spanish": "Hace falta que comamos pronto.", "english": "It is necessary that we eat soon."}
+      ],
+      "notes": "'Hace falta' literally means 'it makes lack' -- an extremely common expression, another way of saying 'it's necessary'."
+    },
+    {
+      "conceptSlug": "subjunctive-after-preferir-que",
+      "conceptName": "Subjunctive after preferir que",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "Preferir que (I prefer that...) also triggers the obligatory subjunctive. The key is the feeling: you are casting your subjectivity onto the world.",
+      "rule": "prefiero que + [subjunctive verb]",
+      "examples": [
+        {"spanish": "Prefiero que se quede.", "english": "I prefer that he stays. / I prefer him to stay."},
+        {"spanish": "Prefiero que se queden.", "english": "I prefer them to stay."},
+        {"spanish": "Prefiero que no se queden aquí.", "english": "I prefer that they don't stay here."},
+        {"spanish": "Prefiero que se lo des a él.", "english": "I prefer you to give it to him."},
+        {"spanish": "Prefiero que se lo des a ella.", "english": "I prefer you to give it to her."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "ity-to-idad",
+      "conceptName": "-ity to -idad word conversion",
+      "category": "Word formation",
+      "role": "practiced",
+      "summary": "English words ending in -ity become -idad in Spanish.",
+      "rule": null,
+      "examples": [
+        {"spanish": "necesidad", "english": "necessity"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "lo que", "english": "what (non-question, 'that which')", "derivation": null},
+    {"spanish": "necesitar", "english": "to need", "derivation": "From necesidad (necessity)"},
+    {"spanish": "necesidad", "english": "necessity", "derivation": "-ity -> -idad"},
+    {"spanish": "faltar", "english": "to lack / to be missing / to be short of", "derivation": null},
+    {"spanish": "falta", "english": "lack (noun)", "derivation": "Noun from faltar"},
+    {"spanish": "hace falta", "english": "it is necessary", "derivation": "Literally 'it makes lack'"},
+    {"spanish": "preferir", "english": "to prefer", "derivation": null},
+    {"spanish": "pronto", "english": "soon", "derivation": "In Italian means 'ready'; in English slang 'get here pronto'"},
+    {"spanish": "el otro día", "english": "the other day", "derivation": null}
+  ]
+}

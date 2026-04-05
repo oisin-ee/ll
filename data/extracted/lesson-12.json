@@ -1,0 +1,124 @@
+{
+  "episode": 12,
+  "summary": "Teaches -er/-ir verb conjugation with key vowel /e/, introduces 'vender' (to sell), feminine endings (-ión, -idad, -a), the -ity to -idad conversion rule, double pronoun ordering (personal first), and 'nos' (us).",
+  "teachings": [
+    {
+      "conceptSlug": "er-ir-verb-conjugation",
+      "conceptName": "-er/-ir verb conjugation pattern",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "For -er/-ir verbs (a closed historic group), the key vowel is /e/. He/she/it/you(formal) gets -e, they/you(plural) gets -en, you(informal) gets -es. The 'I' form is still -o for all verb types.",
+      "rule": "-er/-ir verbs: -o (I), -e (he/she/it/you formal), -en (they/you plural), -es (you informal). Key vowel = e.",
+      "examples": [
+        {"spanish": "vender → vendo", "english": "to sell → I sell"},
+        {"spanish": "vender → vende", "english": "to sell → he/she sells"},
+        {"spanish": "vender → venden", "english": "to sell → they sell"},
+        {"spanish": "contaminar → contamina", "english": "to contaminate → it contaminates (-ar key vowel a)"},
+        {"spanish": "contaminar → contaminan", "english": "to contaminate → they contaminate"},
+        {"spanish": "contaminar → contaminas", "english": "to contaminate → you (informal) contaminate"}
+      ],
+      "notes": "Although there are three endings (-ar, -er, -ir), there are only two conjugation groups: -ar verbs and -er/-ir verbs."
+    },
+    {
+      "conceptSlug": "feminine-endings",
+      "conceptName": "Feminine word endings: -a, -ión, -idad",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Words ending in -a are usually feminine (la casa). Words ending in -ión are always feminine (la opinión). Words ending in -idad are always feminine (la diversidad). Masculine words typically end in -o.",
+      "rule": "Feminine endings: -a, -ión, -idad (all use 'la'). The gender belongs to the word, not the thing.",
+      "examples": [
+        {"spanish": "la casa", "english": "the house"},
+        {"spanish": "la opinión", "english": "the opinion"},
+        {"spanish": "la asociación", "english": "the association"},
+        {"spanish": "la diversidad", "english": "the diversity"},
+        {"spanish": "la electricidad", "english": "the electricity"},
+        {"spanish": "la persona", "english": "the person (feminine word even for males)"}
+      ],
+      "notes": "A man is 'una persona' — the word is feminine even when referring to a male."
+    },
+    {
+      "conceptSlug": "cognate-conversion-ity-idad",
+      "conceptName": "Cognate conversion: -ity to -idad",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "English words ending -ity become -idad in Spanish. All -idad words are feminine.",
+      "rule": "-ity → -idad. All -idad words are feminine (la).",
+      "examples": [
+        {"spanish": "diversidad", "english": "diversity"},
+        {"spanish": "nacionalidad", "english": "nationality"},
+        {"spanish": "creatividad", "english": "creativity"},
+        {"spanish": "electricidad", "english": "electricity"},
+        {"spanish": "generosidad", "english": "generosity"},
+        {"spanish": "comunidad", "english": "community"},
+        {"spanish": "oportunidad", "english": "opportunity"},
+        {"spanish": "claridad", "english": "clarity"},
+        {"spanish": "personalidad", "english": "personality"},
+        {"spanish": "sinceridad", "english": "sincerity"}
+      ],
+      "notes": "From -idad words, you can guess adjectives by removing -idad and adding -o/-a: claridad → claro, generosidad → generoso."
+    },
+    {
+      "conceptSlug": "adjective-gender-agreement",
+      "conceptName": "Adjective gender and number agreement",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Adjectives ending in -o change to -a for feminine, and add -s for plural. -os (masculine plural), -as (feminine plural).",
+      "rule": "-o (masc sing), -a (fem sing), -os (masc/mixed plural), -as (fem plural).",
+      "examples": [
+        {"spanish": "generoso / generosa / generosos / generosas", "english": "generous (m/f/m-pl/f-pl)"},
+        {"spanish": "sincero / sincera", "english": "sincere (m/f)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "double-pronoun-order",
+      "conceptName": "Double pronoun ordering: personal first",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "When two object pronouns appear together (e.g., 'me' and 'lo'), the personal one (me, te, nos) comes first.",
+      "rule": "Personal pronoun (me, te, nos) comes before thing pronoun (lo, la, los, las).",
+      "examples": [
+        {"spanish": "Me lo venden", "english": "They sell it to me"},
+        {"spanish": "No me lo venden", "english": "They don't sell it to me"},
+        {"spanish": "¿Por qué no me lo venden?", "english": "Why don't they sell it to me?"},
+        {"spanish": "Nos lo venden", "english": "They sell it to us"},
+        {"spanish": "¿Por qué no nos lo venden?", "english": "Why don't they sell it to us?"}
+      ],
+      "notes": "Think about the verb first, then add the pronouns. Don't try to translate the whole package at once."
+    },
+    {
+      "conceptSlug": "nos-pronoun",
+      "conceptName": "Nos (us)",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "Nos means 'us'. It follows the same placement rules as me, te, lo.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Nos venden algo", "english": "They're selling us something"},
+        {"spanish": "Nos lo venden", "english": "They're selling it to us"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "claro-expression",
+      "conceptName": "Claro (clear / of course)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Claro means 'clear' as an adjective, but is also used conversationally like 'of course' to show agreement or understanding.",
+      "rule": null,
+      "examples": [],
+      "notes": "Derived from claridad. Used a lot in conversation: 'claro, claro, claro'."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "vender", "english": "to sell", "derivation": "related to 'vending machine', 'street vendor'"},
+    {"spanish": "nos", "english": "us", "derivation": null},
+    {"spanish": "persona", "english": "person", "derivation": "from personalidad"},
+    {"spanish": "claro", "english": "clear / of course", "derivation": "from claridad"},
+    {"spanish": "eléctrico", "english": "electric", "derivation": "guessed from electricidad"},
+    {"spanish": "generoso", "english": "generous", "derivation": "from generosidad"},
+    {"spanish": "oportuno", "english": "opportune / timely", "derivation": "from oportunidad"},
+    {"spanish": "sincero", "english": "sincere", "derivation": "from sinceridad"},
+    {"spanish": "común", "english": "common", "derivation": "from comunidad (irregular — not 'comuno')"}
+  ]
+}

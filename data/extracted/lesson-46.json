@@ -1,0 +1,71 @@
+{
+  "episode": 46,
+  "summary": "Reviews the present perfect tense with haber, then introduces the imperfect (line in the past) for -ar verbs using the -aba ending. Teaches how to express ongoing or habitual past actions and combines haber with the conditional to form 'would have' structures.",
+  "teachings": [
+    {
+      "conceptSlug": "present-perfect",
+      "conceptName": "Present perfect with haber",
+      "category": "Verb tense",
+      "role": "reviewed",
+      "summary": "Reviewed the present perfect formed with haber + past participle (-ado for -ar verbs, -ido for -er/-ir verbs). The past participle never changes regardless of subject.",
+      "rule": "Haber conjugated + -ado (for -ar verbs) or -ido (for -er/-ir verbs). The participle is invariable after haber.",
+      "examples": [
+        {"spanish": "He comido", "english": "I have eaten"},
+        {"spanish": "He hablado", "english": "I have spoken"},
+        {"spanish": "Han bailado", "english": "They have danced"},
+        {"spanish": "He podido comer", "english": "I have been able to eat"},
+        {"spanish": "No he podido comer", "english": "I haven't been able to eat"}
+      ],
+      "notes": "The participle after haber never changes - he bailado, han bailado, hemos bailado all use bailado."
+    },
+    {
+      "conceptSlug": "conditional-perfect",
+      "conceptName": "Conditional perfect (would have)",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "Combining haber in the conditional (habría) with the past participle to form 'would have' structures. Habría is irregular - the e of haber falls out naturally.",
+      "rule": "Habría + past participle (-ado/-ido). The e in habería naturally contracts to habría.",
+      "examples": [
+        {"spanish": "Habría salido", "english": "I would have gone out"},
+        {"spanish": "Habría podido salir", "english": "I would have been able to go out"},
+        {"spanish": "No habría podido salir", "english": "I wouldn't have been able to go out"}
+      ],
+      "notes": "The contraction from habería to habría happens naturally through frequent use. Only a few verbs have this contraction."
+    },
+    {
+      "conceptSlug": "imperfect-tense",
+      "conceptName": "Imperfect tense (line in the past)",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "Introduced the imperfect tense as the 'line in the past' representing ongoing, habitual, or repeated past actions (I was doing, I used to do). For -ar verbs, remove -ar and add -aba as the base ending.",
+      "rule": "For -ar verbs: remove -ar, add -aba (I/he/she/it/usted), -abas (tú), -ábamos (we), -aban (they/ustedes). The accent stays on -aba throughout.",
+      "examples": [
+        {"spanish": "Hablaba", "english": "I was speaking / I used to speak"},
+        {"spanish": "Hablabas", "english": "You were speaking (informal)"},
+        {"spanish": "Hablábamos", "english": "We were speaking"},
+        {"spanish": "Hablaban", "english": "They were speaking"},
+        {"spanish": "Esperaba", "english": "I was waiting / I used to wait"},
+        {"spanish": "Te esperaba", "english": "I was waiting for you (informal)"},
+        {"spanish": "Lo esperábamos", "english": "We were waiting for you (formal, masc)"},
+        {"spanish": "Intentaban encontrármelo", "english": "They were trying to find it for me"}
+      ],
+      "notes": "Three pasts in Spanish: (1) present perfect (he comido), (2) imperfect/line (comía), (3) preterite/dot (comí). The -aba form covers I/he/she/it/usted - same form for all."
+    },
+    {
+      "conceptSlug": "three-pasts-framework",
+      "conceptName": "Three pasts framework",
+      "category": "Verb tense",
+      "role": "introduced",
+      "summary": "Introduced the framework of three pasts in Spanish: the 'I have eaten' past (present perfect), the 'line in the past' (imperfect - ongoing/habitual), and the 'dot in the past' (preterite - completed action).",
+      "rule": "Line = I was eating, I used to eat, I would eat (habitual). Dot = I ate (completed). Have = I have eaten.",
+      "examples": [],
+      "notes": "All English past expressions fit into one of these three Spanish forms."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "esperar", "english": "to wait, to hope", "derivation": null},
+    {"spanish": "intentar", "english": "to try", "derivation": "from intention/intent"},
+    {"spanish": "encontrar", "english": "to find, to encounter", "derivation": "from encounter"},
+    {"spanish": "salir", "english": "to leave, to go out", "derivation": null}
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "episode": 65,
+  "summary": "This lesson teaches 'más' as 'else' (nada más = nothing else, nadie más = nobody else), the preterite of 'ver' (irregular), time-related vocabulary with 'vez' (una vez, otra vez, una vez más), and possessive adjectives (mi, tu, nuestro/a, su) including agreement rules.",
+  "teachings": [
+    {
+      "conceptSlug": "mas-as-else",
+      "conceptName": "Más meaning 'else'",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Adding 'más' to negative words like nada or nadie gives the meaning of 'else': nada más (nothing else), nadie más (nobody else). 'Una vez más' means 'one more time'.",
+      "rule": "nada más = nothing else / anything else; nadie más = nobody else / anybody else",
+      "examples": [
+        {"spanish": "No comí nada más.", "english": "I didn't eat anything else."},
+        {"spanish": "¿No comiste nada más?", "english": "Didn't you eat anything else?"},
+        {"spanish": "Una vez más.", "english": "One more time."},
+        {"spanish": "Quiero verlos una vez más.", "english": "I want to see them one more time."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "ver-preterite",
+      "conceptName": "Ver (to see) - preterite",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Ver is irregular in the preterite: vi, vio, vimos, viste, vieron. The endings follow the -er/-ir pattern but the stem is just v-.",
+      "rule": "vi, vio, vimos, viste, vieron",
+      "examples": [
+        {"spanish": "Vi.", "english": "I saw."},
+        {"spanish": "Vio.", "english": "He/she saw."},
+        {"spanish": "Viste.", "english": "You (informal) saw."},
+        {"spanish": "Vimos.", "english": "We saw."},
+        {"spanish": "Vieron.", "english": "They saw."},
+        {"spanish": "¿No me viste anoche?", "english": "Didn't you see me last night?"},
+        {"spanish": "Lo vi una vez.", "english": "I saw him once."},
+        {"spanish": "Los vieron una vez.", "english": "They saw them once."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "vez-time-occasion",
+      "conceptName": "Vez (time/occasion)",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Vez means 'time' in the sense of occasion (not clock time). It is feminine (una vez). 'Otra vez' means 'again' (another time). 'A la vez' means 'at the same time'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Una vez.", "english": "Once / one time."},
+        {"spanish": "Otra vez.", "english": "Again / another time."},
+        {"spanish": "Una vez más.", "english": "One more time."},
+        {"spanish": "A la vez.", "english": "At the same time."},
+        {"spanish": "Quiero verlos otra vez.", "english": "I want to see them again."},
+        {"spanish": "¿Saliste a bailar otra vez?", "english": "Did you go out to dance again?"},
+        {"spanish": "¿Llegaste tarde otra vez?", "english": "Did you arrive late again?"},
+        {"spanish": "Todos llegaron a mi casa a la vez.", "english": "Everybody arrived at my house at the same time."}
+      ],
+      "notes": "Vez is feminine (otra vez, not otro vez). V-e-z."
+    },
+    {
+      "conceptSlug": "possessive-adjectives",
+      "conceptName": "Possessive adjectives",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "Full review of possessive adjectives: mi/mis (my), tu/tus (your informal), nuestro/nuestra/nuestros/nuestras (our), su/sus (his/her/their/your formal). They agree with the thing possessed, not the possessor. 'Propio/a' means 'own'.",
+      "rule": "Mi, tu, su change only for number (mi/mis, tu/tus, su/sus). Nuestro changes for both gender and number (nuestro/nuestra/nuestros/nuestras). Su/sus covers his, her, their, and your (formal) -- the plural 'sus' refers to plural things possessed, not plural possessors.",
+      "examples": [
+        {"spanish": "Mi casa.", "english": "My house."},
+        {"spanish": "Tu casa.", "english": "Your house. (informal)"},
+        {"spanish": "Nuestra casa.", "english": "Our house."},
+        {"spanish": "Su casa.", "english": "His/her/their/your(formal) house."},
+        {"spanish": "Quiero ir a sus casas.", "english": "I want to go to his/their houses."},
+        {"spanish": "Estamos con nuestros amigos.", "english": "We are with our friends."},
+        {"spanish": "Estamos con nuestras amigas.", "english": "We are with our friends. (all female)"},
+        {"spanish": "Mis amigos.", "english": "My friends."},
+        {"spanish": "Mi propia casa.", "english": "My own house."},
+        {"spanish": "Mi propio auto.", "english": "My own car."},
+        {"spanish": "Mis propios ojos.", "english": "My own eyes."},
+        {"spanish": "Lo vi con mis propios ojos.", "english": "I saw it with my own eyes."}
+      ],
+      "notes": "Nuestro contains the o-split visible in nosotros. Avoid saying 'sus' just because you mean 'they' -- sus only for plural possessed items."
+    },
+    {
+      "conceptSlug": "gerund-progressive",
+      "conceptName": "Gerund/progressive (-ndo form)",
+      "category": "Verb construction",
+      "role": "practiced",
+      "summary": "The -ndo form (gerund) is appropriate in structures like 'he arrived wanting to speak with me', where English also uses -ing.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Llegó a mi casa otra vez queriendo hablar conmigo.", "english": "He arrived at my house again wanting to speak with me."}
+      ],
+      "notes": "Spanish uses -ing much less than English, but this is one situation where it is used."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "vez", "english": "time (occasion), feminine", "derivation": "V-e-z"},
+    {"spanish": "otra vez", "english": "again / another time", "derivation": "otro/a + vez"},
+    {"spanish": "a la vez", "english": "at the same time", "derivation": null},
+    {"spanish": "todos", "english": "everybody / everyone", "derivation": "Plural of todo"},
+    {"spanish": "nuestro/a", "english": "our", "derivation": "Contains the o-split from nosotros"},
+    {"spanish": "su/sus", "english": "his/her/their/your (formal)", "derivation": null},
+    {"spanish": "propio/a", "english": "own", "derivation": "Related to 'property'"},
+    {"spanish": "ojo", "english": "eye", "derivation": "O-j-o"},
+    {"spanish": "hora", "english": "hour / time (clock)", "derivation": null},
+    {"spanish": "¿A qué hora?", "english": "At what time?", "derivation": "Literally 'at what hour?'"}
+  ]
+}

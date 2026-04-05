@@ -1,0 +1,113 @@
+{
+  "episode": 74,
+  "summary": "This lesson introduces 'elegir' (to choose) with its e->i stem change, teaches the subjunctive after 'para que' (so that/in order that), introduces 'volver' (to return) with its o->ue stem change, the past participle 'hecho' (done/made), and 'también' (also/as well).",
+  "teachings": [
+    {
+      "conceptSlug": "e-to-i-stem-change",
+      "conceptName": "E to I stem change (elegir type)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Some verbs like elegir have an e that turns into i (rather than splitting to ie) when stressed. Elijo (I choose), but elegimos (we choose -- unstressed, no change).",
+      "rule": "When the stem e is stressed, it becomes i (not ie). When unstressed, it stays as e. Example: elijo, eliges, elige, elegimos, eligen.",
+      "examples": [
+        {"spanish": "Elijo.", "english": "I choose."},
+        {"spanish": "Eliges.", "english": "You choose. (informal)"},
+        {"spanish": "Elegimos.", "english": "We choose."},
+        {"spanish": "No quiero que elijas por mí.", "english": "I don't want you to choose for me (on my behalf)."}
+      ],
+      "notes": "Related to 'elect'. Election = elección."
+    },
+    {
+      "conceptSlug": "subjunctive-after-para-que",
+      "conceptName": "Subjunctive after para que (so that)",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "After 'para que' (so that / in order that), the subjunctive is obligatory. Note: 'para + infinitive' (in order to) does NOT use the subjunctive. The subjunctive is needed only when there is a 'que' and a different subject.",
+      "rule": "para que + [subjunctive]. But para + [infinitive] = in order to (no subjunctive).",
+      "examples": [
+        {"spanish": "Hemos cocinado para que coman.", "english": "We have cooked so that they eat."},
+        {"spanish": "Nos hemos encontrado para hablar.", "english": "We have met up in order to speak. (no que, no subjunctive)"},
+        {"spanish": "Lo he hecho para que vuelvas.", "english": "I have done it so that you come back. (informal)"},
+        {"spanish": "Lo he hecho para que vuelvan.", "english": "I have done it so that they come back."},
+        {"spanish": "Lo han hecho para que volvamos.", "english": "They have done it so that we come back."},
+        {"spanish": "Hemos hecho todo para que tú también vuelvas.", "english": "We have done everything so that you also come back."}
+      ],
+      "notes": "Para can be shortened to 'pa' in some dialects: 'pa que volvamos'."
+    },
+    {
+      "conceptSlug": "volver-to-return",
+      "conceptName": "Volver (to return / to go back / to come back)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Volver means to return/go back/come back. The o splits to ue when stressed (vuelvo, vuelves). Related to 'revolve'; 'revolver' in Spanish means to stir.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Vuelvo.", "english": "I return / I come back."},
+        {"spanish": "Vuelves.", "english": "You return. (informal)"},
+        {"spanish": "Para que vuelvas.", "english": "So that you come back."},
+        {"spanish": "Para que vuelvan.", "english": "So that they come back."},
+        {"spanish": "Para que volvamos.", "english": "So that we come back."}
+      ],
+      "notes": "Related to 'revolve' in English. In Spanish, 'revolver' means to stir."
+    },
+    {
+      "conceptSlug": "romper-to-break",
+      "conceptName": "Romper / romperse (to break)",
+      "category": "Vocabulary strategy",
+      "role": "practiced",
+      "summary": "Romper is to break (transitive); romperse is to break (intransitive -- something breaks by itself). Practiced with the subjunctive: 'no quiero que se rompa' (I don't want it to break).",
+      "rule": null,
+      "examples": [
+        {"spanish": "No quiero que se rompa.", "english": "I don't want it to break."},
+        {"spanish": "No quiero que lo rompa.", "english": "I don't want him/her to break it."}
+      ],
+      "notes": "Related to rapture, corrupt, disrupt, erupt -- the -rupt root."
+    },
+    {
+      "conceptSlug": "hecho-past-participle",
+      "conceptName": "Hecho (done/made - past participle of hacer)",
+      "category": "Verb conjugation",
+      "role": "practiced",
+      "summary": "Hecho is the irregular past participle of hacer. Also means 'fact' as a noun.",
+      "rule": null,
+      "examples": [
+        {"spanish": "He hecho.", "english": "I have done."},
+        {"spanish": "Lo he hecho para que vuelvas.", "english": "I have done it so that you come back."},
+        {"spanish": "Hemos hecho todo.", "english": "We have done everything."}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "tambien-also",
+      "conceptName": "También (also / as well)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "También means 'also' or 'as well'. It contains 'tan' (so/as) + 'bien' (well), making it a near-direct translation of the English 'as well'. The n of tan becomes m before the b.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Para que tú también vuelvas.", "english": "So that you too come back."},
+        {"spanish": "Hemos hecho todo para que tú también vuelvas.", "english": "We have done everything so that you also come back."}
+      ],
+      "notes": "también = tan (as/so) + bien (well). The n softened to m before the b. A near-direct translation of English 'as well'."
+    },
+    {
+      "conceptSlug": "encontrarse-to-meet-up",
+      "conceptName": "Encontrarse (to meet up)",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Encontrarse (reflexive of encontrar) means 'to meet up' -- literally 'to find oneself/each other'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Nos hemos encontrado para hablar.", "english": "We have met up to speak."}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "elegir", "english": "to choose", "derivation": "Related to 'elect'; elección = election"},
+    {"spanish": "volver", "english": "to return / to go back / to come back", "derivation": "Related to 'revolve'; stem change o -> ue"},
+    {"spanish": "revolver", "english": "to stir", "derivation": "From volver with re- prefix"},
+    {"spanish": "también", "english": "also / as well", "derivation": "tan (as/so) + bien (well)"},
+    {"spanish": "encontrarse", "english": "to meet up", "derivation": "Reflexive of encontrar (to find)"}
+  ]
+}

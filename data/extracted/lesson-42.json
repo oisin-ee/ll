@@ -1,0 +1,59 @@
+{
+  "episode": 42,
+  "summary": "This lesson introduces the gustar construction (to be pleasing to) and the 'me gustaría' pattern for 'I would like'. It also covers how poder contracts in the conditional (podría instead of podería), and practices double-pronoun placement with conditional structures.",
+  "teachings": [
+    {
+      "conceptSlug": "gustar-construction",
+      "conceptName": "Gustar construction (to be pleasing)",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Gustar means 'to be pleasing', not 'to like'. 'I like it' = 'it is pleasing to me' (me gusta). The verb conjugates to match what is liked (gusta for singular, gustan for plural), not who likes it. Common error: saying 'me gusto' which means 'I please myself'.",
+      "rule": "Me gusta = I like it (it pleases me). Me gustan = I like them (they please me). Always start by conjugating the verb for what does the pleasing, then add who is pleased (me/te/le/nos/les).",
+      "examples": [
+        { "spanish": "Me gusta.", "english": "I like it. (It pleases me.)" },
+        { "spanish": "Me gustan.", "english": "I like them. (They please me.)" },
+        { "spanish": "Me gustaría comer ahora.", "english": "I would like to eat now." },
+        { "spanish": "Nos gustaría comer ahora.", "english": "We would like to eat now." },
+        { "spanish": "Me gustaría verte.", "english": "I would like to see you." }
+      ],
+      "notes": "Start with the verb, then add the pronoun. 'Nos gustaría' not 'nos gustaríamos' - the subject is 'it' (the thing that pleases), not 'we'. Me gusto = I please myself / I like myself."
+    },
+    {
+      "conceptSlug": "conditional-tense",
+      "conceptName": "Conditional tense (would)",
+      "category": "Verb tense",
+      "role": "practiced",
+      "summary": "Practiced the conditional with hablar and gustar. Emphasized the importance of starting with the verb conjugation before adding pronouns, to stay in control of the sentence-building process.",
+      "rule": null,
+      "examples": [
+        { "spanish": "Hablaría.", "english": "I/he/she would speak." },
+        { "spanish": "Hablaríamos.", "english": "We would speak." },
+        { "spanish": "No hablarían.", "english": "They wouldn't speak." }
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "poder-conditional-contraction",
+      "conceptName": "Poder contracts in conditional/future",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Common verbs like poder lose their -e- when adding conditional/future endings. Poder + ía = podería, but through contraction becomes podría. This gives 'could' (would be able). The same contraction applies to both will and would futures.",
+      "rule": "Poder -> podr- (not poder-) + conditional/future endings. Podría = I/he/she could. Podrías = you (informal) could. Podríamos = we could. Podrían = they could.",
+      "examples": [
+        { "spanish": "Podría.", "english": "I/he/she could." },
+        { "spanish": "Podrían.", "english": "They could." },
+        { "spanish": "Podrías.", "english": "You (informal) could." },
+        { "spanish": "Podríamos.", "english": "We could." },
+        { "spanish": "¿Podrías venir a mi casa?", "english": "Could you come to my house?" },
+        { "spanish": "¿Me podrías decir algo?", "english": "Could you tell me something?" },
+        { "spanish": "¿Podrías decirme si quieres venir?", "english": "Could you tell me if you want to come?" }
+      ],
+      "notes": "The -e- of poder fell away through centuries of frequent use: podería -> podría."
+    }
+  ],
+  "vocabulary": [
+    { "spanish": "gustar", "english": "to be pleasing, to please", "derivation": null },
+    { "spanish": "me gustaría", "english": "I would like (it would please me)", "derivation": null },
+    { "spanish": "podría", "english": "could (I/he/she)", "derivation": "poder contracted: podería -> podría" }
+  ]
+}

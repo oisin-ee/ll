@@ -1,0 +1,99 @@
+{
+  "episode": 72,
+  "summary": "This lesson teaches how the subjunctive mood is used to form commands/orders. With negative commands and formal/plural commands, the subjunctive is used. For positive informal commands, a shortcut exists: drop the -s from the tú form. Object pronouns attach to the end of positive commands but precede negative commands.",
+  "teachings": [
+    {
+      "conceptSlug": "imperative-mood",
+      "conceptName": "Imperative / commands using subjunctive",
+      "category": "Verb mood",
+      "role": "practiced",
+      "summary": "Commands in Spanish use the subjunctive mood in most cases: all negative commands, all formal commands, and all plural commands. The subjunctive gives the command form. For positive informal (tú) commands, a shortcut is used instead: drop the -s from the present tense tú form.",
+      "rule": "Negative commands (all persons): use subjunctive. Formal commands: use subjunctive. Plural commands: use subjunctive. Positive informal commands: drop -s from present tú form (compras -> compra, comes -> come).",
+      "examples": [
+        {"spanish": "No hables.", "english": "Don't speak. (informal)"},
+        {"spanish": "No te quedes aquí.", "english": "Don't stay here. (informal)"},
+        {"spanish": "No se lo des a él.", "english": "Don't give it to him. (informal)"},
+        {"spanish": "Coman.", "english": "Eat! (plural command)"},
+        {"spanish": "Coma.", "english": "Eat! (formal command)"},
+        {"spanish": "No lo coma.", "english": "Don't eat it. (formal)"},
+        {"spanish": "No lo comas.", "english": "Don't eat it. (informal)"},
+        {"spanish": "No lo coman.", "english": "Don't eat it. (plural)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "command-pronoun-placement",
+      "conceptName": "Pronoun placement with commands",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "With positive commands, object pronouns (me, lo, se, etc.) attach to the end of the verb as one word. With negative commands, pronouns go before the verb in their normal position.",
+      "rule": "Positive command: verb + pronoun(s) as one word (e.g., espérenme, cómalo, cómpramelo). Negative command: no + pronoun(s) + verb (e.g., no lo coma, no los esperen).",
+      "examples": [
+        {"spanish": "Espérenme.", "english": "Wait for me! (plural)"},
+        {"spanish": "Espérenlo.", "english": "Wait for him/it! (plural)"},
+        {"spanish": "Espérenlos.", "english": "Wait for them! (plural)"},
+        {"spanish": "No los esperen.", "english": "Don't wait for them. (plural)"},
+        {"spanish": "Cómalo.", "english": "Eat it! (formal)"},
+        {"spanish": "No lo coma.", "english": "Don't eat it. (formal)"},
+        {"spanish": "Cómanlo.", "english": "Eat it! (plural)"},
+        {"spanish": "No lo coman.", "english": "Don't eat it. (plural)"}
+      ],
+      "notes": "The pronoun placement with positive commands helps the ear recognize it as a command, since the vowel switch alone is a subtle change."
+    },
+    {
+      "conceptSlug": "positive-informal-command-shortcut",
+      "conceptName": "Positive informal command shortcut",
+      "category": "Verb mood",
+      "role": "introduced",
+      "summary": "For positive informal (tú) commands only, instead of using the subjunctive, Spanish drops the -s from the tú present tense form. This is a shortcut because telling people informally what to do is extremely common.",
+      "rule": "compras -> compra (Buy!), comes -> come (Eat!), olvidas -> olvida (Forget!). The result looks identical to the he/she/it form but is derived by dropping -s from tú.",
+      "examples": [
+        {"spanish": "Cómpralo.", "english": "Buy it! (informal)"},
+        {"spanish": "Cómpramelo.", "english": "Buy it for me! (informal)"},
+        {"spanish": "Olvídalo.", "english": "Forget it! (informal)"},
+        {"spanish": "Olvídate.", "english": "Forget! (informal, reflexive)"},
+        {"spanish": "Cómelo.", "english": "Eat it! (informal)"},
+        {"spanish": "Véndelo.", "english": "Sell it! (informal)"},
+        {"spanish": "No lo vendas.", "english": "Don't sell it. (informal -- back to subjunctive)"}
+      ],
+      "notes": "Only applies to POSITIVE INFORMAL commands. Negative informal commands still use the subjunctive (no lo comas, not *no lo come)."
+    },
+    {
+      "conceptSlug": "olvidar-to-forget",
+      "conceptName": "Olvidar / olvidarse (to forget)",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Olvidar means to forget. It needs an object (what is forgotten). If no object is stated, use the reflexive olvidarse (me olvido). Related to English 'oblivion'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Olvídelo.", "english": "Forget it! (formal)"},
+        {"spanish": "Olvídese.", "english": "Forget! (formal, reflexive -- no object)"},
+        {"spanish": "No lo olvides.", "english": "Don't forget it. (informal)"},
+        {"spanish": "No te olvides.", "english": "Don't forget. (informal, reflexive)"},
+        {"spanish": "No se olviden.", "english": "Don't forget. (plural, reflexive)"},
+        {"spanish": "No lo olvidemos.", "english": "Let's not forget it."},
+        {"spanish": "No nos olvidemos.", "english": "Let's not forget."}
+      ],
+      "notes": "Related to English 'oblivion'. The verb doesn't like to be alone -- needs an object or reflexive."
+    },
+    {
+      "conceptSlug": "callar-callarse",
+      "conceptName": "Callar / callarse (to quiet / to shut up)",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Callar means to quiet; callarse means to shut up (reflexive). Not polite.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Cállate.", "english": "Shut up! (informal)"},
+        {"spanish": "Cállense.", "english": "Shut up! (plural -- uses subjunctive)"}
+      ],
+      "notes": "Cállate uses the informal positive shortcut. Cállense uses the subjunctive because it's plural."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "ahí", "english": "there", "derivation": "a-h-í"},
+    {"spanish": "allí", "english": "there (slightly different from ahí)", "derivation": "a-l-l-í (double l)"},
+    {"spanish": "olvidar / olvidarse", "english": "to forget", "derivation": "Related to English 'oblivion'"},
+    {"spanish": "callar / callarse", "english": "to quiet / to shut up", "derivation": "c-a-l-l-a-r"}
+  ]
+}

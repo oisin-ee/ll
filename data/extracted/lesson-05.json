@@ -1,0 +1,103 @@
+{
+  "episode": 5,
+  "summary": "Introduces the subject pronoun 'yo' (I) for emphasis, object pronouns 'te' and 'lo', and the cognate rule for -ence/-ance words becoming -encia/-ancia. Also covers the Spanish r and rolling r sounds.",
+  "teachings": [
+    {
+      "conceptSlug": "yo-subject-pronoun",
+      "conceptName": "Yo (I) — emphatic subject pronoun",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "The word for 'I' is 'yo' but it's only used for emphasis. The verb form alone conveys 'I'. Word order for negation: yo no quiero.",
+      "rule": "'Yo' is only used for emphasis. Normal order: Yo no quiero (I don't want). 'No' comes before the verb, not before 'yo'.",
+      "examples": [
+        {"spanish": "Yo quiero", "english": "I want (emphatic)"},
+        {"spanish": "Yo no quiero cancelar", "english": "I don't want to cancel (emphatic)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "lo-pronoun",
+      "conceptName": "Lo (it/him)",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "Lo means 'it' or 'him'. It attaches to the end of infinitives.",
+      "rule": "'Lo' attaches to end of infinitives. Lo = it / him.",
+      "examples": [
+        {"spanish": "Quiero cancelarlo", "english": "I want to cancel it"},
+        {"spanish": "Quiero regularlo", "english": "I want to regulate it"},
+        {"spanish": "Quiero salvarlo", "english": "I want to save him"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "te-pronoun",
+      "conceptName": "Te (you, informal object)",
+      "category": "Pronoun",
+      "role": "practiced",
+      "summary": "Te is used as informal 'you' (object). It attaches to the end of infinitives like -lo and -me.",
+      "rule": null,
+      "examples": [
+        {"spanish": "No quiero obligarte", "english": "I don't want to oblige you"},
+        {"spanish": "No quiero provocarte", "english": "I don't want to provoke you"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "cognate-conversion-ence-ance",
+      "conceptName": "Cognate conversion: -ence/-ance endings",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "-ence in English becomes -encia in Spanish, and -ance becomes -ancia.",
+      "rule": "-ence → -encia, -ance → -ancia.",
+      "examples": [
+        {"spanish": "experiencia", "english": "experience"},
+        {"spanish": "diferencia", "english": "difference"},
+        {"spanish": "influencia", "english": "influence"},
+        {"spanish": "existencia", "english": "existence"},
+        {"spanish": "consistencia", "english": "consistence"},
+        {"spanish": "incongruencia", "english": "incongruence"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "spanish-r-pronunciation",
+      "conceptName": "Spanish r and rolling rr",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Initial r or double rr inside a word is a rolling/trilled r. Single r between vowels is a softer tap. Don't stress about it — it will come naturally.",
+      "rule": "Initial r = rolling r. Double rr inside a word = rolling r. Single r between vowels = tap.",
+      "examples": [
+        {"spanish": "pero", "english": "but (single r, tap)"},
+        {"spanish": "perro", "english": "dog (double rr, rolling)"}
+      ],
+      "notes": "The teacher couldn't pronounce the rolling r for a long time and it came naturally while practicing in Peru."
+    },
+    {
+      "conceptSlug": "acion-to-ar-verb-derivation",
+      "conceptName": "Deriving -ar verbs from -ación nouns",
+      "category": "Word formation",
+      "role": "practiced",
+      "summary": "Continued practice of the -ación to -ar derivation rule with new words. Also introduced the concept that experimentar means both 'to experiment' and 'to experience'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "celebrar", "english": "to celebrate"},
+        {"spanish": "obligar", "english": "to oblige"},
+        {"spanish": "salvar", "english": "to save"},
+        {"spanish": "participar", "english": "to participate"},
+        {"spanish": "crear", "english": "to create"},
+        {"spanish": "experimentar", "english": "to experiment / to experience"}
+      ],
+      "notes": "Take the long route syllable by syllable. Don't jump from English verb to Spanish — go through the -ación noun first."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "yo", "english": "I (emphatic)", "derivation": null},
+    {"spanish": "lo", "english": "it / him", "derivation": null},
+    {"spanish": "pero", "english": "but", "derivation": null},
+    {"spanish": "perro", "english": "dog", "derivation": null},
+    {"spanish": "luz", "english": "light", "derivation": "related to 'ilustrar' (the lus inside)"},
+    {"spanish": "experimentar", "english": "to experiment / to experience", "derivation": "experimentation → experimentación → experimentar"},
+    {"spanish": "experiencia", "english": "experience (noun)", "derivation": "experience → experiencia (-ence → -encia)"},
+    {"spanish": "experimento", "english": "experiment (noun)", "derivation": null}
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "episode": 90,
+  "summary": "The final lesson covers dialectal variations across the Spanish-speaking world: leísmo in Spain (using le/les for people instead of lo/la), vosotros (informal plural you in Spain), vos (used in Río de la Plata and 30% of the Spanish-speaking world with different conjugations), and aspirated s. It concludes with advice on practicing, listening, and analyzing Spanish.",
+  "teachings": [
+    {
+      "conceptSlug": "leismo",
+      "conceptName": "Leísmo (le/les for direct objects in Spain)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "In most of Spain, le and les are used when referring to people as direct objects (not just indirect objects). So 'le veo' means 'I see him/her' in Spain, while 'lo veo' means 'I see it'. In most of Latin America, lo/la/los/las are used for direct objects regardless.",
+      "rule": "In most of Spain: le/les for people (direct object), lo/la for things. In Latin America: lo/la/los/las for all direct objects.",
+      "examples": [
+        {"spanish": "Le veo (Spain)", "english": "I see him/her/you (formal)"},
+        {"spanish": "Lo veo (Latin America / standard)", "english": "I see him/it"}
+      ],
+      "notes": "A dialectal feature — not a rule to follow, but to recognize."
+    },
+    {
+      "conceptSlug": "vosotros",
+      "conceptName": "Vosotros (informal plural you, Spain)",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "Vosotros is the informal plural 'you' used in most of Spain. It is not used in Latin America, where ustedes serves for both formal and informal plural.",
+      "rule": null,
+      "examples": [],
+      "notes": "Only used in Spain. Something to listen for if practicing with Spanish dialect speakers."
+    },
+    {
+      "conceptSlug": "voseo",
+      "conceptName": "Voseo (vos instead of tú)",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "Vos is an alternative to tú used in the Río de la Plata region (Buenos Aires, Montevideo) and around 30% of the Spanish-speaking world. Verb conjugations change slightly — the accent shifts to the final syllable, which prevents stem vowel splits: puedes → podés, quieres → querés.",
+      "rule": "Vos conjugations: accent on final syllable. Puedes → podés. Quieres → querés. The stressed final vowel prevents the stem from splitting.",
+      "examples": [
+        {"spanish": "Podés", "english": "You can (vos form, instead of puedes)"},
+        {"spanish": "Querés", "english": "You want (vos form, instead of quieres)"}
+      ],
+      "notes": "Used exclusively or mixed with tú depending on region. The accent on the end prevents stem changes (o doesn't split to ue, e doesn't split to ie)."
+    },
+    {
+      "conceptSlug": "aspirated-s",
+      "conceptName": "Aspirated s in dialects",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Many Spanish accents aspirate the s sound, producing /h/ instead of /s/: está → /ehtá/, espero → /ehpero/, cómo está → /cómo ehtá/.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Está → /ehtá/", "english": "Is (aspirated s dialect)"},
+        {"spanish": "Espero → /ehpero/", "english": "I hope (aspirated s dialect)"}
+      ],
+      "notes": "Common in many dialects. Something to recognize, not necessarily adopt."
+    },
+    {
+      "conceptSlug": "listening-as-separate-skill",
+      "conceptName": "Listening comprehension as a separate skill",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Listening is a separate skill from speaking. At first, you will understand less than you can produce. The key is to deconstruct what you hear (the reverse of building sentences), analyze it, and insist — the language will appear to slow down over time.",
+      "rule": null,
+      "examples": [],
+      "notes": "Watch movies with subtitles, match English subtitles to Spanish audio. Music is good practice. Don't be overwhelmed — insist and analyze."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "hispanohablante", "english": "Spanish speaker", "derivation": "hispano (Hispanic) + hablante (speaker, from hablar)"},
+    {"spanish": "vosotros", "english": "you all (informal, Spain only)", "derivation": "vos + otros (you + others)"},
+    {"spanish": "vos", "english": "you (informal, Río de la Plata and other regions)", "derivation": "Historical form of 'you'"}
+  ]
+}

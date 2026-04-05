@@ -1,0 +1,94 @@
+{
+  "episode": 27,
+  "summary": "This lesson teaches adjective placement (after the noun in Spanish), the articles un/una (a/an), multiple words for car (coche, carro, auto, máquina), the adjective grande (big), and the 'shortcut' strategy of using modal verbs (puedo, quiero, debo, tengo que) with infinitives for easier sentence building.",
+  "teachings": [
+    {
+      "conceptSlug": "adjective-after-noun",
+      "conceptName": "Adjectives come after the noun in Spanish",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "In Spanish, adjectives (describing words you can put 'is' in front of) come after the noun they describe. Instead of 'the global situation', you say 'the situation global'. There is some flexibility for emphasis, but the standard position is after.",
+      "rule": "Adjectives follow the noun: la situación global (not la global situación). Adjectives also become plural when the noun is plural.",
+      "examples": [
+        {"spanish": "la situación global", "english": "the global situation"},
+        {"spanish": "una cámara digital", "english": "a digital camera"},
+        {"spanish": "el auto grande", "english": "the big car"},
+        {"spanish": "las casas grandes", "english": "the big houses"},
+        {"spanish": "los autos grandes", "english": "the big cars"},
+        {"spanish": "el auto rojo", "english": "the red car"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "un-una-indefinite-article",
+      "conceptName": "un/una = a (indefinite article)",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "The indefinite article 'a' is 'un' for masculine nouns and 'una' for feminine nouns.",
+      "rule": "un = a (masculine). una = a (feminine). El/la = the, un/una = a.",
+      "examples": [
+        {"spanish": "un coche", "english": "a car (masculine)"},
+        {"spanish": "una máquina", "english": "a machine (feminine)"},
+        {"spanish": "un carro", "english": "a car"},
+        {"spanish": "Quiero comprar una cámara digital", "english": "I want to buy a digital camera"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "noun-gender",
+      "conceptName": "Masculine (-o) and feminine (-a) nouns",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "Reinforced that gender belongs to the noun/word, not the object. Different words for 'car' have different genders: coche (masculine), carro (masculine), máquina (feminine), auto (masculine).",
+      "rule": null,
+      "examples": [
+        {"spanish": "el coche", "english": "the car (masculine)"},
+        {"spanish": "la máquina", "english": "the machine/car (feminine)"},
+        {"spanish": "el carro", "english": "the car (masculine)"},
+        {"spanish": "el auto", "english": "the car (masculine)"}
+      ],
+      "notes": "Gender is a property of the word, not the object — the same physical car can be el coche or la máquina."
+    },
+    {
+      "conceptSlug": "plural-los-las",
+      "conceptName": "Plural articles: el→los, la→las",
+      "category": "Grammar",
+      "role": "practiced",
+      "summary": "El becomes los in plural; la becomes las. Nouns and adjectives both take plural -s.",
+      "rule": null,
+      "examples": [
+        {"spanish": "el auto → los autos", "english": "the car → the cars"},
+        {"spanish": "la casa → las casas", "english": "the house → the houses"},
+        {"spanish": "las casas grandes", "english": "the big houses"},
+        {"spanish": "los carros grandes", "english": "the big cars"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "modal-verb-shortcut",
+      "conceptName": "Modal verbs as shortcuts for conversation",
+      "category": "Vocabulary strategy",
+      "role": "introduced",
+      "summary": "Using modal verbs (puedo, quiero, debo, tengo que) with infinitives is a 'shortcut' — even though the sentence is longer, it's easier to build because the modal is practiced frequently and the main verb stays in the infinitive. This lets you become conversational faster.",
+      "rule": "puedo/quiero/debo/tengo que + infinitive is easier to build than direct conjugation. Use these shortcuts to get conversational, then notice how native speakers say it differently.",
+      "examples": [
+        {"spanish": "No puedo encontrarlo", "english": "I can't find it (shortcut — longer but easier)"},
+        {"spanish": "No lo encuentro", "english": "I don't find it (more natural but harder to build)"},
+        {"spanish": "¿Puedes ver el coche grande?", "english": "Can you see the big car? (shortcut)"},
+        {"spanish": "¿Ves el coche grande?", "english": "Do you see the big car? (more natural)"}
+      ],
+      "notes": "Once you're communicative and correct, you'll start noticing native speakers use direct conjugation where you use modals, and your speech will adjust naturally."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "grande", "english": "big, grand", "derivation": "English 'grand' → grande"},
+    {"spanish": "coche", "english": "car (from 'coach', masculine)", "derivation": "coach → coche"},
+    {"spanish": "carro", "english": "car (masculine, rolling r)", "derivation": "car → carro"},
+    {"spanish": "auto", "english": "car (masculine)", "derivation": "automobile → auto"},
+    {"spanish": "máquina", "english": "machine, car (feminine)", "derivation": null},
+    {"spanish": "automóvil", "english": "automobile", "derivation": null},
+    {"spanish": "una cámara digital", "english": "a digital camera", "derivation": null},
+    {"spanish": "rojo", "english": "red", "derivation": null},
+    {"spanish": "en", "english": "in", "derivation": null}
+  ]
+}

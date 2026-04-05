@@ -1,0 +1,75 @@
+{
+  "episode": 24,
+  "summary": "This lesson introduces the verb dar (to give) with its irregular 'I' form doy. It teaches double object pronoun ordering (personal before thing: me lo dan) and practices combining dar with emphasis pronouns, future context, and complex constructions like 'I want to give you it'.",
+  "teachings": [
+    {
+      "conceptSlug": "dar-to-give",
+      "conceptName": "The verb dar (to give)",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Dar means to give. The 'I' form is irregular: doy (ending in -oy, like voy and estoy). Other forms are regular: da, dan, das.",
+      "rule": "dar: doy (I give), da (he/she/you formal give), dan (they give), das (you informal give).",
+      "examples": [
+        {"spanish": "Doy", "english": "I give"},
+        {"spanish": "Lo doy", "english": "I give it"},
+        {"spanish": "Las doy", "english": "I give them (feminine)"},
+        {"spanish": "Él da", "english": "He gives"},
+        {"spanish": "Ella da", "english": "She gives"},
+        {"spanish": "Ellos dan", "english": "They give"},
+        {"spanish": "Das", "english": "You (informal) give"},
+        {"spanish": "Tú das", "english": "You give (emphatic)"}
+      ],
+      "notes": "Doy ends in -oy like voy (I go)."
+    },
+    {
+      "conceptSlug": "double-object-pronoun-order",
+      "conceptName": "Double object pronouns: person before thing",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "When two object pronouns appear together (e.g., 'give me it'), the personal pronoun (me, te, nos) comes before the thing pronoun (lo, la, los, las). This order is: me/te/nos + lo/la/los/las + verb.",
+      "rule": "Personal pronoun (me, te, nos) comes before thing pronoun (lo, la): me lo dan (they give me it), te lo doy (I give you it).",
+      "examples": [
+        {"spanish": "Me lo dan", "english": "They give it to me (they give me it)"},
+        {"spanish": "Ellos me lo dan", "english": "They give it to me (emphatic)"},
+        {"spanish": "Te lo doy mañana", "english": "I'll give it to you tomorrow"},
+        {"spanish": "¿Me lo da mañana?", "english": "Are you (formal) giving it to me tomorrow?"},
+        {"spanish": "¿Usted me lo da mañana?", "english": "Are YOU giving it to me tomorrow?"},
+        {"spanish": "¿Nos lo dan mañana?", "english": "Are you guys giving it to us tomorrow?"},
+        {"spanish": "¿Ustedes nos lo dan mañana?", "english": "Are YOU guys giving it to us tomorrow?"},
+        {"spanish": "Te lo quiero dar", "english": "I want to give it to you"}
+      ],
+      "notes": "In Spanish you say 'they give me it' not 'they give it to me' — no preposition needed."
+    },
+    {
+      "conceptSlug": "ustedes-you-plural",
+      "conceptName": "Ustedes = you (plural/formal plural)",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "Ustedes is the plural of usted (you formal). Formed by adding -es to usted (since it ends in a consonant, you add -es not just -s). Ustedes takes the same verb form as ellos/ellas.",
+      "rule": "Words ending in a consonant form plural with -es: usted → ustedes.",
+      "examples": [
+        {"spanish": "¿Ustedes nos lo dan mañana?", "english": "Are you guys giving it to us tomorrow?"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "algo-something",
+      "conceptName": "algo = something",
+      "category": "Grammar",
+      "role": "reviewed",
+      "summary": "Algo means something. Used in giving context.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Él me da algo", "english": "He is giving me something"},
+        {"spanish": "Me dan algo", "english": "They give me something"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "dar", "english": "to give", "derivation": null},
+    {"spanish": "doy", "english": "I give", "derivation": null},
+    {"spanish": "ustedes", "english": "you (plural)", "derivation": "usted + -es (consonant plural rule)"},
+    {"spanish": "algo", "english": "something", "derivation": null}
+  ]
+}

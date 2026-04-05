@@ -1,0 +1,79 @@
+{
+  "episode": 86,
+  "summary": "This lesson teaches how go verbs behave irregularly in the future (will) and conditional (would) tenses, typically contracting with a -d- (tener → tendré, venir → vendré, poner → pondré, salir → saldré). Hacer and decir are even more irregular (haré, diré). Poder also contracts but is not a go verb (podría).",
+  "teachings": [
+    {
+      "conceptSlug": "go-verbs-future-conditional",
+      "conceptName": "Go verbs: irregular future and conditional",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Go verbs contract in the future and conditional tenses. Most replace the final vowel of the infinitive with -d-: tener → tendr-, venir → vendr-, poner → pondr-, salir → saldr-. Then add the normal future (-é, -ás, -á, -emos, -án) or conditional (-ía, -ías, -ía, -íamos, -ían) endings.",
+      "rule": "Most go verbs: infinitive vowel → d. Tener → tendr-. Venir → vendr-. Poner → pondr-. Salir → saldr-. Exception: traer is regular (traeré). Hacer → har-. Decir → dir-.",
+      "examples": [
+        {"spanish": "Tendré", "english": "I will have"},
+        {"spanish": "Vendré", "english": "I will come"},
+        {"spanish": "Vendríamos más tarde, pero no tenemos tiempo", "english": "We would come later, but we don't have time"},
+        {"spanish": "Lo pondré aquí", "english": "I will put it here"},
+        {"spanish": "Lo pondría aquí", "english": "I would put it here"},
+        {"spanish": "Saldría", "english": "I would leave/go out"},
+        {"spanish": "¿Saldrás esta noche?", "english": "Will you go out tonight?"},
+        {"spanish": "¿Sales esta noche?", "english": "Are you going out tonight? (present with future context)"}
+      ],
+      "notes": "The -go in the present tense is an alarm bell that the verb will be irregular in the futures too. Traer is an exception — it stays regular."
+    },
+    {
+      "conceptSlug": "hacer-decir-future",
+      "conceptName": "Hacer and decir: irregular futures",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Hacer and decir are extra irregular in the future/conditional. Hacer → har- (haré, haría). Decir → dir- (diré, diría). Once you know one form, you can derive all the others.",
+      "rule": "Hacer → har- (haré, harás, hará, haremos, harán / haría, harías, etc.). Decir → dir- (diré, dirás, etc. / diría, dirías, etc.).",
+      "examples": [
+        {"spanish": "Lo haríamos, pero estamos ocupados ahora", "english": "We would do it, but we're busy now"},
+        {"spanish": "Haremos", "english": "We will do/make"},
+        {"spanish": "Harán", "english": "They will do/make"},
+        {"spanish": "Diría", "english": "I/he/she would say"},
+        {"spanish": "Diré", "english": "I will say"},
+        {"spanish": "Te diré más tarde", "english": "I will tell you later"},
+        {"spanish": "Te digo más tarde", "english": "I tell you later (present with future context)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "poder-future-conditional",
+      "conceptName": "Poder: irregular future/conditional",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "Poder is not a go verb but also contracts in the future/conditional: the -e- falls out giving podr- (podré, podría). Similar contraction to haber → habr-.",
+      "rule": "Poder → podr- (podré, podría). The /e/ falls out.",
+      "examples": [
+        {"spanish": "Podría", "english": "I could / I would be able to"},
+        {"spanish": "Podríamos", "english": "We could / we would be able to"}
+      ],
+      "notes": "Subtle difference in sound: podría (I could) vs pondría (I would put)."
+    },
+    {
+      "conceptSlug": "future-formation",
+      "conceptName": "Future tense formation",
+      "category": "Verb tense",
+      "role": "reviewed",
+      "summary": "Review of future endings added to the infinitive: -é (I), -ás (you informal), -á (he/she/you formal), -emos (we), -án (they). These match the irregular present forms of haber.",
+      "rule": null,
+      "examples": [],
+      "notes": null
+    },
+    {
+      "conceptSlug": "conditional-formation",
+      "conceptName": "Conditional tense formation",
+      "category": "Verb tense",
+      "role": "reviewed",
+      "summary": "Review of conditional endings added to the infinitive: -ía as the key sound, plus -mos, -n, -s for other persons.",
+      "rule": null,
+      "examples": [],
+      "notes": "Remember 'me gustaría' (I would like) as the hook for the -ía sound."
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "ocupado", "english": "busy / occupied", "derivation": "Cognate with English 'occupied'"}
+  ]
+}

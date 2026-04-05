@@ -1,0 +1,151 @@
+{
+  "episode": 14,
+  "summary": "Introduces irregular 'sé' (I know), subject pronouns 'él' (he) and 'ella' (she), 'poner' (to put) and its -poner compounds, 'tengo que' (I have to), 'cuándo' (when), and double-l pronunciation. Reviews salir/salgo and the -go verb group.",
+  "teachings": [
+    {
+      "conceptSlug": "se-i-know-irregular",
+      "conceptName": "Sé (I know) — highly irregular",
+      "category": "Verb conjugation",
+      "role": "introduced",
+      "summary": "The 'I' form of saber is sé (not sabo). Very irregular — just two letters. The rest of saber's conjugation is regular: sabe (he/she knows), etc.",
+      "rule": "Saber → sé (I know). Irregular only for 'I'. All other forms regular: sabe, saben, sabes.",
+      "examples": [
+        {"spanish": "Sé", "english": "I know"},
+        {"spanish": "No sé", "english": "I don't know"},
+        {"spanish": "Lo sé", "english": "I know it"},
+        {"spanish": "No sé qué quiere", "english": "I don't know what he wants"},
+        {"spanish": "Sabe", "english": "He/she knows"}
+      ],
+      "notes": "Lo sé is common because sé alone is very short. People often say 'lo sé' rather than just 'sé'."
+    },
+    {
+      "conceptSlug": "el-ella-subject-pronouns",
+      "conceptName": "Él (he) and Ella (she) — subject pronouns",
+      "category": "Pronoun",
+      "role": "introduced",
+      "summary": "Él means 'he' (spelled e-l). Ella means 'she' (spelled e-l-l-a). Double l in Spanish is pronounced /y/. These are used for emphasis or clarification, not required.",
+      "rule": "Él = he, ella = she. Use for emphasis or contrast. Not needed when the verb form is clear.",
+      "examples": [
+        {"spanish": "No sé qué él quiere", "english": "I don't know what HE wants (emphatic)"},
+        {"spanish": "Ella ve", "english": "She sees"},
+        {"spanish": "Yo no quiero invitarlo, pero ella sí", "english": "I don't want to invite him, but she does"}
+      ],
+      "notes": "Double l (ll) in Spanish = /y/ sound. Subject pronouns are used for contrast: 'I don't want to, but SHE does.'"
+    },
+    {
+      "conceptSlug": "double-l-pronunciation",
+      "conceptName": "Double l (ll) pronunciation",
+      "category": "Grammar",
+      "role": "introduced",
+      "summary": "Double l in Spanish is pronounced /y/ (like 'yes').",
+      "rule": "ll = /y/ sound.",
+      "examples": [
+        {"spanish": "ella", "english": "she (pronounced /eya/)"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "tengo-que-have-to",
+      "conceptName": "Tengo que (I have to)",
+      "category": "Verb construction",
+      "role": "introduced",
+      "summary": "Adding 'que' to tengo changes 'I have' to 'I have to' (must). Que here has no comfortable direct translation. Tengo que is more everyday than debo (more serious).",
+      "rule": "Tengo que + infinitive = I have to [verb]. Less serious than debo.",
+      "examples": [
+        {"spanish": "Tengo que hacerlo", "english": "I have to do it"},
+        {"spanish": "Tengo que comer ahora", "english": "I have to eat now"}
+      ],
+      "notes": "Debo is more severe/serious (like English 'must'). Tengo que is more everyday (like 'have to')."
+    },
+    {
+      "conceptSlug": "poner-to-put",
+      "conceptName": "Poner (to put) and -poner compounds",
+      "category": "Verb type",
+      "role": "introduced",
+      "summary": "Poner means 'to put'. I put = pongo (irregular -go). English -pose verbs correspond to -poner in Spanish: compose = componer, suppose = suponer, impose = imponer, expose = exponer, oppose = oponer.",
+      "rule": "English -pose = Spanish -poner. Poner → pongo (I put, irregular -go). Irregularity generalizes: suponer → supongo.",
+      "examples": [
+        {"spanish": "Pongo", "english": "I put"},
+        {"spanish": "Supongo", "english": "I suppose"},
+        {"spanish": "Supongo que sí", "english": "I suppose so (literally: I suppose that yes)"},
+        {"spanish": "Lo opongo", "english": "I oppose it"}
+      ],
+      "notes": "Supongo que sí = I suppose so. Que can mean 'that'."
+    },
+    {
+      "conceptSlug": "go-verb-group",
+      "conceptName": "The -go irregular verb group",
+      "category": "Verb conjugation",
+      "role": "practiced",
+      "summary": "Review of verbs with irregular -go in the 'I' form: tengo, vengo, salgo, pongo. The -go only appears in the 'I' form; other forms are regular. The irregularity generalizes to compounds: obtener → obtengo, suponer → supongo.",
+      "rule": "The -go irregularity only applies to the 'I' form. Compounds follow the same pattern.",
+      "examples": [
+        {"spanish": "Tengo", "english": "I have"},
+        {"spanish": "Vengo", "english": "I come"},
+        {"spanish": "Salgo", "english": "I leave/go out"},
+        {"spanish": "Pongo", "english": "I put"},
+        {"spanish": "Obtengo", "english": "I obtain"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "cuando-when",
+      "conceptName": "Cuándo (when)",
+      "category": "Expression",
+      "role": "introduced",
+      "summary": "Cuándo means 'when'.",
+      "rule": null,
+      "examples": [
+        {"spanish": "¿Cuándo vienes?", "english": "When are you coming?"},
+        {"spanish": "¿Cuándo vienes a comer?", "english": "When are you coming to eat?"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "tener-tiene-irregular",
+      "conceptName": "Tiene (he/she/it has) and related forms",
+      "category": "Verb conjugation",
+      "role": "practiced",
+      "summary": "Tiene = he/she has. Tienen = they have. Tienes = you (informal) have. The irregularity (ie split) is explored more fully in lesson 15.",
+      "rule": null,
+      "examples": [
+        {"spanish": "Tiene", "english": "He/she/it has, you (formal) have"},
+        {"spanish": "Tienen", "english": "They have"},
+        {"spanish": "Tienes", "english": "You (informal) have"},
+        {"spanish": "Ella tiene", "english": "She has"},
+        {"spanish": "Quiero saber qué tiene", "english": "I want to know what he/she has"}
+      ],
+      "notes": null
+    },
+    {
+      "conceptSlug": "useful-verb-recap",
+      "conceptName": "Key verbs that take infinitives",
+      "category": "Verb construction",
+      "role": "reviewed",
+      "summary": "Recap of the key verbs that are followed by infinitives: voy a (going to), puedo (can), tengo que (have to), debo (must), quiero (want).",
+      "rule": null,
+      "examples": [
+        {"spanish": "Voy a comer", "english": "I'm going to eat"},
+        {"spanish": "Puedo comer", "english": "I can eat"},
+        {"spanish": "Tengo que comer", "english": "I have to eat"},
+        {"spanish": "Debo comer", "english": "I must eat"},
+        {"spanish": "Quiero comer", "english": "I want to eat"}
+      ],
+      "notes": null
+    }
+  ],
+  "vocabulary": [
+    {"spanish": "sé", "english": "I know (irregular)", "derivation": "from saber"},
+    {"spanish": "él", "english": "he", "derivation": null},
+    {"spanish": "ella", "english": "she", "derivation": null},
+    {"spanish": "poner", "english": "to put", "derivation": null},
+    {"spanish": "pongo", "english": "I put (irregular -go)", "derivation": null},
+    {"spanish": "componer", "english": "to compose", "derivation": "com- + poner (-pose → -poner)"},
+    {"spanish": "suponer", "english": "to suppose", "derivation": "su- + poner (-pose → -poner)"},
+    {"spanish": "imponer", "english": "to impose", "derivation": "im- + poner"},
+    {"spanish": "exponer", "english": "to expose", "derivation": "ex- + poner"},
+    {"spanish": "oponer", "english": "to oppose", "derivation": "o- + poner"},
+    {"spanish": "cuándo", "english": "when", "derivation": null},
+    {"spanish": "que", "english": "that / what (also used in tengo que)", "derivation": null}
+  ]
+}
