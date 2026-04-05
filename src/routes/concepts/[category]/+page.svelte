@@ -38,6 +38,7 @@
 			<p class="opacity-50"><a href="/concepts" class="anchor">Concepts</a> / {data.categoryName}</p>
 			<h1 class="h2">{data.categoryName}</h1>
 		</div>
+		<a href="/concepts/{data.categorySlug}/exercise" class="btn preset-filled-primary">Practice</a>
 		<span class="badge preset-tonal">{data.concepts.length} concepts</span>
 		<span class="badge preset-tonal-primary">{masteredCount} mastered</span>
 	</div>
