@@ -33,7 +33,7 @@
 
 <div class="flex flex-col gap-4">
 	<!-- Header -->
-	<div class="flex items-center gap-4">
+	<div class="flex flex-wrap items-center gap-2 md:gap-4">
 		<div class="flex-1">
 			<p class="opacity-50"><a href="/concepts" class="anchor">Concepts</a> / {data.categoryName}</p>
 			<h1 class="h2">{data.categoryName}</h1>
@@ -57,7 +57,7 @@
 			placeholder="Search in {data.categoryName}..."
 			class="input"
 		/>
-		<SegmentedControl
+		<div class="overflow-x-auto"><SegmentedControl
 			name="mastery-filter"
 			value={masteryFilter}
 			onValueChange={(details) => { masteryFilter = details.value; }}
@@ -85,7 +85,7 @@
 					<SegmentedControl.ItemHiddenInput />
 				</SegmentedControl.Item>
 			</SegmentedControl.Control>
-		</SegmentedControl>
+		</SegmentedControl></div>
 	</div>
 
 	<!-- Concept cards -->
@@ -93,9 +93,9 @@
 		{#each filteredConcepts as concept}
 			<div class="card p-3" id={concept.slug} style={masteryBorder(concept.mastery)}>
 				<!-- Top row: name + mastery buttons -->
-				<div class="flex items-center gap-2">
+				<div class="flex flex-wrap items-center gap-2">
 					<span class="font-bold flex-1">{concept.name}</span>
-					<form method="POST" action="?/updateMastery" use:enhance class="flex gap-1">
+					<form method="POST" action="?/updateMastery" use:enhance class="flex gap-1 flex-wrap">
 						<input type="hidden" name="id" value={concept.id} />
 						{#each [0, 1, 2, 3] as level}
 							<button
@@ -134,7 +134,7 @@
 											</div>
 										{/if}
 										{#if ep.examples.length > 0}
-											<div class="grid grid-cols-2 gap-1">
+											<div class="grid grid-cols-1 md:grid-cols-2 gap-1">
 												{#each ep.examples as ex}
 													<p class="font-bold">{ex.spanish}</p>
 													<p class="opacity-75">{ex.english}</p>
@@ -163,7 +163,7 @@
 	{/if}
 
 	<!-- Category navigation -->
-	<div class="flex items-center gap-4 mt-4">
+	<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4 mt-4">
 		{#if data.prevCategory}
 			<a href="/concepts/{data.prevCategory.slug}" class="btn preset-tonal flex-1">
 				&larr; {data.prevCategory.name}

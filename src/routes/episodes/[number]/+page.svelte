@@ -25,9 +25,9 @@
 	}
 </script>
 
-<div class="flex flex-col h-[calc(100vh-3rem)] overflow-hidden">
+<div class="flex flex-col h-[calc(100dvh-3.5rem)] md:h-[calc(100dvh-3rem)] overflow-hidden">
 	<!-- Header -->
-	<div class="flex items-center gap-4 pb-4">
+	<div class="flex flex-wrap items-center gap-2 md:gap-4 pb-4">
 		{#if data.prevEpisode}
 			<a href="/episodes/{data.prevEpisode.number}" class="btn btn-sm preset-tonal" title={data.prevEpisode.title}>
 				&larr;
@@ -49,7 +49,7 @@
 				<Switch.Control>
 					<Switch.Thumb />
 				</Switch.Control>
-				<Switch.Label>{listened ? 'Listened' : 'Not listened'}</Switch.Label>
+				<Switch.Label><span class="hidden sm:inline">{listened ? 'Listened' : 'Not listened'}</span></Switch.Label>
 				<Switch.HiddenInput name="_switch" />
 			</Switch>
 			<noscript><button type="submit" class="btn btn-sm">Toggle</button></noscript>
@@ -232,7 +232,7 @@
 										{/if}
 
 										{#if concept.examples.length > 0}
-											<div class="grid grid-cols-2 gap-2">
+											<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
 												{#each concept.examples as ex}
 													<p class="font-bold">{ex.spanish}</p>
 													<p class="opacity-75">{ex.english}</p>
@@ -256,7 +256,7 @@
 
 					{#if data.vocabulary.length > 0}
 						<h3 class="h3">Vocabulary</h3>
-						<div class="grid grid-cols-2 gap-2">
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
 							{#each data.vocabulary as v}
 								<div class="card p-3">
 									<p class="font-bold">{v.spanish}</p>

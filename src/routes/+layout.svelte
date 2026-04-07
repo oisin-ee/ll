@@ -3,16 +3,19 @@
 	import { Navigation, Avatar } from '@skeletonlabs/skeleton-svelte';
 	import { page } from '$app/stores';
 	import { enhance } from '$app/forms';
+	import { afterNavigate } from '$app/navigation';
+	import MobileAppBar from '$lib/components/MobileAppBar.svelte';
+	import NavDrawer from '$lib/components/NavDrawer.svelte';
 
 	let { data, children } = $props();
+	let drawerOpen = $state(false);
+
+	afterNavigate(() => {
+		drawerOpen = false;
+	});
 </script>
 
-<svelte:head>
-	<title>Language Learner</title>
-</svelte:head>
-
-<div class="flex h-screen">
-	<!-- Sidebar Navigation -->
+{#snippet navContent()}
 	<Navigation layout="sidebar">
 		<Navigation.Header>
 			<div class="p-4">
@@ -78,9 +81,26 @@
 			</div>
 		</Navigation.Footer>
 	</Navigation>
+{/snippet}
 
-	<!-- Main content -->
-	<main class="flex-1 overflow-auto p-6">
+<svelte:head>
+	<title>Language Learner</title>
+</svelte:head>
+
+<div class="flex flex-col md:flex-row h-screen">
+	<div class="md:hidden">
+		<MobileAppBar onMenuClick={() => { drawerOpen = true }} />
+	</div>
+
+	<NavDrawer bind:open={drawerOpen}>
+		{@render navContent()}
+	</NavDrawer>
+
+	<div class="hidden md:block">
+		{@render navContent()}
+	</div>
+
+	<main class="flex-1 overflow-auto p-3 md:p-6">
 		<div class="mx-auto max-w-5xl">
 			{@render children()}
 		</div>

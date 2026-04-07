@@ -8,7 +8,7 @@
 <div class="flex flex-col gap-6">
 	<!-- Hero: Journey Progress -->
 	<div class="card preset-tonal-primary p-6">
-		<div class="flex items-center gap-4">
+		<div class="flex flex-col sm:flex-row sm:items-center gap-4">
 			<div class="flex-1">
 				<h1 class="h2">Your Journey</h1>
 				<p class="opacity-75">{data.listenedCount} of {data.totalEpisodes} episodes completed</p>

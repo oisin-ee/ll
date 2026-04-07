@@ -62,7 +62,7 @@
 				<div class="flex-1">
 					<p class="anchor">{ep.title}</p>
 					{#if ep.conceptNames.length > 0}
-						<div class="flex gap-1 mt-1">
+						<div class="flex gap-1 mt-1 flex-wrap">
 							{#each ep.conceptNames as name}
 								<span class="chip preset-tonal">{name}</span>
 							{/each}
