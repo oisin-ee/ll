@@ -37,7 +37,8 @@
     "better-sqlite3": "^12.8.0",
     "drizzle-orm": "^0.45.2",
     "lucia": "^3.2.2",
-    "marked": "^17.0.5"
+    "marked": "^17.0.5",
+    "verbos": "^0.0.3"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

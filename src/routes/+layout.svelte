@@ -56,6 +56,16 @@
 					<Navigation.TriggerText>Concepts</Navigation.TriggerText>
 				</Navigation.TriggerAnchor>
 			</Navigation.Group>
+
+			<Navigation.Group>
+				<Navigation.Label>Practice</Navigation.Label>
+				<Navigation.TriggerAnchor
+					href="/practice/past-tense"
+					class={$page.url.pathname.startsWith('/practice') ? 'preset-tonal-primary' : ''}
+				>
+					<Navigation.TriggerText>Past Tense</Navigation.TriggerText>
+				</Navigation.TriggerAnchor>
+			</Navigation.Group>
 		</Navigation.Menu>
 
 		<Navigation.Footer>
