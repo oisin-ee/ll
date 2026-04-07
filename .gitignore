@@ -22,6 +22,9 @@ Thumbs.db
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
+# Audio files (served from GitHub raw URLs via oisincoveney/ll-audio)
+language-transfer/
+
 # Database
 data/*.db
 data/*.db-shm
