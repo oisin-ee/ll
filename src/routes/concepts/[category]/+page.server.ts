@@ -1,14 +1,15 @@
 import { db } from '$lib/server/db';
-import { concepts, episodeConcepts, episodes, userConcepts } from '$lib/server/db/schema';
-import { eq, asc, and } from 'drizzle-orm';
+import { userConcepts } from '$lib/server/db/schema';
+import { eq, and } from 'drizzle-orm';
 import { error } from '@sveltejs/kit';
+import { fetchConceptsIndex } from '$lib/server/episode-data';
 import type { PageServerLoad, Actions } from './$types';
 
 export const load: PageServerLoad = async ({ params, locals }) => {
 	const userId = locals.user!.id;
 	const categorySlug = params.category;
 
-	const allConcepts = db.select().from(concepts).orderBy(concepts.name).all();
+	const allConcepts = await fetchConceptsIndex();
 	const categoryConcepts = allConcepts.filter(
 		(c) => (c.category || 'Uncategorized').toLowerCase().replace(/\s+/g, '-') === categorySlug
 	);
@@ -17,39 +18,13 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 
 	const categoryName = categoryConcepts[0].category || 'Uncategorized';
 
-	// Load user mastery for these concepts
-	const conceptIds = categoryConcepts.map((c) => c.id);
 	const userConceptRows = db
 		.select()
 		.from(userConcepts)
 		.where(eq(userConcepts.userId, userId))
-		.all()
-		.filter((uc) => conceptIds.includes(uc.conceptId));
+		.all();
+
 	const masteryMap = new Map(userConceptRows.map((uc) => [uc.conceptId, uc.mastery]));
-
-	const links = db
-		.select({
-			conceptId: episodeConcepts.conceptId,
-			episodeNumber: episodes.number,
-			episodeTitle: episodes.title,
-			role: episodeConcepts.role,
-			summary: episodeConcepts.summary,
-			rule: episodeConcepts.rule,
-			examples: episodeConcepts.examples,
-			notes: episodeConcepts.notes
-		})
-		.from(episodeConcepts)
-		.innerJoin(episodes, eq(episodeConcepts.episodeId, episodes.id))
-		.orderBy(asc(episodes.number))
-		.all()
-		.filter((l) => conceptIds.includes(l.conceptId));
-
-	const linkMap = new Map<number, typeof links>();
-	for (const link of links) {
-		const existing = linkMap.get(link.conceptId) ?? [];
-		existing.push(link);
-		linkMap.set(link.conceptId, existing);
-	}
 
 	const allCategories = [...new Set(allConcepts.map((c) => c.category || 'Uncategorized'))].sort();
 	const currentIndex = allCategories.indexOf(categoryName);
@@ -63,12 +38,22 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 	return {
 		categoryName,
 		categorySlug,
-		concepts: categoryConcepts.map((c) => ({
-			...c,
-			mastery: masteryMap.get(c.id) ?? 0,
-			episodes: (linkMap.get(c.id) ?? []).map((ep) => ({
-				...ep,
-				examples: ep.examples ? JSON.parse(ep.examples) as Array<{ spanish: string; english: string }> : []
+		concepts: categoryConcepts.map((c, i) => ({
+			id: allConcepts.indexOf(c) + 1,
+			slug: c.slug,
+			name: c.name,
+			description: null,
+			category: c.category,
+			mastery: masteryMap.get(allConcepts.indexOf(c) + 1) ?? 0,
+			episodes: c.episodes.map((ep) => ({
+				conceptId: allConcepts.indexOf(c) + 1,
+				episodeNumber: ep.episode,
+				episodeTitle: `Lesson ${String(ep.episode).padStart(2, '0')}`,
+				role: ep.role,
+				summary: ep.summary,
+				rule: ep.rule,
+				examples: ep.examples,
+				notes: ep.notes
 			}))
 		})),
 		prevCategory: prevCategory ? { name: prevCategory, slug: toSlug(prevCategory) } : null,

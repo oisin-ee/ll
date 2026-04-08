@@ -1,6 +1,7 @@
 import { db } from '$lib/server/db';
-import { episodes, words, episodeConcepts, concepts, userEpisodes } from '$lib/server/db/schema';
+import { episodes, words, userEpisodes } from '$lib/server/db/schema';
 import { eq, count, and } from 'drizzle-orm';
+import { fetchConceptsIndex } from '$lib/server/episode-data';
 import type { PageServerLoad, Actions } from './$types';
 
 export const load: PageServerLoad = async ({ locals }) => {
@@ -33,29 +34,20 @@ export const load: PageServerLoad = async ({ locals }) => {
 		.groupBy(words.episodeId)
 		.all();
 
-	const conceptCounts = db
-		.select({ episodeId: episodeConcepts.episodeId, conceptCount: count() })
-		.from(episodeConcepts)
-		.groupBy(episodeConcepts.episodeId)
-		.all();
+	const conceptsIndex = await fetchConceptsIndex();
 
-	const conceptNames = db
-		.select({
-			episodeId: episodeConcepts.episodeId,
-			name: concepts.name
-		})
-		.from(episodeConcepts)
-		.innerJoin(concepts, eq(episodeConcepts.conceptId, concepts.id))
-		.all();
+	// Build per-episode concept counts and names from the concepts index
+	const episodeConceptMap = new Map<number, { count: number; names: string[] }>();
+	for (const concept of conceptsIndex) {
+		for (const ep of concept.episodes) {
+			const existing = episodeConceptMap.get(ep.episode) ?? { count: 0, names: [] };
+			existing.count++;
+			existing.names.push(concept.name);
+			episodeConceptMap.set(ep.episode, existing);
+		}
+	}
 
 	const wordMap = new Map(wordCounts.map((w) => [w.episodeId, w.wordCount]));
-	const conceptMap = new Map(conceptCounts.map((c) => [c.episodeId, c.conceptCount]));
-	const conceptNameMap = new Map<number, string[]>();
-	for (const cn of conceptNames) {
-		const existing = conceptNameMap.get(cn.episodeId) ?? [];
-		existing.push(cn.name);
-		conceptNameMap.set(cn.episodeId, existing);
-	}
 
 	const listenedCount = allEpisodes.filter((ep) => listenedMap.get(ep.id)?.listened).length;
 
@@ -67,8 +59,8 @@ export const load: PageServerLoad = async ({ locals }) => {
 			listened: listenedMap.get(ep.id)?.listened ?? false,
 			listenedAt: listenedMap.get(ep.id)?.listenedAt ?? null,
 			wordCount: wordMap.get(ep.id) ?? 0,
-			conceptCount: conceptMap.get(ep.id) ?? 0,
-			conceptNames: (conceptNameMap.get(ep.id) ?? []).slice(0, 3)
+			conceptCount: episodeConceptMap.get(ep.number)?.count ?? 0,
+			conceptNames: (episodeConceptMap.get(ep.number)?.names ?? []).slice(0, 3)
 		}))
 	};
 };

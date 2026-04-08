@@ -1,8 +1,9 @@
 import { db } from '$lib/server/db';
-import { episodes, words, concepts, lingqSyncLog, userEpisodes } from '$lib/server/db/schema';
+import { episodes, words, lingqSyncLog, userEpisodes } from '$lib/server/db/schema';
 import { count, eq, desc, and } from 'drizzle-orm';
 import { fail } from '@sveltejs/kit';
 import { fetchAllCards } from '$lib/server/lingq';
+import { fetchConceptsIndex } from '$lib/server/episode-data';
 import type { PageServerLoad, Actions } from './$types';
 
 export const load: PageServerLoad = async ({ locals }) => {
@@ -20,7 +21,8 @@ export const load: PageServerLoad = async ({ locals }) => {
 		.where(eq(words.userId, userId))
 		.all();
 
-	const [{ conceptCount }] = db.select({ conceptCount: count() }).from(concepts).all();
+	const conceptsIndex = await fetchConceptsIndex();
+	const conceptCount = conceptsIndex.length;
 
 	const recentEpisodes = db
 		.select({

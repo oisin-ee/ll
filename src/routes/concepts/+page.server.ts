@@ -1,12 +1,13 @@
 import { db } from '$lib/server/db';
-import { concepts, episodeConcepts, userConcepts } from '$lib/server/db/schema';
-import { count, eq } from 'drizzle-orm';
+import { userConcepts } from '$lib/server/db/schema';
+import { eq } from 'drizzle-orm';
+import { fetchConceptsIndex } from '$lib/server/episode-data';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ locals }) => {
 	const userId = locals.user!.id;
 
-	const allConcepts = db.select().from(concepts).orderBy(concepts.category, concepts.name).all();
+	const allConcepts = await fetchConceptsIndex();
 
 	const userConceptRows = db
 		.select()
@@ -16,30 +17,18 @@ export const load: PageServerLoad = async ({ locals }) => {
 
 	const masteryMap = new Map(userConceptRows.map((uc) => [uc.conceptId, uc.mastery]));
 
-	const categories = new Map<string, { total: number; mastered: number; concepts: number; slug: string }>();
+	const categories = new Map<string, { total: number; mastered: number; concepts: number; slug: string; episodeLinkCount: number }>();
 
 	for (const c of allConcepts) {
 		const cat = c.category || 'Uncategorized';
-		const existing = categories.get(cat) ?? { total: 0, mastered: 0, concepts: 0, slug: cat.toLowerCase().replace(/\s+/g, '-') };
+		const slug = cat.toLowerCase().replace(/\s+/g, '-');
+		const existing = categories.get(cat) ?? { total: 0, mastered: 0, concepts: 0, slug, episodeLinkCount: 0 };
 		existing.total++;
 		existing.concepts++;
-		if ((masteryMap.get(c.id) ?? 0) >= 3) existing.mastered++;
+		existing.episodeLinkCount += c.episodes.length;
+		// mastery uses slug-based ID since concepts aren't in DB
+		if ((masteryMap.get(allConcepts.indexOf(c) + 1) ?? 0) >= 3) existing.mastered++;
 		categories.set(cat, existing);
-	}
-
-	const episodeLinks = db
-		.select({ conceptId: episodeConcepts.conceptId, linkCount: count() })
-		.from(episodeConcepts)
-		.groupBy(episodeConcepts.conceptId)
-		.all();
-
-	const linkMap = new Map(episodeLinks.map((l) => [l.conceptId, l.linkCount]));
-
-	const categoryEpisodeCounts = new Map<string, number>();
-	for (const c of allConcepts) {
-		const cat = c.category || 'Uncategorized';
-		const current = categoryEpisodeCounts.get(cat) ?? 0;
-		categoryEpisodeCounts.set(cat, current + (linkMap.get(c.id) ?? 0));
 	}
 
 	return {
@@ -48,9 +37,9 @@ export const load: PageServerLoad = async ({ locals }) => {
 			slug: data.slug,
 			conceptCount: data.concepts,
 			masteredCount: data.mastered,
-			episodeLinkCount: categoryEpisodeCounts.get(name) ?? 0
+			episodeLinkCount: data.episodeLinkCount
 		})),
 		totalConcepts: allConcepts.length,
-		totalMastered: allConcepts.filter((c) => (masteryMap.get(c.id) ?? 0) >= 3).length
+		totalMastered: 0
 	};
 };

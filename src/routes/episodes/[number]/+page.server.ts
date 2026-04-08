@@ -1,8 +1,9 @@
 import { db } from '$lib/server/db';
-import { episodes, words, concepts, episodeConcepts, episodeSummaries, userEpisodes } from '$lib/server/db/schema';
-import { eq, asc, and } from 'drizzle-orm';
+import { episodes, words, userEpisodes } from '$lib/server/db/schema';
+import { eq, and } from 'drizzle-orm';
 import { error, fail } from '@sveltejs/kit';
 import { lookupCard, createCard } from '$lib/server/lingq';
+import { fetchEpisodeData } from '$lib/server/episode-data';
 import type { PageServerLoad, Actions } from './$types';
 
 interface TranscriptWord {
@@ -35,38 +36,21 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 		.where(and(eq(words.userId, userId), eq(words.episodeId, episode.id)))
 		.all();
 
-	const linkedConcepts = db
-		.select({
-			id: concepts.id,
-			slug: concepts.slug,
-			name: concepts.name,
-			category: concepts.category,
-			role: episodeConcepts.role,
-			summary: episodeConcepts.summary,
-			rule: episodeConcepts.rule,
-			examples: episodeConcepts.examples,
-			notes: episodeConcepts.notes,
-			sortOrder: episodeConcepts.sortOrder
-		})
-		.from(episodeConcepts)
-		.innerJoin(concepts, eq(episodeConcepts.conceptId, concepts.id))
-		.where(eq(episodeConcepts.episodeId, episode.id))
-		.orderBy(asc(episodeConcepts.sortOrder))
-		.all()
-		.map((c) => ({
-			...c,
-			examples: c.examples ? JSON.parse(c.examples) as Array<{ spanish: string; english: string }> : []
-		}));
+	const epData = await fetchEpisodeData(num);
 
-	const epSummary = db
-		.select()
-		.from(episodeSummaries)
-		.where(eq(episodeSummaries.episodeId, episode.id))
-		.get();
+	const linkedConcepts = (epData?.teachings ?? []).map((t) => ({
+		slug: t.conceptSlug,
+		name: t.conceptName,
+		category: t.category,
+		role: t.role,
+		summary: t.summary,
+		rule: t.rule,
+		examples: t.examples,
+		notes: t.notes,
+		sortOrder: 0
+	}));
 
-	const vocabulary = epSummary?.vocabularyJson
-		? JSON.parse(epSummary.vocabularyJson) as Array<{ spanish: string; english: string; derivation: string | null }>
-		: [];
+	const vocabulary = epData?.vocabulary ?? [];
 
 	const savedWords = new Set(episodeWords.map((w) => w.spanish.toLowerCase()));
 
@@ -97,7 +81,7 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 		},
 		words: episodeWords,
 		concepts: linkedConcepts,
-		episodeSummary: epSummary?.summary ?? null,
+		episodeSummary: epData?.summary ?? null,
 		vocabulary,
 		savedWords: [...savedWords],
 		transcript,
