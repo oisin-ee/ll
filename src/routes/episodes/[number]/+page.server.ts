@@ -2,8 +2,6 @@ import { db } from '$lib/server/db';
 import { episodes, words, concepts, episodeConcepts, episodeSummaries, userEpisodes } from '$lib/server/db/schema';
 import { eq, asc, and } from 'drizzle-orm';
 import { error, fail } from '@sveltejs/kit';
-import { readFileSync, existsSync } from 'node:fs';
-import { resolve } from 'node:path';
 import { lookupCard, createCard } from '$lib/server/lingq';
 import type { PageServerLoad, Actions } from './$types';
 
@@ -73,11 +71,14 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 	const savedWords = new Set(episodeWords.map((w) => w.spanish.toLowerCase()));
 
 	let transcript: TranscriptTurn[] = [];
-	if (episode.transcriptPath) {
-		const fullPath = resolve(episode.transcriptPath);
-		if (existsSync(fullPath)) {
-			transcript = JSON.parse(readFileSync(fullPath, 'utf-8'));
+	const padded = String(num).padStart(2, '0');
+	try {
+		const res = await fetch(`https://raw.githubusercontent.com/oisincoveney/ll-episodes/main/${padded}/transcript.json`);
+		if (res.ok) {
+			transcript = await res.json();
 		}
+	} catch {
+		// transcript stays empty
 	}
 
 	const prevEpisode = num > 1
