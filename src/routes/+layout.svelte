@@ -66,6 +66,16 @@
 					<Navigation.TriggerText>Past Tense</Navigation.TriggerText>
 				</Navigation.TriggerAnchor>
 			</Navigation.Group>
+
+			<Navigation.Group>
+				<Navigation.Label>Music</Navigation.Label>
+				<Navigation.TriggerAnchor
+					href="/music"
+					class={$page.url.pathname.startsWith('/music') ? 'preset-tonal-primary' : ''}
+				>
+					<Navigation.TriggerText>Songs</Navigation.TriggerText>
+				</Navigation.TriggerAnchor>
+			</Navigation.Group>
 		</Navigation.Menu>
 
 		<Navigation.Footer>

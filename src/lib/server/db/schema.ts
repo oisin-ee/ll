@@ -68,6 +68,29 @@ export const episodeSummaries = sqliteTable('episode_summaries', {
 	vocabularyJson: text('vocabulary_json')
 });
 
+// ── Music catalog ─────────────────────────────────────────────────────────────
+
+export const songs = sqliteTable('songs', {
+	id: integer('id').primaryKey({ autoIncrement: true }),
+	title: text('title').notNull(),
+	artist: text('artist').notNull(),
+	youtubeId: text('youtube_id').notNull(),
+	lrcText: text('lrc_text'),
+	teacherNotes: text('teacher_notes'),
+	createdAt: text('created_at').notNull()
+});
+
+export const songLines = sqliteTable('song_lines', {
+	id: integer('id').primaryKey({ autoIncrement: true }),
+	songId: integer('song_id')
+		.notNull()
+		.references(() => songs.id, { onDelete: 'cascade' }),
+	lineNumber: integer('line_number').notNull(),
+	startMs: integer('start_ms').notNull(),
+	spanish: text('spanish').notNull(),
+	english: text('english')
+});
+
 // ── User-scoped data ──────────────────────────────────────────────────────────
 
 export const userEpisodes = sqliteTable(
@@ -93,9 +116,9 @@ export const words = sqliteTable('words', {
 	spanish: text('spanish').notNull(),
 	english: text('english').notNull(),
 	example: text('example'),
-	episodeId: integer('episode_id')
-		.notNull()
-		.references(() => episodes.id),
+	// nullable: words from songs will have songId set instead
+	episodeId: integer('episode_id').references(() => episodes.id),
+	songId: integer('song_id').references(() => songs.id, { onDelete: 'set null' }),
 	lingqId: integer('lingq_id'),
 	lingqStatus: integer('lingq_status'),
 	createdAt: text('created_at').notNull()
@@ -114,6 +137,23 @@ export const userConcepts = sqliteTable(
 		mastery: integer('mastery').notNull().default(0)
 	},
 	(t) => [uniqueIndex('ux_user_concepts').on(t.userId, t.conceptId)]
+);
+
+export const flashcardReviews = sqliteTable(
+	'flashcard_reviews',
+	{
+		id: integer('id').primaryKey({ autoIncrement: true }),
+		userId: text('user_id')
+			.notNull()
+			.references(() => users.id),
+		episodeId: integer('episode_id')
+			.notNull()
+			.references(() => episodes.id),
+		spanish: text('spanish').notNull(),
+		cardState: text('card_state').notNull(),
+		createdAt: text('created_at').notNull()
+	},
+	(t) => [uniqueIndex('ux_flashcard_reviews').on(t.userId, t.episodeId, t.spanish)]
 );
 
 export const lingqSyncLog = sqliteTable('lingq_sync_log', {
@@ -150,8 +190,18 @@ export const episodesRelations = relations(episodes, ({ many, one }) => ({
 	userEpisodes: many(userEpisodes)
 }));
 
+export const songsRelations = relations(songs, ({ many }) => ({
+	lines: many(songLines),
+	words: many(words)
+}));
+
+export const songLinesRelations = relations(songLines, ({ one }) => ({
+	song: one(songs, { fields: [songLines.songId], references: [songs.id] })
+}));
+
 export const wordsRelations = relations(words, ({ one }) => ({
 	episode: one(episodes, { fields: [words.episodeId], references: [episodes.id] }),
+	song: one(songs, { fields: [words.songId], references: [songs.id] }),
 	user: one(users, { fields: [words.userId], references: [users.id] })
 }));
 
@@ -173,4 +223,9 @@ export const userEpisodesRelations = relations(userEpisodes, ({ one }) => ({
 export const userConceptsRelations = relations(userConcepts, ({ one }) => ({
 	user: one(users, { fields: [userConcepts.userId], references: [users.id] }),
 	concept: one(concepts, { fields: [userConcepts.conceptId], references: [concepts.id] })
+}));
+
+export const flashcardReviewsRelations = relations(flashcardReviews, ({ one }) => ({
+	user: one(users, { fields: [flashcardReviews.userId], references: [users.id] }),
+	episode: one(episodes, { fields: [flashcardReviews.episodeId], references: [episodes.id] })
 }));

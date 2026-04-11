@@ -12,6 +12,7 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
+    "@oisincoveney/style": "^0.1.5",
     "@skeletonlabs/skeleton": "^4.14.0",
     "@skeletonlabs/skeleton-svelte": "^4.14.0",
     "@sveltejs/adapter-auto": "^7.0.0",
@@ -38,7 +39,9 @@
     "drizzle-orm": "^0.45.2",
     "lucia": "^3.2.2",
     "marked": "^17.0.5",
-    "verbos": "^0.0.3"
+    "ts-fsrs": "^5.3.2",
+    "verbos": "^0.0.3",
+    "youtube-player": "^5.6.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
