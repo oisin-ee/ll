@@ -8,20 +8,52 @@ export const load: PageServerLoad = async () => {
 	return {};
 };
 
+async function fetchYoutubeMetadata(youtubeId: string): Promise<{ title: string; artist: string }> {
+	const url = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${youtubeId}&format=json`;
+	const res = await fetch(url);
+	if (!res.ok) throw new Error('Could not fetch YouTube metadata');
+	const data = await res.json() as { title: string; author_name: string };
+
+	// Many music videos use "Artist - Song Title" format in the title
+	const dashIndex = data.title.indexOf(' - ');
+	if (dashIndex !== -1) {
+		return {
+			artist: data.title.slice(0, dashIndex).trim(),
+			title: data.title.slice(dashIndex + 3).trim()
+		};
+	}
+
+	return { title: data.title, artist: data.author_name };
+}
+
+async function fetchLrc(title: string, artist: string): Promise<string | null> {
+	// Strip common suffixes like "(Official Video)", "(Lyrics)", etc.
+	const cleanTitle = title.replace(/\s*[\(\[][^\)\]]*[\)\]]/g, '').trim();
+	const params = new URLSearchParams({ track_name: cleanTitle, artist_name: artist });
+	const res = await fetch(`https://lrclib.net/api/get?${params}`);
+	if (!res.ok) return null;
+	const data = await res.json() as { syncedLyrics?: string };
+	return data.syncedLyrics ?? null;
+}
+
 export const actions: Actions = {
 	default: async ({ request }) => {
 		const formData = await request.formData();
-		const title = String(formData.get('title') ?? '').trim();
-		const artist = String(formData.get('artist') ?? '').trim();
 		const youtubeInput = String(formData.get('youtubeUrl') ?? '').trim();
-		const lrcText = String(formData.get('lrcText') ?? '').trim();
 		const teacherNotes = String(formData.get('teacherNotes') ?? '').trim();
 
-		if (!title) return fail(400, { error: 'Title is required', title, artist, youtubeInput, lrcText, teacherNotes });
-		if (!artist) return fail(400, { error: 'Artist is required', title, artist, youtubeInput, lrcText, teacherNotes });
-
 		const youtubeId = extractYoutubeId(youtubeInput);
-		if (!youtubeId) return fail(400, { error: 'Invalid YouTube URL or ID', title, artist, youtubeInput, lrcText, teacherNotes });
+		if (!youtubeId) return fail(400, { error: 'Invalid YouTube URL or ID', youtubeInput });
+
+		let title: string;
+		let artist: string;
+		try {
+			({ title, artist } = await fetchYoutubeMetadata(youtubeId));
+		} catch {
+			return fail(400, { error: 'Could not fetch video info from YouTube', youtubeInput });
+		}
+
+		const lrcText = await fetchLrc(title, artist);
 
 		const song = db
 			.insert(songs)
@@ -29,7 +61,7 @@ export const actions: Actions = {
 				title,
 				artist,
 				youtubeId,
-				lrcText: lrcText || null,
+				lrcText: lrcText ?? null,
 				teacherNotes: teacherNotes || null,
 				createdAt: new Date().toISOString()
 			})
