@@ -32,19 +32,6 @@ jobs:
           rsync -a drizzle.config.ts /home/exedev/ll/
           rsync -a --delete drizzle/ /home/exedev/ll/drizzle/
 
-      - name: Bootstrap migration history
-        run: |
-          sqlite3 /home/exedev/ll/data/ll.db "
-            CREATE TABLE IF NOT EXISTS __drizzle_migrations (
-              id INTEGER PRIMARY KEY AUTOINCREMENT,
-              hash text NOT NULL,
-              created_at numeric
-            );
-            INSERT INTO __drizzle_migrations (hash, created_at)
-            SELECT '68e5aaf75b174f90dffa2af8f6d65080f62e7c3a34ed38c72cf1a278ee3c77fc', 1775392060310
-            WHERE NOT EXISTS (SELECT 1 FROM __drizzle_migrations);
-          "
-
       - name: Apply schema changes
         run: cd /home/exedev/ll && pnpm drizzle-kit migrate
 
