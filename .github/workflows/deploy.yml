@@ -28,7 +28,7 @@ jobs:
         run: rsync -a --delete node_modules/ /home/exedev/ll/node_modules/
 
       - name: Apply schema changes
-        run: cd /home/exedev/ll && pnpm drizzle-kit push --force
+        run: pnpm drizzle-kit push --dialect sqlite --schema ./src/lib/server/db/schema.ts --url /home/exedev/ll/data/ll.db --force
 
       - name: Restart service
         run: sudo systemctl restart ll
