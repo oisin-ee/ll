@@ -7,7 +7,7 @@
 
 	let phase = $state<'setup' | 'active' | 'summary'>('setup');
 	let roundSize = $state('20');
-	let tenseFilter = $state<TenseFilter>(data.tenseFilter);
+	let tenseFilter = $derived<TenseFilter>(data.tenseFilter);
 	let showHints = $state(false);
 	let exercises = $state<PastTenseExercise[]>([]);
 	let currentIndex = $state(0);
@@ -22,7 +22,6 @@
 	const progressPercent = $derived(total > 0 ? Math.round((currentIndex / total) * 100) : 0);
 
 	function applyTenseFilter(value: string) {
-		tenseFilter = value as TenseFilter;
 		goto(`/practice/past-tense?tense=${value}`, { replaceState: true, invalidateAll: true });
 	}
 
