@@ -1,5 +1,9 @@
 import { z } from 'zod';
 import getArtistTitle from 'get-artist-title';
+import { db } from '$lib/server/db';
+import { songLines } from '$lib/server/db/schema';
+import { parseLrc } from '$lib/lrc';
+import { eq } from 'drizzle-orm';
 
 const oEmbedSchema = z.object({
 	title: z.string(),
@@ -28,4 +32,19 @@ export async function fetchLrc(title: string, artist: string): Promise<string | 
 	if (!res.ok) return null;
 	const results = lrcSearchSchema.parse(await res.json());
 	return results.find((r) => r.syncedLyrics)?.syncedLyrics ?? null;
+}
+
+export function saveSongLines(songId: number, lrcText: string): void {
+	const parsed = parseLrc(lrcText);
+	if (parsed.length === 0) return;
+	db.delete(songLines).where(eq(songLines.songId, songId)).run();
+	db.insert(songLines)
+		.values(parsed.map((line, i) => ({
+			songId,
+			lineNumber: i,
+			startMs: line.startMs,
+			spanish: line.text,
+			english: null
+		})))
+		.run();
 }

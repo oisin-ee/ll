@@ -1,8 +1,9 @@
 import { db } from '$lib/server/db';
-import { songs, songLines, words } from '$lib/server/db/schema';
+import { songs, words } from '$lib/server/db/schema';
 import { eq, and } from 'drizzle-orm';
 import { error, fail } from '@sveltejs/kit';
 import { lookupCard, createCard } from '$lib/server/lingq';
+import { fetchYoutubeMetadata, fetchLrc, saveSongLines } from '$lib/server/music';
 import type { PageServerLoad, Actions } from './$types';
 
 export const load: PageServerLoad = async ({ params, locals }) => {
@@ -97,5 +98,29 @@ export const actions: Actions = {
 		db.delete(words)
 			.where(and(eq(words.id, id), eq(words.userId, user.id)))
 			.run();
+	},
+
+	reloadLyrics: async ({ params, locals }) => {
+		const user = locals.user;
+		if (!user) return fail(401, { reloadError: 'Not authenticated' });
+
+		const songId = parseInt(params.id);
+		if (isNaN(songId)) return fail(400, { reloadError: 'Invalid song' });
+
+		const song = db.select().from(songs).where(eq(songs.id, songId)).get();
+		if (!song) return fail(404, { reloadError: 'Song not found' });
+
+		let metadata: { title: string; artist: string };
+		try {
+			metadata = await fetchYoutubeMetadata(song.youtubeId);
+		} catch {
+			return fail(400, { reloadError: 'Could not fetch video info from YouTube' });
+		}
+
+		const lrcText = await fetchLrc(metadata.title, metadata.artist);
+		if (!lrcText) return fail(404, { reloadError: 'No lyrics found for this song' });
+
+		db.update(songs).set({ title: metadata.title, artist: metadata.artist, lrcText }).where(eq(songs.id, songId)).run();
+		saveSongLines(songId, lrcText);
 	}
 };

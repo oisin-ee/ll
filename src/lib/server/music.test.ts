@@ -1,14 +1,52 @@
-import { describe, it, expect, afterEach } from 'vitest';
-import { fetchYoutubeMetadata, fetchLrc } from './music';
+import { describe, it, expect, afterEach, vi, beforeEach } from 'vitest';
+import { fetchYoutubeMetadata, fetchLrc, saveSongLines } from './music';
 import { db } from './db';
 import { songs, songLines } from './db/schema';
-import { parseLrc, extractYoutubeId } from '$lib/lrc';
+import { extractYoutubeId } from '$lib/lrc';
 import { eq } from 'drizzle-orm';
 
+const OEMBED_RESPONSE = {
+	title: 'Mancha de Rolando - Arde la ciudad (video oficial) HD',
+	author_name: 'PopArt Discos'
+};
+
+const UPDATED_OEMBED_RESPONSE = {
+	title: 'Mancha de Rolando - Arde la ciudad (video oficial) HD',
+	author_name: 'PopArt Discos'
+};
+
+const LRCLIB_RESPONSE = [
+	{
+		trackName: 'Arde la Ciudad',
+		artistName: 'Mancha De Rolando',
+		syncedLyrics: '[00:15.04] Tu equipo volvió a ganar\n[00:22.16] Te prendieron mil bengalas hoy\n[00:57.03] Arde la ciudad'
+	}
+];
+
+const UPDATED_LRCLIB_RESPONSE = [
+	{
+		trackName: 'Arde la Ciudad',
+		artistName: 'Mancha De Rolando',
+		syncedLyrics: '[00:15.04] Tu equipo volvió a ganar\n[00:57.03] Arde la ciudad'
+	}
+];
+
+beforeEach(() => {
+	vi.stubGlobal('fetch', vi.fn(async (url: string) => {
+		if (url.includes('oembed')) return new Response(JSON.stringify(OEMBED_RESPONSE));
+		if (url.includes('lrclib')) return new Response(JSON.stringify(LRCLIB_RESPONSE));
+		throw new Error(`Unexpected fetch call: ${url}`);
+	}));
+});
+
+afterEach(() => {
+	vi.unstubAllGlobals();
+});
+
 describe('fetchYoutubeMetadata', () => {
-	it('extracts artist and title from a music video with label channel', async () => {
-		// YouTube title: "Mancha de Rolando - Arde la ciudad (video oficial) HD"
-		// Channel: "PopArt Discos" (a label, not the artist)
+	it('extracts artist and title, ignoring label channel name', async () => {
+		// oEmbed returns "Mancha de Rolando - Arde la ciudad (video oficial) HD", channel "PopArt Discos" (a label)
+		// get-artist-title should parse the title, not use the channel name as artist
 		const result = await fetchYoutubeMetadata('-8vxXsfbxj4');
 		expect(result.artist).toBe('Mancha de Rolando');
 		expect(result.title).toBe('Arde la ciudad');
@@ -16,20 +54,19 @@ describe('fetchYoutubeMetadata', () => {
 });
 
 describe('fetchLrc', () => {
-	it('finds synced lyrics for Arde la ciudad', async () => {
+	it('returns syncedLyrics from the first matching result', async () => {
 		const lrc = await fetchLrc('Arde la ciudad', 'Mancha de Rolando');
-		expect(lrc).not.toBeNull();
-		expect(lrc).toContain('[');
+		expect(lrc).toBe(LRCLIB_RESPONSE[0].syncedLyrics);
 	});
 
-	it('returns null for a nonexistent track', async () => {
-		const lrc = await fetchLrc('zzz_nonexistent_track_xyz', 'zzz_nonexistent_artist_xyz');
+	it('returns null when lrclib returns no results', async () => {
+		vi.stubGlobal('fetch', vi.fn(async () => new Response(JSON.stringify([]))));
+		const lrc = await fetchLrc('nonexistent', 'nobody');
 		expect(lrc).toBeNull();
-	}, 15_000);
+	});
 });
 
-describe('full song insertion flow', () => {
-	const testYoutubeUrl = 'https://www.youtube.com/watch?v=-8vxXsfbxj4&pp=ygUOYXJkZSBsYSBjaXVkYWQ%3D';
+describe('song insertion and reload flow', () => {
 	let insertedSongId: number | undefined;
 
 	afterEach(() => {
@@ -39,19 +76,19 @@ describe('full song insertion flow', () => {
 		}
 	});
 
-	it('creates a song with synced lyric lines from a YouTube URL', async () => {
-		const youtubeId = extractYoutubeId(testYoutubeUrl);
+	it('creates a song with parsed lyric lines from a YouTube URL', async () => {
+		const youtubeId = extractYoutubeId('https://www.youtube.com/watch?v=-8vxXsfbxj4');
 		expect(youtubeId).toBe('-8vxXsfbxj4');
 		if (!youtubeId) return;
 
-		const { title, artist } = await fetchYoutubeMetadata(youtubeId);
-		const lrcText = await fetchLrc(title, artist);
+		const metadata = await fetchYoutubeMetadata(youtubeId);
+		const lrcText = await fetchLrc(metadata.title, metadata.artist);
 		expect(lrcText).not.toBeNull();
 		if (!lrcText) return;
 
 		const song = db.insert(songs).values({
-			title,
-			artist,
+			title: metadata.title,
+			artist: metadata.artist,
 			youtubeId,
 			lrcText,
 			teacherNotes: null,
@@ -59,23 +96,49 @@ describe('full song insertion flow', () => {
 		}).returning().get();
 
 		insertedSongId = song.id;
-
-		const parsed = parseLrc(lrcText);
-		expect(parsed.length).toBeGreaterThan(0);
-
-		db.insert(songLines).values(
-			parsed.map((line, i) => ({
-				songId: song.id,
-				lineNumber: i,
-				startMs: line.startMs,
-				spanish: line.text,
-				english: null
-			}))
-		).run();
+		saveSongLines(song.id, lrcText);
 
 		const lines = await db.query.songLines.findMany({ where: eq(songLines.songId, song.id) });
-		expect(lines.length).toBe(parsed.length);
-		expect(lines[0].startMs).toBeGreaterThan(0);
-		expect(lines[0].spanish).toBeTruthy();
+		expect(lines).toHaveLength(3);
+		expect(lines[0].startMs).toBe(15040);
+		expect(lines[0].spanish).toBe('Tu equipo volvió a ganar');
+	});
+
+	it('reload replaces song lines with freshly fetched metadata and lyrics', async () => {
+		// Insert a song with stale data (no lyrics)
+		const song = db.insert(songs).values({
+			title: 'stale title',
+			artist: 'stale artist',
+			youtubeId: '-8vxXsfbxj4',
+			lrcText: null,
+			teacherNotes: null,
+			createdAt: new Date().toISOString()
+		}).returning().get();
+
+		insertedSongId = song.id;
+
+		// Simulate reload: fetch updated metadata and lyrics, then save
+		vi.stubGlobal('fetch', vi.fn(async (url: string) => {
+			if (url.includes('oembed')) return new Response(JSON.stringify(UPDATED_OEMBED_RESPONSE));
+			if (url.includes('lrclib')) return new Response(JSON.stringify(UPDATED_LRCLIB_RESPONSE));
+			throw new Error(`Unexpected fetch call: ${url}`);
+		}));
+
+		const metadata = await fetchYoutubeMetadata(song.youtubeId);
+		const lrcText = await fetchLrc(metadata.title, metadata.artist);
+		expect(lrcText).not.toBeNull();
+		if (!lrcText) return;
+
+		db.update(songs).set({ title: metadata.title, artist: metadata.artist, lrcText }).where(eq(songs.id, song.id)).run();
+		saveSongLines(song.id, lrcText);
+
+		const updated = db.select().from(songs).where(eq(songs.id, song.id)).get();
+		expect(updated?.title).toBe('Arde la ciudad');
+		expect(updated?.artist).toBe('Mancha de Rolando');
+
+		const lines = await db.query.songLines.findMany({ where: eq(songLines.songId, song.id) });
+		expect(lines).toHaveLength(2);
+		expect(lines[0].spanish).toBe('Tu equipo volvió a ganar');
+		expect(lines[1].spanish).toBe('Arde la ciudad');
 	});
 });

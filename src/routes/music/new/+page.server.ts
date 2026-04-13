@@ -1,8 +1,8 @@
 import { db } from '$lib/server/db';
-import { songs, songLines } from '$lib/server/db/schema';
+import { songs } from '$lib/server/db/schema';
 import { fail, redirect } from '@sveltejs/kit';
-import { parseLrc, extractYoutubeId } from '$lib/lrc';
-import { fetchYoutubeMetadata, fetchLrc } from '$lib/server/music';
+import { extractYoutubeId } from '$lib/lrc';
+import { fetchYoutubeMetadata, fetchLrc, saveSongLines } from '$lib/server/music';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
@@ -18,21 +18,20 @@ export const actions: Actions = {
 		const youtubeId = extractYoutubeId(youtubeInput);
 		if (!youtubeId) return fail(400, { error: 'Invalid YouTube URL or ID', youtubeInput });
 
-		let title: string;
-		let artist: string;
+		let metadata: { title: string; artist: string };
 		try {
-			({ title, artist } = await fetchYoutubeMetadata(youtubeId));
+			metadata = await fetchYoutubeMetadata(youtubeId);
 		} catch {
 			return fail(400, { error: 'Could not fetch video info from YouTube', youtubeInput });
 		}
 
-		const lrcText = await fetchLrc(title, artist);
+		const lrcText = await fetchLrc(metadata.title, metadata.artist);
 
 		const song = db
 			.insert(songs)
 			.values({
-				title,
-				artist,
+				title: metadata.title,
+				artist: metadata.artist,
 				youtubeId,
 				lrcText: lrcText ?? null,
 				teacherNotes: teacherNotes || null,
@@ -41,22 +40,7 @@ export const actions: Actions = {
 			.returning()
 			.get();
 
-		if (lrcText) {
-			const parsed = parseLrc(lrcText);
-			if (parsed.length > 0) {
-				db.insert(songLines)
-					.values(
-						parsed.map((line, i) => ({
-							songId: song.id,
-							lineNumber: i,
-							startMs: line.startMs,
-							spanish: line.text,
-							english: null
-						}))
-					)
-					.run();
-			}
-		}
+		if (lrcText) saveSongLines(song.id, lrcText);
 
 		redirect(303, `/music/${song.id}`);
 	}

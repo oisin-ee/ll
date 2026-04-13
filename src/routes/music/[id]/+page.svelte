@@ -85,7 +85,15 @@
 
 		{#if data.lines.length > 0}
 			<section class="card preset-tonal p-4 max-h-screen overflow-y-auto">
-				<h2 class="h4 mb-3">Lyrics</h2>
+				<div class="flex items-center justify-between mb-3">
+					<h2 class="h4">Lyrics</h2>
+					<form method="POST" action="?/reloadLyrics" use:enhance>
+						<button type="submit" class="btn btn-sm preset-tonal">Reload lyrics</button>
+					</form>
+				</div>
+				{#if form?.reloadError}
+					<p class="text-sm opacity-75 mb-2">{form.reloadError}</p>
+				{/if}
 				<LyricsDisplay
 					lines={data.lines.map((l) => ({ startMs: l.startMs, text: l.spanish }))}
 					{currentMs}
@@ -99,7 +107,12 @@
 		{:else}
 			<section class="card preset-tonal p-4 text-center opacity-60">
 				<p>No lyrics added yet.</p>
-				<a href="/music/{data.song.id}/edit" class="anchor text-sm mt-1">Add lyrics</a>
+				<form method="POST" action="?/reloadLyrics" use:enhance class="mt-2">
+					<button type="submit" class="btn btn-sm preset-tonal">Reload lyrics</button>
+				</form>
+				{#if form?.reloadError}
+					<p class="text-sm opacity-75 mt-1">{form.reloadError}</p>
+				{/if}
 			</section>
 		{/if}
 	</div>
