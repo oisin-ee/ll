@@ -2,108 +2,98 @@
 	import '../app.css';
 	import { page } from '$app/stores';
 	import { enhance } from '$app/forms';
-	import { afterNavigate } from '$app/navigation';
-	import { LogOutIcon } from '@lucide/svelte';
-	import MobileAppBar from '$lib/components/MobileAppBar.svelte';
-	import NavDrawer from '$lib/components/NavDrawer.svelte';
+	import { Home, Headphones, BookOpen, Zap, Music, Brain, LogOut } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Avatar, AvatarImage, AvatarFallback } from '$lib/components/ui/avatar';
 
 	let { data, children } = $props();
-	let drawerOpen = $state(false);
-
-	afterNavigate(() => {
-		drawerOpen = false;
-	});
 
 	function isActive(path: string, exact = false): boolean {
 		return exact ? $page.url.pathname === path : $page.url.pathname.startsWith(path);
 	}
+
+	const navItems = [
+		{ href: '/', label: 'Home', icon: Home, exact: true },
+		{ href: '/episodes', label: 'Episodes', icon: Headphones, exact: false },
+		{ href: '/vocabulary', label: 'Vocab', icon: BookOpen, exact: false },
+		{ href: '/practice', label: 'Practice', icon: Zap, exact: false },
+		{ href: '/music', label: 'Music', icon: Music, exact: false },
+	];
 </script>
-
-{#snippet navContent()}
-	<nav class="flex flex-col h-full">
-		<div class="p-6 pb-4 border-b border-border">
-			<Button href="/" variant="link" class="font-display text-2xl font-semibold p-0 h-auto block">LL</Button>
-			<p class="text-sm text-muted-foreground mt-0.5">Language Transfer</p>
-		</div>
-
-		<div class="flex-1 overflow-y-auto py-4 px-3 flex flex-col gap-6">
-			<div>
-				<p class="text-xs font-semibold uppercase tracking-widest text-muted-foreground px-3 mb-2">Learn</p>
-				<div class="flex flex-col gap-0.5">
-					<Button href="/" variant="ghost" class="w-full justify-start {isActive('/', true) ? 'bg-accent text-accent-foreground font-medium' : ''}">Dashboard</Button>
-					<Button href="/episodes" variant="ghost" class="w-full justify-start {isActive('/episodes') ? 'bg-accent text-accent-foreground font-medium' : ''}">Episodes</Button>
-				</div>
-			</div>
-
-			<div>
-				<p class="text-xs font-semibold uppercase tracking-widest text-muted-foreground px-3 mb-2">Review</p>
-				<div class="flex flex-col gap-0.5">
-					<Button href="/vocabulary" variant="ghost" class="w-full justify-start {isActive('/vocabulary', true) ? 'bg-accent text-accent-foreground font-medium' : ''}">Vocabulary</Button>
-					<Button href="/concepts" variant="ghost" class="w-full justify-start {isActive('/concepts', true) ? 'bg-accent text-accent-foreground font-medium' : ''}">Concepts</Button>
-				</div>
-			</div>
-
-			<div>
-				<p class="text-xs font-semibold uppercase tracking-widest text-muted-foreground px-3 mb-2">Practice</p>
-				<div class="flex flex-col gap-0.5">
-					<Button href="/practice/past-tense" variant="ghost" class="w-full justify-start {isActive('/practice') ? 'bg-accent text-accent-foreground font-medium' : ''}">Past Tense</Button>
-				</div>
-			</div>
-
-			<div>
-				<p class="text-xs font-semibold uppercase tracking-widest text-muted-foreground px-3 mb-2">Music</p>
-				<div class="flex flex-col gap-0.5">
-					<Button href="/music" variant="ghost" class="w-full justify-start {isActive('/music') ? 'bg-accent text-accent-foreground font-medium' : ''}">Songs</Button>
-				</div>
-			</div>
-		</div>
-
-		<div class="p-4 border-t border-border flex flex-col gap-3">
-			<form method="POST" action="/?/sync" use:enhance>
-				<Button type="submit" variant="outline" class="w-full">Sync LingQ</Button>
-			</form>
-			{#if data.user}
-				<div class="flex items-center gap-3">
-					<Avatar size="sm">
-						{#if data.user.avatar}
-							<AvatarImage src={data.user.avatar} alt={data.user.name ?? 'User'} referrerpolicy="no-referrer" />
-						{/if}
-						<AvatarFallback>{(data.user.name ?? data.user.email)[0].toUpperCase()}</AvatarFallback>
-					</Avatar>
-					<span class="text-sm flex-1 truncate text-muted-foreground">{data.user.name ?? data.user.email}</span>
-					<form method="POST" action="/auth/logout">
-						<Button type="submit" variant="ghost" size="icon-sm" title="Sign out">
-							<LogOutIcon />
-						</Button>
-					</form>
-				</div>
-			{/if}
-		</div>
-	</nav>
-{/snippet}
 
 <svelte:head>
 	<title>Language Learner</title>
 </svelte:head>
 
-<div class="flex flex-col md:flex-row h-screen bg-background">
-	<div class="md:hidden">
-		<MobileAppBar onMenuClick={() => { drawerOpen = true; }} />
-	</div>
+<div class="flex h-screen bg-background">
+	<!-- Desktop sidebar -->
+	<aside class="hidden md:flex flex-col w-44 border-r border-border shrink-0 bg-background">
+		<div class="px-4 py-5">
+			<a href="/" class="font-semibold text-base tracking-tight text-foreground">LL</a>
+			<p class="text-xs text-muted-foreground mt-0.5">Language Transfer</p>
+		</div>
 
-	<NavDrawer bind:open={drawerOpen}>
-		{@render navContent()}
-	</NavDrawer>
+		<nav class="flex-1 px-2 flex flex-col gap-0.5 overflow-y-auto">
+			{#each navItems as item}
+				<a
+					href={item.href}
+					class="flex items-center gap-2.5 px-2.5 py-2 rounded-md text-sm transition-colors {isActive(item.href, item.exact) ? 'bg-accent text-accent-foreground font-medium' : 'text-muted-foreground hover:text-foreground hover:bg-muted'}"
+				>
+					<item.icon size={16} />
+					{item.label}
+				</a>
+			{/each}
+			<a
+				href="/concepts"
+				class="flex items-center gap-2.5 px-2.5 py-2 rounded-md text-sm transition-colors {isActive('/concepts') ? 'bg-accent text-accent-foreground font-medium' : 'text-muted-foreground hover:text-foreground hover:bg-muted'}"
+			>
+				<Brain size={16} />
+				Concepts
+			</a>
+		</nav>
 
-	<aside class="hidden md:flex flex-col w-56 border-r border-border shrink-0 bg-background">
-		{@render navContent()}
+		<div class="px-2 py-3 border-t border-border flex flex-col gap-2">
+			<form method="POST" action="/?/sync" use:enhance>
+				<Button type="submit" variant="outline" size="sm" class="w-full text-xs">Sync LingQ</Button>
+			</form>
+			{#if data.user}
+				<div class="flex items-center gap-2 px-1">
+					<Avatar size="sm">
+						{#if data.user.avatar}
+							<AvatarImage src={data.user.avatar} alt={data.user.name ?? 'User'} referrerpolicy="no-referrer" />
+						{/if}
+						<AvatarFallback class="text-xs">{(data.user.name ?? data.user.email)[0].toUpperCase()}</AvatarFallback>
+					</Avatar>
+					<span class="text-xs flex-1 truncate text-muted-foreground">{data.user.name ?? data.user.email}</span>
+					<form method="POST" action="/auth/logout">
+						<Button type="submit" variant="ghost" size="icon-sm" title="Sign out">
+							<LogOut size={14} />
+						</Button>
+					</form>
+				</div>
+			{/if}
+		</div>
 	</aside>
 
-	<main class="flex-1 min-h-0 overflow-hidden flex flex-col p-3 md:p-6">
-		<div class="mx-auto max-w-5xl w-full flex-1 min-h-0 overflow-auto">
+	<!-- Main content -->
+	<main class="flex-1 min-h-0 overflow-y-auto">
+		<div class="mx-auto max-w-5xl w-full p-4 pb-24 md:p-6 md:pb-6">
 			{@render children()}
 		</div>
 	</main>
+
+	<!-- Mobile bottom nav -->
+	<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-background border-t border-border" style="padding-bottom: env(safe-area-inset-bottom);">
+		<div class="grid grid-cols-5 h-14">
+			{#each navItems as item}
+				<a
+					href={item.href}
+					class="flex flex-col items-center justify-center gap-0.5 transition-colors {isActive(item.href, item.exact) ? 'text-primary' : 'text-muted-foreground'}"
+				>
+					<item.icon size={20} />
+					<span class="text-[10px] font-medium">{item.label}</span>
+				</a>
+			{/each}
+		</div>
+	</nav>
 </div>

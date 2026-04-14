@@ -9,8 +9,7 @@
 	<title>Music — Language Learner</title>
 </svelte:head>
 
-<div class="flex items-center justify-between mb-6">
-	<h1 class="text-3xl font-bold">Music</h1>
+<div class="flex items-center justify-end mb-4">
 	<Button href="/music/new">Add Song</Button>
 </div>
 

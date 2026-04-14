@@ -11,12 +11,9 @@
 </script>
 
 <div class="flex flex-col gap-6">
-	<div class="flex items-center gap-4">
-		<div class="flex-1">
-			<h1 class="font-display text-3xl font-semibold">Concepts</h1>
-			<p class="text-muted-foreground text-sm mt-0.5">{data.totalMastered} of {data.totalConcepts} mastered</p>
-		</div>
-		<Badge class="font-display text-base">{overallPercent}%</Badge>
+	<div class="flex items-center justify-between">
+		<p class="text-sm text-muted-foreground">{data.totalMastered} of {data.totalConcepts} mastered</p>
+		<Badge>{overallPercent}%</Badge>
 	</div>
 
 	<Progress value={overallPercent} max={100} />

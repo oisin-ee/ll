@@ -21,11 +21,9 @@
 </script>
 
 <div class="flex flex-col gap-4">
-	<div class="flex items-center gap-4">
-		<div class="flex-1">
-			<h1 class="font-display text-3xl font-semibold">Episodes</h1>
-			<p class="text-muted-foreground text-sm mt-0.5">{data.listenedCount} of {data.totalEpisodes} completed</p>
-		</div>
+	<div class="flex items-center justify-between">
+		<p class="text-sm text-muted-foreground">{data.listenedCount} of {data.totalEpisodes} completed</p>
+		<p class="text-sm font-medium">{progressPercent}%</p>
 	</div>
 
 	<Progress value={progressPercent} max={100} />

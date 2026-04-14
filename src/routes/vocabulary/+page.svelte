@@ -41,8 +41,7 @@
 </script>
 
 <div class="flex flex-col gap-4">
-	<div class="flex items-center gap-4">
-		<h1 class="font-display text-3xl font-semibold flex-1">Vocabulary</h1>
+	<div class="flex items-center gap-2">
 		<Badge>{filteredWords.length} words</Badge>
 	</div>
 

@@ -31,36 +31,30 @@
 	}
 </script>
 
-<div class="flex flex-col h-[calc(100dvh-3.5rem)] md:h-[calc(100dvh-3rem)] overflow-hidden">
-	<div class="flex flex-wrap items-center gap-2 md:gap-4 pb-4">
-		{#if data.prevEpisode}
-			<Button href="/episodes/{data.prevEpisode.number}" variant="outline" size="sm" title={data.prevEpisode.title}>&larr;</Button>
-		{/if}
-
-		<Avatar>
-			<AvatarFallback>{data.episode.number}</AvatarFallback>
-		</Avatar>
-		<div class="flex-1">
-			<p class="text-sm text-muted-foreground"><Button href="/episodes" variant="link" class="h-auto p-0">Episodes</Button> / Episode {data.episode.number}</p>
-			<h1 class="text-2xl font-bold">{data.episode.title}</h1>
+<div class="flex flex-col gap-4">
+	<div class="flex items-center gap-3">
+		<Button href="/episodes" variant="ghost" size="icon-sm">&larr;</Button>
+		<div class="flex-1 min-w-0">
+			<p class="text-xs text-muted-foreground">Episode {data.episode.number}</p>
+			<h1 class="text-lg font-semibold leading-tight truncate">{data.episode.title}</h1>
 		</div>
-
-		<form bind:this={formEl} method="POST" action="?/toggleListened" use:enhance>
-			<input type="hidden" name="number" value={data.episode.number} />
-			<input type="hidden" name="listened" value={String(!data.episode.listened)} />
-			<div class="flex items-center gap-2">
+		<div class="flex items-center gap-2 shrink-0">
+			{#if data.prevEpisode}
+				<Button href="/episodes/{data.prevEpisode.number}" variant="outline" size="icon-sm" title={data.prevEpisode.title}>&larr;</Button>
+			{/if}
+			{#if data.nextEpisode}
+				<Button href="/episodes/{data.nextEpisode.number}" variant="outline" size="icon-sm" title={data.nextEpisode.title}>&rarr;</Button>
+			{/if}
+			<form bind:this={formEl} method="POST" action="?/toggleListened" use:enhance>
+				<input type="hidden" name="number" value={data.episode.number} />
+				<input type="hidden" name="listened" value={String(!data.episode.listened)} />
 				<Switch checked={data.episode.listened} onclick={() => formEl.requestSubmit()} />
-				<span class="hidden sm:inline text-sm">{data.episode.listened ? 'Listened' : 'Not listened'}</span>
-			</div>
-			<noscript><button type="submit">Toggle</button></noscript>
-		</form>
-
-		{#if data.nextEpisode}
-			<Button href="/episodes/{data.nextEpisode.number}" variant="default" size="sm" title={data.nextEpisode.title}>&rarr;</Button>
-		{/if}
+				<noscript><button type="submit">Toggle</button></noscript>
+			</form>
+		</div>
 	</div>
 
-	<div class="pb-4">
+	<div>
 		<AudioPlayer
 			episodeNumber={data.episode.number}
 			playbackPosition={data.episode.playbackPosition}
@@ -84,15 +78,15 @@
 		</Card>
 	{/if}
 
-	<Tabs bind:value={activeTab} class="flex flex-col flex-1 min-h-0">
+	<Tabs bind:value={activeTab}>
 		<TabsList>
 			<TabsTrigger value="transcript">Transcript</TabsTrigger>
 			<TabsTrigger value="words">Words ({data.words.length})</TabsTrigger>
 			<TabsTrigger value="concepts">Concepts ({data.concepts.length})</TabsTrigger>
 		</TabsList>
 
-		<TabsContent value="transcript" class="min-h-0">
-			<div class="overflow-auto h-full pt-4 relative" style="line-height: 1.8;">
+		<TabsContent value="transcript">
+			<div class="pt-4 relative" style="line-height: 1.8;">
 				{#if data.transcript.length > 0}
 					{#if data.episodeSummary}
 						<Card class="mb-4">
@@ -146,8 +140,8 @@
 			</div>
 		</TabsContent>
 
-		<TabsContent value="words" class="min-h-0">
-			<div class="overflow-auto h-full pt-4">
+		<TabsContent value="words">
+			<div class="pt-4">
 				<div class="flex flex-col gap-3">
 					{#if data.words.length > 0}
 						{#each data.words as word}
@@ -182,8 +176,8 @@
 			</div>
 		</TabsContent>
 
-		<TabsContent value="concepts" class="min-h-0">
-			<div class="overflow-auto h-full pt-4">
+		<TabsContent value="concepts">
+			<div class="pt-4">
 				<div class="flex flex-col gap-4">
 					{#if data.episodeSummary}
 						<Card>
