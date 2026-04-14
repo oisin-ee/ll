@@ -1,6 +1,12 @@
 <script lang="ts">
-	import { SegmentedControl, Progress, Switch } from '@skeletonlabs/skeleton-svelte';
-	import { generateExercises, checkAnswer, getTenseLabel, type PastTenseExercise, type TenseFilter } from '$lib/past-tense-exercises';
+	import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
+	import { Progress } from '$lib/components/ui/progress';
+	import { Switch } from '$lib/components/ui/switch';
+	import { Badge } from '$lib/components/ui/badge';
+	import { Card, CardContent } from '$lib/components/ui/card';
+	import { Input } from '$lib/components/ui/input';
+	import { Button } from '$lib/components/ui/button';
+	import { generateExercises, checkAnswer, type PastTenseExercise, type TenseFilter } from '$lib/past-tense-exercises';
 	import { goto } from '$app/navigation';
 
 	let { data } = $props();
@@ -62,185 +68,141 @@
 
 	function handleKeydown(e: KeyboardEvent) {
 		if (phase !== 'active' || e.key !== 'Enter') return;
-		if (submitted) {
-			advance();
-		}
+		if (submitted) advance();
 	}
 
-	function retry() {
-		start();
-	}
-
-	function practiceMissed() {
-		start(missed, missed.length);
-	}
+	function retry() { start(); }
+	function practiceMissed() { start(missed, missed.length); }
 </script>
 
 <svelte:window onkeydown={handleKeydown} />
 
 <div class="flex flex-col gap-4 max-w-2xl mx-auto">
 	<div>
-		<p class="opacity-50"><a href="/practice" class="anchor">Practice</a> / Past Tense</p>
-		<h1 class="h2">Past Tense Practice</h1>
+		<p class="text-sm text-muted-foreground">
+			<Button href="/practice" variant="link" class="h-auto p-0">Practice</Button> / Past Tense
+		</p>
+		<h1 class="font-display text-3xl font-semibold">Past Tense Practice</h1>
 	</div>
 
 	{#if phase === 'setup'}
-		<div class="card p-6 flex flex-col gap-4">
-			<p>{data.pool.length} exercises available</p>
+		<Card>
+			<CardContent class="pt-4 flex flex-col gap-4">
+				<p class="text-muted-foreground">{data.pool.length} exercises available</p>
 
-			<div>
-				<p class="font-bold mb-2">What to practice</p>
-				<SegmentedControl
-					name="tense-filter"
-					value={tenseFilter}
-					onValueChange={(details) => { if (details.value) applyTenseFilter(details.value); }}
-				>
-					<SegmentedControl.Control>
-						<SegmentedControl.Indicator />
-						<SegmentedControl.Item value="all">
-							<SegmentedControl.ItemText>Mix everything</SegmentedControl.ItemText>
-							<SegmentedControl.ItemHiddenInput />
-						</SegmentedControl.Item>
-						<SegmentedControl.Item value="preterito">
-							<SegmentedControl.ItemText>I did it</SegmentedControl.ItemText>
-							<SegmentedControl.ItemHiddenInput />
-						</SegmentedControl.Item>
-						<SegmentedControl.Item value="imperfecto">
-							<SegmentedControl.ItemText>I used to</SegmentedControl.ItemText>
-							<SegmentedControl.ItemHiddenInput />
-						</SegmentedControl.Item>
-						<SegmentedControl.Item value="presentePerfecto">
-							<SegmentedControl.ItemText>I have done</SegmentedControl.ItemText>
-							<SegmentedControl.ItemHiddenInput />
-						</SegmentedControl.Item>
-					</SegmentedControl.Control>
-				</SegmentedControl>
-			</div>
+				<div>
+					<p class="font-semibold mb-2">What to practice</p>
+					<ToggleGroup type="single" value={tenseFilter} onValueChange={(v) => { if (v) applyTenseFilter(v); }} spacing={0} variant="outline">
+						<ToggleGroupItem value="all">Mix everything</ToggleGroupItem>
+						<ToggleGroupItem value="preterito">I did it</ToggleGroupItem>
+						<ToggleGroupItem value="imperfecto">I used to</ToggleGroupItem>
+						<ToggleGroupItem value="presentePerfecto">I have done</ToggleGroupItem>
+					</ToggleGroup>
+				</div>
 
-			<div>
-				<p class="font-bold mb-2">Round size</p>
-				<SegmentedControl
-					name="round-size"
-					value={roundSize}
-					onValueChange={(details) => { roundSize = details.value ?? roundSize; }}
-				>
-					<SegmentedControl.Control>
-						<SegmentedControl.Indicator />
-						<SegmentedControl.Item value="10">
-							<SegmentedControl.ItemText>10</SegmentedControl.ItemText>
-							<SegmentedControl.ItemHiddenInput />
-						</SegmentedControl.Item>
-						<SegmentedControl.Item value="20">
-							<SegmentedControl.ItemText>20</SegmentedControl.ItemText>
-							<SegmentedControl.ItemHiddenInput />
-						</SegmentedControl.Item>
-						<SegmentedControl.Item value="all">
-							<SegmentedControl.ItemText>All ({data.pool.length})</SegmentedControl.ItemText>
-							<SegmentedControl.ItemHiddenInput />
-						</SegmentedControl.Item>
-					</SegmentedControl.Control>
-				</SegmentedControl>
-			</div>
+				<div>
+					<p class="font-semibold mb-2">Round size</p>
+					<ToggleGroup type="single" value={roundSize} onValueChange={(v) => { if (v) roundSize = v; }} spacing={0} variant="outline">
+						<ToggleGroupItem value="10">10</ToggleGroupItem>
+						<ToggleGroupItem value="20">20</ToggleGroupItem>
+						<ToggleGroupItem value="all">All ({data.pool.length})</ToggleGroupItem>
+					</ToggleGroup>
+				</div>
 
-			<div class="flex items-center gap-3">
-				<Switch name="show-hints" checked={showHints} onCheckedChange={(e) => { showHints = e.checked; }} />
-				<span>Show verb hints</span>
-			</div>
+				<div class="flex items-center gap-3">
+					<Switch bind:checked={showHints} />
+					<span class="text-sm">Show verb hints</span>
+				</div>
 
-			<button class="btn preset-filled-primary" onclick={() => start()}>Start</button>
-		</div>
+				<Button onclick={() => start()}>Start</Button>
+			</CardContent>
+		</Card>
 
 	{:else if phase === 'active' && currentExercise}
-		<!-- Progress -->
 		<div class="flex items-center gap-3">
-			<span class="badge preset-tonal">{currentIndex + 1} / {total}</span>
-			<div class="flex-1">
-				<Progress value={progressPercent} max={100}>
-					<Progress.Track>
-						<Progress.Range />
-					</Progress.Track>
-				</Progress>
-			</div>
-			<span class="badge preset-tonal">{score.correct} correct</span>
+			<Badge variant="outline">{currentIndex + 1} / {total}</Badge>
+			<Progress value={progressPercent} max={100} class="flex-1" />
+			<Badge variant="outline">{score.correct} correct</Badge>
 		</div>
 
-		<!-- Exercise card -->
-		<div class="card p-6 flex flex-col gap-4">
-			<div class="flex items-center gap-2 flex-wrap">
-				<span class="badge preset-tonal w-fit">Translate to Spanish</span>
-				{#if showHints}
-					<span class="badge preset-tonal-primary w-fit">{currentExercise.verbInfinitive} — {currentExercise.verbEnglish}</span>
+		<Card>
+			<CardContent class="pt-4 flex flex-col gap-4">
+				<div class="flex items-center gap-2 flex-wrap">
+					<Badge variant="outline">Translate to Spanish</Badge>
+					{#if showHints}
+						<Badge>{currentExercise.verbInfinitive} — {currentExercise.verbEnglish}</Badge>
+					{/if}
+				</div>
+
+				<p class="font-display text-2xl">{currentExercise.english}</p>
+
+				{#if !submitted}
+					<!-- svelte-ignore a11y_autofocus -->
+					<form onsubmit={(e) => { e.preventDefault(); submitAnswer(); }}>
+						<Input
+							type="text"
+							bind:value={userInput}
+							placeholder="Type your Spanish translation..."
+							autofocus
+						/>
+						<Button type="submit" class="mt-2 w-full" disabled={!userInput.trim()}>Check</Button>
+					</form>
+				{:else if lastResult}
+					{#if lastResult.correct}
+						<Card>
+							<CardContent class="py-3">
+								<p class="font-semibold text-secondary">Correct!</p>
+								<p class="font-display text-xl">{currentExercise.displayAnswer}</p>
+								{#if lastResult.accentWarning}
+									<p class="text-sm text-muted-foreground mt-1">Watch the accents: <strong>{currentExercise.displayAnswer}</strong></p>
+								{/if}
+							</CardContent>
+						</Card>
+					{:else}
+						<Card>
+							<CardContent class="py-3">
+								<p class="font-semibold text-destructive">Not quite</p>
+								<p class="line-through text-muted-foreground">{userInput}</p>
+							</CardContent>
+						</Card>
+						<Card>
+							<CardContent class="py-3">
+								<p class="font-semibold text-sm">Correct answer:</p>
+								<p class="font-display text-xl">{currentExercise.displayAnswer}</p>
+							</CardContent>
+						</Card>
+					{/if}
+					<Button onclick={advance}>Next</Button>
 				{/if}
-			</div>
-
-			<p class="h3">{currentExercise.english}</p>
-
-			{#if !submitted}
-				<!-- svelte-ignore a11y_autofocus -->
-				<form onsubmit={(e) => { e.preventDefault(); submitAnswer(); }}>
-					<input
-						type="text"
-						bind:value={userInput}
-						class="input"
-						placeholder="Type your Spanish translation..."
-						autofocus
-					/>
-					<button
-						type="submit"
-						class="btn preset-filled-primary mt-2 w-full"
-						disabled={!userInput.trim()}
-					>Check</button>
-				</form>
-			{:else if lastResult}
-				{#if lastResult.correct}
-					<div class="card preset-tonal-primary p-4">
-						<p class="font-bold text-green-500">Correct!</p>
-						<p class="h4">{currentExercise.displayAnswer}</p>
-						{#if lastResult.accentWarning}
-							<p class="opacity-75 mt-1">Watch the accents: <strong>{currentExercise.displayAnswer}</strong></p>
-						{/if}
-					</div>
-				{:else}
-					<div class="card preset-tonal p-4 border-l-4 border-red-500">
-						<p class="font-bold text-red-500">Not quite</p>
-						<p class="line-through opacity-50">{userInput}</p>
-					</div>
-					<div class="card preset-tonal-primary p-4">
-						<p class="font-bold">Correct answer:</p>
-						<p class="h4">{currentExercise.displayAnswer}</p>
-					</div>
-				{/if}
-
-				<button class="btn preset-filled-primary" onclick={advance}>Next</button>
-			{/if}
-		</div>
+			</CardContent>
+		</Card>
 
 	{:else if phase === 'summary'}
-		<div class="card p-6 flex flex-col gap-4 text-center">
-			<p class="h3">Round complete</p>
-
-			<div class="flex justify-center gap-6">
-				<div>
-					<p class="h2">{score.correct}</p>
-					<p class="opacity-50">Correct</p>
+		<Card>
+			<CardContent class="pt-4 flex flex-col gap-4 text-center">
+				<p class="font-display text-2xl font-semibold">Round complete</p>
+				<div class="flex justify-center gap-6">
+					<div>
+						<p class="font-display text-3xl font-semibold">{score.correct}</p>
+						<p class="text-sm text-muted-foreground">Correct</p>
+					</div>
+					<div>
+						<p class="font-display text-3xl font-semibold">{score.incorrect}</p>
+						<p class="text-sm text-muted-foreground">Missed</p>
+					</div>
+					<div>
+						<p class="font-display text-3xl font-semibold">{total > 0 ? Math.round((score.correct / total) * 100) : 0}%</p>
+						<p class="text-sm text-muted-foreground">Score</p>
+					</div>
 				</div>
-				<div>
-					<p class="h2">{score.incorrect}</p>
-					<p class="opacity-50">Missed</p>
+				<div class="flex flex-col gap-2">
+					<Button onclick={retry}>Retry</Button>
+					{#if missed.length > 0}
+						<Button variant="outline" onclick={practiceMissed}>Practice missed ({missed.length})</Button>
+					{/if}
+					<Button href="/practice" variant="outline">Back to Practice</Button>
 				</div>
-				<div>
-					<p class="h2">{total > 0 ? Math.round((score.correct / total) * 100) : 0}%</p>
-					<p class="opacity-50">Score</p>
-				</div>
-			</div>
-
-			<div class="flex flex-col gap-2">
-				<button class="btn preset-filled-primary" onclick={retry}>Retry</button>
-				{#if missed.length > 0}
-					<button class="btn preset-tonal" onclick={practiceMissed}>Practice missed ({missed.length})</button>
-				{/if}
-				<a href="/practice" class="btn preset-tonal">Back to Practice</a>
-			</div>
-		</div>
+			</CardContent>
+		</Card>
 	{/if}
 </div>

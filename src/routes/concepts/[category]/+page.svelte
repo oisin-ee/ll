@@ -1,6 +1,13 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { SegmentedControl, Collapsible, Progress } from '@skeletonlabs/skeleton-svelte';
+	import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
+	import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '$lib/components/ui/collapsible';
+	import { Progress } from '$lib/components/ui/progress';
+	import { Badge } from '$lib/components/ui/badge';
+	import { Card, CardContent } from '$lib/components/ui/card';
+	import { Input } from '$lib/components/ui/input';
+	import { Button } from '$lib/components/ui/button';
+	import { Separator } from '$lib/components/ui/separator';
 
 	let { data } = $props();
 
@@ -8,17 +15,16 @@
 	let search = $state('');
 	let masteryFilter = $state('all');
 
-	function masteryBorder(mastery: number): string {
-		if (mastery === 1) return 'border-left: 4px solid var(--color-warning-500);';
-		if (mastery === 2) return 'border-left: 4px solid var(--color-secondary-500);';
-		if (mastery === 3) return 'border-left: 4px solid var(--color-primary-500);';
-		return 'border-left: 4px solid transparent;';
+	function masteryVariant(mastery: number): 'default' | 'secondary' | 'outline' | 'destructive' {
+		if (mastery === 3) return 'default';
+		if (mastery === 2) return 'secondary';
+		if (mastery === 1) return 'outline';
+		return 'outline';
 	}
 
 	const filteredConcepts = $derived(
 		data.concepts.filter((c) => {
-			const matchesSearch = !search ||
-				c.name.toLowerCase().includes(search.toLowerCase());
+			const matchesSearch = !search || c.name.toLowerCase().includes(search.toLowerCase());
 			const matchesMastery = masteryFilter === 'all' || String(c.mastery) === masteryFilter;
 			return matchesSearch && matchesMastery;
 		})
@@ -31,146 +37,120 @@
 </script>
 
 <div class="flex flex-col gap-4">
-	<!-- Header -->
 	<div class="flex flex-wrap items-center gap-2 md:gap-4">
 		<div class="flex-1">
-			<p class="opacity-50"><a href="/concepts" class="anchor">Concepts</a> / {data.categoryName}</p>
-			<h1 class="h2">{data.categoryName}</h1>
+			<p class="text-sm text-muted-foreground">
+				<Button href="/concepts" variant="link" class="h-auto p-0">Concepts</Button> / {data.categoryName}
+			</p>
+			<h1 class="font-display text-3xl font-semibold">{data.categoryName}</h1>
 		</div>
-		<a href="/concepts/{data.categorySlug}/exercise" class="btn preset-filled-primary">Practice</a>
-		<span class="badge preset-tonal">{data.concepts.length} concepts</span>
-		<span class="badge preset-tonal-primary">{masteredCount} mastered</span>
+		<Button href="/concepts/{data.categorySlug}/exercise">Practice</Button>
+		<Badge variant="outline">{data.concepts.length} concepts</Badge>
+		<Badge>{masteredCount} mastered</Badge>
 	</div>
 
-	<Progress value={progressPercent} max={100}>
-		<Progress.Track>
-			<Progress.Range />
-		</Progress.Track>
-	</Progress>
+	<Progress value={progressPercent} max={100} />
 
-	<!-- Filters -->
 	<div class="flex flex-col gap-3">
-		<input
-			type="text"
-			bind:value={search}
-			placeholder="Search in {data.categoryName}..."
-			class="input"
-		/>
-		<div class="overflow-x-auto"><SegmentedControl
-			name="mastery-filter"
-			value={masteryFilter}
-			onValueChange={(details) => { masteryFilter = details.value ?? 'all'; }}
-		>
-			<SegmentedControl.Control>
-				<SegmentedControl.Indicator />
-				<SegmentedControl.Item value="all">
-					<SegmentedControl.ItemText>All</SegmentedControl.ItemText>
-					<SegmentedControl.ItemHiddenInput />
-				</SegmentedControl.Item>
-				<SegmentedControl.Item value="0">
-					<SegmentedControl.ItemText>Not started</SegmentedControl.ItemText>
-					<SegmentedControl.ItemHiddenInput />
-				</SegmentedControl.Item>
-				<SegmentedControl.Item value="1">
-					<SegmentedControl.ItemText>Introduced</SegmentedControl.ItemText>
-					<SegmentedControl.ItemHiddenInput />
-				</SegmentedControl.Item>
-				<SegmentedControl.Item value="2">
-					<SegmentedControl.ItemText>Practicing</SegmentedControl.ItemText>
-					<SegmentedControl.ItemHiddenInput />
-				</SegmentedControl.Item>
-				<SegmentedControl.Item value="3">
-					<SegmentedControl.ItemText>Solid</SegmentedControl.ItemText>
-					<SegmentedControl.ItemHiddenInput />
-				</SegmentedControl.Item>
-			</SegmentedControl.Control>
-		</SegmentedControl></div>
+		<Input type="text" bind:value={search} placeholder="Search in {data.categoryName}..." />
+		<div class="overflow-x-auto">
+			<ToggleGroup type="single" value={masteryFilter} onValueChange={(v) => { if (v) masteryFilter = v; }} spacing={0} variant="outline">
+				<ToggleGroupItem value="all">All</ToggleGroupItem>
+				<ToggleGroupItem value="0">Not started</ToggleGroupItem>
+				<ToggleGroupItem value="1">Introduced</ToggleGroupItem>
+				<ToggleGroupItem value="2">Practicing</ToggleGroupItem>
+				<ToggleGroupItem value="3">Solid</ToggleGroupItem>
+			</ToggleGroup>
+		</div>
 	</div>
 
-	<!-- Concept cards -->
 	<div class="flex flex-col gap-2">
 		{#each filteredConcepts as concept}
-			<div class="card p-3" id={concept.slug} style={masteryBorder(concept.mastery)}>
-				<!-- Top row: name + mastery buttons -->
-				<div class="flex flex-wrap items-center gap-2">
-					<span class="font-bold flex-1">{concept.name}</span>
-					<form method="POST" action="?/updateMastery" use:enhance class="flex gap-1 flex-wrap">
-						<input type="hidden" name="id" value={concept.id} />
-						{#each [0, 1, 2, 3] as level}
-							<button
-								type="submit"
-								name="mastery"
-								value={String(level)}
-								class="btn btn-sm {concept.mastery === level ? 'preset-filled-primary-500' : 'preset-tonal'}"
-							>{masteryLabels[level]}</button>
-						{/each}
-					</form>
-				</div>
-
-				<!-- Episode links as compact chips -->
-				{#if concept.episodes.length > 0}
-					<div class="flex flex-col gap-1 mt-2">
-						{#each concept.episodes as ep}
-							<Collapsible>
-								<Collapsible.Trigger>
-									<span class="flex items-center gap-2">
-										<span>{ep.episodeTitle}</span>
-										<span class="badge preset-filled-primary-500">{ep.role}</span>
-									</span>
-								</Collapsible.Trigger>
-								<Collapsible.Content>
-									<div class="flex flex-col gap-2 p-2">
-										{#if ep.summary}
-											<p>{ep.summary}</p>
-										{/if}
-										{#if ep.rule}
-											<div class="card preset-tonal-primary p-2" style="border-left: 3px solid var(--color-primary-500);">
-												<p class="font-bold">{ep.rule}</p>
-											</div>
-										{/if}
-										{#if ep.examples.length > 0}
-											<div class="grid grid-cols-1 md:grid-cols-2 gap-1">
-												{#each ep.examples as ex}
-													<p class="font-bold">{ex.spanish}</p>
-													<p class="opacity-75">{ex.english}</p>
-												{/each}
-											</div>
-										{/if}
-										{#if ep.notes}
-											<p class="opacity-50">{ep.notes}</p>
-										{/if}
-										<a href="/episodes/{ep.episodeNumber}" class="btn btn-sm preset-tonal w-fit">Go to episode &rarr;</a>
-									</div>
-								</Collapsible.Content>
-							</Collapsible>
-						{/each}
+			<Card id={concept.slug}>
+				<CardContent class="pt-4 flex flex-col gap-3">
+					<div class="flex flex-wrap items-center gap-2">
+						<span class="font-display font-semibold flex-1">{concept.name}</span>
+						<form method="POST" action="?/updateMastery" use:enhance class="flex gap-1 flex-wrap">
+							<input type="hidden" name="id" value={concept.id} />
+							{#each [0, 1, 2, 3] as level}
+								<Button
+									type="submit"
+									name="mastery"
+									value={String(level)}
+									size="sm"
+									variant={concept.mastery === level ? 'default' : 'outline'}
+								>{masteryLabels[level]}</Button>
+							{/each}
+						</form>
 					</div>
-				{/if}
-			</div>
+
+					{#if concept.episodes.length > 0}
+						<div class="flex flex-col gap-1">
+							{#each concept.episodes as ep}
+								<Collapsible>
+									<CollapsibleTrigger class="flex items-center gap-2 text-sm hover:text-foreground text-muted-foreground transition-colors w-full text-left">
+										<span class="flex-1">{ep.episodeTitle}</span>
+										<Badge variant={masteryVariant(concept.mastery)}>{ep.role}</Badge>
+									</CollapsibleTrigger>
+									<CollapsibleContent>
+										<div class="flex flex-col gap-2 pt-2 pl-2">
+											{#if ep.summary}
+												<p class="text-sm text-muted-foreground">{ep.summary}</p>
+											{/if}
+											{#if ep.rule}
+												<Card>
+													<CardContent class="py-2 px-3">
+														<p class="font-semibold text-sm">{ep.rule}</p>
+													</CardContent>
+												</Card>
+											{/if}
+											{#if ep.examples.length > 0}
+												<div class="grid grid-cols-1 md:grid-cols-2 gap-1">
+													{#each ep.examples as ex}
+														<p class="font-semibold text-sm">{ex.spanish}</p>
+														<p class="text-sm text-muted-foreground">{ex.english}</p>
+													{/each}
+												</div>
+											{/if}
+											{#if ep.notes}
+												<p class="text-xs text-muted-foreground">{ep.notes}</p>
+											{/if}
+											<Button href="/episodes/{ep.episodeNumber}" variant="outline" size="sm" class="w-fit">Go to episode &rarr;</Button>
+										</div>
+									</CollapsibleContent>
+								</Collapsible>
+							{/each}
+						</div>
+					{/if}
+				</CardContent>
+			</Card>
 		{/each}
 	</div>
 
 	{#if filteredConcepts.length === 0}
-		<div class="card preset-tonal p-6 text-center">
-			<p class="h4">No concepts match your filters</p>
-			<p class="opacity-50">Try adjusting your search or mastery filter.</p>
-		</div>
+		<Card>
+			<CardContent class="text-center py-6">
+				<p class="font-display text-lg font-semibold">No concepts match your filters</p>
+				<p class="text-muted-foreground text-sm mt-1">Try adjusting your search or mastery filter.</p>
+			</CardContent>
+		</Card>
 	{/if}
 
-	<!-- Category navigation -->
-	<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4 mt-4">
+	<Separator />
+
+	<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4">
 		{#if data.prevCategory}
-			<a href="/concepts/{data.prevCategory.slug}" class="btn preset-tonal flex-1">
+			<Button href="/concepts/{data.prevCategory.slug}" variant="outline" class="flex-1">
 				&larr; {data.prevCategory.name}
-			</a>
+			</Button>
 		{:else}
 			<div class="flex-1"></div>
 		{/if}
-		<a href="/concepts" class="btn preset-tonal">All Categories</a>
+		<Button href="/concepts" variant="outline">All Categories</Button>
 		{#if data.nextCategory}
-			<a href="/concepts/{data.nextCategory.slug}" class="btn preset-tonal-primary flex-1 text-right">
+			<Button href="/concepts/{data.nextCategory.slug}" variant="default" class="flex-1">
 				{data.nextCategory.name} &rarr;
-			</a>
+			</Button>
 		{/if}
 	</div>
 </div>

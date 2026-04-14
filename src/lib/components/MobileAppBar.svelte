@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { AppBar } from '@skeletonlabs/skeleton-svelte';
 	import { MenuIcon } from '@lucide/svelte';
+	import { Button } from '$lib/components/ui/button';
 
 	let {
 		onMenuClick
@@ -9,15 +9,9 @@
 	} = $props();
 </script>
 
-<AppBar>
-	<AppBar.Toolbar>
-		<AppBar.Lead>
-			<button class="btn-icon preset-tonal" onclick={onMenuClick}>
-				<MenuIcon size={20} />
-			</button>
-		</AppBar.Lead>
-		<AppBar.Headline>
-			<a href="/" class="h3 anchor">LL</a>
-		</AppBar.Headline>
-	</AppBar.Toolbar>
-</AppBar>
+<header class="flex items-center gap-3 px-4 py-3 border-b border-border bg-background">
+	<Button variant="ghost" size="icon" onclick={onMenuClick} aria-label="Open menu">
+		<MenuIcon />
+	</Button>
+	<Button href="/" variant="link" class="font-display text-xl font-semibold p-0 h-auto">LL</Button>
+</header>

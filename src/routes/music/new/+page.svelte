@@ -1,5 +1,10 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import { Button } from '$lib/components/ui/button';
+	import { Input } from '$lib/components/ui/input';
+	import { Textarea } from '$lib/components/ui/textarea';
+	import { Label } from '$lib/components/ui/label';
+	import { Card, CardContent } from '$lib/components/ui/card';
 
 	let { form } = $props();
 </script>
@@ -10,37 +15,39 @@
 
 <div class="max-w-xl">
 	<div class="flex items-center gap-3 mb-6">
-		<a href="/music" class="btn btn-sm preset-tonal">&larr;</a>
-		<h1 class="h2">Add Song</h1>
+		<Button href="/music" variant="outline" size="sm">&larr;</Button>
+		<h1 class="text-3xl font-bold">Add Song</h1>
 	</div>
 
 	{#if form?.error}
-		<aside class="card preset-tonal-error p-3 mb-4">{form.error}</aside>
+		<Card class="mb-4">
+			<CardContent class="py-3 px-4 text-destructive">{form.error}</CardContent>
+		</Card>
 	{/if}
 
 	<form method="POST" use:enhance class="flex flex-col gap-4">
-		<label class="flex flex-col gap-1">
-			<span class="label">YouTube URL or ID</span>
-			<input
+		<div class="flex flex-col gap-1.5">
+			<Label for="youtubeUrl">YouTube URL or ID</Label>
+			<Input
+				id="youtubeUrl"
 				name="youtubeUrl"
 				type="text"
-				class="input"
 				placeholder="e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 				value={form?.youtubeInput ?? ''}
 				required
 			/>
-		</label>
+		</div>
 
-		<label class="flex flex-col gap-1">
-			<span class="label">Teacher notes (optional)</span>
-			<textarea
+		<div class="flex flex-col gap-1.5">
+			<Label for="teacherNotes">Teacher notes (optional)</Label>
+			<Textarea
+				id="teacherNotes"
 				name="teacherNotes"
-				class="textarea"
-				rows="3"
+				rows={3}
 				placeholder="Anything your teacher said about this song"
-			></textarea>
-		</label>
+			/>
+		</div>
 
-		<button type="submit" class="btn preset-filled-primary-500">Save Song</button>
+		<Button type="submit">Save Song</Button>
 	</form>
 </div>

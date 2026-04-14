@@ -1,6 +1,14 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { Tabs, Switch, Avatar, Collapsible, Tooltip, Popover } from '@skeletonlabs/skeleton-svelte';
+	import { Tabs, TabsList, TabsTrigger, TabsContent } from '$lib/components/ui/tabs';
+	import { Switch } from '$lib/components/ui/switch';
+	import { Avatar, AvatarFallback } from '$lib/components/ui/avatar';
+	import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '$lib/components/ui/collapsible';
+	import { Tooltip, TooltipTrigger, TooltipContent } from '$lib/components/ui/tooltip';
+	import { Popover, PopoverContent } from '$lib/components/ui/popover';
+	import { Button, buttonVariants } from '$lib/components/ui/button';
+	import { Badge } from '$lib/components/ui/badge';
+	import { Card, CardContent } from '$lib/components/ui/card';
 	import AudioPlayer from '$lib/components/AudioPlayer.svelte';
 
 	let { data, form } = $props();
@@ -24,43 +32,34 @@
 </script>
 
 <div class="flex flex-col h-[calc(100dvh-3.5rem)] md:h-[calc(100dvh-3rem)] overflow-hidden">
-	<!-- Header -->
 	<div class="flex flex-wrap items-center gap-2 md:gap-4 pb-4">
 		{#if data.prevEpisode}
-			<a href="/episodes/{data.prevEpisode.number}" class="btn btn-sm preset-tonal" title={data.prevEpisode.title}>
-				&larr;
-			</a>
+			<Button href="/episodes/{data.prevEpisode.number}" variant="outline" size="sm" title={data.prevEpisode.title}>&larr;</Button>
 		{/if}
 
-		<Avatar class="preset-filled-primary-500">
-			<Avatar.Fallback>{data.episode.number}</Avatar.Fallback>
+		<Avatar>
+			<AvatarFallback>{data.episode.number}</AvatarFallback>
 		</Avatar>
 		<div class="flex-1">
-			<p class="opacity-50"><a href="/episodes" class="anchor">Episodes</a> / Episode {data.episode.number}</p>
-			<h1 class="h2">{data.episode.title}</h1>
+			<p class="text-sm text-muted-foreground"><Button href="/episodes" variant="link" class="h-auto p-0">Episodes</Button> / Episode {data.episode.number}</p>
+			<h1 class="text-2xl font-bold">{data.episode.title}</h1>
 		</div>
 
 		<form bind:this={formEl} method="POST" action="?/toggleListened" use:enhance>
 			<input type="hidden" name="number" value={data.episode.number} />
 			<input type="hidden" name="listened" value={String(!data.episode.listened)} />
-			<Switch checked={data.episode.listened}>
-				<Switch.Control onclick={() => formEl.requestSubmit()}>
-					<Switch.Thumb />
-				</Switch.Control>
-				<Switch.Label><span class="hidden sm:inline">{data.episode.listened ? 'Listened' : 'Not listened'}</span></Switch.Label>
-				<Switch.HiddenInput name="_switch" />
-			</Switch>
-			<noscript><button type="submit" class="btn btn-sm">Toggle</button></noscript>
+			<div class="flex items-center gap-2">
+				<Switch checked={data.episode.listened} onclick={() => formEl.requestSubmit()} />
+				<span class="hidden sm:inline text-sm">{data.episode.listened ? 'Listened' : 'Not listened'}</span>
+			</div>
+			<noscript><button type="submit">Toggle</button></noscript>
 		</form>
 
 		{#if data.nextEpisode}
-			<a href="/episodes/{data.nextEpisode.number}" class="btn btn-sm preset-tonal-primary" title={data.nextEpisode.title}>
-				&rarr;
-			</a>
+			<Button href="/episodes/{data.nextEpisode.number}" variant="default" size="sm" title={data.nextEpisode.title}>&rarr;</Button>
 		{/if}
 	</div>
 
-	<!-- Audio Player -->
 	<div class="pb-4">
 		<AudioPlayer
 			episodeNumber={data.episode.number}
@@ -69,38 +68,36 @@
 		/>
 	</div>
 
-	<!-- Feedback (ephemeral) -->
 	{#if form?.added === true}
-		<aside class="card preset-tonal-primary p-3 mb-2">
-			Added "{form.word.spanish}" &rarr; "{form.word.english}"
-		</aside>
+		<Card class="mb-2">
+			<CardContent class="py-3 px-4">Added "{form.word.spanish}" &rarr; "{form.word.english}"</CardContent>
+		</Card>
 	{/if}
 	{#if form?.added === false}
-		<aside class="card preset-tonal p-3 mb-2">
-			"{form.word.spanish}" already tracked
-		</aside>
+		<Card class="mb-2">
+			<CardContent class="py-3 px-4">"{form.word.spanish}" already tracked</CardContent>
+		</Card>
 	{/if}
 	{#if form?.addError}
-		<aside class="card preset-tonal-error p-3 mb-2">{form.addError}</aside>
+		<Card class="mb-2">
+			<CardContent class="py-3 px-4 text-destructive">{form.addError}</CardContent>
+		</Card>
 	{/if}
 
-	<!-- Tabs + scrollable content -->
-	<Tabs value={activeTab} onValueChange={(details) => (activeTab = details.value)} class="flex flex-col flex-1 min-h-0">
-		<Tabs.List>
-			<Tabs.Trigger value="transcript">Transcript</Tabs.Trigger>
-			<Tabs.Trigger value="words">Words ({data.words.length})</Tabs.Trigger>
-			<Tabs.Trigger value="concepts">Concepts ({data.concepts.length})</Tabs.Trigger>
-			<Tabs.Indicator />
-		</Tabs.List>
+	<Tabs bind:value={activeTab} class="flex flex-col flex-1 min-h-0">
+		<TabsList>
+			<TabsTrigger value="transcript">Transcript</TabsTrigger>
+			<TabsTrigger value="words">Words ({data.words.length})</TabsTrigger>
+			<TabsTrigger value="concepts">Concepts ({data.concepts.length})</TabsTrigger>
+		</TabsList>
 
-		<!-- Transcript Tab -->
-		<Tabs.Content value="transcript" class="flex-1 min-h-0">
-			<div class="transcript-scroll overflow-auto h-full pt-4" style="line-height: 1.8; position: relative;">
+		<TabsContent value="transcript" class="min-h-0">
+			<div class="overflow-auto h-full pt-4 relative" style="line-height: 1.8;">
 				{#if data.transcript.length > 0}
 					{#if data.episodeSummary}
-						<div class="card preset-tonal p-4 mb-4">
-							<p>{data.episodeSummary}</p>
-						</div>
+						<Card class="mb-4">
+							<CardContent class="py-4 px-4"><p>{data.episodeSummary}</p></CardContent>
+						</Card>
 					{/if}
 
 					{#each data.transcript as turn}
@@ -117,9 +114,9 @@
 								{#each turn.words as token}
 									{#if token.clean}
 										{#if data.savedWords.includes(token.clean)}
-											<span class="chip preset-tonal-primary">{token.display}</span>
+											<Badge variant="secondary">{token.display}</Badge>
 										{:else}
-											<button type="button" class="anchor" onclick={(e) => showPopup(e, token.clean)}>{token.display}</button>
+											<Button type="button" variant="link" class="h-auto p-0 text-base" onclick={(e: MouseEvent) => showPopup(e, token.clean)}>{token.display}</Button>
 										{/if}
 									{:else}
 										{token.display}
@@ -129,140 +126,135 @@
 						</div>
 					{/each}
 
-					<!-- Popover for word actions -->
-					<Popover
-						open={popoverOpen}
-						onOpenChange={(details: { open: boolean }) => { if (!details.open) hidePopup(); }}
-						positioning={{ placement: 'top', flip: true, getAnchorElement: () => anchorEl }}
-						closeOnInteractOutside={true}
-					>
-						<Popover.Positioner>
-							<Popover.Content class="card preset-filled-primary-500 p-3">
-								<p class="font-bold">Add "{pendingWord}"?</p>
-								<form method="POST" action="?/addWord" use:enhance class="flex gap-2 mt-2">
-									<input type="hidden" name="term" value={pendingWord} />
-									<input type="hidden" name="episodeNumber" value={data.episode.number} />
-									<button type="submit" class="btn btn-sm preset-filled-surface-100-900" onclick={hidePopup}>Add to LingQ</button>
-									<button type="button" class="btn btn-sm preset-tonal" onclick={hidePopup}>Cancel</button>
-								</form>
-							</Popover.Content>
-						</Popover.Positioner>
+					<Popover bind:open={popoverOpen} onOpenChange={(open) => { if (!open) hidePopup(); }}>
+						<PopoverContent customAnchor={anchorEl} side="top">
+							<p class="font-bold">Add "{pendingWord}"?</p>
+							<form method="POST" action="?/addWord" use:enhance class="flex gap-2 mt-2">
+								<input type="hidden" name="term" value={pendingWord} />
+								<input type="hidden" name="episodeNumber" value={data.episode.number} />
+								<Button type="submit" size="sm" onclick={hidePopup}>Add to LingQ</Button>
+								<Button type="button" variant="outline" size="sm" onclick={hidePopup}>Cancel</Button>
+							</form>
+						</PopoverContent>
 					</Popover>
 				{:else}
-					<div class="text-center p-8 opacity-50">
-						<p class="h4">No transcript available</p>
+					<div class="text-center p-8 text-muted-foreground">
+						<p class="text-xl font-semibold">No transcript available</p>
 						<p>This episode doesn't have a transcript yet.</p>
 					</div>
 				{/if}
 			</div>
-		</Tabs.Content>
+		</TabsContent>
 
-		<!-- Words Tab -->
-		<Tabs.Content value="words" class="flex-1 min-h-0">
+		<TabsContent value="words" class="min-h-0">
 			<div class="overflow-auto h-full pt-4">
 				<div class="flex flex-col gap-3">
 					{#if data.words.length > 0}
 						{#each data.words as word}
-							<div class="card p-4 flex items-center gap-4">
-								<div class="flex-1">
-									<span class="h4">{word.spanish}</span>
-									<span class="opacity-75">&mdash; {word.english}</span>
-								</div>
-								{#if word.lingqStatus !== null}
-									<span class="badge preset-filled-primary-500">{word.lingqStatus}</span>
-								{/if}
-								<form method="POST" action="?/deleteWord" use:enhance>
-									<input type="hidden" name="id" value={word.id} />
-									<Tooltip>
-										<Tooltip.Trigger type="submit" class="btn btn-sm preset-tonal-error">&times;</Tooltip.Trigger>
-										<Tooltip.Content>Remove word</Tooltip.Content>
-									</Tooltip>
-								</form>
-							</div>
+							<Card>
+								<CardContent class="py-4 px-4 flex items-center gap-4">
+									<div class="flex-1">
+										<span class="text-lg font-semibold">{word.spanish}</span>
+										<span class="text-muted-foreground"> &mdash; {word.english}</span>
+									</div>
+									{#if word.lingqStatus !== null}
+										<Badge>{word.lingqStatus}</Badge>
+									{/if}
+									<form method="POST" action="?/deleteWord" use:enhance>
+										<input type="hidden" name="id" value={word.id} />
+										<Tooltip>
+											<TooltipTrigger type="submit" class={buttonVariants({ variant: 'destructive', size: 'sm' })}>&times;</TooltipTrigger>
+											<TooltipContent>Remove word</TooltipContent>
+										</Tooltip>
+									</form>
+								</CardContent>
+							</Card>
 						{/each}
 					{:else}
-						<div class="card preset-tonal p-6 text-center">
-							<p class="h4">No words tracked yet</p>
-							<p class="opacity-50">Click words in the transcript to add them to your vocabulary.</p>
-						</div>
+						<Card>
+							<CardContent class="py-6 text-center">
+								<p class="text-lg font-semibold">No words tracked yet</p>
+								<p class="text-muted-foreground">Click words in the transcript to add them to your vocabulary.</p>
+							</CardContent>
+						</Card>
 					{/if}
 				</div>
 			</div>
-		</Tabs.Content>
+		</TabsContent>
 
-		<!-- Concepts Tab -->
-		<Tabs.Content value="concepts" class="flex-1 min-h-0">
+		<TabsContent value="concepts" class="min-h-0">
 			<div class="overflow-auto h-full pt-4">
 				<div class="flex flex-col gap-4">
 					{#if data.episodeSummary}
-						<div class="card preset-tonal p-4">
-							<p>{data.episodeSummary}</p>
-						</div>
+						<Card>
+							<CardContent class="py-4 px-4"><p>{data.episodeSummary}</p></CardContent>
+						</Card>
 					{/if}
 
 					{#if data.concepts.length > 0}
 						{#each data.concepts as concept, i}
-							<Collapsible defaultOpen={i === 0}>
-								<Collapsible.Trigger>
-									<div class="flex items-center gap-2">
-										<span class="font-bold">{concept.name}</span>
-										<span class="badge preset-filled-primary-500">{concept.role}</span>
-										{#if concept.category}
-											<span class="badge preset-tonal">{concept.category}</span>
-										{/if}
-									</div>
-								</Collapsible.Trigger>
-								<Collapsible.Content>
+							<Collapsible open={i === 0}>
+								<CollapsibleTrigger class="flex items-center gap-2 w-full text-left">
+									<span class="font-bold">{concept.name}</span>
+									<Badge>{concept.role}</Badge>
+									{#if concept.category}
+										<Badge variant="outline">{concept.category}</Badge>
+									{/if}
+								</CollapsibleTrigger>
+								<CollapsibleContent>
 									<div class="flex flex-col gap-3 p-2">
 										{#if concept.summary}
 											<p>{concept.summary}</p>
 										{/if}
-
 										{#if concept.rule}
-											<div class="card preset-tonal-primary p-3" style="border-left: 3px solid var(--color-primary-500);">
-												<p class="font-bold">{concept.rule}</p>
-											</div>
+											<Card>
+												<CardContent class="py-3 px-3">
+													<p class="font-bold">{concept.rule}</p>
+												</CardContent>
+											</Card>
 										{/if}
-
 										{#if concept.examples.length > 0}
 											<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
 												{#each concept.examples as ex}
 													<p class="font-bold">{ex.spanish}</p>
-													<p class="opacity-75">{ex.english}</p>
+													<p class="text-muted-foreground">{ex.english}</p>
 												{/each}
 											</div>
 										{/if}
-
 										{#if concept.notes}
-											<p class="opacity-50">{concept.notes}</p>
+											<p class="text-muted-foreground text-sm">{concept.notes}</p>
 										{/if}
 									</div>
-								</Collapsible.Content>
+								</CollapsibleContent>
 							</Collapsible>
 						{/each}
 					{:else}
-						<div class="card preset-tonal p-6 text-center">
-							<p class="h4">No concepts linked</p>
-							<p class="opacity-50">No grammar concepts have been extracted for this episode yet.</p>
-						</div>
+						<Card>
+							<CardContent class="py-6 text-center">
+								<p class="text-lg font-semibold">No concepts linked</p>
+								<p class="text-muted-foreground">No grammar concepts have been extracted for this episode yet.</p>
+							</CardContent>
+						</Card>
 					{/if}
 
 					{#if data.vocabulary.length > 0}
-						<h3 class="h3">Vocabulary</h3>
+						<h3 class="text-xl font-semibold">Vocabulary</h3>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
 							{#each data.vocabulary as v}
-								<div class="card p-3">
-									<p class="font-bold">{v.spanish}</p>
-									<p class="opacity-75">{v.english}</p>
-									{#if v.derivation}
-										<p class="opacity-50">{v.derivation}</p>
-									{/if}
-								</div>
+								<Card>
+									<CardContent class="py-3 px-3">
+										<p class="font-bold">{v.spanish}</p>
+										<p class="text-muted-foreground">{v.english}</p>
+										{#if v.derivation}
+											<p class="text-muted-foreground text-sm">{v.derivation}</p>
+										{/if}
+									</CardContent>
+								</Card>
 							{/each}
 						</div>
 					{/if}
 				</div>
 			</div>
-		</Tabs.Content>
+		</TabsContent>
 	</Tabs>
 </div>

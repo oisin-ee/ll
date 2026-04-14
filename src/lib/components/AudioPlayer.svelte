@@ -2,6 +2,8 @@
 	import { goto, beforeNavigate, invalidateAll } from '$app/navigation';
 	import { onDestroy } from 'svelte';
 	import { PlayIcon, PauseIcon } from '@lucide/svelte';
+	import { Button } from '$lib/components/ui/button';
+	import { Card, CardContent } from '$lib/components/ui/card';
 
 	let {
 		episodeNumber,
@@ -132,45 +134,47 @@
 	});
 </script>
 
-<div class="card preset-tonal p-4">
-	<audio
-		bind:this={audioEl}
-		src="/api/audio/{episodeNumber}"
-		preload="metadata"
-		onplay={() => { isPlaying = true; startSaveTimer(); }}
-		onpause={() => { isPlaying = false; savePosition(); stopSaveTimer(); }}
-		ontimeupdate={handleTimeUpdate}
-		onloadedmetadata={handleLoadedMetadata}
-		onended={handleEnded}
-	></audio>
+<Card>
+	<CardContent class="py-4 px-4">
+		<audio
+			bind:this={audioEl}
+			src="/api/audio/{episodeNumber}"
+			preload="metadata"
+			onplay={() => { isPlaying = true; startSaveTimer(); }}
+			onpause={() => { isPlaying = false; savePosition(); stopSaveTimer(); }}
+			ontimeupdate={handleTimeUpdate}
+			onloadedmetadata={handleLoadedMetadata}
+			onended={handleEnded}
+		></audio>
 
-	<div class="flex items-center gap-2 md:gap-3">
-		<button class="btn-icon preset-filled-primary-500" onclick={togglePlay}>
-			{#if isPlaying}
-				<PauseIcon size={20} />
-			{:else}
-				<PlayIcon size={20} />
+		<div class="flex items-center gap-2 md:gap-3">
+			<Button size="icon" onclick={togglePlay}>
+				{#if isPlaying}
+					<PauseIcon />
+				{:else}
+					<PlayIcon />
+				{/if}
+			</Button>
+
+			<span class="font-mono text-sm">{formatTime(currentTime)}</span>
+
+			<input
+				type="range"
+				class="flex-1"
+				min="0"
+				max={duration}
+				step="1"
+				value={currentTime}
+				oninput={(e) => seek(e.currentTarget.valueAsNumber)}
+			/>
+
+			<span class="font-mono text-sm">{formatTime(duration)}</span>
+
+			{#if nextEpisodeNumber}
+				<Button href="/episodes/{nextEpisodeNumber}" size="sm" variant="outline">
+					<span class="hidden sm:inline">Next</span> &rarr;
+				</Button>
 			{/if}
-		</button>
-
-		<span class="font-mono text-sm">{formatTime(currentTime)}</span>
-
-		<input
-			type="range"
-			class="flex-1"
-			min="0"
-			max={duration}
-			step="1"
-			value={currentTime}
-			oninput={(e) => seek(e.currentTarget.valueAsNumber)}
-		/>
-
-		<span class="font-mono text-sm">{formatTime(duration)}</span>
-
-		{#if nextEpisodeNumber}
-			<a href="/episodes/{nextEpisodeNumber}" class="btn btn-sm preset-tonal">
-				<span class="hidden sm:inline">Next</span> &rarr;
-			</a>
-		{/if}
-	</div>
-</div>
+		</div>
+	</CardContent>
+</Card>

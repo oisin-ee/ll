@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { Progress } from '@skeletonlabs/skeleton-svelte';
+	import { Progress } from '$lib/components/ui/progress';
+	import { Badge } from '$lib/components/ui/badge';
+	import { Card, CardContent } from '$lib/components/ui/card';
+	import { Button } from '$lib/components/ui/button';
 
 	let { data } = $props();
 
@@ -63,114 +66,116 @@
 
 <div class="flex flex-col gap-4 max-w-2xl mx-auto">
 	<div>
-		<p class="opacity-50"><a href="/practice" class="anchor">Practice</a> / Flashcards</p>
-		<h1 class="h2">Vocabulary Flashcards</h1>
+		<p class="text-sm text-muted-foreground">
+			<Button href="/practice" variant="link" class="h-auto p-0">Practice</Button> / Flashcards
+		</p>
+		<h1 class="font-display text-3xl font-semibold">Vocabulary Flashcards</h1>
 	</div>
 
 	{#if phase === 'setup'}
-		<div class="card p-6 flex flex-col gap-4">
-			{#if data.stats.total === 0}
-				<p>No vocabulary available yet. Listen to some episodes first!</p>
-				<a href="/episodes" class="btn preset-filled-primary">Go to Episodes</a>
-			{:else}
-				<div class="flex gap-6">
-					<div>
-						<p class="h2">{data.stats.due}</p>
-						<p class="opacity-50">Due</p>
-					</div>
-					<div>
-						<p class="h2">{data.stats.newCards}</p>
-						<p class="opacity-50">New</p>
-					</div>
-					<div>
-						<p class="h2">{data.stats.total}</p>
-						<p class="opacity-50">Total</p>
-					</div>
-				</div>
-
-				{#if data.stats.due === 0}
-					<p>All caught up! Come back later for more reviews.</p>
-					<a href="/practice" class="btn preset-tonal">Back to Practice</a>
+		<Card>
+			<CardContent class="pt-4 flex flex-col gap-4">
+				{#if data.stats.total === 0}
+					<p class="text-muted-foreground">No vocabulary available yet. Listen to some episodes first!</p>
+					<Button href="/episodes">Go to Episodes</Button>
 				{:else}
-					<button class="btn preset-filled-primary" onclick={start}>
-						Start ({data.stats.due} cards)
-					</button>
+					<div class="flex gap-6">
+						<div>
+							<p class="font-display text-3xl font-semibold">{data.stats.due}</p>
+							<p class="text-sm text-muted-foreground">Due</p>
+						</div>
+						<div>
+							<p class="font-display text-3xl font-semibold">{data.stats.newCards}</p>
+							<p class="text-sm text-muted-foreground">New</p>
+						</div>
+						<div>
+							<p class="font-display text-3xl font-semibold">{data.stats.total}</p>
+							<p class="text-sm text-muted-foreground">Total</p>
+						</div>
+					</div>
+
+					{#if data.stats.due === 0}
+						<p class="text-muted-foreground">All caught up! Come back later for more reviews.</p>
+						<Button href="/practice" variant="outline">Back to Practice</Button>
+					{:else}
+						<Button onclick={start}>Start ({data.stats.due} cards)</Button>
+					{/if}
 				{/if}
-			{/if}
-		</div>
+			</CardContent>
+		</Card>
 
 	{:else if phase === 'active' && currentCard}
 		<div class="flex items-center gap-3">
-			<span class="badge preset-tonal">{currentIndex + 1} / {cards.length}</span>
-			<div class="flex-1">
-				<Progress value={progressPercent} max={100}>
-					<Progress.Track>
-						<Progress.Range />
-					</Progress.Track>
-				</Progress>
-			</div>
-			<span class="badge preset-tonal">{reviewed} reviewed</span>
+			<Badge variant="outline">{currentIndex + 1} / {cards.length}</Badge>
+			<Progress value={progressPercent} max={100} class="flex-1" />
+			<Badge variant="outline">{reviewed} reviewed</Badge>
 		</div>
 
-		<div class="card p-6 flex flex-col gap-4">
-			<div class="flex items-center gap-2">
-				<span class="badge preset-tonal">Ep. {currentCard.episodeNumber}</span>
-				{#if currentCard.isNew}
-					<span class="badge preset-tonal-primary">New</span>
-				{/if}
-			</div>
-
-			<p class="h3 text-center py-4">{currentCard.english}</p>
-
-			{#if !revealed}
-				<button class="btn preset-filled-primary" onclick={() => revealed = true}>
-					Show Answer <span class="opacity-50 ml-2">Space</span>
-				</button>
-			{:else}
-				<div class="card preset-tonal-primary p-4 text-center">
-					<p class="h3">{currentCard.spanish}</p>
-					{#if currentCard.derivation}
-						<p class="opacity-75 mt-1">{currentCard.derivation}</p>
+		<Card>
+			<CardContent class="pt-4 flex flex-col gap-4">
+				<div class="flex items-center gap-2">
+					<Badge variant="outline">Ep. {currentCard.episodeNumber}</Badge>
+					{#if currentCard.isNew}
+						<Badge>New</Badge>
 					{/if}
 				</div>
 
-				<div class="grid grid-cols-4 gap-2">
-					<button class="btn preset-tonal border-l-4 border-red-500" onclick={() => rate('Again')}>
-						<span class="flex flex-col items-center">
-							<span>Again</span>
-							<span class="opacity-50 text-xs">1</span>
-						</span>
-					</button>
-					<button class="btn preset-tonal border-l-4 border-orange-500" onclick={() => rate('Hard')}>
-						<span class="flex flex-col items-center">
-							<span>Hard</span>
-							<span class="opacity-50 text-xs">2</span>
-						</span>
-					</button>
-					<button class="btn preset-tonal border-l-4 border-green-500" onclick={() => rate('Good')}>
-						<span class="flex flex-col items-center">
-							<span>Good</span>
-							<span class="opacity-50 text-xs">3</span>
-						</span>
-					</button>
-					<button class="btn preset-tonal border-l-4 border-blue-500" onclick={() => rate('Easy')}>
-						<span class="flex flex-col items-center">
-							<span>Easy</span>
-							<span class="opacity-50 text-xs">4</span>
-						</span>
-					</button>
-				</div>
-			{/if}
-		</div>
+				<p class="font-display text-3xl text-center py-4">{currentCard.english}</p>
+
+				{#if !revealed}
+					<Button onclick={() => { revealed = true; }}>
+						Show Answer <span class="text-primary-foreground/60 ml-2">Space</span>
+					</Button>
+				{:else}
+					<Card>
+						<CardContent class="py-3 text-center">
+							<p class="font-display text-2xl">{currentCard.spanish}</p>
+							{#if currentCard.derivation}
+								<p class="text-sm text-muted-foreground mt-1">{currentCard.derivation}</p>
+							{/if}
+						</CardContent>
+					</Card>
+
+					<div class="grid grid-cols-4 gap-2">
+						<Button variant="destructive" onclick={() => rate('Again')}>
+							<span class="flex flex-col items-center">
+								<span>Again</span>
+								<span class="text-xs opacity-60">1</span>
+							</span>
+						</Button>
+						<Button variant="outline" onclick={() => rate('Hard')}>
+							<span class="flex flex-col items-center">
+								<span>Hard</span>
+								<span class="text-xs opacity-60">2</span>
+							</span>
+						</Button>
+						<Button variant="secondary" onclick={() => rate('Good')}>
+							<span class="flex flex-col items-center">
+								<span>Good</span>
+								<span class="text-xs opacity-60">3</span>
+							</span>
+						</Button>
+						<Button onclick={() => rate('Easy')}>
+							<span class="flex flex-col items-center">
+								<span>Easy</span>
+								<span class="text-xs opacity-60">4</span>
+							</span>
+						</Button>
+					</div>
+				{/if}
+			</CardContent>
+		</Card>
 
 	{:else if phase === 'done'}
-		<div class="card p-6 flex flex-col gap-4 text-center">
-			<p class="h3">Session complete</p>
-			<p class="h2">{reviewed} cards reviewed</p>
-			<div class="flex flex-col gap-2">
-				<a href="/practice/flashcards" class="btn preset-filled-primary">Back to Flashcards</a>
-				<a href="/practice" class="btn preset-tonal">Back to Practice</a>
-			</div>
-		</div>
+		<Card>
+			<CardContent class="pt-4 flex flex-col gap-4 text-center">
+				<p class="font-display text-2xl font-semibold">Session complete</p>
+				<p class="font-display text-3xl font-semibold">{reviewed} cards reviewed</p>
+				<div class="flex flex-col gap-2">
+					<Button href="/practice/flashcards">Back to Flashcards</Button>
+					<Button href="/practice" variant="outline">Back to Practice</Button>
+				</div>
+			</CardContent>
+		</Card>
 	{/if}
 </div>

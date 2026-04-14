@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { Popover } from '@skeletonlabs/skeleton-svelte';
+	import { Popover, PopoverContent } from '$lib/components/ui/popover';
+	import { Button } from '$lib/components/ui/button';
+	import { Card, CardContent } from '$lib/components/ui/card';
 	import SongPlayer from '$lib/components/SongPlayer.svelte';
 	import LyricsDisplay from '$lib/components/LyricsDisplay.svelte';
 
@@ -13,7 +15,7 @@
 	let reloadingLyrics = $state(false);
 
 	function handleWordClick(word: string, event: MouseEvent) {
-		anchorEl = event.target as HTMLElement; // target is always an element in onclick
+		anchorEl = event.target as HTMLElement;
 		pendingWord = word;
 		popoverOpen = true;
 	}
@@ -34,26 +36,32 @@
 
 <div class="flex flex-col gap-4 h-full overflow-hidden">
 	<div class="flex items-center gap-3">
-		<a href="/music" class="btn btn-sm preset-tonal">&larr;</a>
+		<Button href="/music" variant="outline" size="sm">&larr;</Button>
 		<div class="flex-1">
-			<p class="opacity-50"><a href="/music" class="anchor">Music</a></p>
-			<h1 class="h2">{data.song.title}</h1>
-			<p class="opacity-75">{data.song.artist}</p>
+			<p class="text-sm text-muted-foreground"><Button href="/music" variant="link" class="h-auto p-0">Music</Button></p>
+			<h1 class="text-2xl font-bold">{data.song.title}</h1>
+			<p class="text-muted-foreground">{data.song.artist}</p>
 		</div>
 	</div>
 
 	{#if data.song.teacherNotes}
-		<aside class="card preset-tonal p-3 text-sm opacity-75">{data.song.teacherNotes}</aside>
+		<Card>
+			<CardContent class="py-3 px-4 text-sm text-muted-foreground">{data.song.teacherNotes}</CardContent>
+		</Card>
 	{/if}
 
 	{#if form?.added}
-		<aside class="card preset-tonal-primary p-3">
-			Added "{form.word.spanish}" &rarr; "{form.word.english}"
-		</aside>
+		<Card>
+			<CardContent class="py-3 px-4">Added "{form.word.spanish}" &rarr; "{form.word.english}"</CardContent>
+		</Card>
 	{:else if form?.added === false}
-		<aside class="card preset-tonal p-3">"{form.word.spanish}" already tracked</aside>
+		<Card>
+			<CardContent class="py-3 px-4">"{form.word.spanish}" already tracked</CardContent>
+		</Card>
 	{:else if form?.addError}
-		<aside class="card preset-tonal-error p-3">{form.addError}</aside>
+		<Card>
+			<CardContent class="py-3 px-4 text-destructive">{form.addError}</CardContent>
+		</Card>
 	{/if}
 
 	<div class="flex-1 min-h-0 grid md:grid-cols-2 gap-4">
@@ -61,32 +69,34 @@
 			<SongPlayer youtubeId={data.song.youtubeId} onTimeUpdate={handleTimeUpdate} />
 
 			{#if data.songWords.length > 0}
-				<section class="card preset-tonal p-4">
-					<h2 class="h4 mb-3">Saved words ({data.songWords.length})</h2>
-					<ul class="flex flex-col gap-2">
-						{#each data.songWords as word}
-							<li class="flex items-center gap-2">
-								<span class="flex-1">
-									<span class="font-medium">{word.spanish}</span>
-									{#if word.english}
-										<span class="opacity-75"> &mdash; {word.english}</span>
-									{/if}
-								</span>
-								<form method="POST" action="?/deleteWord" use:enhance>
-									<input type="hidden" name="id" value={word.id} />
-									<button type="submit" class="btn btn-sm preset-tonal-error">&times;</button>
-								</form>
-							</li>
-						{/each}
-					</ul>
-				</section>
+				<Card>
+					<CardContent class="py-4 px-4">
+						<h2 class="text-base font-semibold mb-3">Saved words ({data.songWords.length})</h2>
+						<ul class="flex flex-col gap-2">
+							{#each data.songWords as word}
+								<li class="flex items-center gap-2">
+									<span class="flex-1">
+										<span class="font-medium">{word.spanish}</span>
+										{#if word.english}
+											<span class="text-muted-foreground"> &mdash; {word.english}</span>
+										{/if}
+									</span>
+									<form method="POST" action="?/deleteWord" use:enhance>
+										<input type="hidden" name="id" value={word.id} />
+										<Button type="submit" size="sm" variant="destructive">&times;</Button>
+									</form>
+								</li>
+							{/each}
+						</ul>
+					</CardContent>
+				</Card>
 			{/if}
 		</div>
 
 		{#if data.lines.length > 0}
-			<section class="card preset-tonal flex flex-col overflow-hidden">
+			<Card class="flex flex-col overflow-hidden">
 				<div class="flex items-center justify-between p-4 pb-2">
-					<h2 class="h4">Lyrics</h2>
+					<h2 class="text-base font-semibold">Lyrics</h2>
 					<form
 						method="POST"
 						action="?/reloadLyrics"
@@ -98,13 +108,13 @@
 							};
 						}}
 					>
-						<button type="submit" disabled={reloadingLyrics} class="btn btn-sm preset-tonal">
+						<Button type="submit" size="sm" variant="outline" disabled={reloadingLyrics}>
 							{reloadingLyrics ? 'Reloading…' : 'Reload lyrics'}
-						</button>
+						</Button>
 					</form>
 				</div>
 				{#if form?.reloadError}
-					<p class="text-sm opacity-75 px-4">{form.reloadError}</p>
+					<p class="text-sm text-muted-foreground px-4">{form.reloadError}</p>
 				{/if}
 				<div class="flex-1 overflow-y-auto">
 					<LyricsDisplay
@@ -114,58 +124,53 @@
 						onWordClick={handleWordClick}
 					/>
 				</div>
-			</section>
+			</Card>
 		{:else}
-			<section class="card preset-tonal p-4 text-center opacity-60">
-				<p>No lyrics added yet.</p>
-				<form
-					method="POST"
-					action="?/reloadLyrics"
-					use:enhance={() => {
-						reloadingLyrics = true;
-						return ({ update }) => {
-							reloadingLyrics = false;
-							update();
-						};
-					}}
-					class="mt-2"
-				>
-					<button type="submit" disabled={reloadingLyrics} class="btn btn-sm preset-tonal">
-						{reloadingLyrics ? 'Reloading…' : 'Reload lyrics'}
-					</button>
-				</form>
-				{#if form?.reloadError}
-					<p class="text-sm opacity-75 mt-1">{form.reloadError}</p>
-				{/if}
-			</section>
+			<Card>
+				<CardContent class="py-4 text-center text-muted-foreground">
+					<p>No lyrics added yet.</p>
+					<form
+						method="POST"
+						action="?/reloadLyrics"
+						use:enhance={() => {
+							reloadingLyrics = true;
+							return ({ update }) => {
+								reloadingLyrics = false;
+								update();
+							};
+						}}
+						class="mt-2"
+					>
+						<Button type="submit" size="sm" variant="outline" disabled={reloadingLyrics}>
+							{reloadingLyrics ? 'Reloading…' : 'Reload lyrics'}
+						</Button>
+					</form>
+					{#if form?.reloadError}
+						<p class="text-sm text-muted-foreground mt-1">{form.reloadError}</p>
+					{/if}
+				</CardContent>
+			</Card>
 		{/if}
 	</div>
 </div>
 
-<Popover
-	open={popoverOpen}
-	onOpenChange={(details: { open: boolean }) => { if (!details.open) hidePopover(); }}
-	positioning={{ placement: 'top', flip: true, getAnchorElement: () => anchorEl }}
-	closeOnInteractOutside={true}
->
-	<Popover.Positioner>
-		<Popover.Content class="card preset-filled-primary-500 p-3">
-			<p class="font-bold mb-2">{pendingWord}</p>
-			<form
-				method="POST"
-				action="?/addWord"
-				use:enhance={() => {
-					return async ({ result, update }) => {
-						if (result.type === 'success' || result.type === 'redirect') hidePopover();
-						await update();
-					};
-				}}
-				class="flex gap-2"
-			>
-				<input type="hidden" name="term" value={pendingWord} />
-				<button type="submit" class="btn btn-sm preset-filled-surface-100-900">Save word</button>
-				<button type="button" class="btn btn-sm preset-tonal" onclick={hidePopover}>Cancel</button>
-			</form>
-		</Popover.Content>
-	</Popover.Positioner>
+<Popover bind:open={popoverOpen} onOpenChange={(open) => { if (!open) hidePopover(); }}>
+	<PopoverContent customAnchor={anchorEl} side="top">
+		<p class="font-bold mb-2">{pendingWord}</p>
+		<form
+			method="POST"
+			action="?/addWord"
+			use:enhance={() => {
+				return async ({ result, update }) => {
+					if (result.type === 'success' || result.type === 'redirect') hidePopover();
+					await update();
+				};
+			}}
+			class="flex gap-2"
+		>
+			<input type="hidden" name="term" value={pendingWord} />
+			<Button type="submit" size="sm">Save word</Button>
+			<Button type="button" size="sm" variant="outline" onclick={hidePopover}>Cancel</Button>
+		</form>
+	</PopoverContent>
 </Popover>

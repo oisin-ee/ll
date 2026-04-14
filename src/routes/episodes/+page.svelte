@@ -1,5 +1,10 @@
 <script lang="ts">
-	import { Progress, Avatar, SegmentedControl } from '@skeletonlabs/skeleton-svelte';
+	import { Progress } from '$lib/components/ui/progress';
+	import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
+	import { Badge } from '$lib/components/ui/badge';
+	import { Card, CardContent } from '$lib/components/ui/card';
+	import { Button } from '$lib/components/ui/button';
+	import { Avatar, AvatarFallback } from '$lib/components/ui/avatar';
 
 	let { data } = $props();
 	let filter = $state('all');
@@ -18,72 +23,52 @@
 <div class="flex flex-col gap-4">
 	<div class="flex items-center gap-4">
 		<div class="flex-1">
-			<h1 class="h2">Episodes</h1>
-			<p class="opacity-50">{data.listenedCount} of {data.totalEpisodes} completed</p>
+			<h1 class="font-display text-3xl font-semibold">Episodes</h1>
+			<p class="text-muted-foreground text-sm mt-0.5">{data.listenedCount} of {data.totalEpisodes} completed</p>
 		</div>
 	</div>
 
-	<Progress value={progressPercent} max={100}>
-		<Progress.Track>
-			<Progress.Range />
-		</Progress.Track>
-	</Progress>
+	<Progress value={progressPercent} max={100} />
 
-	<!-- Filters -->
-	<SegmentedControl
-		name="filter"
-		value={filter}
-		onValueChange={(details) => { filter = details.value ?? 'all'; }}
-	>
-		<SegmentedControl.Control>
-			<SegmentedControl.Indicator />
-			<SegmentedControl.Item value="all">
-				<SegmentedControl.ItemText>All ({data.totalEpisodes})</SegmentedControl.ItemText>
-				<SegmentedControl.ItemHiddenInput />
-			</SegmentedControl.Item>
-			<SegmentedControl.Item value="listened">
-				<SegmentedControl.ItemText>Listened ({data.listenedCount})</SegmentedControl.ItemText>
-				<SegmentedControl.ItemHiddenInput />
-			</SegmentedControl.Item>
-			<SegmentedControl.Item value="not-listened">
-				<SegmentedControl.ItemText>Not Listened ({data.totalEpisodes - data.listenedCount})</SegmentedControl.ItemText>
-				<SegmentedControl.ItemHiddenInput />
-			</SegmentedControl.Item>
-		</SegmentedControl.Control>
-	</SegmentedControl>
+	<ToggleGroup type="single" value={filter} onValueChange={(v) => { if (v) filter = v; }} spacing={0} variant="outline">
+		<ToggleGroupItem value="all">All ({data.totalEpisodes})</ToggleGroupItem>
+		<ToggleGroupItem value="listened">Listened ({data.listenedCount})</ToggleGroupItem>
+		<ToggleGroupItem value="not-listened">Not Listened ({data.totalEpisodes - data.listenedCount})</ToggleGroupItem>
+	</ToggleGroup>
 
-	<!-- Episode cards -->
 	<div class="flex flex-col gap-2">
 		{#each filteredEpisodes as ep}
-			<a href="/episodes/{ep.number}" class="card p-4 flex items-center gap-4">
-				<Avatar class={ep.listened ? 'preset-filled-primary-500' : 'preset-tonal'}>
-					<Avatar.Fallback>{ep.number}</Avatar.Fallback>
+			<Button href="/episodes/{ep.number}" variant="outline" class="h-auto p-4 flex items-center gap-4 justify-start">
+				<Avatar>
+					<AvatarFallback class="{ep.listened ? 'bg-primary text-primary-foreground' : ''} font-display">{ep.number}</AvatarFallback>
 				</Avatar>
-				<div class="flex-1">
-					<p class="anchor">{ep.title}</p>
+				<div class="flex-1 text-left">
+					<p class="text-foreground">{ep.title}</p>
 					{#if ep.conceptNames.length > 0}
 						<div class="flex gap-1 mt-1 flex-wrap">
 							{#each ep.conceptNames as name}
-								<span class="chip preset-tonal">{name}</span>
+								<Badge variant="outline">{name}</Badge>
 							{/each}
 						</div>
 					{/if}
 				</div>
 				<div class="flex gap-2">
 					{#if ep.wordCount > 0}
-						<span class="badge preset-tonal">{ep.wordCount} words</span>
+						<Badge variant="outline">{ep.wordCount} words</Badge>
 					{/if}
 					{#if ep.conceptCount > 0}
-						<span class="badge preset-tonal">{ep.conceptCount} concepts</span>
+						<Badge variant="outline">{ep.conceptCount} concepts</Badge>
 					{/if}
 				</div>
-			</a>
+			</Button>
 		{/each}
 	</div>
 
 	{#if filteredEpisodes.length === 0}
-		<div class="card preset-tonal p-6 text-center">
-			<p class="h4">No episodes match this filter</p>
-		</div>
+		<Card>
+			<CardContent class="text-center py-6">
+				<p class="font-display text-lg font-semibold">No episodes match this filter</p>
+			</CardContent>
+		</Card>
 	{/if}
 </div>

@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { SegmentedControl, Progress } from '@skeletonlabs/skeleton-svelte';
+	import { ToggleGroup, ToggleGroupItem } from '$lib/components/ui/toggle-group';
+	import { Progress } from '$lib/components/ui/progress';
+	import { Badge } from '$lib/components/ui/badge';
+	import { Card, CardContent } from '$lib/components/ui/card';
+	import { Button } from '$lib/components/ui/button';
 	import { generateExercises, type ExerciseItem } from '$lib/exercises';
 
 	let { data } = $props();
@@ -78,161 +82,129 @@
 		answered = false;
 		phase = 'active';
 	}
-
-	const sizeOptions = $derived(() => {
-		const opts = [{ value: '10', label: '10' }, { value: '20', label: '20' }];
-		if (data.pool.length > 20) {
-			opts.push({ value: 'all', label: `All (${data.pool.length})` });
-		}
-		return opts;
-	});
 </script>
 
 <div class="flex flex-col gap-4 max-w-2xl mx-auto">
-	<!-- Header -->
 	<div>
-		<p class="opacity-50"><a href="/concepts" class="anchor">Concepts</a> / <a href="/concepts/{data.categorySlug}" class="anchor">{data.categoryName}</a> / Practice</p>
-		<h1 class="h2">Practice: {data.categoryName}</h1>
+		<p class="text-sm text-muted-foreground">
+			<Button href="/concepts" variant="link" class="h-auto p-0">Concepts</Button> /
+			<Button href="/concepts/{data.categorySlug}" variant="link" class="h-auto p-0">{data.categoryName}</Button> / Practice
+		</p>
+		<h1 class="font-display text-3xl font-semibold">Practice: {data.categoryName}</h1>
 	</div>
 
 	{#if data.pool.length === 0}
-		<div class="card preset-tonal p-6 text-center">
-			<p class="h4">No examples available</p>
-			<p class="opacity-50">This category has no example sentences to practice with.</p>
-			<a href="/concepts/{data.categorySlug}" class="btn preset-tonal mt-4">Back to category</a>
-		</div>
+		<Card>
+			<CardContent class="text-center py-6 flex flex-col gap-4">
+				<p class="font-display text-lg font-semibold">No examples available</p>
+				<p class="text-muted-foreground text-sm">This category has no example sentences to practice with.</p>
+				<Button href="/concepts/{data.categorySlug}" variant="outline" class="w-fit mx-auto">Back to category</Button>
+			</CardContent>
+		</Card>
 
 	{:else if phase === 'setup'}
-		<div class="card p-6 flex flex-col gap-4">
-			<p>{data.pool.length} examples available</p>
-
-			<div>
-				<p class="font-bold mb-2">Round size</p>
-				<SegmentedControl
-					name="round-size"
-					value={roundSize}
-					onValueChange={(details) => { roundSize = details.value ?? roundSize; }}
-				>
-					<SegmentedControl.Control>
-						<SegmentedControl.Indicator />
-						<SegmentedControl.Item value="10">
-							<SegmentedControl.ItemText>10</SegmentedControl.ItemText>
-							<SegmentedControl.ItemHiddenInput />
-						</SegmentedControl.Item>
-						<SegmentedControl.Item value="20">
-							<SegmentedControl.ItemText>20</SegmentedControl.ItemText>
-							<SegmentedControl.ItemHiddenInput />
-						</SegmentedControl.Item>
-						<SegmentedControl.Item value="all">
-							<SegmentedControl.ItemText>All ({data.pool.length})</SegmentedControl.ItemText>
-							<SegmentedControl.ItemHiddenInput />
-						</SegmentedControl.Item>
-					</SegmentedControl.Control>
-				</SegmentedControl>
-			</div>
-
-			<button class="btn preset-filled-primary" onclick={() => start()}>Start</button>
-		</div>
+		<Card>
+			<CardContent class="pt-4 flex flex-col gap-4">
+				<p class="text-muted-foreground">{data.pool.length} examples available</p>
+				<div>
+					<p class="font-semibold mb-2">Round size</p>
+					<ToggleGroup type="single" value={roundSize} onValueChange={(v) => { if (v) roundSize = v; }} spacing={0} variant="outline">
+						<ToggleGroupItem value="10">10</ToggleGroupItem>
+						<ToggleGroupItem value="20">20</ToggleGroupItem>
+						<ToggleGroupItem value="all">All ({data.pool.length})</ToggleGroupItem>
+					</ToggleGroup>
+				</div>
+				<Button onclick={() => start()}>Start</Button>
+			</CardContent>
+		</Card>
 
 	{:else if phase === 'active' && currentExercise}
-		<!-- Progress -->
 		<div class="flex items-center gap-3">
-			<span class="badge preset-tonal">{currentIndex + 1} / {total}</span>
-			<div class="flex-1">
-				<Progress value={progressPercent} max={100}>
-					<Progress.Track>
-						<Progress.Range />
-					</Progress.Track>
-				</Progress>
-			</div>
-			<span class="badge preset-tonal">{score.correct} correct</span>
+			<Badge variant="outline">{currentIndex + 1} / {total}</Badge>
+			<Progress value={progressPercent} max={100} class="flex-1" />
+			<Badge variant="outline">{score.correct} correct</Badge>
 		</div>
 
-		<!-- Exercise card -->
-		<div class="card p-6 flex flex-col gap-4">
-			{#if currentExercise.type === 'translate'}
-				<span class="badge preset-tonal w-fit">Translate to Spanish</span>
-				<p class="h3">{currentExercise.english}</p>
+		<Card>
+			<CardContent class="pt-4 flex flex-col gap-4">
+				{#if currentExercise.type === 'translate'}
+					<Badge variant="outline" class="w-fit">Translate to Spanish</Badge>
+					<p class="font-display text-2xl">{currentExercise.english}</p>
 
-				{#if !revealed}
-					<button class="btn preset-filled-primary" onclick={() => { revealed = true; }}>Reveal answer</button>
+					{#if !revealed}
+						<Button onclick={() => { revealed = true; }}>Reveal answer</Button>
+					{:else}
+						<Card>
+							<CardContent class="py-3">
+								<p class="font-display text-2xl font-bold">{currentExercise.spanish}</p>
+							</CardContent>
+						</Card>
+						{#if currentExercise.rule}
+							<p class="text-sm text-muted-foreground">{currentExercise.conceptName}: {currentExercise.rule}</p>
+						{:else}
+							<p class="text-sm text-muted-foreground">{currentExercise.conceptName}</p>
+						{/if}
+						<div class="flex gap-2">
+							<Button class="flex-1" onclick={markCorrect}>Got it</Button>
+							<Button class="flex-1" variant="outline" onclick={markIncorrect}>Missed it</Button>
+						</div>
+					{/if}
+
 				{:else}
-					<div class="card preset-tonal-primary p-4">
-						<p class="h3 font-bold">{currentExercise.spanish}</p>
+					<Badge variant="outline" class="w-fit">Choose the translation</Badge>
+					<p class="font-display text-2xl">{currentExercise.spanish}</p>
+
+					<div class="flex flex-col gap-2">
+						{#each currentExercise.options ?? [] as option}
+							{@const isCorrect = option === currentExercise.english}
+							{@const isSelected = option === selectedOption}
+							<Button
+								class="text-left justify-start"
+								variant={answered ? (isCorrect ? 'default' : isSelected ? 'destructive' : 'outline') : 'outline'}
+								onclick={() => selectOption(option)}
+								disabled={answered}
+							>{option}</Button>
+						{/each}
 					</div>
 
-					{#if currentExercise.rule}
-						<p class="opacity-50">{currentExercise.conceptName}: {currentExercise.rule}</p>
-					{:else}
-						<p class="opacity-50">{currentExercise.conceptName}</p>
+					{#if answered}
+						{#if currentExercise.rule}
+							<p class="text-sm text-muted-foreground">{currentExercise.conceptName}: {currentExercise.rule}</p>
+						{:else}
+							<p class="text-sm text-muted-foreground">{currentExercise.conceptName}</p>
+						{/if}
+						<Button onclick={advance}>Next</Button>
 					{/if}
-
-					<div class="flex gap-2">
-						<button class="btn preset-filled-primary flex-1" onclick={markCorrect}>Got it</button>
-						<button class="btn preset-tonal flex-1" onclick={markIncorrect}>Missed it</button>
-					</div>
 				{/if}
-
-			{:else}
-				<span class="badge preset-tonal w-fit">Choose the translation</span>
-				<p class="h3">{currentExercise.spanish}</p>
-
-				<div class="flex flex-col gap-2">
-					{#each currentExercise.options ?? [] as option}
-						{@const isCorrect = option === currentExercise.english}
-						{@const isSelected = option === selectedOption}
-						<button
-							class="btn text-left {answered
-								? isCorrect
-									? 'preset-filled-primary'
-									: isSelected
-										? 'preset-filled-error-500'
-										: 'preset-tonal'
-								: 'preset-tonal'}"
-							onclick={() => selectOption(option)}
-							disabled={answered}
-						>{option}</button>
-					{/each}
-				</div>
-
-				{#if answered}
-					{#if currentExercise.rule}
-						<p class="opacity-50">{currentExercise.conceptName}: {currentExercise.rule}</p>
-					{:else}
-						<p class="opacity-50">{currentExercise.conceptName}</p>
-					{/if}
-
-					<button class="btn preset-filled-primary" onclick={advance}>Next</button>
-				{/if}
-			{/if}
-		</div>
+			</CardContent>
+		</Card>
 
 	{:else if phase === 'summary'}
-		<div class="card p-6 flex flex-col gap-4 text-center">
-			<p class="h3">Round complete</p>
-
-			<div class="flex justify-center gap-6">
-				<div>
-					<p class="h2">{score.correct}</p>
-					<p class="opacity-50">Correct</p>
+		<Card>
+			<CardContent class="pt-4 flex flex-col gap-4 text-center">
+				<p class="font-display text-2xl font-semibold">Round complete</p>
+				<div class="flex justify-center gap-6">
+					<div>
+						<p class="font-display text-3xl font-semibold">{score.correct}</p>
+						<p class="text-sm text-muted-foreground">Correct</p>
+					</div>
+					<div>
+						<p class="font-display text-3xl font-semibold">{score.incorrect}</p>
+						<p class="text-sm text-muted-foreground">Missed</p>
+					</div>
+					<div>
+						<p class="font-display text-3xl font-semibold">{total > 0 ? Math.round((score.correct / total) * 100) : 0}%</p>
+						<p class="text-sm text-muted-foreground">Score</p>
+					</div>
 				</div>
-				<div>
-					<p class="h2">{score.incorrect}</p>
-					<p class="opacity-50">Missed</p>
+				<div class="flex flex-col gap-2">
+					<Button onclick={retry}>Retry</Button>
+					{#if missed.length > 0}
+						<Button variant="outline" onclick={practiceMissed}>Practice missed ({missed.length})</Button>
+					{/if}
+					<Button href="/concepts/{data.categorySlug}" variant="outline">Back to category</Button>
 				</div>
-				<div>
-					<p class="h2">{total > 0 ? Math.round((score.correct / total) * 100) : 0}%</p>
-					<p class="opacity-50">Score</p>
-				</div>
-			</div>
-
-			<div class="flex flex-col gap-2">
-				<button class="btn preset-filled-primary" onclick={retry}>Retry</button>
-				{#if missed.length > 0}
-					<button class="btn preset-tonal" onclick={practiceMissed}>Practice missed ({missed.length})</button>
-				{/if}
-				<a href="/concepts/{data.categorySlug}" class="btn preset-tonal">Back to category</a>
-			</div>
-		</div>
+			</CardContent>
+		</Card>
 	{/if}
 </div>

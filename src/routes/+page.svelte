@@ -1,80 +1,83 @@
 <script lang="ts">
-	import { Progress, Avatar } from '@skeletonlabs/skeleton-svelte';
+	import { Progress } from '$lib/components/ui/progress';
+	import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
+	import { Button } from '$lib/components/ui/button';
+	import { Avatar, AvatarFallback } from '$lib/components/ui/avatar';
+	import { Separator } from '$lib/components/ui/separator';
 
 	let { data } = $props();
 	const progressPercent = $derived(Math.round((data.listenedCount / data.totalEpisodes) * 100));
 </script>
 
 <div class="flex flex-col gap-6">
-	<!-- Hero: Journey Progress -->
-	<div class="card preset-tonal-primary p-6">
-		<div class="flex flex-col sm:flex-row sm:items-center gap-4">
-			<div class="flex-1">
-				<h1 class="h2">Your Journey</h1>
-				<p class="opacity-75">{data.listenedCount} of {data.totalEpisodes} episodes completed</p>
-			</div>
-			<div class="flex gap-6">
-				<div class="text-center">
-					<p class="h3">{data.wordCount}</p>
-					<p class="opacity-75">Words</p>
+	<Card>
+		<CardHeader>
+			<div class="flex flex-col sm:flex-row sm:items-center gap-4">
+				<div class="flex-1">
+					<CardTitle class="font-display text-2xl">Your Journey</CardTitle>
+					<p class="text-muted-foreground text-sm mt-1">{data.listenedCount} of {data.totalEpisodes} episodes completed</p>
 				</div>
-				<div class="text-center">
-					<p class="h3">{data.conceptCount}</p>
-					<p class="opacity-75">Concepts</p>
+				<div class="flex gap-6">
+					<div class="text-center">
+						<p class="font-display text-2xl font-semibold">{data.wordCount}</p>
+						<p class="text-sm text-muted-foreground">Words</p>
+					</div>
+					<div class="text-center">
+						<p class="font-display text-2xl font-semibold">{data.conceptCount}</p>
+						<p class="text-sm text-muted-foreground">Concepts</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="mt-4">
-			<Progress value={progressPercent} max={100}>
-				<Progress.Track>
-					<Progress.Range />
-				</Progress.Track>
-			</Progress>
-			<p class="text-right mt-1 opacity-75">{progressPercent}%</p>
-		</div>
-	</div>
+		</CardHeader>
+		<CardContent>
+			<Progress value={progressPercent} max={100} />
+			<p class="text-right mt-1 text-sm text-muted-foreground">{progressPercent}%</p>
+		</CardContent>
+	</Card>
 
-	<!-- Continue Learning -->
 	{#if data.nextEpisode}
-		<a href="/episodes/{data.nextEpisode.number}" class="card preset-filled-primary-500 p-6 flex items-center gap-4">
+		<Button href="/episodes/{data.nextEpisode.number}" variant="default" class="h-auto p-6 flex items-center gap-4 justify-start">
 			<Avatar>
-				<Avatar.Fallback>{data.nextEpisode.number}</Avatar.Fallback>
+				<AvatarFallback class="bg-primary-foreground/20 text-primary-foreground font-display">{data.nextEpisode.number}</AvatarFallback>
 			</Avatar>
-			<div class="flex-1">
-				<p class="opacity-75">Continue learning</p>
-				<p class="h3">{data.nextEpisode.title}</p>
+			<div class="flex-1 text-left">
+				<p class="text-primary-foreground/75 text-sm">Continue learning</p>
+				<p class="font-display text-xl font-semibold">{data.nextEpisode.title}</p>
 			</div>
-			<span class="h4">&rarr;</span>
-		</a>
+			<span class="text-xl">&rarr;</span>
+		</Button>
 	{:else}
-		<div class="card preset-tonal p-6 text-center">
-			<p class="h3">Course Complete</p>
-			<p class="opacity-75">You've listened to all {data.totalEpisodes} episodes</p>
-		</div>
+		<Card>
+			<CardContent class="text-center py-4">
+				<p class="font-display text-xl font-semibold">Course Complete</p>
+				<p class="text-muted-foreground mt-1">You've listened to all {data.totalEpisodes} episodes</p>
+			</CardContent>
+		</Card>
 	{/if}
 
-	<!-- Recent Activity -->
 	{#if data.recentEpisodes.length > 0}
-		<div class="card p-6">
-			<h2 class="h3">Recent Activity</h2>
-			<div class="flex flex-col gap-3 mt-4">
+		<Card>
+			<CardHeader>
+				<CardTitle class="font-display text-xl">Recent Activity</CardTitle>
+			</CardHeader>
+			<CardContent class="flex flex-col gap-3">
 				{#each data.recentEpisodes as ep, i}
-					<a href="/episodes/{ep.number}" class="flex items-center gap-3">
-						<Avatar class={i === 0 ? 'preset-filled-primary-500' : 'preset-tonal'}>
-							<Avatar.Fallback>{ep.number}</Avatar.Fallback>
+					<Button href="/episodes/{ep.number}" variant="ghost" class="h-auto py-2 flex items-center gap-3 justify-start">
+						<Avatar>
+							<AvatarFallback class="{i === 0 ? 'bg-primary text-primary-foreground' : ''} font-display">{ep.number}</AvatarFallback>
 						</Avatar>
-						<div class="flex-1">
-							<p class="anchor">{ep.title}</p>
+						<div class="flex-1 text-left">
+							<p class="text-foreground">{ep.title}</p>
 							{#if ep.listenedAt}
-								<p class="opacity-50">{ep.listenedAt}</p>
+								<p class="text-xs text-muted-foreground">{ep.listenedAt}</p>
 							{/if}
 						</div>
-					</a>
+					</Button>
 					{#if i < data.recentEpisodes.length - 1}
-						<hr />
+						<Separator />
 					{/if}
 				{/each}
-			</div>
-		</div>
+			</CardContent>
+		</Card>
 	{/if}
 </div>
