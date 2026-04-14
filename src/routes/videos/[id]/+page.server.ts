@@ -1,9 +1,9 @@
 import { db } from '$lib/server/db';
-import { songs, songLines, words } from '$lib/server/db/schema';
+import { videos, videoLines, words } from '$lib/server/db/schema';
 import { eq, and } from 'drizzle-orm';
 import { error, fail } from '@sveltejs/kit';
 import { lookupCard, createCard } from '$lib/server/lingq';
-import { fetchYoutubeMetadata, saveSongLines } from '$lib/server/music';
+import { fetchVideoMetadata, saveVideoLines } from '$lib/server/videos';
 import type { PageServerLoad, Actions } from './$types';
 
 export const load: PageServerLoad = async ({ params, locals }) => {
@@ -11,27 +11,27 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 	if (!user) throw error(401, 'Not authenticated');
 
 	const id = parseInt(params.id);
-	if (isNaN(id)) throw error(404, 'Song not found');
+	if (isNaN(id)) throw error(404, 'Video not found');
 
-	const song = db.select().from(songs).where(eq(songs.id, id)).get();
-	if (!song) throw error(404, 'Song not found');
+	const video = db.select().from(videos).where(eq(videos.id, id)).get();
+	if (!video) throw error(404, 'Video not found');
 
 	const lines = db
 		.select()
-		.from(songLines)
-		.where(eq(songLines.songId, id))
+		.from(videoLines)
+		.where(eq(videoLines.videoId, id))
 		.all()
 		.sort((a, b) => a.startMs - b.startMs);
 
-	const songWords = db
+	const videoWords = db
 		.select()
 		.from(words)
-		.where(and(eq(words.userId, user.id), eq(words.songId, id)))
+		.where(and(eq(words.userId, user.id), eq(words.videoId, id)))
 		.all();
 
-	const trackedWords = songWords.map((w) => w.spanish.toLowerCase());
+	const trackedWords = videoWords.map((w) => w.spanish.toLowerCase());
 
-	return { song, lines, songWords, trackedWords };
+	return { video, lines, videoWords, trackedWords };
 };
 
 export const actions: Actions = {
@@ -39,20 +39,20 @@ export const actions: Actions = {
 		const user = locals.user;
 		if (!user) return fail(401, { addError: 'Not authenticated' });
 
-		const songId = parseInt(params.id);
-		if (isNaN(songId)) return fail(400, { addError: 'Invalid song' });
+		const videoId = parseInt(params.id);
+		if (isNaN(videoId)) return fail(400, { addError: 'Invalid video' });
 
 		const formData = await request.formData();
 		const term = String(formData.get('term') ?? '').trim();
 		if (!term) return fail(400, { addError: 'Word is required' });
 
-		const song = db.select().from(songs).where(eq(songs.id, songId)).get();
-		if (!song) return fail(404, { addError: 'Song not found' });
+		const video = db.select().from(videos).where(eq(videos.id, videoId)).get();
+		if (!video) return fail(404, { addError: 'Video not found' });
 
 		const existing = db
 			.select()
 			.from(words)
-			.where(and(eq(words.userId, user.id), eq(words.songId, songId)))
+			.where(and(eq(words.userId, user.id), eq(words.videoId, videoId)))
 			.all()
 			.find((w) => w.spanish.toLowerCase() === term.toLowerCase());
 
@@ -78,7 +78,8 @@ export const actions: Actions = {
 				english,
 				example: null,
 				episodeId: null,
-				songId,
+				songId: null,
+				videoId,
 				lingqId: card.pk,
 				lingqStatus: card.status,
 				createdAt: new Date().toISOString()
@@ -100,26 +101,26 @@ export const actions: Actions = {
 			.run();
 	},
 
-	reloadLyrics: async ({ params, locals }) => {
+	reloadSubtitles: async ({ params, locals }) => {
 		const user = locals.user;
 		if (!user) return fail(401, { reloadError: 'Not authenticated' });
 
-		const songId = parseInt(params.id);
-		if (isNaN(songId)) return fail(400, { reloadError: 'Invalid song' });
+		const videoId = parseInt(params.id);
+		if (isNaN(videoId)) return fail(400, { reloadError: 'Invalid video' });
 
-		const song = db.select().from(songs).where(eq(songs.id, songId)).get();
-		if (!song) return fail(404, { reloadError: 'Song not found' });
+		const video = db.select().from(videos).where(eq(videos.id, videoId)).get();
+		if (!video) return fail(404, { reloadError: 'Video not found' });
 
-		let metadata: { title: string; artist: string };
+		let metadata: { title: string; channel: string };
 		try {
-			metadata = await fetchYoutubeMetadata(song.youtubeId);
+			metadata = await fetchVideoMetadata(video.youtubeId);
 		} catch {
 			return fail(400, { reloadError: 'Could not fetch video info from YouTube' });
 		}
 
-		db.update(songs).set({ title: metadata.title, artist: metadata.artist }).where(eq(songs.id, songId)).run();
+		db.update(videos).set({ title: metadata.title, channel: metadata.channel }).where(eq(videos.id, videoId)).run();
 
-		const hasSubs = await saveSongLines(songId, song.youtubeId);
+		const hasSubs = await saveVideoLines(videoId, video.youtubeId);
 		if (!hasSubs) return fail(404, { reloadError: 'No Spanish subtitles found for this video' });
 	}
 };

@@ -27,6 +27,10 @@ case "$FILE_PATH" in
             continue
             ;;
         esac
+        # SvelteKit virtual modules and path aliases ($env, $lib, $app, $service-worker, etc.)
+        if [[ "$base" == \$* ]]; then
+          continue
+        fi
         if ! echo "$deps" | grep -qxF "$base"; then
           fabricated+="$base\n"
         fi

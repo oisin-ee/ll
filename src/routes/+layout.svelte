@@ -2,7 +2,7 @@
 	import '../app.css';
 	import { page } from '$app/stores';
 	import { enhance } from '$app/forms';
-	import { Home, Headphones, BookOpen, Zap, Music, Brain, LogOut } from '@lucide/svelte';
+	import { Home, Headphones, BookOpen, Zap, Music, Video, Brain, LogOut } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Avatar, AvatarImage, AvatarFallback } from '$lib/components/ui/avatar';
 
@@ -18,6 +18,7 @@
 		{ href: '/vocabulary', label: 'Vocab', icon: BookOpen, exact: false },
 		{ href: '/practice', label: 'Practice', icon: Zap, exact: false },
 		{ href: '/music', label: 'Music', icon: Music, exact: false },
+		{ href: '/videos', label: 'Videos', icon: Video, exact: false },
 	];
 </script>
 
@@ -76,10 +77,8 @@
 	</aside>
 
 	<!-- Main content -->
-	<main class="flex-1 min-h-0 overflow-y-auto">
-		<div class="mx-auto max-w-5xl w-full p-4 pb-24 md:p-6 md:pb-6">
-			{@render children()}
-		</div>
+	<main class="flex-1 min-h-0 overflow-hidden">
+		{@render children()}
 	</main>
 
 	<!-- Mobile bottom nav -->

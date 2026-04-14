@@ -91,6 +91,28 @@ export const songLines = sqliteTable('song_lines', {
 	english: text('english')
 });
 
+// ── Video catalog ─────────────────────────────────────────────────────────────
+
+export const videos = sqliteTable('videos', {
+	id: integer('id').primaryKey({ autoIncrement: true }),
+	title: text('title').notNull(),
+	channel: text('channel').notNull(),
+	youtubeId: text('youtube_id').notNull(),
+	teacherNotes: text('teacher_notes'),
+	createdAt: text('created_at').notNull()
+});
+
+export const videoLines = sqliteTable('video_lines', {
+	id: integer('id').primaryKey({ autoIncrement: true }),
+	videoId: integer('video_id')
+		.notNull()
+		.references(() => videos.id, { onDelete: 'cascade' }),
+	lineNumber: integer('line_number').notNull(),
+	startMs: integer('start_ms').notNull(),
+	spanish: text('spanish').notNull(),
+	english: text('english')
+});
+
 // ── User-scoped data ──────────────────────────────────────────────────────────
 
 export const userEpisodes = sqliteTable(
@@ -119,6 +141,7 @@ export const words = sqliteTable('words', {
 	// nullable: words from songs will have songId set instead
 	episodeId: integer('episode_id').references(() => episodes.id),
 	songId: integer('song_id').references(() => songs.id, { onDelete: 'set null' }),
+	videoId: integer('video_id').references(() => videos.id, { onDelete: 'set null' }),
 	lingqId: integer('lingq_id'),
 	lingqStatus: integer('lingq_status'),
 	createdAt: text('created_at').notNull()
@@ -199,9 +222,19 @@ export const songLinesRelations = relations(songLines, ({ one }) => ({
 	song: one(songs, { fields: [songLines.songId], references: [songs.id] })
 }));
 
+export const videosRelations = relations(videos, ({ many }) => ({
+	lines: many(videoLines),
+	words: many(words)
+}));
+
+export const videoLinesRelations = relations(videoLines, ({ one }) => ({
+	video: one(videos, { fields: [videoLines.videoId], references: [videos.id] })
+}));
+
 export const wordsRelations = relations(words, ({ one }) => ({
 	episode: one(episodes, { fields: [words.episodeId], references: [episodes.id] }),
 	song: one(songs, { fields: [words.songId], references: [songs.id] }),
+	video: one(videos, { fields: [words.videoId], references: [videos.id] }),
 	user: one(users, { fields: [words.userId], references: [users.id] })
 }));
 

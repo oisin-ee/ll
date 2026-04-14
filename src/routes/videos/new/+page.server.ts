@@ -1,8 +1,9 @@
 import { db } from '$lib/server/db';
-import { songs } from '$lib/server/db/schema';
+import { videos } from '$lib/server/db/schema';
 import { fail, redirect } from '@sveltejs/kit';
+import { eq } from 'drizzle-orm';
 import { extractYoutubeId } from '$lib/lrc';
-import { fetchYoutubeMetadata, saveSongLines } from '$lib/server/music';
+import { fetchVideoMetadata, saveVideoLines } from '$lib/server/videos';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
@@ -18,34 +19,34 @@ export const actions: Actions = {
 		const youtubeId = extractYoutubeId(youtubeInput);
 		if (!youtubeId) return fail(400, { error: 'Invalid YouTube URL or ID', youtubeInput });
 
-		let metadata: { title: string; artist: string };
+		let metadata: { title: string; channel: string };
 		try {
-			metadata = await fetchYoutubeMetadata(youtubeId);
+			metadata = await fetchVideoMetadata(youtubeId);
 		} catch {
 			return fail(400, { error: 'Could not fetch video info from YouTube', youtubeInput });
 		}
 
-		const song = db
-			.insert(songs)
+		const video = db
+			.insert(videos)
 			.values({
 				title: metadata.title,
-				artist: metadata.artist,
+				channel: metadata.channel,
 				youtubeId,
-				lrcText: null,
 				teacherNotes: teacherNotes || null,
 				createdAt: new Date().toISOString()
 			})
 			.returning()
 			.get();
 
-		const hasSubs = await saveSongLines(song.id, youtubeId);
+		const hasSubs = await saveVideoLines(video.id, youtubeId);
 		if (!hasSubs) {
+			db.delete(videos).where(eq(videos.id, video.id)).run();
 			return fail(400, {
 				error: 'No Spanish subtitles found for this video. Try a different video.',
 				youtubeInput
 			});
 		}
 
-		redirect(303, `/music/${song.id}`);
+		redirect(303, `/videos/${video.id}`);
 	}
 };
