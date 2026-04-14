@@ -15,9 +15,6 @@ jobs:
       - name: Copy env file
         run: cp /home/exedev/ll/.env .env
 
-      - name: Ensure yt-dlp is installed
-        run: pip3 install -U yt-dlp
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
