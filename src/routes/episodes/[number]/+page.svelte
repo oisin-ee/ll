@@ -31,7 +31,7 @@
 	}
 </script>
 
-<div class="flex flex-col gap-4">
+<div class="h-full overflow-hidden flex flex-col gap-4 p-4 pb-20 md:p-6 md:pb-6">
 	<div class="flex items-center gap-3">
 		<Button href="/episodes" variant="ghost" size="icon-sm">&larr;</Button>
 		<div class="flex-1 min-w-0">
@@ -78,14 +78,14 @@
 		</Card>
 	{/if}
 
-	<Tabs bind:value={activeTab}>
+	<Tabs bind:value={activeTab} class="flex-1 min-h-0 overflow-hidden">
 		<TabsList>
 			<TabsTrigger value="transcript">Transcript</TabsTrigger>
 			<TabsTrigger value="words">Words ({data.words.length})</TabsTrigger>
 			<TabsTrigger value="concepts">Concepts ({data.concepts.length})</TabsTrigger>
 		</TabsList>
 
-		<TabsContent value="transcript">
+		<TabsContent value="transcript" class="overflow-y-auto min-h-0">
 			<div class="pt-4 relative" style="line-height: 1.8;">
 				{#if data.transcript.length > 0}
 					{#if data.episodeSummary}
@@ -140,7 +140,7 @@
 			</div>
 		</TabsContent>
 
-		<TabsContent value="words">
+		<TabsContent value="words" class="overflow-y-auto min-h-0">
 			<div class="pt-4">
 				<div class="flex flex-col gap-3">
 					{#if data.words.length > 0}
@@ -176,7 +176,7 @@
 			</div>
 		</TabsContent>
 
-		<TabsContent value="concepts">
+		<TabsContent value="concepts" class="overflow-y-auto min-h-0">
 			<div class="pt-4">
 				<div class="flex flex-col gap-4">
 					{#if data.episodeSummary}

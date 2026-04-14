@@ -34,7 +34,7 @@
 	<title>{data.song.title} — Language Learner</title>
 </svelte:head>
 
-<div class="flex flex-col gap-4 h-full overflow-hidden">
+<div class="h-full overflow-hidden flex flex-col gap-4 p-4 pb-20 md:p-6 md:pb-6">
 	<div class="flex items-center gap-3">
 		<Button href="/music" variant="outline" size="sm">&larr;</Button>
 		<div class="flex-1">
