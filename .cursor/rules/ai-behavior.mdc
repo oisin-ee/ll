@@ -1,28 +1,37 @@
 ---
-description: Rules for AI behavior when generating code
+description: Uncertainty, no follow-up questions, constraints as hard requirements
+globs: ["**/*.ts","**/*.tsx"]
 ---
 
-# AI Behavior
+# AI Behavior & Principles
 
-These rules apply to ALL AI interactions, not just specific file types.
+**Uncertainty & Verification**
 
-## Before Writing Code
-- MUST read existing codebase before writing any code. Understand the project structure, patterns, and conventions already in use.
-- Research and propose your approach. Wait for approval before coding. Do not jump straight to implementation.
-- Use existing utilities, hooks, and patterns found in the project. Do NOT rewrite something that already exists.
+When you're about to write code that uses an external API, library function, or package feature you haven't verified in THIS session, you MUST:
+1. Say explicitly: "I need to verify <X>"
+2. Use Read/Grep/Glob to check the actual source or installed package
+3. If confirmed, proceed; if not, ask or use the actual API
 
-## Code Generation Rules
-- NEVER over-engineer. Use the simplest solution that solves the problem.
-- NEVER over-abstract. No unnecessary wrappers, indirection, or factory patterns for one-time operations.
-- NEVER over-comment. No obvious comments like `// increment counter` or `// return the value`. Comments are only for non-obvious WHY.
-- NEVER copy-paste code. If you're about to duplicate logic, extract it to a shared function or component.
-- NEVER write custom code when a well-maintained library already does the job. Check if a library exists before building from scratch.
-- NEVER use hacks, workarounds, or bandaids. Investigate root causes and apply proper fixes.
-- NEVER create new base UI components in `components/ui/` without explicit approval.
-- Refactor in the same PR as the feature, not in a separate PR.
-- Write modular, composable code. Break things into sensibly named hooks and components.
-- Use semantic HTML. No empty `<div>` elements used as spacers or wrappers when a semantic element exists.
+Never state an API exists based on training data alone. Verify or abstain. Confident wrong answers are worse than honest uncertainty.
 
-## Infrastructure
-- The WebSocket / infrastructure layer (`ws/`, `infrastructure/`) is READ-ONLY. Do not modify without explicit approval.
-- Effect library is encouraged for service composition, error handling, and async workflows.
+**No completion claims without proof**: Never write "this works", "this should work", or "tests should pass" as a terminal statement. Run the test command, observe the output, include it in your response. The Stop hook checks the session transcript — it will block you if you claim completion without evidence.
+
+**User Constraints Are Hard Requirements**
+
+When the user gives explicit constraints ("use X", "don't do Y", "no Z"), those are non-negotiable. Do not reinterpret, simplify, or substitute. If a constraint is unclear, ask ONCE. Otherwise follow it exactly.
+
+**No Follow-Up Questions**
+
+Do not end responses with "Want me to...", "Should I also...", or similar follow-up prompts. If the work is done, state what changed and stop. If there's genuine ambiguity about next steps, name the specific decision rather than open-ended questions.
+
+**Read Before Editing**
+
+Before modifying any non-trivial code, trace the full data flow. Don't apply frontend band-aids when the root cause is backend (or vice versa).
+
+**No Destructive Operations Without Permission**
+
+Never run `git reset --hard`, `rm -rf`, `git push --force`, `DROP TABLE`, or publish commands without explicit user approval.
+
+**No Co-Authored-By**
+
+Do not add "Co-Authored-By: Claude" to commit messages.

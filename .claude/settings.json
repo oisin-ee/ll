@@ -1,113 +1,4 @@
 {
-  "hooks": {
-    "PostToolUse": [
-      {
-        "hooks": [
-          {
-            "command": ".claude/hooks/post-edit-check.sh",
-            "timeout": 60,
-            "type": "command"
-          }
-        ],
-        "matcher": "Write|Edit"
-      }
-    ],
-    "PreCompact": [
-      {
-        "hooks": [
-          {
-            "command": "bd prime",
-            "type": "command"
-          }
-        ],
-        "matcher": ""
-      }
-    ],
-    "PreToolUse": [
-      {
-        "hooks": [
-          {
-            "command": ".claude/hooks/import-validator.sh",
-            "timeout": 10,
-            "type": "command"
-          },
-          {
-            "command": ".claude/hooks/ai-antipattern-guard.sh",
-            "timeout": 10,
-            "type": "command"
-          }
-        ],
-        "matcher": "Write|Edit"
-      },
-      {
-        "hooks": [
-          {
-            "command": ".claude/hooks/destructive-command-guard.sh",
-            "timeout": 5,
-            "type": "command"
-          },
-          {
-            "command": ".claude/hooks/block-coauthor.sh",
-            "timeout": 5,
-            "type": "command"
-          }
-        ],
-        "matcher": "Bash"
-      },
-      {
-        "hooks": [
-          {
-            "command": ".claude/hooks/block-todowrite.sh",
-            "timeout": 5,
-            "type": "command"
-          }
-        ],
-        "matcher": "TodoWrite"
-      }
-    ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "command": ".claude/hooks/context-bootstrap.sh",
-            "timeout": 10,
-            "type": "command"
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "command": "bd prime",
-            "type": "command"
-          }
-        ],
-        "matcher": ""
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "command": ".claude/hooks/pre-stop-verification.sh",
-            "timeout": 30,
-            "type": "command"
-          }
-        ]
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "command": ".claude/hooks/context-injector.sh",
-            "timeout": 5,
-            "type": "command"
-          }
-        ]
-      }
-    ]
-  },
   "permissions": {
     "mode": "default",
     "rules": [
@@ -134,7 +25,7 @@
       },
       {
         "decision": "allow",
-        "if": "Bash(svelte-kit sync \u0026\u0026 svelte-check --tsconfig ./tsconfig.json|svelte-check --tsconfig ./tsconfig.json|vitest run|git status|git diff|git log|bd *)",
+        "if": "Bash(svelte-kit sync && svelte-check --tsconfig ./tsconfig.json|svelte-check --tsconfig ./tsconfig.json|vitest run|git status|git diff|git log|bd *)",
         "reason": "Safe verification and task tracking",
         "tool": "Bash"
       },
@@ -155,5 +46,125 @@
         "tool": "Write"
       }
     ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/post-edit-check.sh",
+            "timeout": 60
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bd prime"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/import-validator.sh",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/ai-antipattern-guard.sh",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/destructive-command-guard.sh",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/block-coauthor.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "TodoWrite",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/block-todowrite.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/context-bootstrap.sh",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bd prime"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/pre-stop-verification.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/context-injector.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "extraKnownMarketplaces": {
+    "beads-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "steveyegge/beads"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "beads@beads-marketplace": true
   }
 }
