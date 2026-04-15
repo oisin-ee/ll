@@ -1,4 +1,4 @@
-import { spawnSync } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
 import { z } from 'zod';
 
 const YOUTUBE_ID_RE = /^[A-Za-z0-9_-]{11}$/;
@@ -55,6 +55,23 @@ function parseSearchResults(stdout: string): YoutubeSearchCandidate[] {
 	}
 
 	return candidates;
+}
+
+export function checkSpanishSubs(youtubeId: string): Promise<boolean> {
+	if (!/^[A-Za-z0-9_-]{11}$/.test(youtubeId)) return Promise.resolve(false);
+	return new Promise((resolve) => {
+		let output = '';
+		let settled = false;
+		const settle = (result: boolean) => {
+			if (!settled) { settled = true; resolve(result); }
+		};
+		const child = spawn('yt-dlp', ['--list-subs', '--sub-lang', 'es', `https://www.youtube.com/watch?v=${youtubeId}`]);
+		const timer = setTimeout(() => { child.kill(); settle(false); }, 15_000);
+		child.stdout.on('data', (d: Buffer) => { output += d.toString(); });
+		child.stderr.on('data', (d: Buffer) => { output += d.toString(); });
+		child.on('close', () => { clearTimeout(timer); settle(/^es[\s-]/m.test(output)); });
+		child.on('error', () => { clearTimeout(timer); settle(false); });
+	});
 }
 
 export async function searchYoutubeCandidates(query: string, limit = 5): Promise<YoutubeSearchCandidate[]> {
