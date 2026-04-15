@@ -3,6 +3,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Badge } from '$lib/components/ui/badge';
+	import { Alert, AlertDescription } from '$lib/components/ui/alert';
 	import {
 		Item,
 		ItemContent,
@@ -18,13 +19,6 @@
 		channel: string;
 		durationSeconds: number | null;
 	}
-
-	type DisplayState =
-		| { kind: 'idle' }
-		| { kind: 'loading' }
-		| { kind: 'error'; message: string }
-		| { kind: 'empty' }
-		| { kind: 'results'; candidates: YoutubeCandidate[] };
 
 	let {
 		initialQuery = '',
@@ -48,20 +42,18 @@
 	// null = checking, true/false = result
 	let subsStatus = $state<Map<string, boolean | null>>(new Map());
 
-	const checkingSubtitles = $derived(
-		candidates.length > 0 && [...subsStatus.values()].some((v) => v === null)
+	const loading = $derived(
+		searching || (candidates.length > 0 && [...subsStatus.values()].some((v) => v === null))
 	);
 	const visibleCandidates = $derived(
 		candidates.filter((c) => subsStatus.get(c.youtubeId) === true)
 	);
-
-	const displayState = $derived.by((): DisplayState => {
-		if (searching || checkingSubtitles) return { kind: 'loading' };
-		if (searchError) return { kind: 'error', message: searchError };
-		if (visibleCandidates.length > 0) return { kind: 'results', candidates: visibleCandidates };
-		if (candidates.length > 0) return { kind: 'empty' };
-		return { kind: 'idle' };
-	});
+	const message = $derived(
+		searchError ??
+			(candidates.length > 0 && !loading && visibleCandidates.length === 0
+				? 'No results with lyrics found. Try a different search.'
+				: undefined)
+	);
 
 	$effect(() => {
 		const ids = candidates.map((c) => c.youtubeId);
@@ -69,8 +61,7 @@
 			subsStatus = new Map();
 			return;
 		}
-		const next = new Map<string, boolean | null>(ids.map((id) => [id, null]));
-		subsStatus = next;
+		subsStatus = new Map(ids.map((id) => [id, null]));
 		for (const id of ids) {
 			checkSubs(id);
 		}
@@ -153,7 +144,7 @@
 		{/if}
 	</div>
 
-	{#if displayState.kind === 'loading'}
+	{#if loading}
 		<div class="flex flex-col gap-1">
 			{#each [0, 1, 2] as _}
 				<Item variant="outline" class="animate-pulse flex-nowrap">
@@ -165,13 +156,13 @@
 				</Item>
 			{/each}
 		</div>
-	{:else if displayState.kind === 'error'}
-		<p class="text-sm text-destructive">{displayState.message}</p>
-	{:else if displayState.kind === 'empty'}
-		<p class="text-sm text-muted-foreground">No results with lyrics found. Try a different search.</p>
-	{:else if displayState.kind === 'results'}
+	{:else if message}
+		<Alert variant="destructive">
+			<AlertDescription>{message}</AlertDescription>
+		</Alert>
+	{:else if visibleCandidates.length > 0}
 		<ToggleGroup type="single" bind:value={selectedId} class="w-full flex-col items-stretch gap-1">
-			{#each displayState.candidates as candidate (candidate.youtubeId)}
+			{#each visibleCandidates as candidate (candidate.youtubeId)}
 				<ToggleGroupItem
 					value={candidate.youtubeId}
 					variant="outline"
