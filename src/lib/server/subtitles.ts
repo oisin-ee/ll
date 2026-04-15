@@ -62,6 +62,8 @@ export function fetchSubtitles(youtubeId: string): SubtitleLine[] | null {
 			// es-419 (Latin American Spanish) is the auto-generated language code for
 			// many Spanish-language videos; es is the code for Spain/generic Spanish.
 			'--sub-langs', 'es,es-419',
+			// Use node as the JS runtime; production servers may not have deno.
+			'--js-runtimes', 'node',
 			'--skip-download',
 			'-o', stem,
 			`https://www.youtube.com/watch?v=${youtubeId}`
