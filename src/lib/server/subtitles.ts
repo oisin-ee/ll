@@ -1,7 +1,7 @@
 import { spawnSync } from 'node:child_process';
-import { existsSync, readFileSync, unlinkSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, unlinkSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { basename, join } from 'node:path';
 import { z } from 'zod';
 import { env } from '$env/dynamic/private';
 import { parseSync } from 'subtitle';
@@ -35,26 +35,33 @@ export function parseSrt(srt: string): SubtitleLine[] {
 	});
 }
 
+function findSubtitleFile(stem: string): string | null {
+	const dir = tmpdir();
+	const prefix = basename(stem) + '.';
+	const file = readdirSync(dir).find(
+		(f) => f.startsWith(prefix) && (f.endsWith('.srt') || f.endsWith('.vtt'))
+	);
+	return file ? join(dir, file) : null;
+}
+
 export function fetchSubtitles(youtubeId: string): SubtitleLine[] | null {
 	if (!/^[A-Za-z0-9_-]{1,20}$/.test(youtubeId)) return null;
 
 	const stem = join(tmpdir(), `ll-subs-${youtubeId}`);
-	const outFile = `${stem}.es.srt`;
 
-	if (existsSync(outFile)) {
-		try {
-			unlinkSync(outFile);
-		} catch {
-			// ignore stale file cleanup failure
-		}
+	// Clean up any stale files from a previous run for this video
+	const stale = findSubtitleFile(stem);
+	if (stale) {
+		try { unlinkSync(stale); } catch { /* ignore */ }
 	}
 
 	spawnSync(
 		'yt-dlp',
 		[
 			'--write-auto-sub',
-			'--sub-lang', 'es',
-			'--sub-format', 'srt',
+			// es-419 (Latin American Spanish) is the auto-generated language code for
+			// many Spanish-language videos; es is the code for Spain/generic Spanish.
+			'--sub-langs', 'es,es-419',
 			'--skip-download',
 			'-o', stem,
 			`https://www.youtube.com/watch?v=${youtubeId}`
@@ -62,12 +69,13 @@ export function fetchSubtitles(youtubeId: string): SubtitleLine[] | null {
 		{ timeout: 60_000 }
 	);
 
-	if (!existsSync(outFile)) return null;
+	const outFile = findSubtitleFile(stem);
+	if (!outFile) return null;
 
 	try {
-		const srt = readFileSync(outFile, 'utf-8');
+		const content = readFileSync(outFile, 'utf-8');
 		unlinkSync(outFile);
-		return parseSrt(srt);
+		return parseSrt(content);
 	} catch {
 		return null;
 	}
