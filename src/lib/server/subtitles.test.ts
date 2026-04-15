@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parseSrt } from './subtitles';
+import { parseSrt, fetchSubtitles } from './subtitles';
 
 const SAMPLE_SRT = `1
 00:00:00,433 --> 00:00:10,477
@@ -17,6 +17,17 @@ UN RATO MIRÁNDOTE ♪
 4
 00:01:00,827 --> 00:01:02,000
 TENGO QUE BAILAR CONTIGO HOY
+`;
+
+// YouTube auto-generated SRTs embed karaoke-style timing tags within each cue
+const SAMPLE_SRT_WITH_INLINE_TAGS = `1
+00:00:04,799 --> 00:00:08,500
+<00:00:04.799><c>caminando</c><00:00:05.620><c>caminando</c>
+<00:00:05.620><c>caminando caminando caminando</c>
+
+2
+00:00:08,500 --> 00:00:12,000
+<00:00:08.500><c>mi</c> <00:00:08.880><c>calle</c> <00:00:09.280><c>que</c>
 `;
 
 describe('parseSrt', () => {
@@ -56,4 +67,38 @@ describe('parseSrt', () => {
 		const musicOnly = lines.find((l) => l.text.includes('♪'));
 		expect(musicOnly).toBeDefined();
 	});
+});
+
+describe('parseSrt with YouTube inline karaoke tags', () => {
+	it('strips inline timestamp tags like <00:00:04.799>', () => {
+		const lines = parseSrt(SAMPLE_SRT_WITH_INLINE_TAGS);
+		const hasTimestampTags = lines.some((l) => /<\d{2}:\d{2}:\d{2}\.\d{3}>/.test(l.text));
+		expect(hasTimestampTags).toBe(false);
+	});
+
+	it('strips <c> and </c> karaoke class tags', () => {
+		const lines = parseSrt(SAMPLE_SRT_WITH_INLINE_TAGS);
+		const hasCTags = lines.some((l) => /<\/?c>/.test(l.text));
+		expect(hasCTags).toBe(false);
+	});
+
+	it('preserves the actual word text after stripping tags', () => {
+		const lines = parseSrt(SAMPLE_SRT_WITH_INLINE_TAGS);
+		const first = lines[0];
+		expect(first.text).toContain('caminando');
+		expect(first.text).not.toMatch(/<[^>]+>/);
+	});
+});
+
+describe('fetchSubtitles', () => {
+	it('downloads and parses Spanish SRT from a real YouTube video with no inline tags', () => {
+		// Bad Bunny - Tití Me Preguntó: native Spanish audio with auto-generated es SRT
+		const lines = fetchSubtitles('YlUKcNNmywk');
+		expect(lines).not.toBeNull();
+		expect(lines!.length).toBeGreaterThan(0);
+		const hasTags = lines!.some((l) => /<[^>]+>/.test(l.text));
+		expect(hasTags).toBe(false);
+		const allHaveStartMs = lines!.every((l) => typeof l.startMs === 'number' && l.startMs >= 0);
+		expect(allHaveStartMs).toBe(true);
+	}, 90_000);
 });

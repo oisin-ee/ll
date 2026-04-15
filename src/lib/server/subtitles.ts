@@ -5,6 +5,7 @@ import { join } from 'node:path';
 import { z } from 'zod';
 import { env } from '$env/dynamic/private';
 import { parseSync } from 'subtitle';
+import striptags from 'striptags';
 
 export type SubtitleLine = {
 	startMs: number;
@@ -18,7 +19,7 @@ const deeplResponseSchema = z.object({
 export function parseSrt(srt: string): SubtitleLine[] {
 	return parseSync(srt)
 		.filter((node): node is Extract<typeof node, { type: 'cue' }> => node.type === 'cue')
-		.map((node) => ({ startMs: node.data.start, text: node.data.text }))
+		.map((node) => ({ startMs: node.data.start, text: striptags(node.data.text).trim() }))
 		.filter((line) => line.text.length > 0)
 		.sort((a, b) => a.startMs - b.startMs);
 }
