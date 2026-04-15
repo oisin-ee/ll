@@ -4,55 +4,30 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { z } from 'zod';
 import { env } from '$env/dynamic/private';
+import { parseSync } from 'subtitle';
 
 export type SubtitleLine = {
 	startMs: number;
 	text: string;
 };
 
-const VTT_TIMESTAMP_RE = /^(\d{2}):(\d{2}):(\d{2})\.(\d{3})\s+-->/;
-
 const deeplResponseSchema = z.object({
 	translations: z.array(z.object({ text: z.string() }))
 });
 
-export function parseVtt(vtt: string): SubtitleLine[] {
-	const results: SubtitleLine[] = [];
-	const blocks = vtt.split(/\n[ \t]*\n/);
-
-	for (const block of blocks) {
-		const lines = block.trim().split('\n');
-		const tsIdx = lines.findIndex((l) => VTT_TIMESTAMP_RE.test(l));
-		if (tsIdx === -1) continue;
-
-		const match = VTT_TIMESTAMP_RE.exec(lines[tsIdx]);
-		if (!match) continue;
-
-		const [, hh, mm, ss, ms] = match;
-		const startMs =
-			parseInt(hh) * 3_600_000 +
-			parseInt(mm) * 60_000 +
-			parseInt(ss) * 1_000 +
-			parseInt(ms);
-
-		const text = lines
-			.slice(tsIdx + 1)
-			.join(' ')
-			.trim();
-
-		if (text) {
-			results.push({ startMs, text });
-		}
-	}
-
-	return results.sort((a, b) => a.startMs - b.startMs);
+export function parseSrt(srt: string): SubtitleLine[] {
+	return parseSync(srt)
+		.filter((node): node is Extract<typeof node, { type: 'cue' }> => node.type === 'cue')
+		.map((node) => ({ startMs: node.data.start, text: node.data.text }))
+		.filter((line) => line.text.length > 0)
+		.sort((a, b) => a.startMs - b.startMs);
 }
 
 export function fetchSubtitles(youtubeId: string): SubtitleLine[] | null {
 	if (!/^[A-Za-z0-9_-]{1,20}$/.test(youtubeId)) return null;
 
 	const stem = join(tmpdir(), `ll-subs-${youtubeId}`);
-	const outFile = `${stem}.es.vtt`;
+	const outFile = `${stem}.es.srt`;
 
 	if (existsSync(outFile)) {
 		try {
@@ -67,7 +42,7 @@ export function fetchSubtitles(youtubeId: string): SubtitleLine[] | null {
 		[
 			'--write-auto-sub',
 			'--sub-lang', 'es',
-			'--sub-format', 'vtt',
+			'--sub-format', 'srt',
 			'--skip-download',
 			'-o', stem,
 			`https://www.youtube.com/watch?v=${youtubeId}`
@@ -78,9 +53,9 @@ export function fetchSubtitles(youtubeId: string): SubtitleLine[] | null {
 	if (!existsSync(outFile)) return null;
 
 	try {
-		const vtt = readFileSync(outFile, 'utf-8');
+		const srt = readFileSync(outFile, 'utf-8');
 		unlinkSync(outFile);
-		return parseVtt(vtt);
+		return parseSrt(srt);
 	} catch {
 		return null;
 	}
