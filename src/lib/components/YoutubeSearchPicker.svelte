@@ -124,7 +124,7 @@
 	{:else if candidates.length > 0}
 		<div class="space-y-1.5">
 			<CardDescription>{candidates.length} results — pick one</CardDescription>
-			<ToggleGroup type="single" bind:value={selectedId} orientation="vertical" class="w-full gap-1">
+			<ToggleGroup type="single" bind:value={selectedId} class="w-full gap-1 flex-col items-stretch">
 				{#each candidates as candidate (candidate.youtubeId)}
 					<ToggleGroupItem
 						value={candidate.youtubeId}
