@@ -17,11 +17,22 @@ const deeplResponseSchema = z.object({
 });
 
 export function parseSrt(srt: string): SubtitleLine[] {
-	return parseSync(srt)
+	const raw = parseSync(srt)
 		.filter((node): node is Extract<typeof node, { type: 'cue' }> => node.type === 'cue')
 		.map((node) => ({ startMs: node.data.start, text: striptags(node.data.text).trim() }))
 		.filter((line) => line.text.length > 0)
 		.sort((a, b) => a.startMs - b.startMs);
+
+	// YouTube auto-generated SRT has pairs of cues ~10ms apart:
+	// - A shorter "base" cue at T (text already visible on screen)
+	// - A longer "karaoke" cue at T+10ms (same base + upcoming words with inline timing)
+	// After tag stripping, both are plain text and the base is a prefix of the karaoke.
+	// Drop the base cue and keep the fuller karaoke cue to avoid duplicate lyric lines.
+	return raw.filter((line, i) => {
+		if (i >= raw.length - 1) return true;
+		const next = raw[i + 1];
+		return !(next.startMs - line.startMs <= 100 && next.text.startsWith(line.text));
+	});
 }
 
 export function fetchSubtitles(youtubeId: string): SubtitleLine[] | null {

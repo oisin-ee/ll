@@ -30,6 +30,25 @@ const SAMPLE_SRT_WITH_INLINE_TAGS = `1
 <00:00:08.500><c>mi</c> <00:00:08.880><c>calle</c> <00:00:09.280><c>que</c>
 `;
 
+// Mirrors the real YouTube production format: pairs of cues ~10ms apart where
+// the first is a short "base" cue and the second is the same text + upcoming words.
+const SAMPLE_SRT_WITH_BASE_KARAOKE_PAIRS = `1
+00:00:03,789 --> 00:00:06,749
+caminando caminandote
+
+2
+00:00:03,799 --> 00:00:06,759
+caminando caminandote mi<00:00:04.799><c> calle</c><00:00:05.520><c> que</c>
+
+3
+00:00:06,749 --> 00:00:09,000
+mi calle que
+
+4
+00:00:06,759 --> 00:00:09,010
+mi calle que quizás<00:00:07.759><c> yo</c><00:00:08.559><c> pueda</c>
+`;
+
 describe('parseSrt', () => {
 	it('parses single-line cues with correct millisecond timing', () => {
 		const lines = parseSrt(SAMPLE_SRT);
@@ -87,6 +106,26 @@ describe('parseSrt with YouTube inline karaoke tags', () => {
 		const first = lines[0];
 		expect(first.text).toContain('caminando');
 		expect(first.text).not.toMatch(/<[^>]+>/);
+	});
+});
+
+describe('parseSrt deduplication of YouTube base/karaoke cue pairs', () => {
+	it('drops the base cue when the next cue starts within 100ms and shares the same prefix', () => {
+		const lines = parseSrt(SAMPLE_SRT_WITH_BASE_KARAOKE_PAIRS);
+		// Should have 2 lines (the karaoke ones), not 4
+		expect(lines).toHaveLength(2);
+	});
+
+	it('keeps the fuller karaoke cue and drops the shorter base cue', () => {
+		const lines = parseSrt(SAMPLE_SRT_WITH_BASE_KARAOKE_PAIRS);
+		expect(lines[0].text).toBe('caminando caminandote mi calle que');
+		expect(lines[1].text).toBe('mi calle que quizás yo pueda');
+	});
+
+	it('uses the karaoke cue start time (T+10ms), not the base cue time', () => {
+		const lines = parseSrt(SAMPLE_SRT_WITH_BASE_KARAOKE_PAIRS);
+		expect(lines[0].startMs).toBe(3799);
+		expect(lines[1].startMs).toBe(6759);
 	});
 });
 
