@@ -3,7 +3,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { Label } from '$lib/components/ui/label';
-	import { Card, CardContent } from '$lib/components/ui/card';
+	import { Alert, AlertDescription } from '$lib/components/ui/alert';
 	import YoutubeSearchPicker from './YoutubeSearchPicker.svelte';
 
 	interface FormState {
@@ -43,9 +43,9 @@
 	</div>
 
 	{#if form?.error}
-		<Card class="border-destructive/30 bg-destructive/10">
-			<CardContent class="px-4 py-3 text-sm text-destructive">{form.error}</CardContent>
-		</Card>
+		<Alert variant="destructive">
+			<AlertDescription>{form.error}</AlertDescription>
+		</Alert>
 	{/if}
 
 	<form
