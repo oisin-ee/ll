@@ -30,8 +30,8 @@
 		initialCandidates?: YoutubeCandidate[];
 	} = $props();
 
-	const YOUTUBE_ID_RE = /^[A-Za-z0-9_-]{11}$/;
 	const thumbUrl = (id: string) => `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
+	const YOUTUBE_ID_RE = /^[A-Za-z0-9_-]{11}$/;
 
 	let searchQuery = $state(untrack(() => initialQuery));
 	let searching = $state(false);
@@ -39,51 +39,11 @@
 	let selectedId = $state(untrack(() => initialSelectedId));
 	let searchError = $state<string | undefined>();
 
-	// null = checking, true/false = result
-	let subsStatus = $state<Map<string, boolean | null>>(new Map());
-
-	const loading = $derived(
-		searching || (candidates.length > 0 && [...subsStatus.values()].some((v) => v === null))
+	const isDirect = $derived(
+		searchQuery.includes('youtube.com/') ||
+		searchQuery.includes('youtu.be/') ||
+		YOUTUBE_ID_RE.test(searchQuery.trim())
 	);
-	const visibleCandidates = $derived(
-		candidates.filter((c) => subsStatus.get(c.youtubeId) === true)
-	);
-	const message = $derived(
-		searchError ??
-			(candidates.length > 0 && !loading && visibleCandidates.length === 0
-				? 'No results with lyrics found. Try a different search.'
-				: undefined)
-	);
-
-	$effect(() => {
-		const ids = candidates.map((c) => c.youtubeId);
-		if (ids.length === 0) {
-			subsStatus = new Map();
-			return;
-		}
-		subsStatus = new Map(ids.map((id) => [id, null]));
-		for (const id of ids) {
-			checkSubs(id);
-		}
-	});
-
-	async function checkSubs(youtubeId: string) {
-		try {
-			const res = await fetch(`/api/youtube-subs?id=${encodeURIComponent(youtubeId)}`);
-			if (!res.ok) return;
-			const data = (await res.json()) as { hasSpanishSubs: boolean };
-			subsStatus = new Map(subsStatus).set(youtubeId, data.hasSpanishSubs);
-		} catch {
-			// leave as null (unknown)
-		}
-	}
-
-	function isDirectUrl(input: string): boolean {
-		const t = input.trim();
-		return t.includes('youtube.com/') || t.includes('youtu.be/') || YOUTUBE_ID_RE.test(t);
-	}
-
-	const isDirect = $derived(isDirectUrl(searchQuery));
 
 	function formatDuration(seconds: number | null): string {
 		if (seconds === null) return '?:??';
@@ -102,7 +62,7 @@
 			if (!res.ok) throw new Error('Search request failed');
 			const data = (await res.json()) as { candidates: YoutubeCandidate[] };
 			candidates = data.candidates;
-			if (candidates.length === 0) searchError = 'No results found. Try a different search.';
+			if (candidates.length === 0) searchError = 'No results with lyrics found. Try a different search.';
 		} catch {
 			searchError = 'Search failed. Please try again.';
 		} finally {
@@ -144,7 +104,7 @@
 		{/if}
 	</div>
 
-	{#if loading}
+	{#if searching}
 		<div class="flex flex-col gap-1">
 			{#each [0, 1, 2] as _}
 				<Item variant="outline" class="animate-pulse flex-nowrap">
@@ -156,13 +116,13 @@
 				</Item>
 			{/each}
 		</div>
-	{:else if message}
+	{:else if searchError}
 		<Alert variant="destructive">
-			<AlertDescription>{message}</AlertDescription>
+			<AlertDescription>{searchError}</AlertDescription>
 		</Alert>
-	{:else if visibleCandidates.length > 0}
+	{:else if candidates.length > 0}
 		<ToggleGroup type="single" bind:value={selectedId} class="w-full flex-col items-stretch gap-1">
-			{#each visibleCandidates as candidate (candidate.youtubeId)}
+			{#each candidates as candidate (candidate.youtubeId)}
 				<ToggleGroupItem
 					value={candidate.youtubeId}
 					variant="outline"

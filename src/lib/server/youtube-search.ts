@@ -87,5 +87,7 @@ export async function searchYoutubeCandidates(query: string, limit = 5): Promise
 
 	if (commandResult.error || commandResult.status !== 0) return [];
 
-	return parseSearchResults(commandResult.stdout ?? '').slice(0, searchLimit);
+	const candidates = parseSearchResults(commandResult.stdout ?? '').slice(0, searchLimit);
+	const subsResults = await Promise.all(candidates.map((c) => checkSpanishSubs(c.youtubeId)));
+	return candidates.filter((_, i) => subsResults[i]);
 }
