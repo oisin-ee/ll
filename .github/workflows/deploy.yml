@@ -15,8 +15,10 @@ jobs:
       - name: Copy env file
         run: cp /home/exedev/ll/.env .env
 
-      - name: Ensure yt-dlp is installed
-        run: command -v yt-dlp || sudo apt-get install -y yt-dlp
+      - name: Ensure yt-dlp and ffmpeg are installed
+        run: |
+          command -v yt-dlp || sudo apt-get install -y yt-dlp
+          command -v ffmpeg || sudo apt-get install -y ffmpeg
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
