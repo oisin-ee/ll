@@ -20,3 +20,9 @@ jobs:
 
       - name: Deploy
         run: docker compose -p ll up -d
+
+      - name: Check container status
+        run: |
+          sleep 5
+          docker compose -p ll ps
+          docker compose -p ll logs --tail=50
