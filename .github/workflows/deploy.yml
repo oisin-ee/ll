@@ -15,18 +15,8 @@ jobs:
       - name: Copy env file
         run: cp /home/exedev/ll/.env .env
 
-      - name: Build production image
+      - name: Build
         run: docker compose -p ll build
-
-      - name: Build migration runner
-        run: docker build --target builder -t ll-migrator .
-
-      - name: Run migrations
-        run: |
-          docker run --rm \
-            -v ll_ll-data:/app/data \
-            ll-migrator \
-            pnpm drizzle-kit migrate
 
       - name: Stop legacy systemd service
         run: sudo systemctl stop ll || true
