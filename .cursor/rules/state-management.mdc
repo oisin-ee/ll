@@ -1,12 +1,12 @@
 ---
-description: Jotai atoms, no createContext, feature-scoped stores
+description: Each component owns its state, framework-appropriate stores, no centralisation
 globs: ["**/*.ts","**/*.tsx"]
 ---
 
 # State Management
 
-- No `createContext` — use Jotai atoms
-- `useState` only for simple local UI state (open/closed, hover)
-- `useRef` only for DOM refs and library integration
-- Feature atoms live in `feature/store/`
-- Cross-feature communication via shared atoms or events
+- Each component owns the state it is responsible for — do not hoist state to a parent unless two siblings genuinely need to share it
+- When siblings must share reactive state, use the framework's appropriate primitive (Svelte 5 `$state` in a `.svelte.ts` module; Jotai atoms in React) — not a fat parent component
+- Simple local UI state (open/closed, hover, loading) lives in the component that controls it
+- Feature-scoped shared state lives in co-located store files (`feature/store/`)
+- Cross-feature communication via shared atoms or events, not prop chains

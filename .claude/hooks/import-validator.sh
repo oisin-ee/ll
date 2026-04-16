@@ -51,10 +51,6 @@ case "$FILE_PATH" in
         if [[ "$base" == "@/"* || "$pkg" == "@/"* ]]; then
           continue
         fi
-        # Skip SvelteKit virtual modules: $env, $lib, $app, $service-worker, etc.
-        if [[ "$pkg" == \$* ]]; then
-          continue
-        fi
         if ! echo "$deps" | grep -qxF "$base"; then
           fabricated+="$base\n"
         fi
