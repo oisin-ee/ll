@@ -78,9 +78,6 @@ importers:
       '@lucide/svelte':
         specifier: ^1.8.0
         version: 1.8.0(svelte@5.55.1)
-      '@oisincoveney/style':
-        specifier: ^0.1.5
-        version: 0.1.5
       '@sveltejs/adapter-auto':
         specifier: ^7.0.0
         version: 7.0.1(@sveltejs/kit@2.56.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.55.1)(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)))(svelte@5.55.1)(typescript@5.9.3)(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)))
@@ -624,10 +621,6 @@ packages:
     resolution: {integrity: sha512-+zYQUKqEOVP5lxbGmxL1OVgGMQtRK91eIJ0bR+3Cr1ts4oQEsQfxyzzd5X47psJlblAuGFrl2xm4YuATjR9oaA==}
     peerDependencies:
       svelte: ^5
-
-  '@oisincoveney/style@0.1.5':
-    resolution: {integrity: sha512-tUEt1SM0wOvkV90UJ50YNIuzOrYDrE4yV2JnyCDh69nysIlfqqM7e5RHbJzs1r/ij+8FJ6xoNeFogsOJVppSGQ==}
-    hasBin: true
 
   '@oslojs/asn1@1.0.0':
     resolution: {integrity: sha512-zw/wn0sj0j0QKbIXfIlnEcTviaCzYOY3V5rAyjR6YtOByFtJiT574+8p9Wlach0lZH9fddD4yb9laEAIl4vXQA==}
@@ -2245,8 +2238,6 @@ snapshots:
   '@lucide/svelte@1.8.0(svelte@5.55.1)':
     dependencies:
       svelte: 5.55.1
-
-  '@oisincoveney/style@0.1.5': {}
 
   '@oslojs/asn1@1.0.0':
     dependencies:
