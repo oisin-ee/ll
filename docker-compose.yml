@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+        GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+        LINGQ_API_KEY: ${LINGQ_API_KEY}
+    ports:
+      - "3000:3000"
+    env_file: .env
+    volumes:
+      - ll-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  ll-data:

@@ -1,0 +1,48 @@
+FROM node:22-bookworm-slim AS builder
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN curl https://mise.run | sh
+ENV PATH="/root/.local/bin:${PATH}"
+
+WORKDIR /app
+COPY mise.toml .
+RUN mise install
+
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
+
+COPY . .
+
+ARG GOOGLE_CLIENT_ID
+ARG GOOGLE_CLIENT_SECRET
+ARG LINGQ_API_KEY
+ENV GOOGLE_CLIENT_ID=$GOOGLE_CLIENT_ID
+ENV GOOGLE_CLIENT_SECRET=$GOOGLE_CLIENT_SECRET
+ENV LINGQ_API_KEY=$LINGQ_API_KEY
+
+RUN pnpm build
+
+
+FROM node:22-bookworm-slim AS runner
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl ca-certificates ffmpeg python3 make g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN curl https://mise.run | sh
+ENV PATH="/root/.local/bin:${PATH}"
+
+WORKDIR /app
+COPY mise.toml .
+RUN mise install
+
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --prod --frozen-lockfile
+
+COPY --from=builder /app/build ./build
+
+EXPOSE 3000
+CMD ["node", "build/index.js"]
