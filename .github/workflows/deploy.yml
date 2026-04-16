@@ -18,8 +18,5 @@ jobs:
       - name: Build
         run: docker compose -p ll build
 
-      - name: Stop legacy systemd service
-        run: sudo systemctl stop ll || true
-
       - name: Deploy
         run: docker compose -p ll up -d

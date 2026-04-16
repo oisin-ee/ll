@@ -43,6 +43,8 @@ COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --prod --frozen-lockfile
 
 COPY --from=builder /app/build ./build
+COPY --from=builder /app/drizzle ./drizzle
+COPY drizzle.config.ts ./
 
 EXPOSE 3000
-CMD ["node", "build/index.js"]
+CMD ["sh", "-c", "pnpm drizzle-kit migrate && pnpm start"]
