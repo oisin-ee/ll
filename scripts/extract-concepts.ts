@@ -63,8 +63,16 @@ addColumn('episode_concepts', 'examples', 'TEXT');
 addColumn('episode_concepts', 'notes', 'TEXT');
 addColumn('episode_concepts', 'sort_order', 'INTEGER NOT NULL DEFAULT 0');
 
-// Ensure unique indices (tables themselves come from drizzle migrations)
-sqlite.exec('CREATE UNIQUE INDEX IF NOT EXISTS idx_episode_concepts_unique ON episode_concepts(episode_number, concept_id)');
+// Create episode_summaries if not exists
+sqlite.exec(`CREATE TABLE IF NOT EXISTS episode_summaries (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	episode_id INTEGER NOT NULL UNIQUE REFERENCES episodes(id),
+	summary TEXT NOT NULL,
+	vocabulary_json TEXT
+)`);
+
+// Ensure unique index
+sqlite.exec('CREATE UNIQUE INDEX IF NOT EXISTS idx_episode_concepts_unique ON episode_concepts(episode_id, concept_id)');
 sqlite.exec('CREATE UNIQUE INDEX IF NOT EXISTS idx_concepts_slug ON concepts(slug)');
 
 const insertConcept = sqlite.prepare(
@@ -74,11 +82,12 @@ const updateConcept = sqlite.prepare(
 	'UPDATE concepts SET name = ?, category = ? WHERE slug = ?'
 );
 const getConceptId = sqlite.prepare('SELECT id FROM concepts WHERE slug = ?');
+const getEpisodeId = sqlite.prepare('SELECT id FROM episodes WHERE number = ?');
 const insertLink = sqlite.prepare(
-	'INSERT OR IGNORE INTO episode_concepts (episode_number, concept_id, role, summary, rule, examples, notes, sort_order) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
+	'INSERT OR IGNORE INTO episode_concepts (episode_id, concept_id, role, summary, rule, examples, notes, sort_order) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
 );
 const insertSummary = sqlite.prepare(
-	'INSERT OR REPLACE INTO episode_summaries (episode_number, summary, vocabulary_json) VALUES (?, ?, ?)'
+	'INSERT OR REPLACE INTO episode_summaries (episode_id, summary, vocabulary_json) VALUES (?, ?, ?)'
 );
 
 const extractedDir = resolve('data/extracted');
@@ -93,14 +102,15 @@ let summaryCount = 0;
 for (const file of files) {
 	const data: ExtractedLesson = JSON.parse(readFileSync(resolve(extractedDir, file), 'utf-8'));
 
-	if (data.episode < 1 || data.episode > 90) {
-		console.warn(`Episode ${data.episode} out of range, skipping`);
+	const episode = getEpisodeId.get(data.episode) as { id: number } | undefined;
+	if (!episode) {
+		console.warn(`Episode ${data.episode} not found in DB, skipping`);
 		continue;
 	}
 
 	// Insert episode summary
 	if (data.summary) {
-		insertSummary.run(data.episode, data.summary, JSON.stringify(data.vocabulary ?? []));
+		insertSummary.run(episode.id, data.summary, JSON.stringify(data.vocabulary ?? []));
 		summaryCount++;
 	}
 
@@ -117,7 +127,7 @@ for (const file of files) {
 
 		try {
 			insertLink.run(
-				data.episode,
+				episode.id,
 				concept.id,
 				t.role,
 				t.summary,

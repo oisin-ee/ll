@@ -1,10 +1,9 @@
 import { db } from '$lib/server/db';
-import { words, userEpisodes } from '$lib/server/db/schema';
+import { episodes, words, userEpisodes } from '$lib/server/db/schema';
 import { eq, and } from 'drizzle-orm';
 import { error, fail } from '@sveltejs/kit';
 import { lookupCard, createCard } from '$lib/server/lingq';
 import { fetchEpisodeData } from '$lib/server/episode-data';
-import { episodeTitle, isValidEpisodeNumber } from '../../../lib/server/episodes';
 import type { PageServerLoad, Actions } from './$types';
 
 interface TranscriptWord {
@@ -20,20 +19,21 @@ interface TranscriptTurn {
 export const load: PageServerLoad = async ({ params, locals }) => {
 	const userId = locals.user!.id;
 	const num = parseInt(params.number);
-	if (!isValidEpisodeNumber(num)) throw error(404, 'Episode not found');
+	if (isNaN(num) || num < 1 || num > 90) throw error(404, 'Episode not found');
 
-	const episode = { number: num, title: episodeTitle(num) };
+	const episode = db.select().from(episodes).where(eq(episodes.number, num)).get();
+	if (!episode) throw error(404, 'Episode not found');
 
 	const userEpisode = db
 		.select()
 		.from(userEpisodes)
-		.where(and(eq(userEpisodes.userId, userId), eq(userEpisodes.episodeNumber, num)))
+		.where(and(eq(userEpisodes.userId, userId), eq(userEpisodes.episodeId, episode.id)))
 		.get();
 
 	const episodeWords = db
 		.select()
 		.from(words)
-		.where(and(eq(words.userId, userId), eq(words.episodeNumber, num)))
+		.where(and(eq(words.userId, userId), eq(words.episodeId, episode.id)))
 		.all();
 
 	const epData = await fetchEpisodeData(num);
@@ -65,13 +65,16 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 		// transcript stays empty
 	}
 
-	const prevEpisode = num > 1 ? { number: num - 1, title: episodeTitle(num - 1) } : null;
-	const nextEpisode = isValidEpisodeNumber(num + 1) ? { number: num + 1, title: episodeTitle(num + 1) } : null;
+	const prevEpisode = num > 1
+		? db.select({ number: episodes.number, title: episodes.title }).from(episodes).where(eq(episodes.number, num - 1)).get()
+		: null;
+	const nextEpisode = num < 90
+		? db.select({ number: episodes.number, title: episodes.title }).from(episodes).where(eq(episodes.number, num + 1)).get()
+		: null;
 
 	return {
 		episode: {
-			number: episode.number,
-			title: episode.title,
+			...episode,
 			listened: userEpisode?.listened ?? false,
 			listenedAt: userEpisode?.listenedAt ?? null,
 			playbackPosition: userEpisode?.playbackPosition ?? 0
@@ -95,12 +98,13 @@ export const actions: Actions = {
 		const num = Number(formData.get('number'));
 		const listened = formData.get('listened') === 'true';
 
-		if (!isValidEpisodeNumber(num)) return;
+		const episode = db.select().from(episodes).where(eq(episodes.number, num)).get();
+		if (!episode) return;
 
 		const existing = db
 			.select()
 			.from(userEpisodes)
-			.where(and(eq(userEpisodes.userId, userId), eq(userEpisodes.episodeNumber, num)))
+			.where(and(eq(userEpisodes.userId, userId), eq(userEpisodes.episodeId, episode.id)))
 			.get();
 
 		if (existing) {
@@ -112,7 +116,7 @@ export const actions: Actions = {
 			db.insert(userEpisodes)
 				.values({
 					userId,
-					episodeNumber: num,
+					episodeId: episode.id,
 					listened,
 					listenedAt: listened ? new Date().toISOString() : null,
 					playbackPosition: 0
@@ -129,12 +133,13 @@ export const actions: Actions = {
 
 		if (!term) return fail(400, { addError: 'Word is required' });
 
-		if (!isValidEpisodeNumber(episodeNumber)) return fail(404, { addError: 'Episode not found' });
+		const episode = db.select().from(episodes).where(eq(episodes.number, episodeNumber)).get();
+		if (!episode) return fail(404, { addError: 'Episode not found' });
 
 		const existing = db
 			.select()
 			.from(words)
-			.where(and(eq(words.userId, userId), eq(words.episodeNumber, episodeNumber)))
+			.where(and(eq(words.userId, userId), eq(words.episodeId, episode.id)))
 			.all()
 			.find((w) => w.spanish.toLowerCase() === term.toLowerCase());
 
@@ -161,7 +166,7 @@ export const actions: Actions = {
 				spanish: card.term,
 				english,
 				example: null,
-				episodeNumber,
+				episodeId: episode.id,
 				lingqId: card.pk,
 				lingqStatus: card.status,
 				createdAt: new Date().toISOString()

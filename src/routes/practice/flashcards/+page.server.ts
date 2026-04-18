@@ -1,5 +1,5 @@
 import { db } from '$lib/server/db';
-import { episodeSummaries, userEpisodes, flashcardReviews } from '$lib/server/db/schema';
+import { episodes, episodeSummaries, userEpisodes, flashcardReviews } from '$lib/server/db/schema';
 import { eq, and } from 'drizzle-orm';
 import type { PageServerLoad } from './$types';
 
@@ -13,25 +13,27 @@ export const load: PageServerLoad = async ({ locals }) => {
 	const userId = locals.user!.id;
 	const now = new Date();
 
-	const listenedEpisodeNumbers = db
-		.select({ episodeNumber: userEpisodes.episodeNumber })
+	const listenedEpisodeIds = db
+		.select({ episodeId: userEpisodes.episodeId })
 		.from(userEpisodes)
 		.where(and(eq(userEpisodes.userId, userId), eq(userEpisodes.listened, true)))
 		.all()
-		.map((r) => r.episodeNumber);
+		.map((r) => r.episodeId);
 
-	if (listenedEpisodeNumbers.length === 0) {
+	if (listenedEpisodeIds.length === 0) {
 		return { cards: [], stats: { total: 0, due: 0, newCards: 0 } };
 	}
 
 	const summaries = db
 		.select({
-			episodeNumber: episodeSummaries.episodeNumber,
+			episodeId: episodeSummaries.episodeId,
+			episodeNumber: episodes.number,
 			vocabularyJson: episodeSummaries.vocabularyJson
 		})
 		.from(episodeSummaries)
+		.innerJoin(episodes, eq(episodeSummaries.episodeId, episodes.id))
 		.all()
-		.filter((s) => listenedEpisodeNumbers.includes(s.episodeNumber));
+		.filter((s) => listenedEpisodeIds.includes(s.episodeId));
 
 	const reviews = db
 		.select()
@@ -40,10 +42,11 @@ export const load: PageServerLoad = async ({ locals }) => {
 		.all();
 
 	const reviewMap = new Map(
-		reviews.map((r) => [`${r.episodeNumber}:${r.spanish}`, r])
+		reviews.map((r) => [`${r.episodeId}:${r.spanish}`, r])
 	);
 
 	type FlashCard = {
+		episodeId: number;
 		episodeNumber: number;
 		spanish: string;
 		english: string;
@@ -61,12 +64,13 @@ export const load: PageServerLoad = async ({ locals }) => {
 
 		for (const item of vocab) {
 			totalCards++;
-			const key = `${summary.episodeNumber}:${item.spanish}`;
+			const key = `${summary.episodeId}:${item.spanish}`;
 			const review = reviewMap.get(key);
 
 			if (!review) {
 				newCount++;
 				dueCards.push({
+					episodeId: summary.episodeId,
 					episodeNumber: summary.episodeNumber,
 					spanish: item.spanish,
 					english: item.english,
@@ -78,6 +82,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 				const due = new Date(cardState.due);
 				if (due <= now) {
 					dueCards.push({
+						episodeId: summary.episodeId,
 						episodeNumber: summary.episodeNumber,
 						spanish: item.spanish,
 						english: item.english,

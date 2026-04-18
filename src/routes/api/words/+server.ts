@@ -8,8 +8,8 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 	if (!userId) throw error(401, 'Unauthorized');
 
 	const body = await request.json();
-	if (!body.spanish?.trim() || !body.english?.trim() || !body.episodeNumber) {
-		throw error(400, 'spanish, english, and episodeNumber are required');
+	if (!body.spanish?.trim() || !body.english?.trim() || !body.episodeId) {
+		throw error(400, 'spanish, english, and episodeId are required');
 	}
 
 	const result = db
@@ -19,7 +19,7 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 			spanish: body.spanish.trim(),
 			english: body.english.trim(),
 			example: body.example?.trim() || null,
-			episodeNumber: body.episodeNumber,
+			episodeId: body.episodeId,
 			createdAt: new Date().toISOString()
 		})
 		.returning()

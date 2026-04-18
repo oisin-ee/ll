@@ -20,10 +20,17 @@ export const sessions = sqliteTable('sessions', {
 });
 
 // ── Shared catalog ────────────────────────────────────────────────────────────
-// Episodes themselves are not stored in the DB — they are fixed (90 Language
-// Transfer lessons) and their metadata is derived in src/lib/server/episodes.ts,
-// with transcripts fetched from the oisincoveney/ll-episodes repo at request
-// time. Tables below reference episodes via `episode_number` (integer).
+
+export const episodes = sqliteTable('episodes', {
+	id: integer('id').primaryKey({ autoIncrement: true }),
+	number: integer('number').notNull().unique(),
+	title: text('title').notNull(),
+	transcriptPath: text('transcript_path'),
+	// legacy columns retained to avoid destructive migration
+	listened: integer('listened', { mode: 'boolean' }),
+	listenedAt: text('listened_at'),
+	playbackPosition: integer('playback_position')
+});
 
 export const concepts = sqliteTable('concepts', {
 	id: integer('id').primaryKey({ autoIncrement: true }),
@@ -37,7 +44,9 @@ export const concepts = sqliteTable('concepts', {
 
 export const episodeConcepts = sqliteTable('episode_concepts', {
 	id: integer('id').primaryKey({ autoIncrement: true }),
-	episodeNumber: integer('episode_number').notNull(),
+	episodeId: integer('episode_id')
+		.notNull()
+		.references(() => episodes.id),
 	conceptId: integer('concept_id')
 		.notNull()
 		.references(() => concepts.id),
@@ -51,7 +60,10 @@ export const episodeConcepts = sqliteTable('episode_concepts', {
 
 export const episodeSummaries = sqliteTable('episode_summaries', {
 	id: integer('id').primaryKey({ autoIncrement: true }),
-	episodeNumber: integer('episode_number').notNull().unique(),
+	episodeId: integer('episode_id')
+		.notNull()
+		.unique()
+		.references(() => episodes.id),
 	summary: text('summary').notNull(),
 	vocabularyJson: text('vocabulary_json')
 });
@@ -110,12 +122,14 @@ export const userEpisodes = sqliteTable(
 		userId: text('user_id')
 			.notNull()
 			.references(() => users.id),
-		episodeNumber: integer('episode_number').notNull(),
+		episodeId: integer('episode_id')
+			.notNull()
+			.references(() => episodes.id),
 		listened: integer('listened', { mode: 'boolean' }).notNull().default(false),
 		listenedAt: text('listened_at'),
 		playbackPosition: integer('playback_position').notNull().default(0)
 	},
-	(t) => [uniqueIndex('ux_user_episodes').on(t.userId, t.episodeNumber)]
+	(t) => [uniqueIndex('ux_user_episodes').on(t.userId, t.episodeId)]
 );
 
 export const words = sqliteTable('words', {
@@ -124,8 +138,8 @@ export const words = sqliteTable('words', {
 	spanish: text('spanish').notNull(),
 	english: text('english').notNull(),
 	example: text('example'),
-	// nullable: words from songs/videos will have songId/videoId set instead
-	episodeNumber: integer('episode_number'),
+	// nullable: words from songs will have songId set instead
+	episodeId: integer('episode_id').references(() => episodes.id),
 	songId: integer('song_id').references(() => songs.id, { onDelete: 'set null' }),
 	videoId: integer('video_id').references(() => videos.id, { onDelete: 'set null' }),
 	lingqId: integer('lingq_id'),
@@ -155,12 +169,14 @@ export const flashcardReviews = sqliteTable(
 		userId: text('user_id')
 			.notNull()
 			.references(() => users.id),
-		episodeNumber: integer('episode_number').notNull(),
+		episodeId: integer('episode_id')
+			.notNull()
+			.references(() => episodes.id),
 		spanish: text('spanish').notNull(),
 		cardState: text('card_state').notNull(),
 		createdAt: text('created_at').notNull()
 	},
-	(t) => [uniqueIndex('ux_flashcard_reviews').on(t.userId, t.episodeNumber, t.spanish)]
+	(t) => [uniqueIndex('ux_flashcard_reviews').on(t.userId, t.episodeId, t.spanish)]
 );
 
 export const lingqSyncLog = sqliteTable('lingq_sync_log', {
@@ -186,6 +202,17 @@ export const sessionsRelations = relations(sessions, ({ one }) => ({
 	user: one(users, { fields: [sessions.userId], references: [users.id] })
 }));
 
+export const episodeSummariesRelations = relations(episodeSummaries, ({ one }) => ({
+	episode: one(episodes, { fields: [episodeSummaries.episodeId], references: [episodes.id] })
+}));
+
+export const episodesRelations = relations(episodes, ({ many, one }) => ({
+	words: many(words),
+	episodeConcepts: many(episodeConcepts),
+	summary: one(episodeSummaries),
+	userEpisodes: many(userEpisodes)
+}));
+
 export const songsRelations = relations(songs, ({ many }) => ({
 	lines: many(songLines),
 	words: many(words)
@@ -205,6 +232,7 @@ export const videoLinesRelations = relations(videoLines, ({ one }) => ({
 }));
 
 export const wordsRelations = relations(words, ({ one }) => ({
+	episode: one(episodes, { fields: [words.episodeId], references: [episodes.id] }),
 	song: one(songs, { fields: [words.songId], references: [songs.id] }),
 	video: one(videos, { fields: [words.videoId], references: [videos.id] }),
 	user: one(users, { fields: [words.userId], references: [users.id] })
@@ -216,11 +244,13 @@ export const conceptsRelations = relations(concepts, ({ many }) => ({
 }));
 
 export const episodeConceptsRelations = relations(episodeConcepts, ({ one }) => ({
+	episode: one(episodes, { fields: [episodeConcepts.episodeId], references: [episodes.id] }),
 	concept: one(concepts, { fields: [episodeConcepts.conceptId], references: [concepts.id] })
 }));
 
 export const userEpisodesRelations = relations(userEpisodes, ({ one }) => ({
-	user: one(users, { fields: [userEpisodes.userId], references: [users.id] })
+	user: one(users, { fields: [userEpisodes.userId], references: [users.id] }),
+	episode: one(episodes, { fields: [userEpisodes.episodeId], references: [episodes.id] })
 }));
 
 export const userConceptsRelations = relations(userConcepts, ({ one }) => ({
@@ -229,5 +259,6 @@ export const userConceptsRelations = relations(userConcepts, ({ one }) => ({
 }));
 
 export const flashcardReviewsRelations = relations(flashcardReviews, ({ one }) => ({
-	user: one(users, { fields: [flashcardReviews.userId], references: [users.id] })
+	user: one(users, { fields: [flashcardReviews.userId], references: [users.id] }),
+	episode: one(episodes, { fields: [flashcardReviews.episodeId], references: [episodes.id] })
 }));
