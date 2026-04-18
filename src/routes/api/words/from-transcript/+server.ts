@@ -1,8 +1,9 @@
 import { db } from '$lib/server/db';
-import { words, episodes } from '$lib/server/db/schema';
+import { words } from '$lib/server/db/schema';
 import { eq, and } from 'drizzle-orm';
 import { lookupCard, createCard } from '$lib/server/lingq';
 import { json, error } from '@sveltejs/kit';
+import { isValidEpisodeNumber } from '../../../../lib/server/episodes';
 import type { RequestHandler } from './$types';
 
 export const POST: RequestHandler = async ({ request, locals }) => {
@@ -16,13 +17,12 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 		throw error(400, 'term and episodeNumber are required');
 	}
 
-	const episode = db.select().from(episodes).where(eq(episodes.number, episodeNumber)).get();
-	if (!episode) throw error(404, 'Episode not found');
+	if (!isValidEpisodeNumber(episodeNumber)) throw error(404, 'Episode not found');
 
 	const existing = db
 		.select()
 		.from(words)
-		.where(and(eq(words.userId, userId), eq(words.episodeId, episode.id)))
+		.where(and(eq(words.userId, userId), eq(words.episodeNumber, episodeNumber)))
 		.all()
 		.find((w) => w.spanish.toLowerCase() === term.trim().toLowerCase());
 
@@ -49,7 +49,7 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 			spanish: card.term,
 			english,
 			example: sentence?.trim() || null,
-			episodeId: episode.id,
+			episodeNumber,
 			lingqId: card.pk,
 			lingqStatus: card.status,
 			createdAt: new Date().toISOString()

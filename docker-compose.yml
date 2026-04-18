@@ -15,3 +15,8 @@ services:
 
 volumes:
   ll-data:
+    # Canonical prod DB lives here. Marked external so a fresh host (or a
+    # broken project-name change) fails loud with "volume not found" instead
+    # of silently creating an empty volume — see the Apr-2026 orphan incident.
+    external: true
+    name: ll_ll-data

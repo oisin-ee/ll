@@ -12,10 +12,10 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 	if (!userId) throw error(401, 'Unauthorized');
 
 	const body = await request.json();
-	const { episodeId, spanish, rating } = body;
+	const { episodeNumber, spanish, rating } = body;
 
-	if (!episodeId || !spanish || !rating) {
-		throw error(400, 'episodeId, spanish, and rating are required');
+	if (typeof episodeNumber !== 'number' || !spanish || !rating) {
+		throw error(400, 'episodeNumber, spanish, and rating are required');
 	}
 
 	const ratingValue = Rating[rating as keyof typeof Rating];
@@ -29,7 +29,7 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 		.where(
 			and(
 				eq(flashcardReviews.userId, userId),
-				eq(flashcardReviews.episodeId, episodeId),
+				eq(flashcardReviews.episodeNumber, episodeNumber),
 				eq(flashcardReviews.spanish, spanish)
 			)
 		)
@@ -58,7 +58,7 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 		db.insert(flashcardReviews)
 			.values({
 				userId,
-				episodeId,
+				episodeNumber,
 				spanish,
 				cardState: JSON.stringify(updated.card),
 				createdAt: now.toISOString()

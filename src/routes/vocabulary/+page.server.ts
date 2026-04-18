@@ -1,26 +1,33 @@
 import { db } from '$lib/server/db';
-import { words, episodes } from '$lib/server/db/schema';
-import { eq, and } from 'drizzle-orm';
+import { words } from '$lib/server/db/schema';
+import { eq } from 'drizzle-orm';
+import { episodeTitle } from '../../lib/server/episodes';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ locals }) => {
 	const userId = locals.user!.id;
 
-	const allWords = db
+	const rawWords = db
 		.select({
 			id: words.id,
 			spanish: words.spanish,
 			english: words.english,
 			example: words.example,
-			episodeNumber: episodes.number,
-			episodeTitle: episodes.title,
+			episodeNumber: words.episodeNumber,
 			lingqStatus: words.lingqStatus
 		})
 		.from(words)
-		.innerJoin(episodes, eq(words.episodeId, episodes.id))
 		.where(eq(words.userId, userId))
-		.orderBy(episodes.number)
 		.all();
+
+	const allWords = rawWords
+		.filter((w) => w.episodeNumber !== null)
+		.map((w) => ({
+			...w,
+			episodeNumber: w.episodeNumber as number,
+			episodeTitle: episodeTitle(w.episodeNumber as number)
+		}))
+		.sort((a, b) => a.episodeNumber - b.episodeNumber);
 
 	return { words: allWords };
 };
