@@ -45,6 +45,11 @@ RUN pnpm install --prod --frozen-lockfile
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/drizzle ./drizzle
 COPY drizzle.config.ts ./
+COPY scripts/migrate.mjs ./scripts/migrate.mjs
 
 EXPOSE 3000
-CMD ["sh", "-c", "pnpm drizzle-kit migrate && pnpm start"]
+# Run migrations via a direct migrator import rather than `drizzle-kit migrate`,
+# because the drizzle-kit CLI swallows migration errors (prints success and
+# exits 0 even when migrate() throws). scripts/migrate.mjs propagates errors
+# and exits non-zero so the container refuses to start on failure.
+CMD ["sh", "-c", "node scripts/migrate.mjs && pnpm start"]
