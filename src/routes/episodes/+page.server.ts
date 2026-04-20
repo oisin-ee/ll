@@ -1,21 +1,14 @@
 import { db } from '$lib/server/db';
-import { episodes, words, userEpisodes } from '$lib/server/db/schema';
+import { words, userEpisodes } from '$lib/server/db/schema';
 import { eq, count, and } from 'drizzle-orm';
 import { fetchConceptsIndex } from '$lib/server/episode-data';
+import { allEpisodes, isValidEpisodeNumber } from '../../lib/server/episodes';
 import type { PageServerLoad, Actions } from './$types';
 
 export const load: PageServerLoad = async ({ locals }) => {
 	const userId = locals.user!.id;
 
-	const allEpisodes = db
-		.select({
-			id: episodes.id,
-			number: episodes.number,
-			title: episodes.title
-		})
-		.from(episodes)
-		.orderBy(episodes.number)
-		.all();
+	const catalog = allEpisodes();
 
 	const userEpisodeRows = db
 		.select()
@@ -24,14 +17,14 @@ export const load: PageServerLoad = async ({ locals }) => {
 		.all();
 
 	const listenedMap = new Map(
-		userEpisodeRows.map((ue) => [ue.episodeId, { listened: ue.listened, listenedAt: ue.listenedAt }])
+		userEpisodeRows.map((ue) => [ue.episodeNumber, { listened: ue.listened, listenedAt: ue.listenedAt }])
 	);
 
 	const wordCounts = db
-		.select({ episodeId: words.episodeId, wordCount: count() })
+		.select({ episodeNumber: words.episodeNumber, wordCount: count() })
 		.from(words)
 		.where(eq(words.userId, userId))
-		.groupBy(words.episodeId)
+		.groupBy(words.episodeNumber)
 		.all();
 
 	const conceptsIndex = await fetchConceptsIndex();
@@ -47,18 +40,19 @@ export const load: PageServerLoad = async ({ locals }) => {
 		}
 	}
 
-	const wordMap = new Map(wordCounts.map((w) => [w.episodeId, w.wordCount]));
+	const wordMap = new Map(wordCounts.map((w) => [w.episodeNumber, w.wordCount]));
 
-	const listenedCount = allEpisodes.filter((ep) => listenedMap.get(ep.id)?.listened).length;
+	const listenedCount = catalog.filter((ep) => listenedMap.get(ep.number)?.listened).length;
 
 	return {
-		totalEpisodes: allEpisodes.length,
+		totalEpisodes: catalog.length,
 		listenedCount,
-		episodes: allEpisodes.map((ep) => ({
-			...ep,
-			listened: listenedMap.get(ep.id)?.listened ?? false,
-			listenedAt: listenedMap.get(ep.id)?.listenedAt ?? null,
-			wordCount: wordMap.get(ep.id) ?? 0,
+		episodes: catalog.map((ep) => ({
+			number: ep.number,
+			title: ep.title,
+			listened: listenedMap.get(ep.number)?.listened ?? false,
+			listenedAt: listenedMap.get(ep.number)?.listenedAt ?? null,
+			wordCount: wordMap.get(ep.number) ?? 0,
 			conceptCount: episodeConceptMap.get(ep.number)?.count ?? 0,
 			conceptNames: (episodeConceptMap.get(ep.number)?.names ?? []).slice(0, 3)
 		}))
@@ -72,13 +66,12 @@ export const actions: Actions = {
 		const num = Number(formData.get('number'));
 		const listened = formData.get('listened') === 'true';
 
-		const episode = db.select().from(episodes).where(eq(episodes.number, num)).get();
-		if (!episode) return;
+		if (!isValidEpisodeNumber(num)) return;
 
 		const existing = db
 			.select()
 			.from(userEpisodes)
-			.where(and(eq(userEpisodes.userId, userId), eq(userEpisodes.episodeId, episode.id)))
+			.where(and(eq(userEpisodes.userId, userId), eq(userEpisodes.episodeNumber, num)))
 			.get();
 
 		if (existing) {
@@ -90,7 +83,7 @@ export const actions: Actions = {
 			db.insert(userEpisodes)
 				.values({
 					userId,
-					episodeId: episode.id,
+					episodeNumber: num,
 					listened,
 					listenedAt: listened ? new Date().toISOString() : null,
 					playbackPosition: 0

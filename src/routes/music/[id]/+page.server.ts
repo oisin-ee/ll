@@ -78,7 +78,7 @@ export const actions: Actions = {
 				spanish: card.term,
 				english,
 				example: null,
-				episodeId: null,
+				episodeNumber: null,
 				songId,
 				lingqId: card.pk,
 				lingqStatus: card.status,

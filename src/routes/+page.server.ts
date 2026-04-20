@@ -1,9 +1,10 @@
 import { db } from '$lib/server/db';
-import { episodes, words, lingqSyncLog, userEpisodes } from '$lib/server/db/schema';
+import { words, lingqSyncLog, userEpisodes } from '$lib/server/db/schema';
 import { count, eq, desc, and } from 'drizzle-orm';
 import { fail } from '@sveltejs/kit';
 import { fetchAllCards } from '$lib/server/lingq';
 import { fetchConceptsIndex } from '$lib/server/episode-data';
+import { allEpisodes, episodeTitle } from '../lib/server/episodes';
 import type { PageServerLoad, Actions } from './$types';
 
 export const load: PageServerLoad = async ({ locals }) => {
@@ -24,32 +25,35 @@ export const load: PageServerLoad = async ({ locals }) => {
 	const conceptsIndex = await fetchConceptsIndex();
 	const conceptCount = conceptsIndex.length;
 
-	const recentEpisodes = db
+	const recentEpisodeRows = db
 		.select({
-			number: episodes.number,
-			title: episodes.title,
+			episodeNumber: userEpisodes.episodeNumber,
 			listenedAt: userEpisodes.listenedAt
 		})
 		.from(userEpisodes)
-		.innerJoin(episodes, eq(userEpisodes.episodeId, episodes.id))
 		.where(and(eq(userEpisodes.userId, userId), eq(userEpisodes.listened, true)))
 		.orderBy(desc(userEpisodes.listenedAt))
 		.limit(5)
 		.all();
 
-	// Next unlistened episode
-	const listenedEpisodeIds = db
-		.select({ episodeId: userEpisodes.episodeId })
+	const recentEpisodes = recentEpisodeRows.map((r) => ({
+		number: r.episodeNumber,
+		title: episodeTitle(r.episodeNumber),
+		listenedAt: r.listenedAt
+	}));
+
+	const listenedNumbers = db
+		.select({ episodeNumber: userEpisodes.episodeNumber })
 		.from(userEpisodes)
 		.where(and(eq(userEpisodes.userId, userId), eq(userEpisodes.listened, true)))
 		.all()
-		.map((r) => r.episodeId);
+		.map((r) => r.episodeNumber);
 
-	const allEpisodes = db.select().from(episodes).orderBy(episodes.number).all();
-	const nextEpisode = allEpisodes.find((ep) => !listenedEpisodeIds.includes(ep.id)) ?? null;
+	const catalog = allEpisodes();
+	const nextEpisode = catalog.find((ep) => !listenedNumbers.includes(ep.number)) ?? null;
 
 	return {
-		totalEpisodes: allEpisodes.length,
+		totalEpisodes: catalog.length,
 		listenedCount,
 		wordCount,
 		conceptCount,
