@@ -11,9 +11,11 @@
 import Database from 'better-sqlite3';
 import { drizzle } from 'drizzle-orm/better-sqlite3';
 import { migrate } from 'drizzle-orm/better-sqlite3/migrator';
-import { resolve } from 'node:path';
+import { resolve, dirname } from 'node:path';
+import { mkdirSync } from 'node:fs';
 
 const dbPath = resolve('data/ll.db');
+mkdirSync(dirname(dbPath), { recursive: true });
 const sqlite = new Database(dbPath);
 sqlite.pragma('journal_mode = WAL');
 sqlite.pragma('foreign_keys = ON');
