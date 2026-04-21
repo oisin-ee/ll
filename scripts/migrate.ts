@@ -26,7 +26,8 @@ try {
 	migrate(db, { migrationsFolder: resolve('drizzle') });
 	process.stdout.write('migrations applied\n');
 } catch (err) {
-	process.stderr.write(`migrate failed: ${err instanceof Error ? err.stack ?? err.message : String(err)}\n`);
+	const message = err instanceof Error ? (err.stack ?? err.message) : String(err);
+	process.stderr.write(`migrate failed: ${message}\n`);
 	process.exit(1);
 } finally {
 	sqlite.close();

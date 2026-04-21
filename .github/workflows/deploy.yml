@@ -49,7 +49,7 @@ jobs:
         run: pnpm run check
 
       - name: Migrate test DB
-        run: node scripts/migrate.mjs
+        run: pnpm exec tsx scripts/migrate.ts
 
       - name: Unit tests
         run: pnpm exec vitest run
