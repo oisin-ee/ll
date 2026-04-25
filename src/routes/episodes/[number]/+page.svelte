@@ -2,14 +2,13 @@
 	import { enhance } from '$app/forms';
 	import { Tabs, TabsList, TabsTrigger, TabsContent } from '$lib/components/ui/tabs';
 	import { Switch } from '$lib/components/ui/switch';
-	import { Avatar, AvatarFallback } from '$lib/components/ui/avatar';
 	import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '$lib/components/ui/collapsible';
 	import { Tooltip, TooltipTrigger, TooltipContent } from '$lib/components/ui/tooltip';
-	import { Popover, PopoverContent } from '$lib/components/ui/popover';
-	import { Button, buttonVariants } from '$lib/components/ui/button';
+	import { buttonVariants } from '$lib/components/ui/button';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Card, CardContent } from '$lib/components/ui/card';
 	import AudioPlayer from '$lib/components/AudioPlayer.svelte';
+	import WordPopover from '$lib/components/media-detail/WordPopover.svelte';
 
 	let { data, form } = $props();
 	let activeTab = $state('transcript');
@@ -17,7 +16,7 @@
 
 	let pendingWord = $state('');
 	let popoverOpen = $state(false);
-	let anchorEl: HTMLElement | null = $state(null);
+	let anchorEl = $state<HTMLElement | null>(null);
 
 	function getSpeakerClasses(speaker: 'T' | 'S' | null): string {
 		if (speaker === 'T') {
@@ -29,26 +28,15 @@
 		return 'border-border bg-muted text-muted-foreground';
 	}
 
-	function showPopup(e: MouseEvent, word: string) {
+	function openWord(e: MouseEvent, word: string) {
 		anchorEl = e.target as HTMLElement;
 		pendingWord = word;
 		popoverOpen = true;
-	}
-
-	function hidePopup() {
-		popoverOpen = false;
-		pendingWord = '';
 	}
 </script>
 
 <div class="h-full overflow-hidden flex flex-col gap-4">
 	<div class="flex items-center justify-end gap-2">
-			{#if data.prevEpisode}
-				<Button href="/episodes/{data.prevEpisode.number}" variant="outline" size="icon-sm" title={data.prevEpisode.title}>&larr;</Button>
-			{/if}
-			{#if data.nextEpisode}
-				<Button href="/episodes/{data.nextEpisode.number}" variant="outline" size="icon-sm" title={data.nextEpisode.title}>&rarr;</Button>
-			{/if}
 			<form bind:this={formEl} method="POST" action="?/toggleListened" use:enhance>
 				<input type="hidden" name="number" value={data.episode.number} />
 				<input type="hidden" name="listened" value={String(!data.episode.listened)} />
@@ -61,6 +49,7 @@
 		<AudioPlayer
 			episodeNumber={data.episode.number}
 			playbackPosition={data.episode.playbackPosition}
+			prevEpisodeNumber={data.prevEpisode?.number ?? null}
 			nextEpisodeNumber={data.nextEpisode?.number ?? null}
 		/>
 	</div>
@@ -113,7 +102,7 @@
 											<button
 												type="button"
 												class="inline cursor-pointer border-none bg-transparent p-0 text-base font-normal text-inherit underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-												onclick={(e: MouseEvent) => showPopup(e, token.clean)}
+												onclick={(e: MouseEvent) => openWord(e, token.clean)}
 											>
 												{token.display}
 											</button>
@@ -126,17 +115,16 @@
 						</div>
 					{/each}
 
-					<Popover bind:open={popoverOpen} onOpenChange={(open) => { if (!open) hidePopup(); }}>
-						<PopoverContent customAnchor={anchorEl} side="top">
-							<p class="font-bold">Add "{pendingWord}"?</p>
-							<form method="POST" action="?/addWord" use:enhance class="flex gap-2 mt-2">
-								<input type="hidden" name="term" value={pendingWord} />
-								<input type="hidden" name="episodeNumber" value={data.episode.number} />
-								<Button type="submit" size="sm" onclick={hidePopup}>Add to LingQ</Button>
-								<Button type="button" variant="outline" size="sm" onclick={hidePopup}>Cancel</Button>
-							</form>
-						</PopoverContent>
-					</Popover>
+					<WordPopover
+						bind:open={popoverOpen}
+						word={pendingWord}
+						anchor={anchorEl}
+						submitLabel="Add to LingQ"
+					>
+						{#snippet extraFields()}
+							<input type="hidden" name="episodeNumber" value={data.episode.number} />
+						{/snippet}
+					</WordPopover>
 				{:else}
 					<div class="text-center p-8 text-muted-foreground">
 						<p class="text-xl font-semibold">No transcript available</p>

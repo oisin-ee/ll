@@ -17,9 +17,11 @@ case "$FILE_PATH" in
   *) exit 0 ;;
 esac
 
-# Skip code-generation files — they contain patterns as strings, not actual usage
+# Skip code-generation files — they contain patterns as strings, not actual usage.
+# Skip framework config files — Vite/Vitest/Playwright/Drizzle/SvelteKit require `export default`.
 case "$FILE_PATH" in
   */generate/*.ts|*/generators/*.ts|*/templates/*.ts|*/.claude/hooks/*) exit 0 ;;
+  *.config.ts|*.config.js|*.config.cjs|*.config.mjs) exit 0 ;;
 esac
 
 block() {

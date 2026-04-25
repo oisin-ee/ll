@@ -8,10 +8,12 @@
 	let {
 		episodeNumber,
 		playbackPosition = 0,
+		prevEpisodeNumber = null,
 		nextEpisodeNumber = null
 	}: {
 		episodeNumber: number;
 		playbackPosition: number;
+		prevEpisodeNumber: number | null;
 		nextEpisodeNumber: number | null;
 	} = $props();
 
@@ -148,6 +150,12 @@
 		></audio>
 
 		<div class="flex items-center gap-2 md:gap-3">
+			{#if prevEpisodeNumber}
+				<Button href="/episodes/{prevEpisodeNumber}" size="sm" variant="outline">
+					&larr; <span class="hidden sm:inline">Prev</span>
+				</Button>
+			{/if}
+
 			<Button size="icon" onclick={togglePlay}>
 				{#if isPlaying}
 					<PauseIcon />

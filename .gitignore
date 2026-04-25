@@ -26,6 +26,11 @@ auth.json
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
+# Playwright
+/test-results
+/playwright-report
+/playwright/.cache
+
 # Audio files (served from GitHub Releases via oisincoveney/ll-audio)
 language-transfer/
 

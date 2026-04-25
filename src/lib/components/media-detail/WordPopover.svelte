@@ -1,41 +1,50 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { enhance } from '$app/forms';
 	import { Popover, PopoverContent } from '$lib/components/ui/popover';
 	import { Button } from '$lib/components/ui/button';
 
-	let pendingWord = $state('');
-	let popoverOpen = $state(false);
-	let anchorEl = $state<HTMLElement | null>(null);
-
-	export function select(word: string, el: HTMLElement) {
-		anchorEl = el;
-		pendingWord = word;
-		popoverOpen = true;
+	interface Props {
+		open: boolean;
+		word: string;
+		anchor: HTMLElement | null;
+		action?: string;
+		submitLabel?: string;
+		extraFields?: Snippet;
 	}
 
-	function hide() {
-		popoverOpen = false;
-		pendingWord = '';
+	let {
+		open = $bindable(),
+		word,
+		anchor,
+		action = '?/addWord',
+		submitLabel = 'Save word',
+		extraFields
+	}: Props = $props();
+
+	function close() {
+		open = false;
 	}
 </script>
 
-<Popover bind:open={popoverOpen} onOpenChange={(open) => { if (!open) hide(); }}>
-	<PopoverContent customAnchor={anchorEl} side="top">
-		<p class="mb-2 font-bold">{pendingWord}</p>
+<Popover bind:open onOpenChange={(next) => { if (!next) close(); }}>
+	<PopoverContent customAnchor={anchor} side="top">
+		<p class="mb-2 font-bold">{word}</p>
 		<form
 			method="POST"
-			action="?/addWord"
+			{action}
 			use:enhance={() => {
 				return async ({ result, update }) => {
-					if (result.type === 'success' || result.type === 'redirect') hide();
+					if (result.type === 'success' || result.type === 'redirect') close();
 					await update();
 				};
 			}}
 			class="flex gap-2"
 		>
-			<input type="hidden" name="term" value={pendingWord} />
-			<Button type="submit" size="sm">Save word</Button>
-			<Button type="button" size="sm" variant="outline" onclick={hide}>Cancel</Button>
+			<input type="hidden" name="term" value={word} />
+			{@render extraFields?.()}
+			<Button type="submit" size="sm">{submitLabel}</Button>
+			<Button type="button" size="sm" variant="outline" onclick={close}>Cancel</Button>
 		</form>
 	</PopoverContent>
 </Popover>

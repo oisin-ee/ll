@@ -1,3 +1,4 @@
 [tools]
 pnpm = "10.33.0"
 yt-dlp = "latest"
+"github:gastownhall/beads" = { version = "latest", exe = "bd" }

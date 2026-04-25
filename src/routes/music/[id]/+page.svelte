@@ -13,7 +13,15 @@
 	let { data, form } = $props();
 
 	let currentMs = $state(0);
-	let wordPopover: WordPopover;
+	let popoverOpen = $state(false);
+	let pendingWord = $state('');
+	let anchorEl = $state<HTMLElement | null>(null);
+
+	function openWord(word: string, e: MouseEvent) {
+		pendingWord = word;
+		anchorEl = e.target as HTMLElement;
+		popoverOpen = true;
+	}
 </script>
 
 <svelte:head>
@@ -53,7 +61,7 @@
 						lines={data.lines.map((l) => ({ startMs: l.startMs, spanish: l.spanish, english: l.english ?? null }))}
 						{currentMs}
 						trackedWords={data.trackedWords}
-						onWordClick={(w, e) => wordPopover.select(w, e.target as HTMLElement)}
+						onWordClick={openWord}
 					/>
 				</div>
 			</Card>
@@ -70,6 +78,6 @@
 	{/snippet}
 
 	{#snippet popover()}
-		<WordPopover bind:this={wordPopover} />
+		<WordPopover bind:open={popoverOpen} word={pendingWord} anchor={anchorEl} />
 	{/snippet}
 </MediaDetailPage>
