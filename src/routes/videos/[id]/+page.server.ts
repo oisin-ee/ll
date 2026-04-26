@@ -1,9 +1,9 @@
-import { db } from '$lib/server/db';
-import { videos, videoLines, words } from '$lib/server/db/schema';
+import { db } from '../../../lib/server/db';
+import { media, mediaLines, words } from '../../../lib/server/db/schema';
 import { eq, and } from 'drizzle-orm';
-import { error, fail } from '@sveltejs/kit';
-import { lookupCard, createCard } from '$lib/server/lingq';
-import { fetchVideoMetadata, saveVideoLines } from '$lib/server/videos';
+import { error, fail, redirect } from '@sveltejs/kit';
+import { lookupCard, createCard } from '../../../lib/server/lingq';
+import { fetchMediaMetadata, saveMediaLines, probeSources } from '../../../lib/server/media';
 import { subtitleFailureMessage } from '../../../lib/server/subtitles';
 import type { PageServerLoad, Actions } from './$types';
 
@@ -14,25 +14,31 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 	const id = parseInt(params.id);
 	if (isNaN(id)) throw error(404, 'Video not found');
 
-	const video = db.select().from(videos).where(eq(videos.id, id)).get();
+	const video = db
+		.select()
+		.from(media)
+		.where(and(eq(media.id, id), eq(media.kind, 'video')))
+		.get();
 	if (!video) throw error(404, 'Video not found');
 
 	const lines = db
 		.select()
-		.from(videoLines)
-		.where(eq(videoLines.videoId, id))
+		.from(mediaLines)
+		.where(eq(mediaLines.mediaId, id))
 		.all()
 		.sort((a, b) => a.startMs - b.startMs);
 
 	const videoWords = db
 		.select()
 		.from(words)
-		.where(and(eq(words.userId, user.id), eq(words.videoId, id)))
+		.where(and(eq(words.userId, user.id), eq(words.mediaId, id)))
 		.all();
 
 	const trackedWords = videoWords.map((w) => w.spanish.toLowerCase());
 
-	return { video, lines, videoWords, trackedWords, breadcrumbLabel: video.title };
+	const sources = await probeSources(video.youtubeId, video.artist, video.title);
+
+	return { media: video, lines, words: videoWords, trackedWords, sources, breadcrumbLabel: video.title };
 };
 
 export const actions: Actions = {
@@ -40,20 +46,20 @@ export const actions: Actions = {
 		const user = locals.user;
 		if (!user) return fail(401, { addError: 'Not authenticated' });
 
-		const videoId = parseInt(params.id);
-		if (isNaN(videoId)) return fail(400, { addError: 'Invalid video' });
+		const mediaId = parseInt(params.id);
+		if (isNaN(mediaId)) return fail(400, { addError: 'Invalid video' });
 
 		const formData = await request.formData();
 		const term = String(formData.get('term') ?? '').trim();
 		if (!term) return fail(400, { addError: 'Word is required' });
 
-		const video = db.select().from(videos).where(eq(videos.id, videoId)).get();
+		const video = db.select().from(media).where(eq(media.id, mediaId)).get();
 		if (!video) return fail(404, { addError: 'Video not found' });
 
 		const existing = db
 			.select()
 			.from(words)
-			.where(and(eq(words.userId, user.id), eq(words.videoId, videoId)))
+			.where(and(eq(words.userId, user.id), eq(words.mediaId, mediaId)))
 			.all()
 			.find((w) => w.spanish.toLowerCase() === term.toLowerCase());
 
@@ -79,8 +85,7 @@ export const actions: Actions = {
 				english,
 				example: null,
 				episodeNumber: null,
-				songId: null,
-				videoId,
+				mediaId,
 				lingqId: card.pk,
 				lingqStatus: card.status,
 				createdAt: new Date().toISOString()
@@ -102,26 +107,56 @@ export const actions: Actions = {
 			.run();
 	},
 
-	reloadSubtitles: async ({ params, locals }) => {
+	reloadLines: async ({ params, locals }) => {
 		const user = locals.user;
 		if (!user) return fail(401, { reloadError: 'Not authenticated' });
 
-		const videoId = parseInt(params.id);
-		if (isNaN(videoId)) return fail(400, { reloadError: 'Invalid video' });
+		const mediaId = parseInt(params.id);
+		if (isNaN(mediaId)) return fail(400, { reloadError: 'Invalid video' });
 
-		const video = db.select().from(videos).where(eq(videos.id, videoId)).get();
+		const video = db.select().from(media).where(eq(media.id, mediaId)).get();
 		if (!video) return fail(404, { reloadError: 'Video not found' });
 
-		let metadata: { title: string; channel: string };
+		let metadata: { title: string; artist: string };
 		try {
-			metadata = await fetchVideoMetadata(video.youtubeId);
+			metadata = await fetchMediaMetadata(video.youtubeId);
 		} catch {
 			return fail(400, { reloadError: 'Could not fetch video info from YouTube' });
 		}
 
-		db.update(videos).set({ title: metadata.title, channel: metadata.channel }).where(eq(videos.id, videoId)).run();
+		db.update(media)
+			.set({ title: metadata.title, artist: metadata.artist })
+			.where(eq(media.id, mediaId))
+			.run();
 
-		const result = await saveVideoLines(videoId, video.youtubeId);
+		const source = video.source === 'lyrics' ? 'lyrics' : 'captions';
+		const result = await saveMediaLines(mediaId, video.youtubeId, source, metadata.artist, metadata.title);
 		if (!result.ok) return fail(404, { reloadError: subtitleFailureMessage(result.reason) });
+	},
+
+	switchSource: async ({ params, locals }) => {
+		const user = locals.user;
+		if (!user) return fail(401, { reloadError: 'Not authenticated' });
+
+		const mediaId = parseInt(params.id);
+		if (isNaN(mediaId)) return fail(400, { reloadError: 'Invalid video' });
+
+		const video = db.select().from(media).where(eq(media.id, mediaId)).get();
+		if (!video) return fail(404, { reloadError: 'Video not found' });
+
+		const newSource = video.source === 'lyrics' ? 'captions' : 'lyrics';
+		const result = await saveMediaLines(mediaId, video.youtubeId, newSource, video.artist, video.title);
+		if (!result.ok) return fail(400, { reloadError: subtitleFailureMessage(result.reason) });
+	},
+
+	deleteMedia: async ({ params, locals }) => {
+		const user = locals.user;
+		if (!user) return fail(401, { deleteError: 'Not authenticated' });
+
+		const mediaId = parseInt(params.id);
+		if (isNaN(mediaId)) return fail(400, { deleteError: 'Invalid video' });
+
+		db.delete(media).where(eq(media.id, mediaId)).run();
+		redirect(303, '/videos');
 	}
 };

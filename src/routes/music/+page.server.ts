@@ -1,9 +1,14 @@
-import { db } from '$lib/server/db';
-import { songs } from '$lib/server/db/schema';
-import { desc } from 'drizzle-orm';
+import { db } from '../../lib/server/db';
+import { media } from '../../lib/server/db/schema';
+import { desc, eq } from 'drizzle-orm';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-	const allSongs = db.select().from(songs).orderBy(desc(songs.createdAt)).all();
-	return { songs: allSongs };
+	const songs = db
+		.select()
+		.from(media)
+		.where(eq(media.kind, 'song'))
+		.orderBy(desc(media.createdAt))
+		.all();
+	return { songs };
 };

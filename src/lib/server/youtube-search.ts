@@ -1,5 +1,7 @@
 import { spawn, spawnSync } from 'node:child_process';
 import { z } from 'zod';
+import getArtistTitle from 'get-artist-title';
+import { checkLrcLyrics } from './lrclib';
 
 const YOUTUBE_ID_RE = /^[A-Za-z0-9_-]{11}$/;
 
@@ -10,11 +12,33 @@ const searchResultSchema = z.object({
 	duration: z.number().nullable().optional()
 });
 
-export interface YoutubeSearchCandidate {
+export interface YoutubeSearchCandidateBase {
 	youtubeId: string;
 	title: string;
 	channel: string;
 	durationSeconds: number | null;
+}
+
+export interface YoutubeSearchCandidate extends YoutubeSearchCandidateBase {
+	hasCaptions: boolean;
+	hasSyncedLyrics: boolean;
+}
+
+/**
+ * Parse "Artist - Title" out of a YouTube video title, falling back to the
+ * uploader/channel as the artist when the title doesn't carry one. Mirrors the
+ * heuristic used by `fetchYoutubeMetadata` so the picker's LRCLIB lookup uses
+ * the same artist/title the ingest pipeline will use.
+ */
+export function parseArtistTitle(
+	title: string,
+	channel: string
+): { artist: string; title: string } | null {
+	const parsed = getArtistTitle(title, { defaultArtist: channel });
+	if (!parsed) return null;
+	const [artist, parsedTitle] = parsed;
+	if (!artist?.trim() || !parsedTitle?.trim()) return null;
+	return { artist, title: parsedTitle };
 }
 
 function clampLimit(limit: number): number {
@@ -22,14 +46,14 @@ function clampLimit(limit: number): number {
 	return Math.min(Math.max(Math.floor(limit), 1), 10);
 }
 
-export function parseSearchOutput(stdout: string): YoutubeSearchCandidate[] {
+export function parseSearchOutput(stdout: string): YoutubeSearchCandidateBase[] {
 	const seen = new Set<string>();
 	const rows = stdout
 		.split('\n')
 		.map((line) => line.trim())
 		.filter((line) => line.length > 0);
 
-	const candidates: YoutubeSearchCandidate[] = [];
+	const candidates: YoutubeSearchCandidateBase[] = [];
 	for (const row of rows) {
 		let json: unknown;
 		try {
@@ -79,15 +103,34 @@ export async function searchYoutubeCandidates(query: string, limit = 5): Promise
 	if (trimmedQuery.length === 0) return [];
 
 	const searchLimit = clampLimit(limit);
+	// `--print` with a JSON template gives us only the fields we need (~200B
+	// per row) instead of `--dump-json`'s ~600KB per row of formats/thumbnails.
+	// At 5 results, the slim form is ~1KB vs ~3MB and avoids the spawnSync
+	// default maxBuffer (1MB) ENOBUFS error.
 	const commandResult = spawnSync(
 		'yt-dlp',
-		['--dump-json', `ytsearch${searchLimit}:${trimmedQuery}`],
+		[
+			'--print',
+			'{"id":%(id)j,"title":%(title)j,"uploader":%(uploader)j,"duration":%(duration)j}',
+			`ytsearch${searchLimit}:${trimmedQuery}`
+		],
 		{ encoding: 'utf-8', timeout: 20_000 }
 	);
 
 	if (commandResult.error || commandResult.status !== 0) return [];
 
-	const candidates = parseSearchOutput(commandResult.stdout ?? '').slice(0, searchLimit);
-	const subsResults = await Promise.all(candidates.map((c) => checkSpanishSubs(c.youtubeId)));
-	return candidates.filter((_, i) => subsResults[i]);
+	const baseCandidates = parseSearchOutput(commandResult.stdout ?? '').slice(0, searchLimit);
+
+	const enriched = await Promise.all(
+		baseCandidates.map(async (candidate) => {
+			const parsed = parseArtistTitle(candidate.title, candidate.channel);
+			const [hasCaptions, hasSyncedLyrics] = await Promise.all([
+				checkSpanishSubs(candidate.youtubeId),
+				parsed ? checkLrcLyrics(parsed.artist, parsed.title) : Promise.resolve(false)
+			]);
+			return { ...candidate, hasCaptions, hasSyncedLyrics };
+		})
+	);
+
+	return enriched.filter((c) => c.hasCaptions || c.hasSyncedLyrics);
 }

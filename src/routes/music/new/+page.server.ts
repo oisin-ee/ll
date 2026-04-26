@@ -1,10 +1,16 @@
-import { db } from '$lib/server/db';
-import { songs } from '$lib/server/db/schema';
+import { db } from '../../../lib/server/db';
+import { media } from '../../../lib/server/db/schema';
 import { fail, redirect } from '@sveltejs/kit';
-import { extractYoutubeId } from '$lib/lrc';
-import { fetchYoutubeMetadata, saveSongLines } from '$lib/server/music';
-import { searchYoutubeCandidates } from '$lib/server/youtube-search';
-import { subtitleFailureMessage } from '../../../lib/server/subtitles';
+import { eq } from 'drizzle-orm';
+import { extractYoutubeId } from '../../../lib/lrc';
+import {
+	fetchMediaMetadata,
+	saveMediaLines,
+	chooseSource,
+	probeSources
+} from '../../../lib/server/media';
+import { searchYoutubeCandidates } from '../../../lib/server/youtube-search';
+import { subtitleFailureMessage, type SubtitleFailureReason } from '../../../lib/server/subtitles';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
@@ -19,7 +25,7 @@ export const actions: Actions = {
 		const selectedYoutubeId = String(formData.get('selectedYoutubeId') ?? '').trim();
 		const intent = String(formData.get('intent') ?? '').trim();
 
-		let youtubeId = extractYoutubeId(youtubeInput) ?? extractYoutubeId(selectedYoutubeId);
+		const youtubeId = extractYoutubeId(youtubeInput) ?? extractYoutubeId(selectedYoutubeId);
 		if (!youtubeId) {
 			const candidates = await searchYoutubeCandidates(youtubeInput);
 			if (candidates.length === 0) {
@@ -40,28 +46,35 @@ export const actions: Actions = {
 
 		let metadata: { title: string; artist: string };
 		try {
-			metadata = await fetchYoutubeMetadata(youtubeId);
+			metadata = await fetchMediaMetadata(youtubeId);
 		} catch {
 			return fail(400, { error: 'Could not fetch video info from YouTube', youtubeInput, teacherNotes });
 		}
 
+		const sources = await probeSources(youtubeId, metadata.artist, metadata.title);
+		const chosenSource = chooseSource('song', sources);
+
 		const song = db
-			.insert(songs)
+			.insert(media)
 			.values({
+				kind: 'song',
 				title: metadata.title,
 				artist: metadata.artist,
 				youtubeId,
 				lrcText: null,
 				teacherNotes: teacherNotes || null,
+				source: chosenSource,
 				createdAt: new Date().toISOString()
 			})
 			.returning()
 			.get();
 
-		const result = await saveSongLines(song.id, youtubeId);
+		const result = await saveMediaLines(song.id, youtubeId, chosenSource, metadata.artist, metadata.title);
 		if (!result.ok) {
+			db.delete(media).where(eq(media.id, song.id)).run();
+			const reason: SubtitleFailureReason = result.reason;
 			return fail(400, {
-				error: subtitleFailureMessage(result.reason),
+				error: subtitleFailureMessage(reason),
 				youtubeInput,
 				teacherNotes
 			});

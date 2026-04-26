@@ -13,7 +13,14 @@ export type SubtitleLine = {
 	text: string;
 };
 
-export type SubtitleFailureReason = 'bad-id' | 'no-subs' | 'yt-dlp-error' | 'parse-error';
+export type SubtitleFailureReason =
+	| 'bad-id'
+	| 'no-subs'
+	| 'yt-dlp-error'
+	| 'parse-error'
+	| 'no-lyrics'
+	| 'no-synced-lyrics'
+	| 'lrclib-error';
 
 export type SubtitleResult =
 	| { ok: true; lines: SubtitleLine[]; lang: string | null }
@@ -23,7 +30,10 @@ const SUBTITLE_FAILURE_MESSAGES: Record<SubtitleFailureReason, string> = {
 	'bad-id': 'Invalid YouTube ID for this video',
 	'no-subs': 'This video has no Spanish subtitles on YouTube',
 	'yt-dlp-error': 'Could not fetch subtitles (yt-dlp error). Check server logs.',
-	'parse-error': 'Subtitles were downloaded but could not be parsed'
+	'parse-error': 'Subtitles were downloaded but could not be parsed',
+	'no-lyrics': 'No lyrics found for this track on LRCLIB',
+	'no-synced-lyrics': 'LRCLIB has plain lyrics but no synced (timed) version for this track',
+	'lrclib-error': 'Could not reach LRCLIB. Check server logs.'
 };
 
 export function subtitleFailureMessage(reason: SubtitleFailureReason): string {
@@ -107,6 +117,11 @@ export function fetchSubtitles(youtubeId: string): SubtitleResult {
 			'--sub-format', 'srt/vtt/best',
 			// Production containers pin node as the JS runtime; deno may not be present.
 			'--js-runtimes', 'node',
+			// Without -i, yt-dlp aborts the whole call when ANY single matching
+			// sub-track fails (e.g. one regional variant returns HTTP 429). With
+			// -i it skips that track and continues; we then check whether at
+			// least one file was written via findSubtitleFile() below.
+			'-i',
 			'--skip-download',
 			'--no-warnings',
 			'-o', stem,

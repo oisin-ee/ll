@@ -56,7 +56,40 @@ export const episodeSummaries = sqliteTable('episode_summaries', {
 	vocabularyJson: text('vocabulary_json')
 });
 
-// ── Music catalog ─────────────────────────────────────────────────────────────
+// ── Media catalog (songs + videos unified) ────────────────────────────────────
+// `kind` discriminates the user-facing view (song vs video); `source` records
+// which provider (yt-dlp Spanish captions vs LRCLIB synced lyrics) populated
+// the timed lines, so reloads re-run the same source and detail pages can
+// offer to swap when the alternative is available.
+
+export const media = sqliteTable('media', {
+	id: integer('id').primaryKey({ autoIncrement: true }),
+	kind: text('kind').notNull(),
+	title: text('title').notNull(),
+	artist: text('artist').notNull(),
+	youtubeId: text('youtube_id').notNull(),
+	lrcText: text('lrc_text'),
+	teacherNotes: text('teacher_notes'),
+	source: text('source').notNull(),
+	createdAt: text('created_at').notNull()
+});
+
+export const mediaLines = sqliteTable('media_lines', {
+	id: integer('id').primaryKey({ autoIncrement: true }),
+	mediaId: integer('media_id')
+		.notNull()
+		.references(() => media.id, { onDelete: 'cascade' }),
+	lineNumber: integer('line_number').notNull(),
+	startMs: integer('start_ms').notNull(),
+	spanish: text('spanish').notNull(),
+	english: text('english')
+});
+
+// ── Legacy music/video catalogs ───────────────────────────────────────────────
+// Retained read-only during the data-copy migration so the migration is
+// non-destructive (CLAUDE.md: never delete user data without explicit
+// approval). A follow-up migration drops these once the unified tables are
+// verified in production.
 
 export const songs = sqliteTable('songs', {
 	id: integer('id').primaryKey({ autoIncrement: true }),
@@ -78,8 +111,6 @@ export const songLines = sqliteTable('song_lines', {
 	spanish: text('spanish').notNull(),
 	english: text('english')
 });
-
-// ── Video catalog ─────────────────────────────────────────────────────────────
 
 export const videos = sqliteTable('videos', {
 	id: integer('id').primaryKey({ autoIncrement: true }),
@@ -124,8 +155,10 @@ export const words = sqliteTable('words', {
 	spanish: text('spanish').notNull(),
 	english: text('english').notNull(),
 	example: text('example'),
-	// nullable: words from songs/videos will have songId/videoId set instead
+	// nullable: words from media will have mediaId set instead
 	episodeNumber: integer('episode_number'),
+	mediaId: integer('media_id').references(() => media.id, { onDelete: 'set null' }),
+	// legacy FKs retained until follow-up migration drops them
 	songId: integer('song_id').references(() => songs.id, { onDelete: 'set null' }),
 	videoId: integer('video_id').references(() => videos.id, { onDelete: 'set null' }),
 	lingqId: integer('lingq_id'),
@@ -186,6 +219,15 @@ export const sessionsRelations = relations(sessions, ({ one }) => ({
 	user: one(users, { fields: [sessions.userId], references: [users.id] })
 }));
 
+export const mediaRelations = relations(media, ({ many }) => ({
+	lines: many(mediaLines),
+	words: many(words)
+}));
+
+export const mediaLinesRelations = relations(mediaLines, ({ one }) => ({
+	media: one(media, { fields: [mediaLines.mediaId], references: [media.id] })
+}));
+
 export const songsRelations = relations(songs, ({ many }) => ({
 	lines: many(songLines),
 	words: many(words)
@@ -205,6 +247,7 @@ export const videoLinesRelations = relations(videoLines, ({ one }) => ({
 }));
 
 export const wordsRelations = relations(words, ({ one }) => ({
+	media: one(media, { fields: [words.mediaId], references: [media.id] }),
 	song: one(songs, { fields: [words.songId], references: [songs.id] }),
 	video: one(videos, { fields: [words.videoId], references: [videos.id] }),
 	user: one(users, { fields: [words.userId], references: [users.id] })

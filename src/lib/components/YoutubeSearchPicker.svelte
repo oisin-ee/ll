@@ -18,6 +18,8 @@
 		title: string;
 		channel: string;
 		durationSeconds: number | null;
+		hasCaptions: boolean;
+		hasSyncedLyrics: boolean;
 	}
 
 	let {
@@ -50,6 +52,13 @@
 		return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
 	}
 
+	function sourceBadgeLabel(candidate: YoutubeCandidate): string | null {
+		if (candidate.hasCaptions && candidate.hasSyncedLyrics) return 'Both';
+		if (candidate.hasSyncedLyrics) return 'Lyrics';
+		if (candidate.hasCaptions) return 'Captions';
+		return null;
+	}
+
 	export async function search() {
 		const q = searchQuery.trim();
 		if (!q) return;
@@ -62,7 +71,7 @@
 			if (!res.ok) throw new Error('Search request failed');
 			const data = (await res.json()) as { candidates: YoutubeCandidate[] };
 			candidates = data.candidates;
-			if (candidates.length === 0) searchError = 'No results with lyrics found. Try a different search.';
+			if (candidates.length === 0) searchError = 'No results with captions or synced lyrics found. Try a different search.';
 		} catch {
 			searchError = 'Search failed. Please try again.';
 		} finally {
@@ -142,7 +151,12 @@
 							<ItemTitle class="w-full truncate">{candidate.title}</ItemTitle>
 							<ItemDescription class="truncate">{candidate.channel}</ItemDescription>
 						</ItemContent>
-						<div class="mr-2 shrink-0">
+						<div class="mr-2 flex shrink-0 items-center gap-1">
+							{#if sourceBadgeLabel(candidate)}
+								<Badge variant="secondary" class="text-xs">
+									{sourceBadgeLabel(candidate)}
+								</Badge>
+							{/if}
 							<Badge variant="outline" class="text-xs">
 								{formatDuration(candidate.durationSeconds)}
 							</Badge>

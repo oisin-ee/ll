@@ -12,10 +12,16 @@ vi.mock('node:child_process', async (importOriginal) => {
 	};
 });
 
+vi.mock('./lrclib', () => ({
+	checkLrcLyrics: vi.fn()
+}));
+
 import { spawn, spawnSync } from 'node:child_process';
+import { checkLrcLyrics } from './lrclib';
 
 const mockedSpawn = vi.mocked(spawn);
 const mockedSpawnSync = vi.mocked(spawnSync);
+const mockedCheckLrcLyrics = vi.mocked(checkLrcLyrics);
 
 function fakeChildProcess(stdoutData: string, exitCode = 0): ChildProcessWithoutNullStreams {
 	const proc = new EventEmitter();
@@ -102,6 +108,8 @@ describe('searchYoutubeCandidates', () => {
 	beforeEach(() => {
 		mockedSpawn.mockReset();
 		mockedSpawnSync.mockReset();
+		mockedCheckLrcLyrics.mockReset();
+		mockedCheckLrcLyrics.mockResolvedValue(false);
 	});
 
 	it('returns an empty array when yt-dlp search fails', async () => {
@@ -115,7 +123,7 @@ describe('searchYoutubeCandidates', () => {
 		expect(mockedSpawn).not.toHaveBeenCalled();
 	});
 
-	it('returns only candidates that have Spanish subtitles', async () => {
+	it('keeps candidates with captions and tags them with hasCaptions=true', async () => {
 		mockedSpawnSync.mockReturnValue(
 			spawnSyncResult({
 				stdout: [
@@ -135,9 +143,53 @@ describe('searchYoutubeCandidates', () => {
 
 		expect(candidates).toHaveLength(1);
 		expect(candidates[0]?.youtubeId).toBe('aaaaaaaaaaa');
+		expect(candidates[0]?.hasCaptions).toBe(true);
+		expect(candidates[0]?.hasSyncedLyrics).toBe(false);
 	});
 
-	it('returns empty when no candidates have Spanish subtitles', async () => {
+	it('keeps candidates that only have synced lyrics (no captions)', async () => {
+		mockedSpawnSync.mockReturnValue(
+			spawnSyncResult({
+				stdout: JSON.stringify({
+					id: 'aaaaaaaaaaa',
+					title: 'Bad Bunny - Tití Me Preguntó',
+					uploader: 'Bad Bunny'
+				})
+			})
+		);
+
+		mockedSpawn.mockImplementation(() => fakeChildProcess('en  English  vtt\n'));
+		mockedCheckLrcLyrics.mockResolvedValue(true);
+
+		const candidates = await searchYoutubeCandidates('query', 5);
+
+		expect(candidates).toHaveLength(1);
+		expect(candidates[0]?.hasCaptions).toBe(false);
+		expect(candidates[0]?.hasSyncedLyrics).toBe(true);
+	});
+
+	it('marks candidates with both captions and lyrics', async () => {
+		mockedSpawnSync.mockReturnValue(
+			spawnSyncResult({
+				stdout: JSON.stringify({
+					id: 'aaaaaaaaaaa',
+					title: 'Bad Bunny - Tití Me Preguntó',
+					uploader: 'Bad Bunny'
+				})
+			})
+		);
+
+		mockedSpawn.mockImplementation(() => fakeChildProcess('es  Spanish  vtt\n'));
+		mockedCheckLrcLyrics.mockResolvedValue(true);
+
+		const candidates = await searchYoutubeCandidates('query', 5);
+
+		expect(candidates).toHaveLength(1);
+		expect(candidates[0]?.hasCaptions).toBe(true);
+		expect(candidates[0]?.hasSyncedLyrics).toBe(true);
+	});
+
+	it('drops candidates that have neither captions nor synced lyrics', async () => {
 		mockedSpawnSync.mockReturnValue(
 			spawnSyncResult({
 				stdout: JSON.stringify({ id: 'aaaaaaaaaaa', title: 'No subs', uploader: 'Chan' })
@@ -145,6 +197,7 @@ describe('searchYoutubeCandidates', () => {
 		);
 
 		mockedSpawn.mockImplementation(() => fakeChildProcess('en  English  vtt\n'));
+		mockedCheckLrcLyrics.mockResolvedValue(false);
 
 		const candidates = await searchYoutubeCandidates('query', 5);
 

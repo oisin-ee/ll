@@ -16,6 +16,8 @@
 			title: string;
 			channel: string;
 			durationSeconds: number | null;
+			hasCaptions: boolean;
+			hasSyncedLyrics: boolean;
 		}>;
 	}
 

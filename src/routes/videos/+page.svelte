@@ -27,7 +27,7 @@
 			<li>
 				<Button href="/videos/{video.id}" variant="outline" class="h-auto p-4 flex flex-col gap-1 items-start w-full justify-start">
 					<span class="font-semibold text-base">{video.title}</span>
-					<span class="text-muted-foreground">{video.channel}</span>
+					<span class="text-muted-foreground">{video.artist}</span>
 					{#if video.teacherNotes}
 						<span class="text-sm text-muted-foreground line-clamp-2">{video.teacherNotes}</span>
 					{/if}
