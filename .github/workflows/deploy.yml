@@ -71,17 +71,21 @@ jobs:
   deploy:
     needs: test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # Free hosted runner SSHes into the exe.dev VM. Self-hosted runners + a
+      # public repo open a gap any future `pull_request`-triggered self-hosted
+      # job would silently widen — this side-steps the whole class.
+      - name: Deploy on exe.dev VM
+        uses: appleboy/ssh-action@v1.2.5
         with:
-          fetch-depth: 1
-
-      - name: Copy env file
-        run: cp /home/exedev/ll/.env .env
-
-      - name: Build
-        run: docker compose -p ll build
-
-      - name: Deploy
-        run: docker compose -p ll up -d
+          host: ${{ secrets.EXE_HOST }}
+          username: ${{ secrets.EXE_USER }}
+          key: ${{ secrets.EXE_SSH_KEY }}
+          script: |
+            set -euo pipefail
+            cd /home/exedev/ll-app
+            git fetch origin main
+            git reset --hard origin/main
+            docker compose -p ll build
+            docker compose -p ll up -d
