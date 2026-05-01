@@ -21,8 +21,17 @@
     "styling-ui",
     "performance"
   ],
-  "tools": ["beads", "contract-driven"],
-  "workflow": "idd",
+  "tools": [
+    "beads",
+    "contract-driven"
+  ],
+  "workflow": "bd",
   "contractDriven": true,
-  "targets": ["claude", "codex", "opencode", "cursor", "lefthook"]
+  "targets": [
+    "claude",
+    "codex",
+    "opencode",
+    "cursor",
+    "lefthook"
+  ]
 }
